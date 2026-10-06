@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f3efe7" />
+  <meta name="description" content="A working archive of how Shubham Shinde became a designer." />
+  <title>About — Shubham Shinde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f3efe7;
+      --paper-2:#ece6da;
+      --ink:#171714;
+      --muted:#777168;
+      --rule:rgba(23,23,20,.18);
+      --red:#b9271f;
+      --sans:"Geist",Arial,sans-serif;
+      --serif:"Instrument Serif",Georgia,serif;
+      --mono:"JetBrains Mono",monospace;
+      --pad:clamp(20px,3.4vw,56px);
+      --ease:cubic-bezier(.22,.61,.36,1);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ::selection{background:var(--ink);color:var(--paper)}
+    .shell{width:min(100%,1600px);margin:0 auto;padding:0 var(--pad)}
+    .site-nav{
+      height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid var(--rule);
+      position:relative;
+      z-index:10;
+    }
+    .brand,.nav-link,.eyebrow,.meta,.caption,.archive-id,.micro{
+      font-family:var(--mono);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:10px;
+      line-height:1.4;
+    }
+    .brand{font-weight:500}
+    .nav-group{display:flex;gap:22px;align-items:center}
+    .nav-link{position:relative}
+    .nav-link:after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:currentColor;transition:right .25s var(--ease)}
+    .nav-link:hover:after,.nav-link[aria-current="page"]:after{right:0}
+    .hero{
+      min-height:calc(100svh - 74px);
+      display:grid;
+      grid-template-columns:1.35fr .65fr;
+      grid-template-rows:auto 1fr auto;
+      column-gap:clamp(36px,7vw,120px);
+      padding:clamp(54px,8vh,100px) 0 34px;
+      position:relative;
+    }
+    .hero-meta{
+      grid-column:1/2;
+      display:grid;
+      grid-template-columns:repeat(2,max-content);
+      gap:5px 28px;
+      color:var(--muted);
+      align-self:start;
+    }
+    .hero-copy{
+      grid-column:1/2;
+      align-self:center;
+      max-width:1050px;
+      padding:7vh 0 5vh;
+    }
+    h1{
+      margin:0;
+      font-size:clamp(64px,10.3vw,166px);
+      letter-spacing:-.065em;
+      line-height:.83;
+      font-weight:450;
+      max-width:10ch;
+    }
+    .hero-sub{
+      font-family:var(--serif);
+      font-style:italic;
+      font-size:clamp(30px,4vw,68px);
+      line-height:1;
+      margin:30px 0 0 clamp(3px,8vw,140px);
+      color:#2b2925;
+    }
+    .hero-photo{
+      grid-column:2/3;
+      grid-row:1/4;
+      align-self:end;
+      width:min(100%,420px);
+      justify-self:end;
+      margin-bottom:clamp(48px,7vh,92px);
+      position:relative;
+      transform:rotate(.45deg);
+      transition:transform .45s var(--ease);
+    }
+    .hero-photo:hover{transform:rotate(0deg) scale(1.01)}
+    .photo-wrap{background:#d8d1c4;padding:8px}
+    .photo-wrap img{
+      width:100%;
+      aspect-ratio:3/4;
+      object-fit:cover;
+      filter:saturate(.72) contrast(.94) sepia(.06);
+    }
+    .caption{color:var(--muted);margin-top:10px;display:flex;justify-content:space-between;gap:15px}
+    .hero-foot{
+      grid-column:1/2;
+      display:flex;
+      justify-content:space-between;
+      border-top:1px solid var(--rule);
+      padding-top:11px;
+      color:var(--muted);
+      max-width:720px;
+    }
+    .red-dot{width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block;margin-right:7px;transform:translateY(-1px)}
+    .section{
+      position:relative;
+      border-top:1px solid var(--rule);
+    }
+    .before{
+      min-height:105svh;
+      padding:clamp(80px,14vh,170px) 0 clamp(90px,13vh,150px);
+      display:grid;
+      grid-template-columns:minmax(170px,.45fr) 1.1fr .55fr;
+      grid-template-rows:auto 1fr auto;
+      column-gap:clamp(28px,5vw,82px);
+    }
+    .section-index{grid-column:1;color:var(--muted)}
+    .before-title{
+      grid-column:2/4;
+      margin:0;
+      font-size:clamp(48px,7vw,112px);
+      line-height:.92;
+      letter-spacing:-.055em;
+      font-weight:450;
+      max-width:12ch;
+    }
+    .before-title em{
+      display:block;
+      font-family:var(--serif);
+      font-weight:400;
+      font-style:italic;
+      letter-spacing:-.035em;
+      margin-left:clamp(12px,5vw,80px);
+    }
+    .before-copy{
+      grid-column:2;
+      align-self:end;
+      max-width:470px;
+      font-size:clamp(18px,1.5vw,23px);
+      line-height:1.45;
+      letter-spacing:-.02em;
+      margin-top:100px;
+    }
+    .before-copy p{margin:0 0 1em}
+    .transition-note{
+      grid-column:3;
+      align-self:end;
+      justify-self:end;
+      width:min(100%,290px);
+      margin-top:90px;
+    }
+    .transition-row{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:10px;
+      border-top:1px solid var(--ink);
+      padding:11px 0 18px;
+      align-items:start;
+    }
+    .transition-row:last-child{border-bottom:1px solid var(--ink)}
+    .transition-row .year{color:var(--muted)}
+    .tiny-sketch{
+      height:54px;
+      margin:17px 0 6px;
+      position:relative;
+      overflow:hidden;
+      opacity:.55;
+    }
+    .tiny-sketch:before,.tiny-sketch:after{
+      content:"";position:absolute;left:0;right:0;border-top:1px solid var(--ink)
+    }
+    .tiny-sketch:before{top:17px;transform:rotate(-2.2deg)}
+    .tiny-sketch:after{top:39px;transform:rotate(1deg)}
+    .tiny-sketch i{
+      position:absolute;left:35%;top:4px;height:46px;border-left:1px solid var(--ink);transform:rotate(17deg)
+    }
+    .detours{
+      padding:clamp(90px,13vh,160px) 0 clamp(110px,18vh,220px);
+    }
+    .detours-head{
+      display:grid;
+      grid-template-columns:.46fr 1.1fr .55fr;
+      gap:clamp(28px,5vw,82px);
+      align-items:start;
+      margin-bottom:clamp(90px,14vh,160px);
+    }
+    .detours-head h2{
+      grid-column:2/4;
+      font-family:var(--serif);
+      font-weight:400;
+      font-size:clamp(50px,7.7vw,122px);
+      line-height:.9;
+      letter-spacing:-.045em;
+      margin:0;
+      max-width:12ch;
+    }
+    .catalog{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      row-gap:clamp(56px,9vw,130px);
+    }
+    .entry{position:relative;min-height:120px}
+    .entry:nth-child(1){grid-column:1/5}
+    .entry:nth-child(2){grid-column:7/10;margin-top:8vw}
+    .entry:nth-child(3){grid-column:3/7}
+    .entry:nth-child(4){grid-column:9/13;margin-top:-2vw}
+    .entry:nth-child(5){grid-column:1/4;margin-top:6vw}
+    .entry:nth-child(6){grid-column:6/11}
+    .entry .archive-id{color:var(--red);margin-bottom:17px}
+    .entry-name{
+      font-size:clamp(29px,3.2vw,52px);
+      letter-spacing:-.045em;
+      line-height:.95;
+      font-weight:500;
+      border-top:1px solid var(--ink);
+      padding-top:11px;
+    }
+    .entry-word{
+      font-family:var(--serif);
+      font-style:italic;
+      font-size:clamp(22px,2.2vw,36px);
+      color:var(--muted);
+      margin-top:7px;
+    }
+    .detours-note{
+      width:min(100%,520px);
+      margin:clamp(120px,17vh,190px) 8.333% 0 auto;
+      font-size:clamp(20px,2vw,30px);
+      line-height:1.35;
+      letter-spacing:-.025em;
+    }
+    .detours-note em{font-family:var(--serif);font-style:italic;font-weight:400}
+    .end-marker{
+      margin-top:140px;
+      border-top:1px solid var(--rule);
+      padding-top:13px;
+      display:flex;justify-content:space-between;color:var(--muted)
+    }
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+    .reveal.is-visible{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-photo{transition:none}
+    }
+    @media(max-width:860px){
+      .site-nav{height:64px}
+      .nav-group{gap:14px}
+      .nav-group .nav-link:first-child{display:none}
+      .hero{
+        min-height:auto;
+        grid-template-columns:1fr;
+        grid-template-rows:auto auto auto auto;
+        padding:42px 0 26px;
+      }
+      .hero-meta{grid-column:1;grid-row:1;grid-template-columns:1fr 1fr;gap:4px 18px}
+      .hero-copy{grid-column:1;grid-row:2;padding:11vh 0 9vh}
+      h1{font-size:clamp(58px,19vw,108px);line-height:.85;max-width:7ch}
+      .hero-sub{font-size:clamp(31px,9vw,52px);margin:20px 0 0 12vw}
+      .hero-photo{
+        grid-column:1;grid-row:3;
+        width:68vw;max-width:330px;
+        justify-self:end;
+        margin:0 2vw 52px 0;
+      }
+      .hero-foot{grid-column:1;grid-row:4}
+      .before{
+        min-height:auto;
+        grid-template-columns:1fr;
+        padding:90px 0 110px;
+      }
+      .section-index{grid-column:1;margin-bottom:68px}
+      .before-title{grid-column:1;font-size:clamp(50px,15vw,82px)}
+      .before-title em{margin-left:7vw}
+      .before-copy{grid-column:1;width:78%;margin:100px 0 0 auto;font-size:19px}
+      .transition-note{grid-column:1;width:72%;justify-self:start;margin:100px 0 0}
+      .detours{padding:90px 0 130px}
+      .detours-head{grid-template-columns:1fr;margin-bottom:90px}
+      .detours-head .section-index{grid-column:1;margin-bottom:60px}
+      .detours-head h2{grid-column:1;font-size:clamp(56px,15vw,88px)}
+      .catalog{display:block}
+      .entry{width:74%;margin:0 0 68px!important}
+      .entry:nth-child(even){margin-left:auto!important}
+      .entry:nth-child(3){width:64%}
+      .entry:nth-child(6){width:82%}
+      .detours-note{width:82%;margin:120px 0 0 auto;font-size:22px}
+      .end-marker{margin-top:110px}
+    }
+    @media(max-width:480px){
+      :root{--pad:18px}
+      .brand,.nav-link,.eyebrow,.meta,.caption,.archive-id,.micro{font-size:9px}
+      .hero-meta{font-size:8px}
+      .hero-copy{padding-top:10vh}
+      .hero-foot{gap:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="./">SHUBHAM SHINDE</a>
+      <div class="nav-group">
+        <a class="nav-link" href="./">WORK</a>
+        <a class="nav-link" aria-current="page" href="./about.html">ABOUT</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" aria-labelledby="about-title">
+        <div class="hero-meta meta reveal">
+          <span>SHUBHAM SHINDE</span><span>2019 — NOW</span>
+          <span>VISUAL DESIGNER</span><span>BENGALURU, INDIA</span>
+        </div>
+
+        <div class="hero-copy">
+          <h1 id="about-title" class="reveal">I took the long way into design.</h1>
+          <p class="hero-sub reveal">And I’m glad I did.</p>
+        </div>
+
+        <figure class="hero-photo reveal">
+          <div class="photo-wrap">
+            <img src="./assets/portrait.jpg" alt="Portrait of Shubham Shinde" />
+          </div>
+          <figcaption class="caption"><span>BENGALURU / 2026</span><span>ARCHIVE 00.01</span></figcaption>
+        </figure>
+
+        <div class="hero-foot micro reveal">
+          <span><i class="red-dot"></i>A WORKING ARCHIVE</span>
+          <span>SCROLL ↓</span>
+        </div>
+      </section>
+
+      <section class="section before" aria-labelledby="before-title">
+        <div class="section-index archive-id reveal">01 / BEFORE DESIGN</div>
+        <h2 id="before-title" class="before-title reveal">
+          I was supposed to build things.
+          <em>Just not these things.</em>
+        </h2>
+
+        <div class="before-copy reveal">
+          <p>I studied civil engineering before finding my way into graphic design.</p>
+          <p>What started as curiosity slowly became the thing I wanted to spend all my time doing.</p>
+        </div>
+
+        <aside class="transition-note reveal" aria-label="Career transition">
+          <div class="micro">A SMALL CHANGE OF PLANS</div>
+          <div class="tiny-sketch" aria-hidden="true"><i></i></div>
+          <div class="transition-row micro">
+            <span>B.E. CIVIL ENGINEERING</span><span class="year">BEFORE</span>
+          </div>
+          <div class="transition-row micro">
+            <span>GRAPHIC DESIGN</span><span class="year">AFTER</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section detours" aria-labelledby="detours-title">
+        <div class="detours-head">
+          <div class="section-index archive-id reveal">02 / THE DETOURS</div>
+          <h2 id="detours-title" class="reveal">The detours turned out to be useful.</h2>
+        </div>
+
+        <div class="catalog" aria-label="Disciplines and what they taught me">
+          <article class="entry reveal">
+            <div class="archive-id">02.01</div>
+            <div class="entry-name">AUTOMOTIVE</div>
+            <div class="entry-word">— Desire</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.02</div>
+            <div class="entry-name">FILM</div>
+            <div class="entry-word">— Story</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.03</div>
+            <div class="entry-name">BRAND</div>
+            <div class="entry-word">— Consistency</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.04</div>
+            <div class="entry-name">WEB</div>
+            <div class="entry-word">— Systems</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.05</div>
+            <div class="entry-name">B2B</div>
+            <div class="entry-word">— Clarity</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.06</div>
+            <div class="entry-name">AI</div>
+            <div class="entry-word">— Speed</div>
+          </article>
+        </div>
+
+        <p class="detours-note reveal">
+          My varied career didn’t scatter my thinking.
+          <em>Each medium taught me something different.</em>
+        </p>
+
+        <div class="end-marker micro reveal">
+          <span>FIRST PASS / 01—02</span>
+          <span>CONTINUED AFTER REVIEW →</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+    items.forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
