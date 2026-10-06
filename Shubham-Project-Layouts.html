@@ -487,6 +487,16 @@ A["daulat-case-mobile"]="assets/portfolio-files/daulat-case-mobile.png";DIM["dau
 {const p=PROJECTS.find(p=>p.id==='daulat');p.assets.push("daulat-case-brief","daulat-case-illustrations","daulat-case-typography","daulat-case-mobile");p.captions.push("The brief \u2014 founder\u2019s vision","Illustration system \u2014 green and gold engravings","Typography \u2014 Playfair Display","Website \u2014 mobile screens");}
 /* Remove the two rejected Solaris mockups from all active placements. */
 {const p=PROJECTS.find(p=>p.id==='solaris');const keep=p.assets.map((key,i)=>({key,caption:p.captions[i]})).filter(x=>!['solaris','solarisextra0'].includes(x.key));p.assets=keep.map(x=>x.key);p.captions=keep.map(x=>x.caption);A.solaris=A.solaris0;DIM.solaris=DIM.solaris0;}
+/* SOLARIS USER SUPPLIED REPLACEMENTS */
+A["solaris-supplied-01"]="assets/portfolio-files/solaris-supplied-01.jpg";DIM["solaris-supplied-01"]=[2880, 1374];
+A["solaris-supplied-02"]="assets/portfolio-files/solaris-supplied-02.jpg";DIM["solaris-supplied-02"]=[1920, 1440];
+A["solaris-supplied-03"]="assets/portfolio-files/solaris-supplied-03.png";DIM["solaris-supplied-03"]=[1490, 1129];
+A["solaris-supplied-04"]="assets/portfolio-files/solaris-supplied-04.jpg";DIM["solaris-supplied-04"]=[1920, 1281];
+A["solaris-supplied-05"]="assets/portfolio-files/solaris-supplied-05.jpg";DIM["solaris-supplied-05"]=[2880, 1452];
+A["solaris-supplied-06"]="assets/portfolio-files/solaris-supplied-06.jpg";DIM["solaris-supplied-06"]=[2880, 1451];
+A["solaris-supplied-07"]="assets/portfolio-files/solaris-supplied-07.jpg";DIM["solaris-supplied-07"]=[2880, 1620];
+A["solaris-supplied-08"]="assets/portfolio-files/solaris-supplied-08.jpg";DIM["solaris-supplied-08"]=[2880, 1977];
+{const p=PROJECTS.find(p=>p.id==='solaris');const i=p.assets.indexOf('solaris2');if(i>=0){p.assets.splice(i,1);p.captions.splice(i,1);}p.assets.push("solaris-supplied-01","solaris-supplied-02","solaris-supplied-03","solaris-supplied-04","solaris-supplied-05","solaris-supplied-06","solaris-supplied-07","solaris-supplied-08");p.captions.push("Staff identity cards","Branded keycaps","Identity and campaign overview","Brand cards \u2014 Connected by Light","Social campaign applications","Brand world and mobile app icon","Financial communication system","Solaris Has Arrived \u2014 billboard");}
 const CATEGORIES=[...new Set(PROJECTS.map(p=>p.category))];
 const app=document.querySelector('#app'),dialog=document.querySelector('#lightbox'),searchDialog=document.querySelector('#search-dialog');let routeCleanup=()=>{};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
