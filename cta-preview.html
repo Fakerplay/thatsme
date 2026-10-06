@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CTA Button & Arrow Craft Preview — Shubham Shinde</title>
+  <title>CTA Button Preview: Concept A (Neon Yellow vs Cyan) — Shubham Shinde</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
@@ -17,8 +17,10 @@
       --muted: #6b655b;
       --hair: rgba(31, 29, 25, 0.16);
       --hair-strong: rgba(31, 29, 25, 0.32);
-      --red: #bd1715;
-      --red-soft: #e24a4a;
+      --neon-yellow: #f4ff2b;
+      --neon-yellow-bright: #ebff00;
+      --cyan: #00f0ff;
+      --cyan-bright: #00e5ff;
       --sans: "Geist", -apple-system, sans-serif;
       --mono: "JetBrains Mono", monospace;
       --serif: "Newsreader", Georgia, serif;
@@ -48,7 +50,7 @@
     .header {
       border-bottom: 1px solid var(--hair-strong);
       padding-bottom: 22px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -66,7 +68,7 @@
       margin: 0;
       font-size: 14.5px;
       color: var(--muted);
-      max-width: 580px;
+      max-width: 600px;
       line-height: 1.5;
     }
     .meta-tag {
@@ -81,140 +83,79 @@
       background: rgba(255, 255, 255, 0.4);
     }
 
-    /* ========================================================
-       INTERACTIVE ARROW STYLE SELECTOR BAR
-       ======================================================== */
-    .arrow-selector-bar {
-      background: rgba(244, 239, 232, 0.95);
-      border: 1px solid var(--hair-strong);
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-bottom: 32px;
-      box-shadow: 0 4px 20px rgba(31, 29, 25, 0.05);
+    /* Comparison Grid */
+    .showcase-grid {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-    }
-    .selector-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-    }
-    .selector-hint {
-      color: var(--red);
-      font-weight: 500;
-    }
-    .arrow-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .arrow-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      background: rgba(255, 255, 255, 0.6);
-      border: 1px solid var(--hair-strong);
-      border-radius: 4px;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--ink);
-      cursor: pointer;
-      transition: all 0.15s ease;
-      user-select: none;
-    }
-    .arrow-pill:hover {
-      background: #fff;
-      border-color: var(--ink);
-      transform: translateY(-1px);
-    }
-    .arrow-pill.active {
-      background: var(--ink);
-      color: #f7f3eb;
-      border-color: var(--ink);
-      box-shadow: 2px 2px 0 var(--red);
-    }
-    .arrow-pill svg {
-      vertical-align: middle;
-      display: inline-block;
-    }
-
-    /* ========================================================
-       GRID OF CONCEPTS
-       ======================================================== */
-    .concepts-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .concept-card {
-      background: rgba(244, 239, 232, 0.7);
-      border: 1px solid var(--hair-strong);
-      border-radius: 6px;
-      padding: 26px 28px;
-      box-shadow: 0 4px 16px rgba(31, 29, 25, 0.04);
-      display: grid;
-      grid-template-columns: 290px 1fr;
       gap: 32px;
+    }
+
+    .showcase-card {
+      background: rgba(244, 239, 232, 0.8);
+      border: 1.5px solid var(--hair-strong);
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 6px 24px rgba(31, 29, 25, 0.05);
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 36px;
       align-items: center;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .concept-card:hover {
+    .showcase-card:hover {
       border-color: var(--ink);
-      box-shadow: 0 10px 30px rgba(31, 29, 25, 0.08);
+      box-shadow: 0 12px 36px rgba(31, 29, 25, 0.08);
     }
 
     .stage {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
       align-items: flex-start;
-      padding: 26px 22px;
-      background: rgba(255, 255, 255, 0.35);
+      padding: 30px 24px;
+      background: rgba(255, 255, 255, 0.45);
       border: 1px dashed var(--hair-strong);
-      border-radius: 4px;
+      border-radius: 6px;
     }
     .stage-label {
       font-family: var(--mono);
       font-size: 10px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .details h3 {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 500;
-      margin: 0 0 8px;
+      margin: 0 0 10px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
     .details h3 .badge {
       font-family: var(--mono);
-      font-size: 10px;
-      padding: 2px 8px;
+      font-size: 10.5px;
+      padding: 3px 9px;
       border-radius: 999px;
-      background: var(--ink);
-      color: var(--paper-hi);
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: 0.05em;
     }
-    .details h3 .badge.rec {
-      background: var(--red);
+    .badge-yellow {
+      background: #1f1d19;
+      color: var(--neon-yellow);
+      border: 1px solid var(--neon-yellow);
+    }
+    .badge-cyan {
+      background: #1f1d19;
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
     }
     .details p {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--ink-soft);
     }
     .traits {
@@ -226,7 +167,7 @@
       font-family: var(--mono);
       font-size: 10.5px;
       background: rgba(31, 29, 25, 0.06);
-      padding: 4px 10px;
+      padding: 5px 11px;
       border-radius: 3px;
       color: var(--ink);
     }
@@ -236,41 +177,26 @@
        ======================================================== */
     .cta-arrow-svg {
       display: inline-block;
+      width: 12px;
+      height: 12px;
       flex-shrink: 0;
       vertical-align: middle;
-      transition: transform 0.22s var(--ease);
       stroke: currentColor;
-    }
-
-    /* Dynamic hover transforms per arrow style */
-    .hover-diagonal:hover .cta-arrow-svg {
-      transform: translate(2.5px, -2.5px);
-    }
-    .hover-horizontal:hover .cta-arrow-svg {
-      transform: translateX(3.5px);
-    }
-    .hover-chevron:hover .cta-arrow-svg {
-      transform: translateX(2.5px);
-    }
-    .hover-extending:hover .cta-arrow-svg .arrow-stem {
-      transform: scaleX(1.3);
-    }
-    .hover-extending:hover .cta-arrow-svg .arrow-head {
-      transform: translateX(3px);
-    }
-    .hover-disc:hover .cta-arrow-svg {
-      transform: translate(1.5px, -1.5px);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin="round";
+      transition: transform 0.2s var(--ease);
     }
 
     /* ========================================================
-       CONCEPT A: THE ARCHITECTURAL SPECIMEN (RECOMMENDED)
+       OPTION 1: CONCEPT A WITH NEON YELLOW SHADOW
        ======================================================== */
-    .cta-specimen {
+    .btn-specimen-yellow {
       position: relative;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 13px 22px;
+      padding: 13px 24px;
       background: var(--ink);
       color: #f7f3eb;
       border: 1px solid var(--ink);
@@ -288,24 +214,27 @@
                   border-color 0.18s ease;
       user-select: none;
     }
-    .cta-specimen:hover {
+    .btn-specimen-yellow:hover {
       transform: translate(-1.5px, -1.5px);
-      box-shadow: 4px 4px 0 var(--red);
+      box-shadow: 4px 4px 0 var(--neon-yellow);
+      border-color: var(--ink);
       color: #f7f3eb;
     }
-    .cta-specimen:active {
+    .btn-specimen-yellow:hover .cta-arrow-svg {
+      transform: translate(2.5px, -2.5px);
+    }
+    .btn-specimen-yellow:active {
       transform: translate(1.5px, 1.5px);
-      box-shadow: 1px 1px 0 var(--red);
+      box-shadow: 1px 1px 0 var(--neon-yellow);
     }
 
-    /* Secondary Specimen (Wireframe Ticket) */
-    .cta-specimen-sec {
+    .btn-specimen-yellow-sec {
       position: relative;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 11px 18px;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.6);
       color: var(--ink);
       border: 1px solid var(--hair-strong);
       border-radius: 3px;
@@ -323,80 +252,33 @@
                   background-color 0.18s ease;
       user-select: none;
     }
-    .cta-specimen-sec:hover {
+    .btn-specimen-yellow-sec:hover {
       transform: translate(-1px, -1px);
       border-color: var(--ink);
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 3px 3px 0 var(--ink);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 3px 3px 0 var(--neon-yellow);
     }
-    .cta-specimen-sec:active {
+    .btn-specimen-yellow-sec:hover .cta-arrow-svg {
+      transform: translate(2.5px, -2.5px);
+    }
+    .btn-specimen-yellow-sec:active {
       transform: translate(1px, 1px);
-      box-shadow: 1px 1px 0 var(--ink);
+      box-shadow: 1px 1px 0 var(--neon-yellow);
     }
 
     /* ========================================================
-       CONCEPT B: THE DUAL-CHAMBER CAPSULE
+       OPTION 2: CONCEPT A WITH ELECTRIC CYAN SHADOW
        ======================================================== */
-    .cta-capsule {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 10px 4px 5px;
-      background: rgba(255, 255, 255, 0.55);
-      border: 1px solid var(--hair-strong);
-      border-radius: 999px;
-      font-family: var(--mono);
-      font-size: 11.5px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      cursor: pointer;
-      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.18s var(--ease);
-      user-select: none;
-    }
-    .cta-capsule-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: var(--ink);
-      color: var(--paper-hi);
-      margin-right: 10px;
-      transition: transform 0.24s var(--ease), background-color 0.2s ease;
-    }
-    .cta-capsule-label {
-      padding-right: 8px;
-      font-weight: 500;
-    }
-    .cta-capsule:hover {
-      border-color: var(--ink);
-      background: rgba(255, 255, 255, 0.9);
-      transform: translateY(-1px);
-    }
-    .cta-capsule:hover .cta-capsule-badge {
-      background: var(--red);
-      transform: rotate(45deg);
-    }
-    .cta-capsule:active {
-      transform: scale(0.98);
-    }
-
-    /* ========================================================
-       CONCEPT C: THE 35MM SHUTTER GATE
-       ======================================================== */
-    .cta-shutter {
+    .btn-specimen-cyan {
       position: relative;
-      isolation: isolate;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       padding: 13px 24px;
-      border: 1.2px solid var(--ink);
-      border-radius: 2px;
-      background: transparent;
-      color: var(--ink);
+      background: var(--ink);
+      color: #f7f3eb;
+      border: 1px solid var(--ink);
+      border-radius: 3px;
       font-family: var(--mono);
       font-size: 12px;
       font-weight: 500;
@@ -404,95 +286,121 @@
       text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
-      overflow: hidden;
-      transition: color 0.22s var(--ease), border-color 0.22s ease;
+      box-shadow: 2.5px 2.5px 0 rgba(31, 29, 25, 0.25);
+      transition: transform 0.18s var(--ease),
+                  box-shadow 0.18s var(--ease),
+                  border-color 0.18s ease;
       user-select: none;
     }
-    .cta-shutter::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: var(--ink);
-      transform: scaleY(0);
-      transform-origin: bottom;
-      transition: transform 0.24s var(--ease);
-    }
-    .cta-shutter:hover::before {
-      transform: scaleY(1);
-    }
-    .cta-shutter:hover {
+    .btn-specimen-cyan:hover {
+      transform: translate(-1.5px, -1.5px);
+      box-shadow: 4px 4px 0 var(--cyan);
+      border-color: var(--ink);
       color: #f7f3eb;
     }
-    .cta-shutter:active {
-      transform: scale(0.98);
+    .btn-specimen-cyan:hover .cta-arrow-svg {
+      transform: translate(2.5px, -2.5px);
+    }
+    .btn-specimen-cyan:active {
+      transform: translate(1.5px, 1.5px);
+      box-shadow: 1px 1px 0 var(--cyan);
     }
 
-    /* ========================================================
-       AUDIT CARD: WHY THE OLD UNICODE ARROWS LOOKED BAD
-       ======================================================== */
-    .audit-card {
-      background: rgba(255, 255, 255, 0.45);
-      border: 1px solid var(--hair-strong);
-      border-radius: 6px;
-      padding: 24px 28px;
-      margin-top: 10px;
-    }
-    .audit-card h3 {
-      font-size: 16px;
-      font-weight: 500;
-      margin: 0 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .comparison-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .comparison-box {
-      padding: 18px 20px;
-      border-radius: 4px;
-      font-size: 13.5px;
-      line-height: 1.6;
-    }
-    .box-bad {
-      background: rgba(189, 23, 21, 0.06);
-      border: 1px solid rgba(189, 23, 21, 0.25);
-    }
-    .box-good {
-      background: rgba(46, 125, 50, 0.06);
-      border: 1px solid rgba(46, 125, 50, 0.25);
-    }
-    .box-head {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 8px;
-      display: flex;
+    .btn-specimen-cyan-sec {
+      position: relative;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
+      padding: 11px 18px;
+      background: rgba(255, 255, 255, 0.6);
+      color: var(--ink);
+      border: 1px solid var(--hair-strong);
+      border-radius: 3px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 var(--hair-strong);
+      transition: transform 0.18s var(--ease),
+                  box-shadow 0.18s var(--ease),
+                  border-color 0.18s ease,
+                  background-color 0.18s ease;
+      user-select: none;
     }
-    .box-bad .box-head { color: var(--red); }
-    .box-good .box-head { color: #2e7d32; }
-    .glyph-display {
-      font-size: 28px;
-      padding: 10px 0;
+    .btn-specimen-cyan-sec:hover {
+      transform: translate(-1px, -1px);
+      border-color: var(--ink);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 3px 3px 0 var(--cyan);
+    }
+    .btn-specimen-cyan-sec:hover .cta-arrow-svg {
+      transform: translate(2.5px, -2.5px);
+    }
+    .btn-specimen-cyan-sec:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 var(--cyan);
+    }
+
+    /* Live Color Toggle Banner */
+    .toggle-banner {
+      background: rgba(31, 29, 25, 0.05);
+      border: 1px solid var(--hair-strong);
+      border-radius: 6px;
+      padding: 18px 24px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       gap: 16px;
+      margin-top: 10px;
+    }
+    .toggle-banner span {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink);
+    }
+    .toggle-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--hair-strong);
+      background: white;
+      color: var(--ink);
+      transition: all 0.15s ease;
+    }
+    .toggle-btn:hover {
+      transform: translateY(-1px);
+    }
+    .toggle-btn.active-yellow {
+      background: var(--ink);
+      color: var(--neon-yellow);
+      border-color: var(--neon-yellow);
+      box-shadow: 2px 2px 0 var(--neon-yellow);
+    }
+    .toggle-btn.active-cyan {
+      background: var(--ink);
+      color: var(--cyan);
+      border-color: var(--cyan);
+      box-shadow: 2px 2px 0 var(--cyan);
     }
 
     @media (max-width: 720px) {
-      .concept-card {
+      .showcase-card {
         grid-template-columns: 1fr;
-        gap: 18px;
-      }
-      .comparison-row {
-        grid-template-columns: 1fr;
+        gap: 20px;
       }
     }
   </style>
@@ -502,228 +410,84 @@
 <div class="container">
   <div class="header">
     <div>
-      <h1>CTA Button &amp; Arrow Craft</h1>
-      <p>Precision-crafted vector arrows replacing OS-fallback Unicode characters. Click any arrow geometry below to test how it responds across all button concepts.</p>
+      <h1>Concept A: Shadow Color Comparison</h1>
+      <p>Solid ink ticket card with precision 45° vector arrows. Compare the tactile hover shadow in <strong>Neon Yellow (#f4ff2b)</strong> versus <strong>Electric Cyan (#00f0ff)</strong> directly on your paper background.</p>
     </div>
-    <span class="meta-tag">Design Audit &amp; Fix</span>
+    <span class="meta-tag">Review &amp; Pick One</span>
   </div>
 
-  <!-- Interactive Arrow Geometry Switcher -->
-  <div class="arrow-selector-bar">
-    <div class="selector-title">
-      <span>Switch Arrow Geometry in Real Time</span>
-      <span class="selector-hint">Active: <span id="active-style-label">Style 1 — Precision Diagonal (45°)</span></span>
-    </div>
-    <div class="arrow-pills">
-      <button class="arrow-pill active" onclick="setArrowStyle('diagonal', this)">
-        <svg width="12" height="12" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M2.5 10.5L10.5 2.5M10.5 2.5H5M10.5 2.5V8"/>
-        </svg>
-        <span>1. Precision 45° Diagonal</span>
-      </button>
-
-      <button class="arrow-pill" onclick="setArrowStyle('horizontal', this)">
-        <svg width="14" height="12" viewBox="0 0 14 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M1 6H12.5M8.5 2L12.5 6L8.5 10"/>
-        </svg>
-        <span>2. Swiss Editorial Horizontal</span>
-      </button>
-
-      <button class="arrow-pill" onclick="setArrowStyle('chevron', this)">
-        <svg width="9" height="12" viewBox="0 0 9 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M2.5 2L6.5 6L2.5 10"/>
-        </svg>
-        <span>3. Minimalist Chevron</span>
-      </button>
-
-      <button class="arrow-pill" onclick="setArrowStyle('extending', this)">
-        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M1 6H13.5M9.5 2L13.5 6L9.5 10"/>
-        </svg>
-        <span>4. Kinetic Extending Stem</span>
-      </button>
-
-      <button class="arrow-pill" onclick="setArrowStyle('disc', this)">
-        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor">
-          <circle cx="8" cy="8" r="7" stroke-width="1" stroke-opacity="0.4"/>
-          <path d="M5.5 10.5L10.5 5.5M10.5 5.5H7M10.5 5.5V9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>5. Circled Hairline Disc</span>
-      </button>
-    </div>
-  </div>
-
-  <div class="concepts-grid">
-    <!-- Concept A -->
-    <div class="concept-card">
+  <div class="showcase-grid">
+    <!-- Option 1: Neon Yellow -->
+    <div class="showcase-card">
       <div class="stage">
-        <span class="stage-label">Live Preview (Hover &amp; Click)</span>
-        <button class="cta-specimen hover-diagonal" id="specimen-primary">
+        <span class="stage-label">Hover &amp; Click Live</span>
+        <button class="btn-specimen-yellow">
           <span>Let’s talk</span>
-          <span class="arrow-slot"></span>
+          <svg class="cta-arrow-svg" viewBox="0 0 13 13" fill="none"><path d="M2.5 10.5L10.5 2.5M10.5 2.5H5M10.5 2.5V8"/></svg>
         </button>
-        <button class="cta-specimen-sec hover-diagonal" id="specimen-secondary">
+        <button class="btn-specimen-yellow-sec">
           <span>Explore work</span>
-          <span class="arrow-slot"></span>
+          <svg class="cta-arrow-svg" viewBox="0 0 13 13" fill="none"><path d="M2.5 10.5L10.5 2.5M10.5 2.5H5M10.5 2.5V8"/></svg>
         </button>
       </div>
       <div class="details">
-        <h3>Concept A: The Architectural Specimen <span class="badge rec">Recommended</span></h3>
-        <p>Solid ink ticket card with offset terracotta red hover shadow (<code>#bd1715</code>). Click produces a physical spring depression. Arrow moves with optical sub-pixel precision.</p>
+        <h3>Option 1: Electric Neon Yellow <span class="badge badge-yellow">#f4ff2b</span></h3>
+        <p>A vibrant, acid-yellow shadow that provides high-energy pop against the charcoal ink ticket card. Echoes high-visibility drafting pens, technical highlighter markers, and industrial print tickets.</p>
         <div class="traits">
-          <span class="trait">Physical Mass</span>
-          <span class="trait">Offset Red Shadow</span>
-          <span class="trait">Spring Press Click</span>
-          <span class="trait">Razor Vector Icon</span>
+          <span class="trait">High Visibility</span>
+          <span class="trait">Electric Acid Contrast</span>
+          <span class="trait">Drafting Marker Pop</span>
+          <span class="trait">Original Brand DNA</span>
         </div>
       </div>
     </div>
 
-    <!-- Concept B -->
-    <div class="concept-card">
+    <!-- Option 2: Electric Cyan -->
+    <div class="showcase-card">
       <div class="stage">
-        <span class="stage-label">Live Preview (Hover &amp; Click)</span>
-        <button class="cta-capsule hover-diagonal">
-          <span class="cta-capsule-badge arrow-slot-badge"></span>
-          <span class="cta-capsule-label">Start a conversation</span>
+        <span class="stage-label">Hover &amp; Click Live</span>
+        <button class="btn-specimen-cyan">
+          <span>Let’s talk</span>
+          <svg class="cta-arrow-svg" viewBox="0 0 13 13" fill="none"><path d="M2.5 10.5L10.5 2.5M10.5 2.5H5M10.5 2.5V8"/></svg>
         </button>
-        <button class="cta-capsule hover-diagonal" style="background: rgba(255,255,255,0.35);">
-          <span class="cta-capsule-badge" style="background: #38342c;">02</span>
-          <span class="cta-capsule-label">Explore archive</span>
+        <button class="btn-specimen-cyan-sec">
+          <span>Explore work</span>
+          <svg class="cta-arrow-svg" viewBox="0 0 13 13" fill="none"><path d="M2.5 10.5L10.5 2.5M10.5 2.5H5M10.5 2.5V8"/></svg>
         </button>
       </div>
       <div class="details">
-        <h3>Concept B: The Dual-Chamber Capsule <span class="badge">Reference 1 DNA</span></h3>
-        <p>Inherits paired bracket badge rhythm. The left circle chamber houses the vector icon with perfect vertical &amp; horizontal optical balance, rotating on hover.</p>
+        <h3>Option 2: Electric Cyan <span class="badge badge-cyan">#00f0ff</span></h3>
+        <p>A crisp, luminous cyan shadow reminiscent of architectural cyanotype blueprints, digital terminals, and laser calibration. Cool, high-tech, and razor-sharp against the warm paper backdrop.</p>
         <div class="traits">
-          <span class="trait">Paired Chamber</span>
-          <span class="trait">Rotational Glyphs</span>
-          <span class="trait">Frosted Paper Surface</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Concept C -->
-    <div class="concept-card">
-      <div class="stage">
-        <span class="stage-label">Live Preview (Hover &amp; Click)</span>
-        <button class="cta-shutter hover-diagonal">
-          <span>Start a conversation</span>
-          <span class="arrow-slot"></span>
-        </button>
-        <button class="cta-shutter hover-diagonal" style="padding: 10px 18px; font-size: 11px;">
-          <span>View résumé</span>
-          <span class="arrow-slot"></span>
-        </button>
-      </div>
-      <div class="details">
-        <h3>Concept C: The 35mm Shutter Gate <span class="badge">Cinematic DNA</span></h3>
-        <p>Starts as a quiet wireframe perimeter; solid ink curtain sweeps upward on hover, inverting both text and vector arrow stroke simultaneously without raster flicker.</p>
-        <div class="traits">
-          <span class="trait">Aperture Sweep</span>
-          <span class="trait">Color Inversion</span>
-          <span class="trait">Zero Raster Flicker</span>
+          <span class="trait">Architectural Cyanotype</span>
+          <span class="trait">Laser Precision</span>
+          <span class="trait">Cool Tech Contrast</span>
+          <span class="trait">Modern Editorial</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Anatomy & Reason for Fix -->
-  <div class="audit-card">
-    <h3>Design Anatomy: Why the Previous Arrows Looked Wrong</h3>
-    <div class="comparison-row">
-      <div class="comparison-box box-bad">
-        <div class="box-head">✕ The Problem: Raw Unicode Character (↗)</div>
-        <div class="glyph-display" style="font-family: var(--mono); color: var(--red);">
-          <span style="border: 1px dashed var(--red); padding: 4px 12px; border-radius: 4px;">↗</span>
-          <small style="font-size: 12px; color: var(--muted); font-family: var(--sans);">Rendered via OS font fallback</small>
-        </div>
-        <p style="margin: 0;">System Unicode glyphs vary drastically across Windows, Mac, and mobile. On Windows, they render with blunt, clunky arrowheads, inconsistent stroke weight that mismatches the font, and uneven vertical baselines that make buttons look cheap.</p>
-      </div>
-      <div class="comparison-box box-good">
-        <div class="box-head">✓ The Solution: Optical 1.6px SVG Vector</div>
-        <div class="glyph-display" style="color: #2e7d32;">
-          <span style="border: 1px dashed #2e7d32; padding: 8px 12px; border-radius: 4px; display: inline-flex; align-items: center;">
-            <svg width="22" height="22" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2.5 10.5L10.5 2.5M10.5 2.5H5M10.5 2.5V8"/>
-            </svg>
-          </span>
-          <small style="font-size: 12px; color: var(--muted); font-family: var(--sans);">Mathematically aligned vector</small>
-        </div>
-        <p style="margin: 0;">Rendered with <code>currentColor</code> and <code>stroke-width: 1.6</code>, calibrated to Geist Mono's exact cap height. Moves with smooth CSS transforms without layout recalculation.</p>
-      </div>
+  <div class="toggle-banner">
+    <span>Which one do you prefer to activate across the entire portfolio?</span>
+    <div class="toggle-buttons">
+      <button class="toggle-btn active-yellow" onclick="selectAccent('#f4ff2b', 'Neon Yellow', this)">⚡ Neon Yellow (#f4ff2b)</button>
+      <button class="toggle-btn" onclick="selectAccent('#00f0ff', 'Electric Cyan', this)">💎 Electric Cyan (#00f0ff)</button>
     </div>
   </div>
-
 </div>
 
 <script>
-  const ARROW_TEMPLATES = {
-    diagonal: {
-      label: 'Style 1 — Precision Diagonal (45°)',
-      hoverClass: 'hover-diagonal',
-      svg: `<svg class="cta-arrow-svg" width="12" height="12" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 10.5L10.5 2.5M10.5 2.5H5M10.5 2.5V8"/></svg>`,
-      badgeSvg: `<svg width="12" height="12" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 10.5L10.5 2.5M10.5 2.5H5M10.5 2.5V8"/></svg>`
-    },
-    horizontal: {
-      label: 'Style 2 — Swiss Editorial Horizontal',
-      hoverClass: 'hover-horizontal',
-      svg: `<svg class="cta-arrow-svg" width="13" height="11" viewBox="0 0 14 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6H12.5M8.5 2L12.5 6L8.5 10"/></svg>`,
-      badgeSvg: `<svg width="12" height="11" viewBox="0 0 14 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6H12.5M8.5 2L12.5 6L8.5 10"/></svg>`
-    },
-    chevron: {
-      label: 'Style 3 — Minimalist Chevron',
-      hoverClass: 'hover-chevron',
-      svg: `<svg class="cta-arrow-svg" width="8" height="11" viewBox="0 0 9 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 2L6.5 6L2.5 10"/></svg>`,
-      badgeSvg: `<svg width="8" height="11" viewBox="0 0 9 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 2L6.5 6L2.5 10"/></svg>`
-    },
-    extending: {
-      label: 'Style 4 — Kinetic Extending Stem',
-      hoverClass: 'hover-extending',
-      svg: `<svg class="cta-arrow-svg" width="14" height="11" viewBox="0 0 15 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="arrow-stem" d="M1 6H13.5"/><path class="arrow-head" d="M9.5 2L13.5 6L9.5 10"/></svg>`,
-      badgeSvg: `<svg width="13" height="11" viewBox="0 0 15 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6H13.5M9.5 2L13.5 6L9.5 10"/></svg>`
-    },
-    disc: {
-      label: 'Style 5 — Circled Hairline Disc',
-      hoverClass: 'hover-disc',
-      svg: `<svg class="cta-arrow-svg" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke-width="1" stroke-opacity="0.35"/><path d="M5.5 10.5L10.5 5.5M10.5 5.5H7M10.5 5.5V9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-      badgeSvg: `<svg width="12" height="12" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 10.5L10.5 2.5M10.5 2.5H5M10.5 2.5V8"/></svg>`
+  function selectAccent(color, name, btnElem) {
+    document.querySelectorAll('.toggle-btn').forEach(b => {
+      b.className = 'toggle-btn';
+    });
+    if (color === '#f4ff2b') {
+      btnElem.classList.add('active-yellow');
+    } else {
+      btnElem.classList.add('active-cyan');
     }
-  };
-
-  let currentKey = 'diagonal';
-
-  function setArrowStyle(key, btnElem) {
-    currentKey = key;
-    const config = ARROW_TEMPLATES[key];
-    if (!config) return;
-
-    // Update Pills
-    document.querySelectorAll('.arrow-pill').forEach(p => p.classList.remove('active'));
-    if (btnElem) btnElem.classList.add('active');
-
-    // Update Label
-    document.getElementById('active-style-label').textContent = config.label;
-
-    // Update all slots
-    document.querySelectorAll('.arrow-slot').forEach(slot => {
-      slot.innerHTML = config.svg;
-    });
-
-    document.querySelectorAll('.arrow-slot-badge').forEach(slot => {
-      slot.innerHTML = config.badgeSvg;
-    });
-
-    // Update hover animation classes on all buttons
-    const hoverClasses = ['hover-diagonal', 'hover-horizontal', 'hover-chevron', 'hover-extending', 'hover-disc'];
-    document.querySelectorAll('.cta-specimen, .cta-specimen-sec, .cta-capsule, .cta-shutter').forEach(btn => {
-      hoverClasses.forEach(cls => btn.classList.remove(cls));
-      btn.classList.add(config.hoverClass);
-    });
   }
-
-  // Initialize with diagonal on load
-  setArrowStyle('diagonal');
 </script>
 
 </body>
