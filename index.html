@@ -478,6 +478,12 @@ A["original-daulat-03"]="assets/portfolio-files/original-daulat-03.png";DIM["ori
 A["original-daulat-04"]="assets/portfolio-files/original-daulat-04.png";DIM["original-daulat-04"]=[1448, 1086];
 A["original-daulat-05"]="assets/portfolio-files/original-daulat-05.png";DIM["original-daulat-05"]=[1672, 941];
 {const p=PROJECTS.find(p=>p.id==='daulat');p.assets=["original-daulat-01", "original-daulat-02", "original-daulat-03", "original-daulat-04", "original-daulat-05"];p.captions=["Brand message \u2014 print composition", "Brand identity \u2014 botanical composition", "Website \u2014 tablet presentation", "Website \u2014 responsive device presentation", "Brand illustrations \u2014 engraved artwork"];A.daulat=A['original-daulat-04'];DIM.daulat=DIM['original-daulat-04'];if(p.story)p.story.evidence='original-daulat-04';}
+/* DAULAT SUPPLIED CASE STUDY PANELS */
+A["daulat-case-brief"]="assets/portfolio-files/daulat-case-brief.png";DIM["daulat-case-brief"]=[1540, 1027];
+A["daulat-case-illustrations"]="assets/portfolio-files/daulat-case-illustrations.png";DIM["daulat-case-illustrations"]=[1049, 1012];
+A["daulat-case-typography"]="assets/portfolio-files/daulat-case-typography.png";DIM["daulat-case-typography"]=[1571, 889];
+A["daulat-case-mobile"]="assets/portfolio-files/daulat-case-mobile.png";DIM["daulat-case-mobile"]=[1586, 1004];
+{const p=PROJECTS.find(p=>p.id==='daulat');p.assets.push("daulat-case-brief","daulat-case-illustrations","daulat-case-typography","daulat-case-mobile");p.captions.push("The brief \u2014 founder\u2019s vision","Illustration system \u2014 green and gold engravings","Typography \u2014 Playfair Display","Website \u2014 mobile screens");}
 const CATEGORIES=[...new Set(PROJECTS.map(p=>p.category))];
 const app=document.querySelector('#app'),dialog=document.querySelector('#lightbox'),searchDialog=document.querySelector('#search-dialog');let routeCleanup=()=>{};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
