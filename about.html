@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#d9d0c3" />
+  <meta name="description" content="A working archive of how Shubham Shinde became a designer." />
+  <title>About — Shubham Shinde</title>
+  <meta name="build-version" content="2026-10-06-2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#d9d0c3;
+      --paper-light:#e8e0d5;
+      --ink:#25221d;
+      --muted:#6e675f;
+      --rule:rgba(37,34,29,.28);
+      --pad:clamp(18px,3vw,52px);
+      --sans:"Geist",Arial,sans-serif;
+      --ease:cubic-bezier(.22,.61,.36,1);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 22% 10%,rgba(255,255,255,.16),transparent 28%),
+        radial-gradient(circle at 76% 46%,rgba(92,75,55,.08),transparent 22%),
+        linear-gradient(180deg,var(--paper-light),var(--paper));
+      color:var(--ink);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.22;
+      mix-blend-mode:multiply;
+      background-image:
+        repeating-linear-gradient(0deg,rgba(0,0,0,.016) 0 1px,transparent 1px 3px),
+        repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px);
+      z-index:20;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ::selection{background:var(--ink);color:var(--paper-light)}
+    .shell{width:min(100%,1600px);margin:0 auto;padding:0 var(--pad)}
+    .site-nav{
+      height:70px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid var(--rule);
+      position:relative;
+      z-index:2;
+    }
+    .brand,.nav-link,.label,.meta,.caption,.archive-id,.micro{
+      font-family:var(--sans);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:10px;
+      line-height:1.4;
+      font-weight:500;
+    }
+    .nav-group{display:flex;gap:22px}
+    .nav-link{position:relative}
+    .nav-link:after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:currentColor;transition:right .25s var(--ease)}
+    .nav-link:hover:after,.nav-link[aria-current="page"]:after{right:0}
+
+    .hero{
+      min-height:calc(100svh - 70px);
+      display:grid;
+      grid-template-columns:1fr 1.08fr .22fr;
+      grid-template-rows:auto 1fr auto;
+      gap:20px 5vw;
+      padding:clamp(34px,6vh,70px) 0 30px;
+      position:relative;
+      isolation:isolate;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:42vw;
+      height:42vw;
+      max-width:650px;
+      max-height:650px;
+      border-radius:50%;
+      left:-18vw;
+      top:8vh;
+      background:radial-gradient(circle,rgba(104,87,68,.12),rgba(104,87,68,0) 70%);
+      filter:blur(6px);
+      z-index:-1;
+    }
+    .hero-meta{
+      grid-column:1;
+      display:grid;
+      grid-template-columns:max-content max-content;
+      gap:4px 24px;
+      color:var(--muted);
+    }
+    .hero-copy{
+      grid-column:1;
+      align-self:end;
+      padding-bottom:10vh;
+      max-width:760px;
+    }
+    h1{
+      margin:0;
+      font-weight:500;
+      font-size:clamp(55px,7.4vw,118px);
+      line-height:.88;
+      letter-spacing:-.06em;
+      max-width:8ch;
+    }
+    .hero-sub{
+      margin:22px 0 0 clamp(18px,6vw,100px);
+      font-size:clamp(20px,2vw,34px);
+      line-height:1.1;
+      letter-spacing:-.035em;
+      font-weight:400;
+    }
+    .stamp-stage{
+      grid-column:2;
+      grid-row:1/4;
+      align-self:center;
+      justify-self:center;
+      width:min(88%,520px);
+      position:relative;
+      padding:46px 38px 36px;
+    }
+    .postage{
+      position:relative;
+      background:#b8ad9f;
+      padding:12px;
+      box-shadow:0 18px 28px rgba(67,52,37,.25),0 3px 8px rgba(54,43,32,.18);
+      transform:rotate(-.7deg);
+    }
+    .postage:before{
+      content:"";
+      position:absolute;
+      inset:-7px;
+      background:
+        radial-gradient(circle at 7px 0,transparent 5px,var(--paper-light) 5.5px) 0 0/14px 7px repeat-x,
+        radial-gradient(circle at 7px 100%,transparent 5px,var(--paper-light) 5.5px) 0 100%/14px 7px repeat-x,
+        radial-gradient(circle at 0 7px,transparent 5px,var(--paper-light) 5.5px) 0 0/7px 14px repeat-y,
+        radial-gradient(circle at 100% 7px,transparent 5px,var(--paper-light) 5.5px) 100% 0/7px 14px repeat-y;
+      pointer-events:none;
+      z-index:-1;
+    }
+    .postage img{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      filter:grayscale(1) sepia(.18) contrast(.92) brightness(.93);
+    }
+    .stamp-mark{
+      position:absolute;
+      width:104px;height:104px;
+      border:1px solid rgba(37,34,29,.65);
+      border-radius:50%;
+      top:10px;left:2px;
+      display:grid;place-items:center;
+      text-align:center;
+      transform:rotate(-12deg);
+      font-size:9px;
+      line-height:1.25;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      background:rgba(217,208,195,.15);
+      box-shadow:inset 0 0 0 8px rgba(37,34,29,.04);
+    }
+    .stamp-mark:after{
+      content:"ARCHIVE";
+      position:absolute;
+      inset:11px;
+      border:1px dashed rgba(37,34,29,.5);
+      border-radius:50%;
+      display:grid;place-items:center;
+      font-size:8px;
+      letter-spacing:.16em;
+    }
+    .vertical-date{
+      position:absolute;
+      right:-28px;
+      top:26px;
+      writing-mode:vertical-rl;
+      text-orientation:mixed;
+      font-size:10px;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+    }
+    .number-badge{
+      position:absolute;
+      right:-18px;
+      top:-4px;
+      width:28px;height:28px;
+      border:1px solid var(--ink);
+      border-radius:50%;
+      display:grid;place-items:center;
+      font-size:9px;
+    }
+    .capsule{
+      position:absolute;
+      left:-72px;
+      top:46%;
+      border:1px solid var(--ink);
+      border-radius:999px;
+      padding:8px 14px;
+      transform:rotate(-90deg);
+      font-size:10px;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      background:rgba(217,208,195,.35);
+      backdrop-filter:blur(1px);
+    }
+    .caption{
+      margin-top:12px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .hero-foot{
+      grid-column:1;
+      display:flex;
+      justify-content:space-between;
+      border-top:1px solid var(--rule);
+      padding-top:11px;
+      color:var(--muted);
+      max-width:650px;
+    }
+
+    .section{
+      position:relative;
+      min-height:100svh;
+      border-top:1px solid var(--rule);
+      padding:clamp(85px,13vh,150px) 0;
+    }
+    .before{
+      display:grid;
+      grid-template-columns:.24fr 1fr .6fr;
+      gap:5vw;
+      align-items:start;
+    }
+    .section-index{color:var(--muted)}
+    .before-title{
+      margin:0;
+      font-size:clamp(48px,7vw,104px);
+      line-height:.92;
+      letter-spacing:-.055em;
+      font-weight:500;
+      max-width:11ch;
+    }
+    .before-title em{
+      display:block;
+      font-style:normal;
+      font-weight:400;
+      margin:12px 0 0 10%;
+      color:#4a453e;
+    }
+    .before-copy{
+      grid-column:2;
+      max-width:440px;
+      margin:clamp(85px,15vh,150px) 0 0 18%;
+      font-size:clamp(17px,1.4vw,22px);
+      line-height:1.5;
+      letter-spacing:-.02em;
+    }
+    .before-copy p{margin:0 0 1em}
+    .transition-note{
+      grid-column:3;
+      align-self:end;
+      width:min(100%,320px);
+      justify-self:end;
+      margin-top:25vh;
+      padding:20px 18px 14px;
+      border:1px solid var(--ink);
+      transform:rotate(.8deg);
+      background:rgba(232,224,213,.18);
+      box-shadow:8px 10px 25px rgba(76,62,47,.08);
+    }
+    .transition-row{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:12px;
+      padding:12px 0;
+      border-top:1px solid var(--rule);
+    }
+    .transition-row:last-child{border-bottom:1px solid var(--rule)}
+    .tiny-sketch{height:58px;position:relative;margin:18px 0 8px}
+    .tiny-sketch:before,.tiny-sketch:after{content:"";position:absolute;left:0;right:0;border-top:1px solid var(--ink)}
+    .tiny-sketch:before{top:18px;transform:rotate(-3deg)}
+    .tiny-sketch:after{top:40px;transform:rotate(1.4deg)}
+    .tiny-sketch i{position:absolute;left:38%;top:3px;height:50px;border-left:1px solid var(--ink);transform:rotate(16deg)}
+
+    .detours{min-height:auto}
+    .detours-head{
+      display:grid;
+      grid-template-columns:.24fr 1fr .6fr;
+      gap:5vw;
+      margin-bottom:clamp(80px,14vh,150px);
+    }
+    .detours-head h2{
+      grid-column:2/4;
+      margin:0;
+      max-width:11ch;
+      font-size:clamp(52px,7vw,108px);
+      line-height:.9;
+      letter-spacing:-.055em;
+      font-weight:500;
+    }
+    .catalog{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:70px 24px;
+      position:relative;
+    }
+    .entry{
+      min-height:160px;
+      padding:16px 16px 18px;
+      border:1px solid var(--ink);
+      background:rgba(232,224,213,.14);
+      box-shadow:6px 8px 20px rgba(66,50,34,.07);
+    }
+    .entry:nth-child(1){grid-column:1/5;transform:rotate(-.7deg)}
+    .entry:nth-child(2){grid-column:7/10;margin-top:100px;transform:rotate(.8deg)}
+    .entry:nth-child(3){grid-column:3/7;transform:rotate(.35deg)}
+    .entry:nth-child(4){grid-column:9/13;margin-top:-40px;transform:rotate(-.6deg)}
+    .entry:nth-child(5){grid-column:1/4;margin-top:80px;transform:rotate(.8deg)}
+    .entry:nth-child(6){grid-column:6/11;transform:rotate(-.35deg)}
+    .entry .archive-id{color:var(--muted);margin-bottom:42px}
+    .entry-name{
+      font-size:clamp(28px,3vw,48px);
+      line-height:.95;
+      letter-spacing:-.045em;
+      font-weight:500;
+      border-top:1px solid var(--ink);
+      padding-top:10px;
+    }
+    .entry-word{
+      margin-top:7px;
+      color:var(--muted);
+      font-size:clamp(17px,1.7vw,26px);
+      letter-spacing:-.025em;
+    }
+    .detours-note{
+      width:min(100%,520px);
+      margin:clamp(110px,16vh,180px) 8% 0 auto;
+      font-size:clamp(20px,1.8vw,28px);
+      line-height:1.4;
+      letter-spacing:-.025em;
+    }
+    .detours-note em{font-style:normal;font-weight:500}
+    .end-marker{
+      margin-top:130px;
+      display:flex;
+      justify-content:space-between;
+      border-top:1px solid var(--rule);
+      padding-top:11px;
+      color:var(--muted);
+    }
+
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .reveal.is-visible{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+    }
+    @media(max-width:860px){
+      .site-nav{height:62px}
+      .nav-group{gap:14px}
+      .hero{
+        grid-template-columns:1fr;
+        grid-template-rows:auto auto auto auto;
+        min-height:auto;
+        padding:34px 0 32px;
+      }
+      .hero-meta{grid-column:1}
+      .hero-copy{grid-column:1;padding:10vh 0 7vh}
+      h1{font-size:clamp(58px,18vw,96px);max-width:7ch}
+      .hero-sub{font-size:25px;margin-left:10vw}
+      .stamp-stage{
+        grid-column:1;grid-row:auto;
+        width:min(84vw,420px);
+        justify-self:center;
+        padding:38px 32px 48px;
+        margin:0 0 40px;
+      }
+      .vertical-date{right:-18px}
+      .capsule{left:-58px}
+      .hero-foot{grid-column:1}
+      .before,.detours-head{grid-template-columns:1fr}
+      .before{min-height:auto}
+      .section-index{margin-bottom:58px}
+      .before-title{grid-column:1}
+      .before-copy{grid-column:1;width:82%;margin:95px 0 0 auto}
+      .transition-note{grid-column:1;width:74%;justify-self:start;margin-top:95px}
+      .detours-head h2{grid-column:1}
+      .catalog{display:block}
+      .entry{width:74%;margin:0 0 56px!important}
+      .entry:nth-child(even){margin-left:auto!important}
+      .detours-note{width:82%;margin:100px 0 0 auto}
+    }
+    @media(max-width:480px){
+      :root{--pad:18px}
+      .brand,.nav-link,.label,.meta,.caption,.archive-id,.micro{font-size:9px}
+      .hero-meta{grid-template-columns:1fr 1fr;gap:4px 12px}
+      .stamp-stage{width:88vw;padding-left:28px;padding-right:28px}
+      .stamp-mark{width:84px;height:84px}
+      .capsule{left:-52px;font-size:9px;padding:7px 12px}
+      .vertical-date{font-size:9px}
+      .entry{width:82%}
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="./">SHUBHAM SHINDE</a>
+      <div class="nav-group">
+        <a class="nav-link" href="./">WORK</a>
+        <a class="nav-link" aria-current="page" href="./about.html">ABOUT</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" aria-labelledby="about-title">
+        <div class="hero-meta meta reveal">
+          <span>SHUBHAM SHINDE</span><span>2019 — NOW</span>
+          <span>VISUAL DESIGNER</span><span>BENGALURU, INDIA</span>
+        </div>
+
+        <div class="hero-copy">
+          <h1 id="about-title" class="reveal">I took the long way into design.</h1>
+          <p class="hero-sub reveal">And I’m glad I did.</p>
+        </div>
+
+        <figure class="stamp-stage reveal">
+          <span class="number-badge">01</span>
+          <span class="vertical-date">OCTOBER / 2026</span>
+          <span class="capsule">A WORKING ARCHIVE</span>
+          <span class="stamp-mark">SS<br>DESIGN<br>BENGALURU</span>
+          <div class="postage">
+            <img src="./assets/about-portrait.webp?v=20261006-2" alt="Portrait of Shubham Shinde" />
+          </div>
+          <figcaption class="caption">
+            <span>PORTRAIT / BENGALURU</span>
+            <span>ARCHIVE 00.01</span>
+          </figcaption>
+        </figure>
+
+        <div class="hero-foot micro reveal">
+          <span>ABOUT / FIELD NOTES</span>
+          <span>SCROLL ↓</span>
+        </div>
+      </section>
+
+      <section class="section before" aria-labelledby="before-title">
+        <div class="section-index archive-id reveal">01 / BEFORE DESIGN</div>
+
+        <h2 id="before-title" class="before-title reveal">
+          I was supposed to build things.
+          <em>Just not these things.</em>
+        </h2>
+
+        <div class="before-copy reveal">
+          <p>I studied civil engineering before finding my way into graphic design.</p>
+          <p>What started as curiosity slowly became the thing I wanted to spend all my time doing.</p>
+        </div>
+
+        <aside class="transition-note reveal" aria-label="Career transition">
+          <div class="micro">A SMALL CHANGE OF PLANS</div>
+          <div class="tiny-sketch" aria-hidden="true"><i></i></div>
+          <div class="transition-row micro">
+            <span>B.E. CIVIL ENGINEERING</span><span>BEFORE</span>
+          </div>
+          <div class="transition-row micro">
+            <span>GRAPHIC DESIGN</span><span>AFTER</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section detours" aria-labelledby="detours-title">
+        <div class="detours-head">
+          <div class="section-index archive-id reveal">02 / THE DETOURS</div>
+          <h2 id="detours-title" class="reveal">The detours turned out to be useful.</h2>
+        </div>
+
+        <div class="catalog" aria-label="Disciplines and what they taught me">
+          <article class="entry reveal">
+            <div class="archive-id">02.01 / FIELD NOTE</div>
+            <div class="entry-name">AUTOMOTIVE</div>
+            <div class="entry-word">Desire</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.02 / FIELD NOTE</div>
+            <div class="entry-name">FILM</div>
+            <div class="entry-word">Story</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.03 / FIELD NOTE</div>
+            <div class="entry-name">BRAND</div>
+            <div class="entry-word">Consistency</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.04 / FIELD NOTE</div>
+            <div class="entry-name">WEB</div>
+            <div class="entry-word">Systems</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.05 / FIELD NOTE</div>
+            <div class="entry-name">B2B</div>
+            <div class="entry-word">Clarity</div>
+          </article>
+          <article class="entry reveal">
+            <div class="archive-id">02.06 / FIELD NOTE</div>
+            <div class="entry-name">AI</div>
+            <div class="entry-word">Speed</div>
+          </article>
+        </div>
+
+        <p class="detours-note reveal">
+          My varied career didn’t scatter my thinking.
+          <em>Each medium taught me something different.</em>
+        </p>
+
+        <div class="end-marker micro reveal">
+          <span>FIELD NOTES / 01—02</span>
+          <span>CONTINUED AFTER REVIEW →</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const items=document.querySelectorAll('.reveal');
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+    items.forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
