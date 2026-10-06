@@ -175,6 +175,12 @@
       "skillPath": "skills/state-machine/SKILL.md",
       "computedHash": "807dcab15870595bf2304d0b4d5c54a95a89f7860a6c2fd3ab078d1140637a7c"
     },
+    "tastemaker": {
+      "source": "codeswithroh/tastemaker",
+      "sourceType": "github",
+      "skillPath": "skills/tastemaker/SKILL.md",
+      "computedHash": "184e0332750eca67728037b25d0e26e2aab934f0ae3bcf84024ef5e98c35f8fe"
+    },
     "variant": {
       "source": "jakubkrehel/skills",
       "sourceType": "github",
