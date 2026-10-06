@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#d8d1c6" />
+  <meta name="description" content="How Shubham Shinde approaches design, direction, and hands-on craft." />
+  <meta name="build-version" content="2026-10-06-approach-v1" />
+  <title>Approach — Shubham Shinde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231f1d19'/%3E%3Ctext x='11' y='43' font-size='34' fill='%23d8d1c6' font-family='Georgia'%3Ess%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --paper: #d8d1c6;
+      --paper-hi: #e7e1d6;
+      --paper-card: #ece6dc;
+      --paper-dark: #cac1b3;
+      --ink: #1f1d19;
+      --muted: #6b655b;
+      --hair: rgba(31, 29, 25, 0.18);
+      --hair-strong: rgba(31, 29, 25, 0.38);
+      --red: #bd1715;
+      --pad: clamp(20px, 4vw, 40px);
+      --sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --serif: "Newsreader", Georgia, "Times New Roman", serif;
+      --ease: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      background-color: var(--paper);
+      background-image:
+        radial-gradient(circle at 14% 6%, rgba(255, 255, 255, 0.28), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(60, 48, 32, 0.04), transparent 26%),
+        linear-gradient(180deg, var(--paper-hi) 0%, var(--paper) 28%, #d4ccc0 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* Subtle print-stock paper grain */
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      pointer-events: none;
+      opacity: 0.16;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; background: none; border: 0; cursor: pointer; color: inherit; }
+    ::selection { background: var(--ink); color: var(--paper-hi); }
+
+    /* Contained, not full width editorial container */
+    .wrap {
+      width: min(100%, 880px);
+      margin: 0 auto;
+      padding-inline: var(--pad);
+    }
+
+    /* Typography & Utilities */
+    .micro {
+      font-size: 10px;
+      line-height: 1.45;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-feature-settings: "tnum" 1;
+    }
+    .serif-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .muted { color: var(--muted); }
+    .red-accent { color: var(--red); }
+    .red-dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--red);
+      vertical-align: middle;
+      margin-right: 6px;
+      position: relative;
+      top: -1px;
+    }
+
+    /* Navigation */
+    .nav {
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--hair);
+    }
+    .nav-brand {
+      font-weight: 500;
+      letter-spacing: 0.12em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a {
+      position: relative;
+      padding-block: 4px;
+      letter-spacing: 0.12em;
+      transition: color 0.18s ease;
+    }
+    .nav-links a:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -2px;
+      height: 1px;
+      background: var(--ink);
+      transition: right 0.22s var(--ease);
+    }
+    .nav-links a:hover:after,
+    .nav-links a[aria-current="page"]:after {
+      right: 0;
+    }
+    .nav-links a[aria-current="page"] {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* Section Header Markers */
+    .section-marker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      color: var(--muted);
+    }
+
+    /* ========================================================
+       BEAT 01: HERO / THE MANIFESTO
+       ======================================================== */
+    .approach-hero {
+      padding-block: clamp(60px, 9vh, 120px) clamp(50px, 8vh, 90px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .hero-meta {
+      display: grid;
+      gap: 4px;
+      margin-bottom: clamp(28px, 4vh, 48px);
+    }
+    .hero-h1 {
+      font-size: clamp(42px, 5.8vw, 76px);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      font-weight: 450;
+      margin: 0;
+      color: var(--ink);
+      text-wrap: balance;
+    }
+    .hero-h1 span {
+      display: block;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .hero-deck {
+      font-size: clamp(17px, 1.45vw, 21px);
+      line-height: 1.6;
+      color: #38342c;
+      letter-spacing: -0.015em;
+      margin-top: clamp(28px, 4.5vh, 48px);
+      max-width: 660px;
+      text-wrap: pretty;
+    }
+
+    /* ========================================================
+       BEAT 02: HOW DECISIONS GET MADE (EDITORIAL LEDGER)
+       ======================================================== */
+    .ledger-section {
+      padding-block: clamp(70px, 10vh, 130px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .ledger-header {
+      margin-bottom: clamp(48px, 7vh, 80px);
+    }
+    .ledger-headline {
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 450;
+      margin: 0;
+    }
+
+    .ledger-entries {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(40px, 6vh, 64px);
+    }
+    .ledger-entry {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: clamp(16px, 3vw, 36px);
+      align-items: baseline;
+      padding-top: 20px;
+      border-top: 1px solid var(--hair-strong);
+    }
+    .ledger-num {
+      color: var(--muted);
+    }
+    .ledger-content h3 {
+      font-size: clamp(22px, 2.2vw, 32px);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      margin: 0 0 14px;
+      color: var(--ink);
+    }
+    .ledger-content p {
+      font-size: clamp(15px, 1.25vw, 17px);
+      line-height: 1.65;
+      color: #3c3830;
+      margin: 0;
+      max-width: 620px;
+    }
+
+    /* ========================================================
+       BEAT 03: THE WORK IN PRACTICE (SHOW > TELL)
+       ======================================================== */
+    .practice-section {
+      padding-block: clamp(70px, 10vh, 140px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .practice-header {
+      margin-bottom: clamp(44px, 6vh, 70px);
+    }
+    .practice-headline {
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 450;
+      margin: 0;
+    }
+
+    .practice-stack {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(56px, 8vh, 90px);
+    }
+    .practice-item {
+      position: relative;
+    }
+    .practice-frame {
+      background: var(--paper-card);
+      border: 1px solid var(--hair-strong);
+      padding: clamp(8px, 1.4vw, 14px);
+      box-shadow: 0 16px 36px rgba(45, 36, 26, 0.09);
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+    .practice-frame:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 48px rgba(45, 36, 26, 0.13);
+    }
+    .practice-frame img {
+      width: 100%;
+      aspect-ratio: 16 / 9.5;
+      object-fit: cover;
+      filter: saturate(0.85) contrast(0.96);
+    }
+    .practice-meta {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: clamp(16px, 3vw, 40px);
+      align-items: baseline;
+      border-top: 1px solid var(--ink);
+      padding-top: 10px;
+    }
+    .practice-meta .tag {
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .practice-meta .desc {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ========================================================
+       BEAT 04: THE COLLABORATION MODEL
+       ======================================================== */
+    .collab-section {
+      padding-block: clamp(70px, 10vh, 130px);
+      border-bottom: 1px solid var(--hair);
+    }
+    .collab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 64px);
+      margin-top: 36px;
+    }
+    .collab-col {
+      padding-top: 16px;
+      border-top: 1px solid var(--hair-strong);
+    }
+    .collab-col h4 {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin: 0 0 18px;
+    }
+    .collab-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .collab-list li {
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: #38342c;
+      position: relative;
+      padding-left: 18px;
+    }
+    .collab-list li:before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    /* ========================================================
+       BEAT 05: THE QUIET ENDING
+       ======================================================== */
+    .ending-section {
+      padding-block: clamp(70px, 11vh, 140px);
+    }
+    .ending-h2 {
+      font-size: clamp(36px, 5vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      font-weight: 450;
+      margin: 0 0 20px;
+    }
+    .ending-sub {
+      font-size: clamp(16px, 1.4vw, 19px);
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0 0 clamp(36px, 5vh, 56px);
+      max-width: 540px;
+    }
+    .ending-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px 48px;
+      align-items: baseline;
+    }
+    .ending-btn {
+      font-size: clamp(16px, 1.6vw, 22px);
+      letter-spacing: -0.02em;
+      font-weight: 500;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.14s var(--ease), border-color 0.14s ease;
+    }
+    .ending-btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--red);
+    }
+    .ending-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Footer */
+    .footer {
+      padding-block: 28px 40px;
+      border-top: 1px solid var(--hair);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+    }
+
+    /* Subtle Reveal on Scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+    }
+    .reveal.is-revealed {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .practice-frame {
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .ledger-entry {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .practice-meta {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      .collab-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- Minimal Clean Header -->
+  <nav class="nav micro">
+    <a href="./" class="nav-brand">SHUBHAM SHINDE</a>
+    <div class="nav-links">
+      <a href="./">WORK</a>
+      <a href="./about.html">ABOUT</a>
+      <a href="./approach.html" aria-current="page">APPROACH</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========================================================
+         BEAT 01: HERO / THE THESIS
+         ======================================================== -->
+    <section class="approach-hero" id="thesis">
+      <div class="hero-meta micro muted reveal">
+        <span>03 / METHODOLOGY</span>
+        <span>VISUAL DIRECTION & CRAFT</span>
+      </div>
+
+      <h1 class="hero-h1 reveal">
+        Strategy gives the work direction.
+        <span class="serif-quote">Taste decides where it stops.</span>
+      </h1>
+
+      <p class="hero-deck reveal">
+        Design isn't an assembly line where ideas are passed down a conveyor belt. I work across the entire arc: uncovering what actually needs to be said, establishing the visual atmosphere, and executing the frames, identities, and interfaces myself.
+      </p>
+    </section>
+
+    <!-- ========================================================
+         BEAT 02: HOW DECISIONS GET MADE
+         ======================================================== -->
+    <section class="ledger-section" id="methodology">
+      <div class="section-marker micro reveal">
+        <span class="red-accent">01</span> / WORKING METHODOLOGY
+      </div>
+
+      <div class="ledger-header">
+        <h2 class="ledger-headline reveal">
+          How decisions actually get made.
+        </h2>
+      </div>
+
+      <div class="ledger-entries">
+        <!-- 01 -->
+        <article class="ledger-entry reveal">
+          <span class="ledger-num micro">01.01</span>
+          <div class="ledger-content">
+            <h3>Find the narrative tension before opening Figma.</h3>
+            <p>
+              Every brief has an official commercial requirement and an unspoken human reality. Understanding the distinction between what a business sells and what a person actually feels is what separates distinctive identities from forgettable templates.
+            </p>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="ledger-entry reveal">
+          <span class="ledger-num micro">01.02</span>
+          <div class="ledger-content">
+            <h3>Gather a surplus of references, then ruthlessly cut.</h3>
+            <p>
+              Anyone with internet access can assemble an endless moodboard. The real discipline of art direction is taste through subtraction: discarding the 90% that is merely trendy until only the ideas that belong to the brief remain.
+            </p>
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="ledger-entry reveal">
+          <span class="ledger-num micro">01.03</span>
+          <div class="ledger-content">
+            <h3>Direction and hands-on craft stay in the same room.</h3>
+            <p>
+              When art direction is divorced from making, nuances disappear in translation. I stay directly inside the typography, compositing, code, and motion timelines from the first sketch through production delivery.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         BEAT 03: THE WORK IN PRACTICE (SHOW > TELL)
+         ======================================================== -->
+    <section class="practice-section" id="practice">
+      <div class="section-marker micro reveal">
+        <span class="red-accent">02</span> / ARTIFACTS IN CONTEXT
+      </div>
+
+      <div class="practice-header">
+        <h2 class="practice-headline reveal">
+          Thinking made visible through real work.
+        </h2>
+      </div>
+
+      <div class="practice-stack">
+        <!-- Artifact 01: Homi Bhabha -->
+        <figure class="practice-item reveal">
+          <div class="practice-frame">
+            <img src="./assets/frame1.webp" alt="Homi Bhabha documentary archival visual frame" loading="lazy">
+          </div>
+          <figcaption class="practice-meta">
+            <span class="micro tag">HOMI BHABHA · FILM</span>
+            <p class="desc">
+              Documentary worldbuilding. Archival records, mathematical typography, and historical grain balanced into a unified cinematic rhythm.
+            </p>
+          </figcaption>
+        </figure>
+
+        <!-- Artifact 02: Studio Vistara -->
+        <figure class="practice-item reveal">
+          <div class="practice-frame">
+            <img src="./assets/vistaranew4.webp" alt="Studio Vistara brand and architectural application" loading="lazy">
+          </div>
+          <figcaption class="practice-meta">
+            <span class="micro tag">STUDIO VISTARA · IDENTITY</span>
+            <p class="desc">
+              Typography in architectural space. Testing the mark across materiality, three dimensions, and printed catalogues before locking digital guidelines.
+            </p>
+          </figcaption>
+        </figure>
+
+        <!-- Artifact 03: Indiclass -->
+        <figure class="practice-item reveal">
+          <div class="practice-frame">
+            <img src="./assets/indiclassframe3.webp" alt="Indiclass title sequence frame" loading="lazy">
+          </div>
+          <figcaption class="practice-meta">
+            <span class="micro tag">INDICLASS · MOTION SYSTEM</span>
+            <p class="desc">
+              Systems in motion. Film transitions and graphic sequences engineered with the same physics: deliberate, grounded, never theatrical.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         BEAT 04: THE WORKING DIALOGUE (COLLABORATION)
+         ======================================================== -->
+    <section class="collab-section" id="collaboration">
+      <div class="section-marker micro reveal">
+        <span class="red-accent">03</span> / COLLABORATION
+      </div>
+
+      <div class="collab-header">
+        <h2 class="ledger-headline reveal">
+          Working together without the friction.
+        </h2>
+      </div>
+
+      <div class="collab-grid reveal">
+        <div class="collab-col">
+          <h4 class="micro"><span class="red-dot"></span>What you can expect</h4>
+          <ul class="collab-list">
+            <li>Direct creative dialogue without agency account layers</li>
+            <li>Rapid prototypes to test visual ideas in real browser context</li>
+            <li>Typography and grid systems designed to outlast design trends</li>
+            <li>High-fidelity execution across brand, web, motion, and print</li>
+          </ul>
+        </div>
+
+        <div class="collab-col">
+          <h4 class="micro"><span class="red-dot"></span>What is intentionally avoided</h4>
+          <ul class="collab-list">
+            <li>Design thinking buzzwords with no tangible visual output</li>
+            <li>Cookie-cutter templates disguised as bespoke design</li>
+            <li>Decorative noise that lacks a functional or emotional reason</li>
+            <li>Prolonged committee review loops that dilute the core concept</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         BEAT 05: THE QUIET ENDING
+         ======================================================== -->
+    <section class="ending-section" id="contact">
+      <div class="section-marker micro reveal">
+        <span class="red-accent">04</span> / NEXT STEPS
+      </div>
+
+      <h2 class="ending-h2 reveal">
+        Have a project or question in mind?
+      </h2>
+
+      <p class="ending-sub reveal">
+        Let’s talk about design lead roles, brand identities, film projects, and website design.
+      </p>
+
+      <div class="ending-actions reveal">
+        <a href="mailto:shubhamshinde52@gmail.com" class="ending-btn">
+          <span>START A CONVERSATION</span> ↗
+        </a>
+        <a href="./" class="ending-btn">
+          <span>EXPLORE SELECTED WORK</span> ↗
+        </a>
+        <a href="./about.html" class="ending-btn">
+          <span>READ THE ARCHIVE</span> ↗
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer micro">
+    <span>SHUBHAM SHINDE / 2026</span>
+    <span>BENGALURU, INDIA</span>
+  </footer>
+</div>
+
+<script>
+  // Clean scroll reveal using IntersectionObserver (tastemaker & accessibility compliant)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
