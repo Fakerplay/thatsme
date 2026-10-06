@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#d8d1c6" />
   <meta name="description" content="How Shubham Shinde approaches design, direction, and hands-on craft — from engineering first principles to cinematic storytelling." />
-  <meta name="build-version" content="2026-10-06-approach-v2" />
-  <title>Approach & Methodology — Shubham Shinde</title>
+  <meta name="build-version" content="2026-10-06-approach-v3-editorial" />
+  <title>Approach &amp; Methodology — Shubham Shinde</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231f1d19'/%3E%3Ctext x='11' y='43' font-size='34' fill='%23d8d1c6' font-family='Georgia'%3Ess%3C/text%3E%3C/svg%3E">
   <style>
     :root {
@@ -20,13 +20,18 @@
       --ink: #1f1d19;
       --ink-soft: #38342c;
       --muted: #6b655b;
-      --hair: rgba(31, 29, 25, 0.18);
-      --hair-strong: rgba(31, 29, 25, 0.38);
+      --hair: rgba(31, 29, 25, 0.16);
+      --hair-strong: rgba(31, 29, 25, 0.32);
       --red: #bd1715;
+      --red-soft: #e24a4a;
+      --cobalt: #0a4de3;
+      --cobalt-deep: #00277a;
+      --cobalt-hi: #427cff;
       --pad: clamp(20px, 4vw, 44px);
       --sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --serif: "Newsreader", Georgia, "Times New Roman", serif;
       --mono: "JetBrains Mono", monospace;
+      --hand: "Caveat", cursive;
       --ease: cubic-bezier(0.23, 1, 0.32, 1);
     }
 
@@ -41,9 +46,9 @@
       font-family: var(--sans);
       background-color: var(--paper);
       background-image:
-        radial-gradient(circle at 12% 5%, rgba(255, 255, 255, 0.32), transparent 26%),
+        radial-gradient(circle at 12% 5%, rgba(255, 255, 255, 0.35), transparent 26%),
         radial-gradient(circle at 88% 10%, rgba(60, 48, 32, 0.05), transparent 24%),
-        linear-gradient(180deg, var(--paper-hi) 0%, var(--paper) 26%, #d3cbc0 100%);
+        linear-gradient(180deg, var(--paper-hi) 0%, var(--paper) 24%, #d3cbc0 100%);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
@@ -67,7 +72,7 @@
     button { font: inherit; background: none; border: 0; cursor: pointer; color: inherit; }
     ::selection { background: var(--ink); color: var(--paper-hi); }
 
-    /* Strictly contained editorial reading column */
+    /* Strictly contained editorial reading column — never edge-to-edge full width */
     .wrap {
       width: min(100%, 880px);
       margin: 0 auto;
@@ -88,19 +93,13 @@
       font-style: italic;
       font-weight: 400;
     }
+    .hand {
+      font-family: var(--hand);
+      font-size: 20px;
+      line-height: 1.2;
+    }
     .muted { color: var(--muted); }
     .red-accent { color: var(--red); }
-    .red-bullet {
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--red);
-      vertical-align: middle;
-      margin-right: 6px;
-      position: relative;
-      top: -1px;
-    }
 
     /* Minimalist Masthead */
     .nav {
@@ -144,17 +143,50 @@
       font-weight: 500;
     }
 
-    /* Distinct Editorial Eyebrow Callouts */
-    .fig-tag {
+    /* ========================================================
+       REFINED BADGE SYSTEM (HOMAGE TO REFERENCE 1: [ 01 ] [ TITLE ])
+       Replaces generic AI eyebrows with tactile paired pills
+       ======================================================== */
+    .pill-badge-group {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 3px 8px;
+      gap: 6px;
+      margin-bottom: 22px;
+      user-select: none;
+    }
+    .pill-badge-id {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 9px;
       border: 1px solid var(--hair-strong);
-      background: rgba(235, 230, 222, 0.45);
-      border-radius: 2px;
-      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.45);
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
       color: var(--ink);
+      box-shadow: 0 1px 3px rgba(31, 29, 25, 0.04);
+    }
+    .pill-badge-name {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 11px;
+      border: 1px solid var(--hair-strong);
+      background: rgba(235, 230, 222, 0.55);
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      box-shadow: 0 1px 3px rgba(31, 29, 25, 0.04);
+    }
+    .pill-badge-group:hover .pill-badge-id {
+      background: var(--ink);
+      color: var(--paper-hi);
+      border-color: var(--ink);
     }
 
     /* Section Base */
@@ -164,11 +196,60 @@
       position: relative;
     }
 
+    /* Section Header Layout with Iconography */
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+    .section-head-text {
+      flex: 1;
+    }
+    .section-icon-stamp {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border: 1px solid var(--hair-strong);
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      box-shadow: 0 2px 6px rgba(31, 29, 25, 0.05);
+      transition: transform 0.2s var(--ease), border-color 0.2s ease;
+    }
+    .section-icon-stamp:hover {
+      transform: translateY(-2px);
+      border-color: var(--ink);
+    }
+    .section-icon-stamp svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3.4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 450;
+      margin: 0 0 16px;
+      color: var(--ink);
+    }
+    .section-body {
+      font-size: clamp(15.5px, 1.25vw, 17.5px);
+      line-height: 1.65;
+      color: var(--ink-soft);
+      margin: 0 0 32px;
+      max-width: 680px;
+    }
+
     /* ========================================================
        HERO: MANIFESTO & FIRST PRINCIPLES
        ======================================================== */
     .hero-section {
-      padding-top: clamp(60px, 9vh, 110px);
+      padding-top: clamp(60px, 9vh, 105px);
       padding-bottom: clamp(50px, 8vh, 85px);
     }
     .hero-kicker {
@@ -228,28 +309,124 @@
       letter-spacing: -0.01em;
     }
 
-    /* Headline Style */
-    .section-title {
-      font-size: clamp(26px, 3.2vw, 44px);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
+    /* ========================================================
+       VISUAL SHOWCASE 01: "CLEAR STEPS"
+       Direct homage to Reference 1:
+       - Classical Halftone Screened Sculpture (Chess Knight)
+       - Ripped vintage medical/technical paper collage
+       - Diagonal candy-striped base (coral-red + ink)
+       - Double pill badge + handwritten margin note
+       ======================================================== */
+    .clear-steps-card {
+      background: #f7f3eb;
+      border: 1px solid var(--hair-strong);
+      border-radius: 4px;
+      padding: clamp(24px, 4vw, 44px);
+      position: relative;
+      margin-top: 36px;
+      box-shadow: 0 18px 45px rgba(35, 28, 20, 0.08);
+      overflow: hidden;
+    }
+    .clear-steps-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .clear-steps-title {
+      font-family: var(--serif);
+      font-size: clamp(38px, 5.5vw, 64px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      font-weight: 400;
+      color: var(--ink);
+      margin: 0;
+    }
+    .clear-steps-title span {
+      display: block;
+      font-size: clamp(32px, 4.8vw, 56px);
+      color: var(--ink-soft);
+    }
+    .clear-steps-meta {
+      text-align: right;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* The Graphic Showcase Stage */
+    .sculpture-stage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-block: 20px 10px;
+    }
+    .sculpture-art-frame {
+      position: relative;
+      background: #f9f6ef;
+      border: 1px solid rgba(31, 29, 25, 0.12);
+      border-radius: 3px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.02);
+    }
+    .sculpture-svg {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 24px rgba(31, 29, 25, 0.08));
+    }
+    .sculpture-pills {
+      margin-top: 14px;
+      align-self: flex-start;
+    }
+
+    .sculpture-commentary {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .sculpture-commentary h3 {
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.15;
       font-weight: 450;
-      margin: 0 0 16px;
+      letter-spacing: -0.03em;
+      margin: 0;
+    }
+    .sculpture-commentary p {
+      margin: 0;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+    .handwritten-callout {
+      position: relative;
+      padding-left: 28px;
       color: var(--ink);
     }
-    .section-body {
-      font-size: clamp(15.5px, 1.25vw, 17.5px);
-      line-height: 1.65;
-      color: var(--ink-soft);
-      margin: 0 0 32px;
-      max-width: 680px;
+    .handwritten-callout svg.curly-arrow {
+      position: absolute;
+      left: 0;
+      top: -2px;
+      width: 22px;
+      height: 36px;
+    }
+    .handwritten-callout p {
+      font-family: var(--hand);
+      font-size: 21px;
+      line-height: 1.25;
+      color: var(--ink);
+      transform: rotate(-1.5deg);
     }
 
     /* ========================================================
-       FIG 01: STRUCTURAL INTEGRITY (CIVIL TO DIGITAL)
+       STEP 01: STRUCTURAL LOAD & BLUEPRINT SCHEMATIC
        ======================================================== */
     .blueprint-card {
-      background: rgba(234, 229, 220, 0.6);
+      background: rgba(234, 229, 220, 0.65);
       border: 1px solid var(--hair-strong);
       padding: clamp(20px, 3vw, 32px);
       position: relative;
@@ -298,7 +475,7 @@
     }
 
     /* ========================================================
-       FIG 02: THE 24FPS RULE (CINEMATIC PACING)
+       STEP 02: THE 24FPS RULE (35MM CINEMATIC PACING)
        ======================================================== */
     .filmstrip-box {
       background: #181714;
@@ -362,26 +539,57 @@
     }
 
     /* ========================================================
-       FIG 03: PHYSICAL MATERIALITY
+       STEP 03: PHYSICAL MATERIALITY & THE GRAINY COBALT BOX
+       Direct homage to Reference 2:
+       - Grainy / Airbrush Stipple Isometric Electric Cobalt Box
+       - Dynamic hand-drawn curved arrow
+       - Handwritten cursive note tilted in margin
        ======================================================== */
     .material-split {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1fr 1fr;
       gap: 28px;
       align-items: center;
+      margin-bottom: 24px;
     }
-    .material-visual {
-      background: var(--paper-card);
+    .cobalt-box-card {
+      background: #e6e2d9;
       border: 1px solid var(--hair-strong);
-      padding: 10px;
+      border-radius: 3px;
+      padding: 20px;
+      position: relative;
       box-shadow: 0 16px 36px rgba(45, 36, 26, 0.08);
-      transform: rotate(-0.5deg);
+      overflow: hidden;
     }
-    .material-visual img {
+    .cobalt-box-svg {
       width: 100%;
-      aspect-ratio: 16 / 10.5;
-      object-fit: cover;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 14px 28px rgba(10, 77, 227, 0.16));
     }
+    .cobalt-margin-note {
+      position: absolute;
+      right: 18px;
+      bottom: 16px;
+      text-align: right;
+    }
+    .cobalt-margin-note p {
+      font-family: var(--hand);
+      font-size: 22px;
+      color: var(--ink);
+      line-height: 1.1;
+      margin: 0;
+      transform: rotate(-6deg);
+    }
+    .cobalt-margin-note span {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--muted);
+      margin-top: 4px;
+      letter-spacing: 0.05em;
+    }
+
     .material-specs {
       display: flex;
       flex-direction: column;
@@ -403,44 +611,95 @@
       line-height: 1.5;
     }
 
+    .physical-proof-strip {
+      background: var(--paper-card);
+      border: 1px solid var(--hair-strong);
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .physical-proof-strip img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+    .proof-caption h6 {
+      margin: 0 0 6px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .proof-caption p {
+      margin: 0;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
     /* ========================================================
-       FIG 04: B2B COMPLEXITY & WORKFLOWS
+       STEP 04: HIGH-DENSITY B2B ARCHITECTURE (WIZCOMMERCE)
        ======================================================== */
     .b2b-box {
       background: var(--paper-card);
       border: 1px solid var(--hair-strong);
       padding: clamp(20px, 3vw, 32px);
     }
+    .b2b-visual-frame {
+      margin-block: 16px;
+      border: 1px solid var(--hair-strong);
+      background: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+    .b2b-visual-frame img {
+      width: 100%;
+      max-height: 240px;
+      object-fit: cover;
+      object-position: top;
+      filter: contrast(1.02);
+    }
+    .b2b-badge-overlay {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: rgba(31, 29, 25, 0.85);
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 2px;
+      font-size: 9.5px;
+    }
     .b2b-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 20px;
+      gap: 20px;
+      margin-top: 16px;
     }
     .b2b-pillar {
       padding: 16px;
-      background: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.45);
       border: 1px solid var(--hair);
     }
     .b2b-pillar h5 {
-      margin: 0 0 8px;
+      margin: 0 0 6px;
       font-size: 14px;
       font-weight: 500;
     }
     .b2b-pillar p {
       margin: 0;
-      font-size: 13.5px;
+      font-size: 13px;
       line-height: 1.55;
       color: var(--muted);
     }
 
     /* ========================================================
-       FIG 05: THE AI + HUMAN TASTE DIAL
+       STEP 05: THE AI + HUMAN TASTE SUBTRACTION DIAL
        ======================================================== */
     .dial-block {
       border: 1px solid var(--ink);
-      padding: clamp(20px, 3.5vw, 36px);
-      background: rgba(238, 232, 222, 0.5);
+      padding: clamp(24px, 3.5vw, 38px);
+      background: rgba(238, 232, 222, 0.6);
+      position: relative;
     }
     .dial-equation {
       display: grid;
@@ -448,7 +707,7 @@
       gap: 20px;
       align-items: center;
       text-align: center;
-      margin: 24px 0;
+      margin: 20px 0;
       padding: 20px 0;
       border-block: 1px solid var(--hair-strong);
     }
@@ -457,7 +716,7 @@
     }
     .equation-col strong {
       display: block;
-      font-size: 16px;
+      font-size: 15px;
       margin-bottom: 4px;
     }
     .equation-col p {
@@ -467,13 +726,34 @@
       line-height: 1.45;
     }
     .dial-sym {
-      font-size: 26px;
+      font-size: 28px;
       color: var(--red);
       font-family: var(--serif);
+      font-weight: 500;
+    }
+    .taste-stamp {
+      position: absolute;
+      top: -16px;
+      right: 24px;
+      width: 72px;
+      height: 72px;
+      border: 1.5px dashed var(--red);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      transform: rotate(12deg);
+      background: rgba(232, 226, 216, 0.9);
+      color: var(--red);
+      font-size: 8px;
+      line-height: 1.15;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      user-select: none;
     }
 
     /* ========================================================
-       FIG 06: WORKING TERMS (THE COALFACE)
+       STEP 06: WORKING TERMS (THE COALFACE)
        ======================================================== */
     .terms-list {
       display: flex;
@@ -483,14 +763,14 @@
     }
     .term-row {
       display: grid;
-      grid-template-columns: 140px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 24px;
       padding-top: 16px;
       border-top: 1px solid var(--hair-strong);
       align-items: baseline;
     }
     .term-row strong {
-      font-size: 13px;
+      font-size: 12.5px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       font-weight: 500;
@@ -510,10 +790,11 @@
       border-bottom: 0;
     }
     .ending-h2 {
+      font-family: var(--serif);
       font-size: clamp(34px, 4.8vw, 64px);
       line-height: 1.02;
-      letter-spacing: -0.05em;
-      font-weight: 450;
+      letter-spacing: -0.04em;
+      font-weight: 400;
       margin: 0 0 16px;
     }
     .ending-sub {
@@ -538,11 +819,12 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: transform 0.14s var(--ease), border-color 0.14s ease;
+      transition: transform 0.14s var(--ease), border-color 0.14s ease, color 0.14s ease;
     }
     .ending-btn:hover {
       transform: translateY(-1px);
       border-color: var(--red);
+      color: var(--red);
     }
     .ending-btn:active {
       transform: scale(0.97);
@@ -575,7 +857,7 @@
         transform: none !important;
         transition: none !important;
       }
-      .film-frame img, .ending-btn {
+      .film-frame img, .ending-btn, .section-icon-stamp {
         transition: none !important;
         transform: none !important;
       }
@@ -583,6 +865,16 @@
 
     /* Responsive */
     @media (max-width: 760px) {
+      .sculpture-stage {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .material-split {
+        grid-template-columns: 1fr;
+      }
+      .physical-proof-strip {
+        grid-template-columns: 1fr;
+      }
       .spec-ledger {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -591,9 +883,6 @@
         grid-template-columns: 1fr;
       }
       .filmstrip-frames {
-        grid-template-columns: 1fr;
-      }
-      .material-split {
         grid-template-columns: 1fr;
       }
       .b2b-grid {
@@ -647,7 +936,7 @@
       </h1>
 
       <p class="hero-lead reveal">
-        Coming from civil engineering into documentary film direction and brand systems fundamentally changed how I view visual design. I do not treat a screen or page as a blank canvas for decoration. I treat it as an engineered structure with an emotional outcome.
+        Coming from civil engineering into documentary film direction and brand systems fundamentally changed how I view visual design. I do not treat a screen or page as a blank canvas for cosmetic decoration. I treat it as an engineered structure designed to carry human attention under stress.
       </p>
 
       <div class="spec-ledger reveal mono">
@@ -656,8 +945,8 @@
           <span class="spec-val">Structural Engineering</span>
         </div>
         <div class="spec-item">
-          <span class="spec-label">CORE DOMAIN</span>
-          <span class="spec-val">Brand · Film · Systems</span>
+          <span class="spec-label">CORE DOMAINS</span>
+          <span class="spec-val">Brand · Film · Systems · AI</span>
         </div>
         <div class="spec-item">
           <span class="spec-label">CURRENT SEAT</span>
@@ -667,20 +956,169 @@
     </section>
 
     <!-- ========================================================
-         FIG 01: STRUCTURAL INTEGRITY
+         VISUAL CENTERPIECE: "CLEAR STEPS"
+         Direct homage to Reference 1:
+         - Halftone Screened Classical Sculpture
+         - Jagged torn paper collage with vintage bureaucratic print
+         - Diagonal candy-striped base (coral-red & black)
+         - Double capsule badge & handwritten annotation
+         ======================================================== -->
+    <section id="overview" style="padding-top: 0;">
+      <div class="clear-steps-card reveal">
+        <div class="clear-steps-header">
+          <h2 class="clear-steps-title">
+            Clear steps
+            <span>through the chaos.</span>
+          </h2>
+          <div class="clear-steps-meta mono">
+            <span>METHOD SUITE 01</span><br>
+            <span>TACTILE DRAFT</span>
+          </div>
+        </div>
+
+        <div class="sculpture-stage">
+          <!-- The Halftone Sculpture Art Frame -->
+          <div class="sculpture-art-frame">
+            <svg class="sculpture-svg" viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Fine Halftone Dot Screen 1 (Shadows) -->
+                <pattern id="halftone-dense" width="8" height="8" patternUnits="userSpaceOnUse">
+                  <circle cx="4" cy="4" r="3.2" fill="#1f1d19" />
+                </pattern>
+                <!-- Fine Halftone Dot Screen 2 (Midtones) -->
+                <pattern id="halftone-mid" width="8" height="8" patternUnits="userSpaceOnUse">
+                  <circle cx="4" cy="4" r="2.0" fill="#1f1d19" />
+                </pattern>
+                <!-- Diagonal Hazard / Candy Stripes for Pedestal (Reference 1) -->
+                <pattern id="pedestal-stripes" width="20" height="20" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+                  <rect width="10" height="20" fill="#e24a4a" />
+                  <rect x="10" width="10" height="20" fill="#1f1d19" />
+                </pattern>
+                <!-- Paper Drop Shadow -->
+                <filter id="torn-shadow" x="-8%" y="-8%" width="120%" height="120%">
+                  <feDropShadow dx="-2" dy="4" stdDeviation="4" flood-color="#1f1d19" flood-opacity="0.18" />
+                </filter>
+              </defs>
+
+              <!-- Chess Knight Classical Sculpture Silhouette -->
+              <g id="knight-sculpture">
+                <!-- Mane Ridges (Segmented classical hair) -->
+                <path d="M 170 85 L 145 105 L 160 120 L 135 140 L 150 160 L 130 185 L 152 205 L 138 235 L 168 255 L 155 295 L 205 345 L 245 350 L 255 300 L 250 240 L 285 190 L 265 130 L 220 90 Z" fill="#2d2b27" />
+
+                <!-- Halftone Screen Texture Layer -->
+                <path d="M 170 85 L 145 105 L 160 120 L 135 140 L 150 160 L 130 185 L 152 205 L 138 235 L 168 255 L 155 295 L 205 345 L 245 350 L 255 300 L 250 240 L 285 190 L 265 130 L 220 90 Z" fill="url(#halftone-dense)" />
+
+                <!-- Knight Muzzle & Forehead (High Contrast Highlight) -->
+                <path d="M 215 90 C 235 95 255 110 270 140 C 285 170 275 195 260 205 C 240 220 220 225 210 220 C 195 210 200 170 205 145 Z" fill="#eae4d8" opacity="0.92" />
+                <path d="M 215 90 C 235 95 255 110 270 140 C 285 170 275 195 260 205 C 240 220 220 225 210 220 C 195 210 200 170 205 145 Z" fill="url(#halftone-mid)" />
+
+                <!-- Eye & Nostril Carvings -->
+                <ellipse cx="232" cy="138" rx="8" ry="6" fill="#1f1d19" transform="rotate(-15 232 138)" />
+                <circle cx="230" cy="137" r="2" fill="#ffffff" />
+                <ellipse cx="266" cy="182" rx="6" ry="4" fill="#1f1d19" transform="rotate(-25 266 182)" />
+                <path d="M 245 195 C 255 198 268 195 272 190" stroke="#1f1d19" stroke-width="3" stroke-linecap="round" />
+
+                <!-- Neck Arch Halftone Screen -->
+                <path d="M 160 170 C 180 185 200 220 215 280 L 175 320 C 160 270 150 220 160 170 Z" fill="url(#halftone-dense)" />
+                <path d="M 180 230 C 205 245 225 280 235 340 L 195 345 C 185 295 175 255 180 230 Z" fill="#1f1d19" />
+              </g>
+
+              <!-- Torn Vintage Technical Paper Collage (Lower Right Base) -->
+              <g id="torn-paper-collage" filter="url(#torn-shadow)">
+                <!-- Jagged Ripped Paper Shape -->
+                <path d="M 200 330 
+                         L 218 322 L 230 328 L 244 320 L 258 326 L 275 318 L 290 325 L 305 320 L 318 332
+                         L 322 395 
+                         L 308 402 L 296 398 L 280 405 L 265 397 L 248 404 L 232 396 L 215 403 L 202 398 
+                         Z" fill="#fcf9f2" stroke="#d5cebe" stroke-width="0.8" />
+
+                <!-- Vintage Technical Form Grid Lines & Labels -->
+                <line x1="210" y1="338" x2="310" y2="338" stroke="#3b3832" stroke-width="0.75" />
+                <line x1="210" y1="358" x2="310" y2="358" stroke="#3b3832" stroke-width="0.75" />
+                <line x1="210" y1="378" x2="310" y2="378" stroke="#3b3832" stroke-width="0.75" />
+
+                <line x1="240" y1="338" x2="240" y2="395" stroke="#3b3832" stroke-width="0.75" />
+                <line x1="275" y1="338" x2="275" y2="395" stroke="#3b3832" stroke-width="0.75" />
+
+                <!-- Checkboxes on Form -->
+                <rect x="214" y="343" width="7" height="7" stroke="#3b3832" stroke-width="0.8" fill="none" />
+                <text x="224" y="349" font-family="'JetBrains Mono', monospace" font-size="5.5" fill="#3b3832" letter-spacing="0.05em">PLAN</text>
+
+                <rect x="245" y="343" width="7" height="7" stroke="#3b3832" stroke-width="0.8" fill="none" />
+                <text x="255" y="349" font-family="'JetBrains Mono', monospace" font-size="5.5" fill="#3b3832" letter-spacing="0.05em">FECA</text>
+
+                <rect x="280" y="343" width="7" height="7" stroke="#3b3832" stroke-width="0.8" fill="none" />
+                <text x="290" y="349" font-family="'JetBrains Mono', monospace" font-size="5.5" fill="#3b3832" letter-spacing="0.05em">OTHER</text>
+
+                <text x="214" y="367" font-family="'JetBrains Mono', monospace" font-size="5" fill="#6b655b">DOB: 1999</text>
+                <text x="245" y="367" font-family="'JetBrains Mono', monospace" font-size="5" fill="#6b655b">SEX: M</text>
+                <text x="280" y="367" font-family="'JetBrains Mono', monospace" font-size="5" fill="#6b655b">REF: SS26</text>
+
+                <text x="214" y="388" font-family="'JetBrains Mono', monospace" font-size="4.5" fill="#8c8577" letter-spacing="0.04em">RESERVED FOR NUCC SPEC</text>
+              </g>
+
+              <!-- Pedestal Base with Diagonal Stripes (Reference 1) -->
+              <g id="striped-base">
+                <path d="M 160 395 C 190 415 270 415 315 390 L 305 425 C 265 445 195 445 155 420 Z" fill="url(#pedestal-stripes)" stroke="#1f1d19" stroke-width="1.2" />
+              </g>
+            </svg>
+
+            <!-- Double Capsule Badge (Reference 1) -->
+            <div class="pill-badge-group sculpture-pills">
+              <span class="pill-badge-id">01</span>
+              <span class="pill-badge-name">Illustration Suite</span>
+            </div>
+          </div>
+
+          <!-- Commentary & Methodology -->
+          <div class="sculpture-commentary">
+            <h3>Structure first.<br>Texture second.<br>Decoration never.</h3>
+            <p>
+              When clients look at good design, they feel the craftsmanship immediately, but they rarely know why. It is because underneath the typography and color lies a rigid structural load: balanced tension, calibrated contrast, and zero cosmetic filler.
+            </p>
+            <p>
+              Like a classical statue cast with modern halftone rasters and torn ledger forms, every project blends timeless editorial proportion with contemporary digital utility.
+            </p>
+            
+            <div class="handwritten-callout">
+              <!-- Hand-drawn curved arrow -->
+              <svg class="curly-arrow" viewBox="0 0 24 38" fill="none" stroke="#1f1d19" stroke-width="1.6" stroke-linecap="round">
+                <path d="M 6 4 C 18 10, 20 22, 10 30" />
+                <path d="M 10 30 L 16 31 M 10 30 L 13 24" />
+              </svg>
+              <p>Strip everything cosmetic until only the bone remains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STEP 01: STRUCTURAL INTEGRITY
          ======================================================== -->
     <section id="structure">
-      <div class="fig-tag mono reveal">
-        <span class="red-bullet"></span>FIG. 01 — STRUCTURAL INTEGRITY
+      <div class="pill-badge-group reveal">
+        <span class="pill-badge-id">01</span>
+        <span class="pill-badge-name">Structural Load</span>
       </div>
 
-      <h2 class="section-title reveal">
-        Calculate the loads before choosing the paint.
-      </h2>
-
-      <p class="section-body reveal">
-        In civil engineering, if your load calculations are wrong, the bridge collapses. Digital interfaces and brand identities behave the same way, just with attention instead of concrete. Before touching typography, color, or micro-interactions, I identify the hierarchy under stress: what is the single message that must survive, where the eye lands, and what can be removed without losing the core idea.
-      </p>
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <h2 class="section-title">
+            Calculate the loads before choosing the paint.
+          </h2>
+          <p class="section-body">
+            In civil engineering, if your load calculations are wrong, the bridge collapses. Digital interfaces and brand identities behave the same way, just with attention instead of concrete. Before touching typography, color, or micro-interactions, I identify the hierarchy under stress: what is the single message that must survive, where the eye lands, and what can be removed without losing the core idea.
+          </p>
+        </div>
+        <!-- Custom Cantilever Truss Icon -->
+        <div class="section-icon-stamp" title="Structural Cantilever Truss">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 20h18M3 20L12 5l9 15M12 5v15M7.5 12.5h9" />
+            <circle cx="12" cy="5" r="2" fill="#bd1715" stroke="none" />
+          </svg>
+        </div>
+      </div>
 
       <div class="blueprint-card reveal">
         <div class="blueprint-header mono">
@@ -713,20 +1151,39 @@
     </section>
 
     <!-- ========================================================
-         FIG 02: THE 24FPS RULE
+         STEP 02: THE 24FPS RULE (CINEMATIC PACING)
          ======================================================== -->
     <section id="cinematics">
-      <div class="fig-tag mono reveal">
-        <span class="red-bullet"></span>FIG. 02 — THE 24FPS RULE
+      <div class="pill-badge-group reveal">
+        <span class="pill-badge-id">02</span>
+        <span class="pill-badge-name">24fps Pacing</span>
       </div>
 
-      <h2 class="section-title reveal">
-        Treating interfaces and campaigns like film sequences.
-      </h2>
-
-      <p class="section-body reveal">
-        Directing documentary projects at Prachyam taught me that human beings don’t experience visual work statically; they experience it through pacing, focal length, and atmospheric tone. A website shouldn't shout at 100% volume across every viewport. It requires wide establishing shots, intimate details, breathing room, and controlled momentum.
-      </p>
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <h2 class="section-title">
+            Directing viewport momentum like a film sequence.
+          </h2>
+          <p class="section-body">
+            Directing documentary projects at Prachyam taught me that human beings don’t experience visual work statically; they experience it through pacing, focal length, and atmospheric tone. A website shouldn't shout at 100% volume across every viewport. It requires wide establishing shots, intimate details, breathing room, and controlled momentum.
+          </p>
+        </div>
+        <!-- Custom 35mm Film Gate Icon -->
+        <div class="section-icon-stamp" title="35mm Film Gate &amp; Shutter">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="2" />
+            <line x1="7" y1="4" x2="7" y2="20" />
+            <line x1="17" y1="4" x2="17" y2="20" />
+            <circle cx="12" cy="12" r="3" stroke="#bd1715" stroke-width="1.8" />
+            <line x1="3" y1="8" x2="7" y2="8" />
+            <line x1="3" y1="12" x2="7" y2="12" />
+            <line x1="3" y1="16" x2="7" y2="16" />
+            <line x1="17" y1="8" x2="21" y2="8" />
+            <line x1="17" y1="12" x2="21" y2="12" />
+            <line x1="17" y1="16" x2="21" y2="16" />
+          </svg>
+        </div>
+      </div>
 
       <div class="filmstrip-box reveal">
         <div class="filmstrip-meta mono">
@@ -757,59 +1214,186 @@
     </section>
 
     <!-- ========================================================
-         FIG 03: MATERIALITY BEYOND FIGMA
+         STEP 03: PHYSICAL MATERIALITY & THE GRAINY COBALT BOX
+         Direct homage to Reference 2:
+         - Grainy / Airbrush Stipple Isometric Electric Cobalt Box
+         - Dynamic hand-drawn curved arrow
+         - Handwritten cursive note tilted in margin
          ======================================================== -->
     <section id="materiality">
-      <div class="fig-tag mono reveal">
-        <span class="red-bullet"></span>FIG. 03 — PHYSICAL VERIFICATION
+      <div class="pill-badge-group reveal">
+        <span class="pill-badge-id">03</span>
+        <span class="pill-badge-name">Physical Proof</span>
       </div>
 
-      <h2 class="section-title reveal">
-        If it only looks good in Figma, it doesn’t work.
-      </h2>
-
-      <p class="section-body reveal">
-        A vector on a glowing display is deceptive: it has no weight, no friction, and no ambient shadow. When creating Studio Vistara and printed editorial brochures, I test identities where they will actually be handled: on 120gsm uncoated paper, cast concrete walls, exterior signage, and physical book spreads.
-      </p>
-
-      <div class="material-split reveal">
-        <div class="material-visual">
-          <img src="./assets/vistaranew4.webp" alt="Studio Vistara mark tested in architectural and print reality" loading="lazy">
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <h2 class="section-title">
+            If it only looks good in Figma, it doesn’t work in reality.
+          </h2>
+          <p class="section-body">
+            A vector on a glowing backlit display is deceptive: it has zero mass, no friction, and no ambient shadow. When creating brand identities, packaging, and editorial publications, I test marks where they will actually be touched: on 120gsm uncoated paper, cast concrete walls, exterior signage, and physical book spreads.
+          </p>
         </div>
+        <!-- Custom Caliper & Sheet Gauge Icon -->
+        <div class="section-icon-stamp" title="Precision Caliper &amp; Gauge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 6v12M20 6v12M9 6v6M15 6v6M4 18h16" />
+            <circle cx="12" cy="18" r="1.5" fill="#bd1715" stroke="none" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- The Cobalt Grainy Box & Hand-Drawn Note Stage (Reference 2) -->
+      <div class="material-split reveal">
+        <!-- Isometric Cobalt Box Visual Piece -->
+        <div class="cobalt-box-card">
+          <svg class="cobalt-box-svg" viewBox="0 0 460 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Airbrush Grain Texture Filter -->
+              <filter id="airbrush-grain" x="0%" y="0%" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" result="noise" />
+                <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.32 0" result="stipple" />
+                <feComposite operator="in" in2="SourceGraphic" result="textured" />
+                <feBlend mode="multiply" in="SourceGraphic" in2="textured" />
+              </filter>
+
+              <!-- Electric Cobalt Gradients -->
+              <linearGradient id="cobalt-left-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0a4de3" />
+                <stop offset="60%" stop-color="#073fc0" />
+                <stop offset="100%" stop-color="#00277a" />
+              </linearGradient>
+
+              <linearGradient id="cobalt-right-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2d6cff" />
+                <stop offset="50%" stop-color="#0a4de3" />
+                <stop offset="100%" stop-color="#052c87" />
+              </linearGradient>
+
+              <linearGradient id="cobalt-flap-left" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1b60ff" />
+                <stop offset="100%" stop-color="#083ebc" />
+              </linearGradient>
+
+              <linearGradient id="cobalt-flap-right" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#3b76ff" />
+                <stop offset="100%" stop-color="#0b4be0" />
+              </linearGradient>
+            </defs>
+
+            <!-- Box Interior (Deep Indigo Void) -->
+            <polygon points="135,130 230,85 325,130 230,175" fill="#041238" />
+
+            <!-- Box Open Flaps (Reference 2) -->
+            <!-- Back Left Flap -->
+            <polygon points="135,130 80,95 175,55 230,85" fill="url(#cobalt-flap-left)" stroke="#ffffff" stroke-width="1.2" />
+            <!-- Back Right Flap -->
+            <polygon points="230,85 285,55 380,95 325,130" fill="url(#cobalt-flap-right)" stroke="#ffffff" stroke-width="1.2" />
+
+            <!-- Left Front Outer Flap -->
+            <polygon points="135,130 75,155 170,205 230,175" fill="url(#cobalt-flap-left)" stroke="#ffffff" stroke-width="1.2" />
+            <!-- Right Front Outer Flap -->
+            <polygon points="230,175 290,205 385,155 325,130" fill="url(#cobalt-flap-right)" stroke="#ffffff" stroke-width="1.2" />
+
+            <!-- Left Box Face -->
+            <polygon points="135,130 230,175 230,305 135,260" fill="url(#cobalt-left-grad)" filter="url(#airbrush-grain)" stroke="#ffffff" stroke-width="1.2" />
+            
+            <!-- Right Box Face -->
+            <polygon points="230,175 325,130 325,260 230,305" fill="url(#cobalt-right-grad)" filter="url(#airbrush-grain)" stroke="#ffffff" stroke-width="1.2" />
+
+            <!-- Cutout White Label Plates on Front Face (Reference 2) -->
+            <polygon points="172,185 198,172 198,205 172,218" fill="#ffffff" stroke="#c0c8db" stroke-width="0.6" />
+            <polygon points="188,235 220,220 220,265 188,280" fill="#ffffff" stroke="#c0c8db" stroke-width="0.6" />
+
+            <!-- Front Center Vertical Wireframe Seam -->
+            <line x1="230" y1="175" x2="230" y2="305" stroke="#ffffff" stroke-width="1.6" />
+
+            <!-- Dynamic Hand-Drawn SVG Arrow (Reference 2) -->
+            <g id="dynamic-arrow">
+              <path d="M 385 270 C 405 240, 395 210, 360 205" fill="none" stroke="#1f1d19" stroke-width="2" stroke-linecap="round" />
+              <path d="M 360 205 L 372 208 M 360 205 L 366 217" stroke="#1f1d19" stroke-width="2" stroke-linecap="round" />
+            </g>
+
+            <!-- Micro-credit mark -->
+            <text x="140" y="270" font-family="'JetBrains Mono', monospace" font-size="7" fill="#88a8f5" letter-spacing="0.04em">endlesss_systems</text>
+          </svg>
+
+          <!-- Handwritten Margin Note (Reference 2) -->
+          <div class="cobalt-margin-note">
+            <p>Больше, чем коробка.</p>
+            <span>MORE THAN A CONTAINER / 2026</span>
+          </div>
+        </div>
+
+        <!-- Specifications & Principles -->
         <div class="material-specs">
           <div class="spec-card">
-            <h5>Spatial Testing</h5>
-            <p>Evaluating letterforms against sunlight, concrete textures, and spatial view distances before finalizing guidelines.</p>
+            <h5>Spatial Verification</h5>
+            <p>Evaluating letterforms against natural sunlight, concrete textures, and varying viewing distances before declaring a guideline complete.</p>
           </div>
           <div class="spec-card">
             <h5>Tactile Degradation</h5>
-            <p>A resilient identity survives low-contrast photocopies, embroidered stitches, and low-res mobile avatars without losing character.</p>
+            <p>A resilient identity survives low-contrast photocopies, embroidered stitches on canvas, and low-res mobile avatars without collapsing.</p>
           </div>
+          <div class="spec-card">
+            <h5>Substrate Friction</h5>
+            <p>Screen vectors have no weight. Print demands calculating ink absorption, paper bulk, and tactile texture from day one.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Studio Vistara Real Project Proof Strip -->
+      <div class="physical-proof-strip reveal">
+        <img src="./assets/vistaranew4.webp" alt="Studio Vistara mark tested in architectural concrete and print reality" loading="lazy">
+        <div class="proof-caption">
+          <h6>STUDIO VISTARA · PHYSICAL SIGN-OFF</h6>
+          <p>The brand geometry tested directly against cast architectural concrete and natural ambient shadows.</p>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         FIG 04: COMPLEX SYSTEMS, ZERO FRICTION
+         STEP 04: COMPLEX B2B WORKFLOWS (WIZCOMMERCE)
          ======================================================== -->
     <section id="systems">
-      <div class="fig-tag mono reveal">
-        <span class="red-bullet"></span>FIG. 04 — DENSE SYSTEMS
+      <div class="pill-badge-group reveal">
+        <span class="pill-badge-id">04</span>
+        <span class="pill-badge-name">Systems Architecture</span>
       </div>
 
-      <h2 class="section-title reveal">
-        Complex B2B workflows without the enterprise ugliness.
-      </h2>
-
-      <p class="section-body reveal">
-        At WizCommerce, I design for wholesale commerce—an industry handling millions in volume, thousands of catalog SKUs, and fast-moving sales reps. The bad approach to enterprise design is hiding complexity behind ten nested popups. My approach is organizing density with uncompromising typographic discipline: power users work at speed, and new users never feel lost.
-      </p>
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <h2 class="section-title">
+            Complex B2B workflows without the enterprise ugliness.
+          </h2>
+          <p class="section-body">
+            At WizCommerce, I design for wholesale commerce—an industry handling millions in transaction volume, thousands of catalog SKUs, and fast-moving sales reps. The lazy approach to enterprise design is hiding complexity behind ten nested popups. My approach is organizing density with uncompromising typographic discipline: power users work at speed, and new users never feel overwhelmed.
+          </p>
+        </div>
+        <!-- Custom Modular Data Matrix Icon -->
+        <div class="section-icon-stamp" title="Modular Data Matrix &amp; Route">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+            <path d="M10 6.5h4M6.5 10v4M14 17.5h-4" stroke="#bd1715" stroke-width="1.6" />
+          </svg>
+        </div>
+      </div>
 
       <div class="b2b-box reveal">
         <div class="mono" style="display:flex;justify-content:space-between;color:var(--muted);border-bottom:1px solid var(--hair-strong);padding-bottom:10px;">
           <span>WIZCOMMERCE · PRODUCT &amp; BRAND DESIGN</span>
           <span>ENTERPRISE CLARITY</span>
         </div>
+
+        <div class="b2b-visual-frame">
+          <img src="./assets/wizcrm.png" alt="WizCommerce wholesale B2B platform interface and workflow" loading="lazy">
+          <span class="b2b-badge-overlay mono">HIGH DENSITY ENGINE · LIVE PRODUCT</span>
+        </div>
+
         <div class="b2b-grid">
           <div class="b2b-pillar">
             <h5>Hierarchical Contrast</h5>
@@ -824,22 +1408,41 @@
     </section>
 
     <!-- ========================================================
-         FIG 05: THE AI + TASTE EQUATION
+         STEP 05: THE AI + HUMAN TASTE DIAL
          ======================================================== -->
     <section id="ai-dial">
-      <div class="fig-tag mono reveal">
-        <span class="red-bullet"></span>FIG. 05 — THE HYBRID STACK
+      <div class="pill-badge-group reveal">
+        <span class="pill-badge-id">05</span>
+        <span class="pill-badge-name">The Subtraction Dial</span>
       </div>
 
-      <h2 class="section-title reveal">
-        AI creates fifty options in an hour.<br>Taste knows which forty-nine to delete.
-      </h2>
-
-      <p class="section-body reveal">
-        I do not romanticize doing manual grunt work when software can accelerate exploration. I actively integrate AI models for rapid mood panels, texture generation, and variant testing. But the danger of AI-driven design is that everything looks 80% finished and 100% generic. That remaining 20%—the exact typographic kerning, the refusal to use a cliché, the human perspective—is where real taste lives.
-      </p>
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <h2 class="section-title">
+            AI creates fifty options in an hour.<br>Taste knows which forty-nine to delete.
+          </h2>
+          <p class="section-body">
+            I do not romanticize doing manual grunt work when software can accelerate exploration. I actively integrate AI models for rapid mood panels, texture generation, and variant testing. But the danger of AI-driven design is that everything looks 80% finished and 100% generic. That remaining 20%—the exact typographic kerning, the refusal to use a cliché, the human perspective—is where real taste lives.
+          </p>
+        </div>
+        <!-- Custom Subtractive Aperture Icon -->
+        <div class="section-icon-stamp" title="Subtractive Slit Aperture">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="5" x2="9" y2="10" />
+            <line x1="3" y1="12" x2="9" y2="12" />
+            <line x1="3" y1="19" x2="9" y2="14" />
+            <line x1="10" y1="3" x2="10" y2="9" />
+            <line x1="10" y1="15" x2="10" y2="21" />
+            <line x1="10" y1="12" x2="21" y2="12" stroke="#bd1715" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
 
       <div class="dial-block reveal">
+        <div class="taste-stamp mono">
+          HUMAN<br>VERIFIED<br>2026
+        </div>
+
         <div class="dial-equation mono">
           <div class="equation-col">
             <strong>SYNTHESIS</strong>
@@ -858,20 +1461,32 @@
     </section>
 
     <!-- ========================================================
-         FIG 06: WORKING TERMS
+         STEP 06: WORKING TERMS (THE COALFACE)
          ======================================================== -->
     <section id="collaboration">
-      <div class="fig-tag mono reveal">
-        <span class="red-bullet"></span>FIG. 06 — THE COALFACE
+      <div class="pill-badge-group reveal">
+        <span class="pill-badge-id">06</span>
+        <span class="pill-badge-name">Direct Execution</span>
       </div>
 
-      <h2 class="section-title reveal">
-        Direct collaboration. Zero account layers.
-      </h2>
-
-      <p class="section-body reveal">
-        When you work with an agency, you brief an account director, who briefs a strategist, who briefs a junior designer. By the time the work reaches the screen, the soul has been squeezed out of it.
-      </p>
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <h2 class="section-title">
+            Direct collaboration. Zero intermediary agency layers.
+          </h2>
+          <p class="section-body">
+            When you work with an agency, you brief an account director, who briefs a strategist, who briefs a junior designer. By the time the work reaches the screen, the soul has been squeezed out of it.
+          </p>
+        </div>
+        <!-- Custom Direct Bridge Node Icon -->
+        <div class="section-icon-stamp" title="Direct Node Conduit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5" cy="12" r="3" fill="#1f1d19" />
+            <circle cx="19" cy="12" r="3" fill="#bd1715" />
+            <line x1="8" y1="12" x2="16" y2="12" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
 
       <div class="terms-list reveal">
         <div class="term-row">
@@ -893,8 +1508,9 @@
          ENDING: NEXT STEPS
          ======================================================== -->
     <section class="ending-section" id="contact">
-      <div class="fig-tag mono reveal">
-        <span class="red-bullet"></span>NEXT STEPS
+      <div class="pill-badge-group reveal">
+        <span class="pill-badge-id">07</span>
+        <span class="pill-badge-name">Next Steps</span>
       </div>
 
       <h2 class="ending-h2 reveal">
