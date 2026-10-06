@@ -107,8 +107,8 @@ dialog[open]{animation:dialog-enter .25s cubic-bezier(.22,1,.36,1)}
 @media(max-width:900px){.work-intro{padding-left:clamp(24px,7vw,80px)}}@media(max-width:600px){.work-intro{padding-left:24px;padding-top:56px}.story-bottom>span{order:initial}.story-modes{width:248px}}@media(prefers-reduced-motion:reduce){.story-modes:before,.story-modes>span,.story-main-cta{transition:none}.story-main-cta:hover{transform:none}}
 
 /* Unified centred page frame and tactile uncoated paper. */
-:root{--page-gutter:clamp(24px,8vw,160px);--content-max:1400px;--pad:var(--page-gutter);--paper:#f4efe3;--line:#d7d0c2;--paper-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Cpath fill='%238c8068' opacity='.22' filter='url(%23paper)' d='M0 0h240v240H0z'/%3E%3C/svg%3E");--paper-fibres:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='420' viewBox='0 0 540 420'%3E%3Cg fill='none' stroke='%239b8d73' stroke-opacity='.12' stroke-width='.6'%3E%3Cpath d='m24 37 8-2m108 46 12 1m117-54-3 9m99 86 15-2m97-85 7 3M57 192l14-3m91 57 5-9m120-42 11 3m128 68 13-2M29 357l11 2m148-28 13-2m86 63 5-12m118-42 17 3m72-91-4 10'/%3E%3C/g%3E%3C/svg%3E")}
-body{background-color:var(--paper);background-image:var(--paper-grain),var(--paper-fibres);background-size:240px 240px,540px 420px}body:after{opacity:.065;mix-blend-mode:multiply}.site-header{padding-inline:var(--page-gutter);background-color:var(--paper);background-image:var(--paper-grain),var(--paper-fibres)}
+:root{--dot-grid:radial-gradient(rgba(41,40,36,0.12) 1.25px,transparent 1.25px);--dot-size:24px 24px;--page-gutter:clamp(24px,8vw,160px);--content-max:1400px;--pad:var(--page-gutter);--paper:#f4efe3;--line:#d7d0c2;--paper-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Cpath fill='%238c8068' opacity='.22' filter='url(%23paper)' d='M0 0h240v240H0z'/%3E%3C/svg%3E");--paper-fibres:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='420' viewBox='0 0 540 420'%3E%3Cg fill='none' stroke='%239b8d73' stroke-opacity='.12' stroke-width='.6'%3E%3Cpath d='m24 37 8-2m108 46 12 1m117-54-3 9m99 86 15-2m97-85 7 3M57 192l14-3m91 57 5-9m120-42 11 3m128 68 13-2M29 357l11 2m148-28 13-2m86 63 5-12m118-42 17 3m72-91-4 10'/%3E%3C/g%3E%3C/svg%3E")}
+body{background-color:var(--paper);background-image:var(--dot-grid),var(--paper-grain),var(--paper-fibres);background-size:24px 24px,240px 240px,540px 420px;background-position:center top,0 0,0 0}body:after{opacity:.065;mix-blend-mode:multiply}.site-header{padding-inline:var(--page-gutter);background-color:var(--paper);background-image:var(--dot-grid),var(--paper-grain),var(--paper-fibres);background-size:24px 24px,240px 240px,540px 420px;background-position:center top,0 0,0 0}
 #app>section{width:calc(100% - 2 * var(--page-gutter));max-width:var(--content-max);margin-inline:auto;padding-inline:0!important;background-color:transparent}
 #app>.hero-option{overflow:visible;min-height:calc(100svh - 100px);padding-top:50px;padding-bottom:60px}.hero-storymaker:before{background:none}.hero-storymaker .story-support{min-height:48px}.story-object{flex-shrink:0}
 #app .project-row,#app .film-section,#app .studies-index,#app .row-heading,#app .rail-footer,#app .section-title,#app .case-work-heading,#app .case-narrative,#app .project-story{background-color:transparent;padding-inline:0!important}.row-heading{max-width:100%}.row-heading>p{max-width:660px}.rail{padding-inline:0!important}.rail-footer{margin-inline:0!important}.more-work>.project-row{width:100%;max-width:none;margin-inline:0}.case-source{margin-left:0}.work-intro{padding-top:80px;padding-bottom:48px}.work-intro>p{margin:20px 0 0}.home-about{display:flex;flex-direction:column;align-items:flex-start;gap:0;text-align:left}.home-about>h2{margin:22px 0 0;max-width:850px}.home-about>p{margin:24px 0 0;max-width:640px}.home-about>.intro-links{margin-top:28px}.hero-option{background:none}.name-footer{padding:60px var(--page-gutter);flex-direction:column;justify-content:flex-end;align-items:center;gap:30px;background-color:#25251f;background-image:var(--paper-grain),var(--paper-fibres)}.name-footer>span{font-size:clamp(40px,10.6vw,170px);max-width:1400px}.footer-character{display:block;object-fit:contain;width:clamp(150px,19vw,260px);height:auto;animation:footer-drift 7s ease-in-out infinite;transform-origin:50% 85%}@keyframes footer-drift{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-12px) rotate(2deg)}}
@@ -226,28 +226,7 @@ body[data-detail-layout=cinematic] .project-title-row{display:grid;grid-template
 @media(max-width:600px){.brand-logo-group{gap:42px;padding-right:42px}#app .brand-logo-group img{height:calc(var(--logo-height)*.8)}.brand-logo-track{animation-duration:45s}}
 @media(prefers-reduced-motion:reduce){.brand-logo-track{animation:none;width:100%}.brand-logo-group{flex-wrap:wrap;justify-content:center;gap:28px 36px;padding:0;width:100%}.brand-logo-group[aria-hidden]{display:none}.brand-logo-window{mask-image:none}}
 </style><style id="cta-and-grid-styles">
-/* Subtle architectural dot grid texture below the hero section */
-#app > .brand-strip {
-  position: relative;
-  isolation: isolate;
-  padding-block: 40px 52px;
-}
-#app > .brand-strip::before {
-  content: "";
-  position: absolute;
-  inset-block: 0;
-  left: 50%;
-  width: var(--gallery-viewport, 100vw);
-  transform: translateX(-50%);
-  z-index: -1;
-  pointer-events: none;
-  background-image: radial-gradient(rgba(41, 40, 36, 0.13) 1.25px, transparent 1.25px);
-  background-size: 22px 22px;
-  background-position: center center;
-  mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
-}
-
+/* Architectural dot grid structure flows across the full page */
 /* Uniform CTA buttons across all pages */
 .btn {
   /* Theme tokens — override these to recolour the button */
