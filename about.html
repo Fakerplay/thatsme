@@ -151,17 +151,99 @@ body{max-width:none}
 #app .project-title-row,body[data-detail-layout] #app .project-title-row{display:block;grid-template-columns:none}
 #app .project-title-row>p,body[data-detail-layout] #app .project-title-row>p{margin:24px 0 0;max-width:760px}
 
-/* A colourful, illustrated process page. */
-.approach-hero{display:grid;grid-template-columns:1fr 1.1fr;gap:5%;align-items:center;padding-block:80px 95px}.approach-hero h1{font-size:clamp(44px,5.6vw,86px);line-height:1.04;letter-spacing:-.055em;margin:24px 0}.approach-hero h1 span{color:#315ac5}.approach-hero p{font-size:17px;line-height:1.7;max-width:480px;color:#5e5a50}.approach-hero figure{margin:0}.approach-hero figure img{width:100%;height:auto;mix-blend-mode:multiply}.approach-hero figcaption{text-align:center;font-size:11px;color:#71695a;margin-top:18px}.approach-inline-link{display:inline-flex;align-items:center;gap:14px;margin-top:20px;font-size:13px;border-bottom:1px solid #315ac5;padding-bottom:9px}
-.process-playground{padding-block:40px 100px}.process-heading{position:relative}.process-heading h2,.practice-heading h2{font-size:clamp(34px,4vw,58px);line-height:1.1;letter-spacing:-.04em;margin:18px 0}.process-heading>p{color:#71695a;font-size:13px}.process-tabs{display:grid;grid-template-columns:repeat(4,1fr);margin:36px 0 0;gap:8px}.process-tabs button{display:flex;align-items:center;justify-content:center;gap:13px;padding:18px;font-size:15px;border:1px solid #c8bfaa;border-radius:8px 8px 0 0;transition:background .2s,transform .2s}.process-tabs button:nth-child(1){background:#f4d578}.process-tabs button:nth-child(2){background:#efa28c}.process-tabs button:nth-child(3){background:#afbfeb}.process-tabs button:nth-child(4){background:#becfac}.process-tabs button[aria-selected=true]{transform:translateY(-5px);box-shadow:0 5px 0 #25251f;border-color:#25251f}.process-symbol{font-size:30px;line-height:1}.process-tabs button:focus-visible{outline:3px solid #315ac5;outline-offset:4px}
-#process-panel{display:grid;grid-template-columns:1fr 1.1fr;gap:7%;align-items:center;padding:50px;background:#eae3d4;border-radius:0 0 12px 12px;min-height:410px}.process-drawing{align-self:stretch;display:flex;flex-direction:column;justify-content:center;align-items:center}.process-drawing svg{width:100%;max-width:370px;animation:process-float 7s ease-in-out infinite}.process-drawing>span{font-size:12px;padding:9px 14px;background:#fff9eb;transform:rotate(-3deg)}.process-copy h3{font-size:clamp(26px,2.8vw,40px);line-height:1.15;letter-spacing:-.035em;margin:16px 0}.process-copy>p{font-size:15px;line-height:1.75;color:#615b4e}.process-copy ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.process-copy li{font-size:11px;padding:7px 10px;border:1px solid #bdb29d;border-radius:3px}
-.approach-practice{padding-block:15px 80px}.practice-heading{margin-bottom:40px}.practice-examples{display:flex;flex-direction:column;gap:32px}.practice-example{display:grid;grid-template-columns:1fr 1fr;gap:6%;align-items:center;padding:26px;background:#e6c6b8;border-radius:8px}.practice-example:nth-child(2){background:#cbd6bd}.practice-example:nth-child(3){background:#c8d3e8}.practice-example:nth-child(2) figure{order:2}.practice-example figure{margin:0;overflow:hidden}.practice-example img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain;transition:transform .4s}.practice-example:hover img{transform:scale(1.025)}.practice-example h3{font-size:clamp(25px,3vw,42px);line-height:1.12;letter-spacing:-.035em;margin:18px 0}.practice-example p{font-size:15px;line-height:1.65;max-width:370px}.practice-open{display:inline-flex;align-items:center;gap:14px;font-size:12px;margin-top:24px}.approach-invite{display:flex;align-items:center;justify-content:center;gap:7vw;padding-block:70px 100px;border-top:1px solid var(--line)}.invite-doodle{font-size:190px;color:#ef7e63;line-height:1;animation:process-float 8s ease-in-out infinite}.approach-invite h2{font-size:clamp(35px,4.4vw,65px);line-height:1.06;letter-spacing:-.04em;margin:22px 0}.approach-invite a{display:inline-flex;align-items:center;gap:16px;font-size:14px;border-bottom:1px solid;padding-bottom:9px}@keyframes process-float{50%{transform:translateY(-7px) rotate(2deg)}}
-@media(max-width:760px){.approach-hero{grid-template-columns:1fr;padding-block:50px 65px;gap:28px}.approach-hero p{font-size:16px}.approach-hero figure{max-width:520px}.process-tabs{grid-template-columns:repeat(2,1fr);gap:10px}.process-tabs button{border-radius:6px;padding:14px;font-size:13px}.process-symbol{font-size:25px}#process-panel{grid-template-columns:1fr;gap:30px;padding:26px 22px;margin-top:14px;border-radius:8px}.process-drawing svg{max-width:260px}.process-playground{padding-bottom:60px}.practice-example{grid-template-columns:1fr;gap:24px;padding:20px}.practice-example:nth-child(2) figure{order:0}.practice-example h3{margin:12px 0}.approach-invite{gap:20px;align-items:flex-start;padding-block:45px 65px}.invite-doodle{font-size:70px}.approach-invite h2{font-size:34px}}
-@media(prefers-reduced-motion:reduce){.process-drawing svg,.invite-doodle{animation:none}.practice-example img,.process-tabs button{transition:none}}
-
-.approach-doodle{width:100px;height:104px;position:absolute;pointer-events:none;z-index:1}.process-heading{padding-right:200px}.process-heading>.doodle-pencil{right:35px;top:20px;width:125px;height:130px;transform:rotate(13deg)}.process-heading>.doodle-spark{right:170px;top:-15px;width:65px;height:68px;transform:rotate(-12deg)}.process-playground{position:relative}.process-playground:before{content:'';position:absolute;width:72px;height:22px;background:#ecc66599;left:30px;bottom:85px;transform:rotate(-8deg);z-index:1}.practice-heading{position:relative;padding-right:180px}.practice-heading>.doodle-arrow{right:170px;top:30px;transform:rotate(20deg)}.practice-heading>.doodle-swatches{right:10px;top:20px;width:130px;height:135px;transform:rotate(8deg)}.practice-example{position:relative;margin-top:20px}.practice-example>.approach-doodle{right:-20px;top:-40px;width:95px;height:98px;transform:rotate(12deg)}.practice-example:nth-child(2)>.approach-doodle{right:auto;left:-24px;transform:rotate(-15deg)}.practice-example figure{position:relative}.practice-example figure:before{content:'';position:absolute;top:2px;left:32%;width:75px;height:19px;transform:rotate(-8deg);background:#f4efe3c9;z-index:1}.approach-invite{position:relative}.approach-invite>.doodle-orbit{right:8px;top:40px;width:95px;height:100px}.approach-invite>.doodle-spark{left:10px;bottom:20px;transform:rotate(25deg);width:60px;height:65px}.process-drawing{position:relative}.process-drawing:before,.process-drawing:after{content:'';position:absolute;width:8px;height:8px;background:#ef7e63;border-radius:50%;left:3%;top:20%}.process-drawing:after{width:12px;height:12px;background:#315ac5;left:auto;right:5%;top:65%}
-@media(max-width:760px){.process-heading,.practice-heading{padding-right:0;padding-top:80px}.process-heading>.doodle-pencil{width:75px;height:78px;top:-8px;right:5px}.process-heading>.doodle-spark{width:50px;height:52px;right:95px;top:0}.practice-heading>.doodle-arrow{top:0;right:95px;width:65px;height:68px}.practice-heading>.doodle-swatches{top:0;right:0;width:80px;height:83px}.practice-example>.approach-doodle{width:65px;height:68px;right:-9px;top:-26px}.practice-example:nth-child(2)>.approach-doodle{left:-12px}.approach-invite>.doodle-orbit{top:auto;bottom:10px;right:8px;width:58px;height:60px}.approach-invite>.doodle-spark{display:none}}
-
+/* ========================================================
+   APPROACH & METHODOLOGY: EDITORIAL FIRST PRINCIPLES SYSTEM
+   ======================================================== */
+.approach-page{width:min(100%,1040px);margin:0 auto;padding:48px var(--pad) 110px}
+.approach-hero{margin-bottom:48px}
+.pill-badge-group{display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;user-select:none}
+.pill-badge-id{display:inline-flex;align-items:center;justify-content:center;padding:3px 9px;border:1px solid rgba(31,29,25,.28);background:rgba(255,255,255,.55);border-radius:999px;font-family:var(--mono,monospace);font-size:10.5px;font-weight:600;color:var(--ink);box-shadow:0 1px 3px rgba(31,29,25,.04)}
+.pill-badge-name{display:inline-flex;align-items:center;padding:3px 11px;border:1px solid rgba(31,29,25,.28);background:rgba(235,230,222,.65);border-radius:999px;font-family:var(--mono,monospace);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);box-shadow:0 1px 3px rgba(31,29,25,.04)}
+.approach-h1{font-family:var(--serif);font-size:clamp(38px,5.2vw,70px);line-height:1.06;letter-spacing:-.04em;font-weight:400;margin:0 0 20px;color:var(--ink);text-wrap:balance}
+.approach-h1 em,.approach-h1 span{font-style:italic;color:#6b655b}
+.approach-lead{font-size:clamp(17px,1.35vw,20.5px);line-height:1.62;color:#38342c;margin:0 0 32px;max-width:66ch;text-wrap:pretty}
+.spec-ledger{background:rgba(238,233,225,.65);border:1px solid rgba(31,29,25,.22);padding:18px 22px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;border-radius:4px;box-shadow:0 2px 6px rgba(31,29,25,.03)}
+.spec-item{display:flex;flex-direction:column;gap:4px}
+.spec-label{font-family:var(--mono,monospace);font-size:9.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.spec-val{font-size:13px;font-weight:500;color:var(--ink);line-height:1.35}
+.approach-jump-nav{display:flex;align-items:center;gap:16px;padding:14px 18px;background:rgba(255,255,255,.55);border:1px solid rgba(31,29,25,.16);border-radius:8px;margin-block:36px 54px;overflow-x:auto;scrollbar-width:none}
+.jump-title{font-family:var(--mono,monospace);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;font-weight:500}
+.jump-links{display:flex;gap:8px;flex-wrap:wrap}
+.jump-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid rgba(31,29,25,.22);border-radius:999px;font-size:12.5px;font-family:var(--sans);background:#fcfaf5;color:var(--ink);cursor:pointer;transition:background .15s,border-color .15s,transform .15s;white-space:nowrap}
+.jump-pill span{font-family:var(--mono,monospace);font-size:10px;color:#bd1715;font-weight:600}
+.jump-pill:hover{background:#fff;border-color:var(--ink);transform:translateY(-1px)}
+.jump-pill:active{transform:scale(.97)}
+.approach-section{padding-block:clamp(48px,7vh,82px);border-bottom:1px solid rgba(31,29,25,.14);position:relative;outline:none}
+.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:28px}
+.section-head-text{flex:1}
+.approach-h2{font-family:var(--serif);font-size:clamp(26px,3.2vw,40px);line-height:1.15;letter-spacing:-.035em;font-weight:400;margin:0 0 14px;color:var(--ink);text-wrap:balance}
+.approach-h2 em{font-style:italic;color:#6b655b}
+.section-desc{font-size:16px;line-height:1.65;color:#454139;margin:0;max-width:65ch;text-wrap:pretty}
+.section-stamp-icon{width:44px;height:44px;flex-shrink:0;border:1px solid rgba(31,29,25,.24);background:rgba(255,255,255,.5);border-radius:6px;display:grid;place-items:center;color:var(--ink);box-shadow:0 2px 6px rgba(31,29,25,.04);transition:transform .2s}
+.section-stamp-icon:hover{transform:translateY(-2px);border-color:var(--ink)}
+.section-stamp-icon svg{width:22px;height:22px}
+.blueprint-card,.b2b-card,.proof-card{background:rgba(246,241,230,.75);border:1px solid rgba(31,29,25,.2);border-radius:4px;padding:clamp(20px,3vw,32px);box-shadow:0 10px 28px rgba(35,28,20,.04)}
+.card-bar{display:flex;justify-content:space-between;font-family:var(--mono,monospace);font-size:10px;color:var(--muted);border-bottom:1px solid rgba(31,29,25,.14);padding-bottom:10px;margin-bottom:20px;letter-spacing:.06em;text-transform:uppercase}
+.card-bar.dark{color:#9c9589;border-bottom-color:rgba(255,255,255,.14)}
+.blueprint-diagram{height:180px;border:1px dashed rgba(31,29,25,.25);display:grid;place-items:center;background:linear-gradient(rgba(31,29,25,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(31,29,25,.03) 1px,transparent 1px);background-size:20px 20px;margin-bottom:20px}
+.blueprint-diagram svg{width:90%;height:85%}
+.card-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:16px;border-top:1px solid rgba(31,29,25,.14)}
+.tenet h4{font-size:15px;font-weight:500;margin:0 0 6px;color:var(--ink);line-height:1.35}
+.tenet p{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0;text-wrap:pretty}
+.tenet.dark h4{color:#ede7dc}
+.tenet.dark p{color:#9c9589}
+.filmstrip-box{background:#181714;color:#ede7dc;padding:clamp(20px,3vw,32px);border-radius:4px;box-shadow:0 18px 40px rgba(15,12,9,.25)}
+.filmstrip-frames{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.film-frame{margin:0;position:relative;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.14);border-radius:2px}
+.film-frame img{width:100%;aspect-ratio:16/9;object-fit:cover;filter:saturate(.9) contrast(1.05);transition:transform .35s ease,filter .35s ease}
+.film-frame:hover img{transform:scale(1.03);filter:saturate(1.05) contrast(1.1)}
+.frame-tag{position:absolute;bottom:8px;left:8px;right:8px;display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#ede7dc;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);padding:3px 6px;border-radius:2px;font-family:var(--mono,monospace)}
+.frame-time{color:#f4ff2b;font-weight:600}
+.filmstrip-footer{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)}
+.proof-hero-media{position:relative;border-radius:3px;overflow:hidden;margin-bottom:22px;border:1px solid rgba(31,29,25,.2)}
+.proof-hero-media img{width:100%;height:auto;display:block;max-height:420px;object-fit:cover}
+.proof-badge{position:absolute;top:12px;left:12px;background:rgba(18,17,14,.85);color:#fff;font-family:var(--mono,monospace);font-size:9.5px;padding:4px 8px;border-radius:2px;letter-spacing:.06em}
+.proof-specs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:16px;border-top:1px solid rgba(31,29,25,.14)}
+.spec-block{display:flex;flex-direction:column;gap:4px}
+.spec-num{font-family:var(--mono,monospace);font-size:11px;color:#bd1715;font-weight:600}
+.spec-block h4{font-size:14.5px;font-weight:500;margin:0 0 4px;color:var(--ink);line-height:1.35}
+.spec-block p{font-size:13px;line-height:1.55;color:var(--muted);margin:0;text-wrap:pretty}
+.b2b-media-frame{border:1px solid rgba(31,29,25,.2);border-radius:3px;overflow:hidden;margin-bottom:20px;background:#fff}
+.b2b-media-frame img{width:100%;height:auto;display:block;max-height:420px;object-fit:cover;object-position:top}
+.dial-block{position:relative;border:1px solid var(--ink);background:rgba(238,232,222,.7);border-radius:4px;padding:clamp(24px,3.5vw,36px);box-shadow:0 10px 30px rgba(35,28,20,.05)}
+.taste-stamp{position:absolute;top:-14px;right:24px;width:68px;height:68px;border:1.5px dashed #bd1715;border-radius:50%;display:grid;place-items:center;text-align:center;transform:rotate(11deg);background:#f6f1e6;color:#bd1715;font-family:var(--mono,monospace);font-size:7.5px;line-height:1.15;font-weight:700;letter-spacing:.08em;user-select:none}
+.dial-equation{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;padding-block:18px;border-block:1px solid rgba(31,29,25,.2);margin-block:10px 18px}
+.eq-tag{font-family:var(--mono,monospace);font-size:9.5px;color:#bd1715;letter-spacing:.08em;font-weight:600;display:block;margin-bottom:4px}
+.equation-col h4{font-size:16px;font-weight:500;margin:0 0 6px;color:var(--ink);line-height:1.35}
+.equation-col p{font-size:13.5px;line-height:1.5;color:var(--muted);margin:0;text-wrap:pretty}
+.dial-sym{font-family:var(--serif);font-size:32px;color:#bd1715;font-weight:400;text-align:center}
+.dial-verdict{text-align:center;font-family:var(--mono,monospace);font-size:10.5px;color:var(--muted);letter-spacing:.06em}
+.terms-list{display:flex;flex-direction:column;gap:16px;margin-top:24px}
+.term-row{display:grid;grid-template-columns:220px 1fr;gap:24px;padding-top:16px;border-top:1px solid rgba(31,29,25,.2);align-items:baseline}
+.term-meta{display:flex;align-items:center;gap:10px}
+.term-num{font-family:var(--mono,monospace);font-size:11px;color:#bd1715;font-weight:600}
+.term-meta strong{font-family:var(--mono,monospace);font-size:12px;letter-spacing:.06em;color:var(--ink)}
+.term-row p{font-size:14.5px;line-height:1.6;color:#433f38;margin:0;text-wrap:pretty}
+.approach-closing{padding-block:clamp(56px,9vh,100px);outline:none}
+.closing-h2{font-family:var(--serif);font-size:clamp(32px,4.2vw,56px);line-height:1.1;letter-spacing:-.035em;font-weight:400;margin:0 0 16px;color:var(--ink);text-wrap:balance}
+.closing-desc{font-size:clamp(16px,1.25vw,19px);line-height:1.6;color:var(--muted);margin:0 0 32px;max-width:58ch;text-wrap:pretty}
+.closing-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+@media(max-width:760px){
+  .approach-page{padding-top:32px;padding-bottom:70px}
+  .spec-ledger{grid-template-columns:1fr;gap:12px;padding:14px 16px}
+  .approach-jump-nav{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 14px;margin-block:24px 36px}
+  .section-head{flex-direction:column;gap:12px}
+  .section-stamp-icon{display:none}
+  .card-grid-2,.filmstrip-footer,.proof-specs-grid{grid-template-columns:1fr;gap:16px}
+  .filmstrip-frames{grid-template-columns:1fr}
+  .dial-equation{grid-template-columns:1fr;gap:12px;text-align:left}
+  .dial-sym{font-size:24px;text-align:left}
+  .term-row{grid-template-columns:1fr;gap:6px}
+  .taste-stamp{width:56px;height:56px;font-size:6.5px;top:-10px;right:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .jump-pill,.film-frame img,.section-stamp-icon{transition:none!important;transform:none!important}
+}
 
 /* The hero entrance is choreographed in place; typography stays untouched. */
 .hero-storymaker .option-enter{animation:none!important}.hero-storymaker .story-character{animation:hero-breathe 10s ease-in-out 2.2s infinite}.hero-storymaker .changing-story{will-change:auto}.hero-storymaker .story-support{min-height:3.5em}.hero-storymaker .cursor-mark{display:none}.hero-storymaker .story-modes:before{transition:transform .75s cubic-bezier(.16,1,.3,1)}
@@ -170,12 +252,6 @@ body{max-width:none}
 
 
 
-.finish-picker{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;padding:24px;background:var(--paper);border-top:1px solid var(--line);color:var(--ink)}.finish-picker>span{font-size:12px;margin-right:8px}.finish-picker button{padding:10px 18px;border:1px solid #b8ad98;border-radius:6px;font-size:12px}.finish-picker button[aria-pressed=true]{outline:2px solid #315ac5;outline-offset:3px}
-:root[data-button-finish=silver]{--metal-face:linear-gradient(175deg,#fff 0%,#e6e8eb 28%,#c2c6cc 49%,#f7f8fa 52%,#d4d7dc 100%);--metal-edge:#9b9fa7;--metal-ink:#30343b;--metal-shadow:#777d86}
-:root[data-button-finish=gold]{--metal-face:linear-gradient(175deg,#fff4ce 0%,#e9d28b 28%,#bb9345 49%,#fff0b6 52%,#d9b969 100%);--metal-edge:#ab8742;--metal-ink:#493817;--metal-shadow:#947139}
-:root[data-button-finish=silver] :is(button:not(.art-slide):not(.review-pin),a.pill,.story-main-cta),:root[data-button-finish=gold] :is(button:not(.art-slide):not(.review-pin),a.pill,.story-main-cta){background:var(--metal-face)!important;color:var(--metal-ink)!important;border:1px solid var(--metal-edge)!important;box-shadow:inset 0 1px 0 #fff9,inset 0 -1px 1px #0002,0 2px 0 var(--metal-shadow),0 3px 5px #00000012!important;text-shadow:0 1px 0 #ffffff85}
-:root[data-button-finish] :is(button:not(.art-slide):not(.review-pin),a.pill,.story-main-cta):active{box-shadow:inset 0 2px 4px #0002,0 1px 0 #fff7!important}
-.finish-picker [data-finish=silver]{background:linear-gradient(175deg,#fff,#c2c6cc 49%,#f7f8fa 52%,#d4d7dc);color:#30343b}.finish-picker [data-finish=gold]{background:linear-gradient(175deg,#fff4ce,#bb9345 49%,#fff0b6 52%,#d9b969);color:#493817}.finish-picker [data-finish=default]{background:#f4efe3;color:#292824}
 
 .project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .project-tag{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#eeebe3;color:#202020;font-size:14px;font-weight:400;line-height:1;font-family:var(--sans);border:0}
@@ -343,7 +419,7 @@ body{max-width:none}
 @media(prefers-reduced-motion:reduce){.ae-fragment{transition:none}.ae-fragment:hover{transform:none}}
 </style><style id="about-folio-overlay">
 body:has(.about-folio){background-color:#d8d3c9;background-image:var(--paper-grain),var(--paper-fibres)}
-body:has(.about-folio) .site-header,body:has(.about-folio) .name-footer,body:has(.about-folio) .finish-picker{display:none!important}
+body:has(.about-folio) .site-header,body:has(.about-folio) .name-footer{display:none!important}
 #app>.about-folio{position:relative;width:calc(100% - 64px);max-width:1160px;margin:32px auto 64px;padding:0 clamp(28px,5.5vw,80px);background-color:#f6f1e6;background-image:var(--paper-grain),var(--paper-fibres);box-shadow:0 20px 80px #4d433321,0 1px 3px #4d433315;border-radius:12px;animation:folio-arrive .7s cubic-bezier(.22,1,.36,1) both}
 .folio-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0 22px;border-bottom:1px solid #d8cebd;font-size:12px;letter-spacing:.05em}.folio-bar>span{color:#746956}.folio-close{display:flex;align-items:center;gap:10px;color:#34362e;text-decoration:none;padding:10px 13px;border:1px solid #bfb4a1;border-radius:50px;font-size:12px;letter-spacing:0;background:#f7f2e8}.folio-close svg{width:16px;height:16px}.folio-close:hover{background:#e5dccb}.folio-close:focus-visible{outline:2px solid #a33728;outline-offset:4px}
 .about-folio .ae{width:100%;max-width:none;margin:0;padding-block:80px}.about-folio .ae-intro{display:grid;grid-template-columns:1.08fr 1fr;column-gap:60px;padding-block:65px 85px;align-items:start}.about-folio .ae-intro>.ae-overline{grid-column:1;grid-row:1;margin:0 0 25px}.about-folio .ae-intro h1{grid-column:1;grid-row:2;font-size:clamp(40px,4.3vw,61px);line-height:1.06;letter-spacing:-.045em;margin:0 0 30px}.about-folio .ae-intro-grid{display:contents}.about-folio .ae-intro-copy{grid-column:1;grid-row:3}.about-folio .ae-intro-copy h2{font-size:22px;line-height:1.3;letter-spacing:-.02em}.about-folio .ae-intro-copy p{font-size:17px;line-height:1.6;margin-top:20px}.about-folio .ae-portrait{grid-column:2;grid-row:1/4;align-self:center;padding:12px 12px 23px;transform:rotate(2deg);background:#fffcf5;box-shadow:2px 4px 4px #50443212,0 16px 30px #50443218}.about-folio .ae-portrait img{border-radius:3px!important}.about-folio .ae-portrait:before{background-color:#c9bc9b9c;background-image:var(--paper-grain);height:34px;width:110px;top:-14px}.about-folio .ae-portrait figcaption{font-size:11px;display:block;line-height:1.8}.about-folio .ae-portrait figcaption span{display:block}.about-folio .ae-stats{gap:26px;margin-top:30px}.about-folio .ae-stats strong{font-size:28px}.about-folio .ae-stats span{font-size:11px}
@@ -720,9 +796,364 @@ function home(){return `<section class="hero-option hero-storymaker" aria-label=
 
 function about(){return `<article class="about-folio about-personal" aria-label="About Shubham Shinde"><div class="folio-bar"><span>Shubham Shinde</span><a class="folio-close" href="#/" aria-label="Close About and return to home">Close <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></a></div><section class="ae ae-intro"><h1>I’m Shubham.<br>I like making things—and figuring out how to make them <span>better.</span></h1><div class="ae-intro-grid"><div class="ae-intro-copy"><p>I’m a multidisciplinary designer and creative lead based in Bengaluru. My work moves between brand, digital products, websites, visual storytelling and creative direction.</p><p class="personal-intro">I’ve never been particularly interested in staying inside one design discipline; I’d rather understand the problem, find the right medium for it, and make the whole thing work.</p><figure class="story-stamp" aria-label="Illustrated stamp: bengaluru"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M24 85h112M34 82V50h19v32m9 0V38h35v44m8 0V51h19v31M59 39h42L80 22 59 39Zm13-10v-9h16v9M39 56v19m8-19v19m24-27v29m9-29v29m9-29v29m22-20v18m8-18v18M28 88l-6 7m113-7 6 7M21 99h121"/><path d="M13 72c-8-13 1-28 10-20 7-14 18-2 11 8m103 9c-9-10-2-27 8-19 10-9 17 7 8 16M23 60v27m120-28v28"/></svg><figcaption>BENGALURU</figcaption></figure></div><div class="desktop-craft portrait-scene" aria-label="Portrait of Shubham Shinde"><img src="assets/about-shubham-cutout-v1.png" alt="Shubham seated on a wooden chair" width="1122" height="1402" fetchpriority="high"></div><figure class="ae-portrait"><img src="assets/about-shubham-red.png" alt="Shubham Shinde seated in a studio against a red backdrop" width="1122" height="1402" fetchpriority="high"><figcaption>Shubham Shinde <span>Always a work in progress.</span></figcaption></figure></div></section><section class="ae ae-belief"><div class="personal-chapter-title"><h2>Curiosity,<br>down to the details.</h2><figure class="story-stamp ink-stamp" aria-label="Illustrated stamp: across disciplines"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M30 90h100M36 85l-8-54 22-4 8 58m-23-48 14-2m-13 11 8-1m-6 10 8-1m-6 10 14-2M65 84l3-56 9-12 7 13-4 55m-12-55 16 1m-11 1-3 49M94 84l-3-35c-14-8-8-27 1-32l3 14 10 3 8-11c9 11 6 27-9 29l2 32M44 99h69"/><path d="M19 104c34 5 86 4 118-1"/></svg><figcaption>ACROSS DISCIPLINES</figcaption></figure></div><div class="story-copy"><p>I’m naturally curious and a little obsessive about details. I’ll spend time fixing a typeface that feels slightly wrong, but I’m equally interested in the bigger questions—what are we trying to say, why should someone care, and could there be a much better way of doing this?</p><p>Over the years, that curiosity has pushed me beyond traditional design. I experiment with code, AI tools, motion, video and new ways of building things.</p><p>I use AI heavily in my workflow—not to replace the thinking, but to explore faster, prototype ideas and make things I previously would have needed a much larger team to create.</p></div></section><section class="ae ae-range"><div class="personal-chapter-title"><h2>Room to<br>figure things out.</h2><figure class="story-stamp" aria-label="Illustrated stamp: built out of curiosity"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M28 96h102M40 93V43h54v50M49 53h16v16H49zM72 53h14m-14 7h14m-37 18h37M97 57h24v36H97zM102 65h14m-14 8h14M35 38l32-18 31 18M58 28v-9h15v9"/><path d="m20 75 8-5-7-5M133 65l8 5-7 6M58 104h41"/></svg><figcaption>BUILT OUT OF CURIOSITY</figcaption></figure></div><div class="story-copy"><p>I enjoy working with ambitious people, especially when the problem is still messy and there isn’t an obvious answer yet. Give me context and ownership and I’m happiest figuring things out from there.</p><p>Outside work, I’m usually exploring something new, collecting references, going down unnecessary internet rabbit holes, or starting a side project because I thought “surely I can build this.”</p><p><strong>I care about good ideas, good craft and work that actually has a point.</strong></p></div></section><section class="ae ae-personality"><h2>A few things about me</h2><div class="personality-grid"><article><figure class="story-stamp ink-stamp" aria-label="Illustrated stamp: one more question"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M28 27h93v64H28zM28 39h93M35 33h2m5 0h2m5 0h2M43 51h48m-48 8h31m-31 9h23M39 101h86M60 91l-5 10m40-10 5 10"/><circle cx="102" cy="73" r="19"/><circle cx="102" cy="73" r="14"/><path d="m116 88 17 17 5-5-18-17M85 18c-4-8 4-15 10-10-8 4-6 10-3 13"/></svg><figcaption>ONE MORE QUESTION</figcaption></figure><h3>Curious by default.</h3><p>I tend to go deep into things I find interesting, whether that’s design, technology, history, filmmaking or some obscure idea I discovered at 1 AM.</p></article><article><figure class="story-stamp ink-stamp" aria-label="Illustrated stamp: across disciplines"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M30 90h100M36 85l-8-54 22-4 8 58m-23-48 14-2m-13 11 8-1m-6 10 8-1m-6 10 14-2M65 84l3-56 9-12 7 13-4 55m-12-55 16 1m-11 1-3 49M94 84l-3-35c-14-8-8-27 1-32l3 14 10 3 8-11c9 11 6 27-9 29l2 32M44 99h69"/><path d="M19 104c34 5 86 4 118-1"/></svg><figcaption>ACROSS DISCIPLINES</figcaption></figure><h3>Designer, but not precious about the title.</h3><p>I’ll design the identity, rethink the product, edit the video, prototype the interaction or open the codebase if that’s what gets us to a better result.</p></article><article><figure class="story-stamp ink-stamp" aria-label="Illustrated stamp: from question to form"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M28 45h32v25H28zM99 45h32v25H99zM66 21h29v20H66zM66 83h29v20H66zM60 57h39M80 41v42M34 51h19m-19 7h12M105 52l8 9 12-11M73 28h15m-15 62h15m-15 7h10"/><circle cx="80" cy="58" r="7"/><path d="M19 35V17h33m58 0h32v19M18 83v30h35m58 0h32V83"/></svg><figcaption>FROM QUESTION TO FORM</figcaption></figure><h3>I like ownership.</h3><p>I do my best work when I understand the larger problem and have room to think beyond the task I was initially given.</p></article><article><figure class="story-stamp" aria-label="Illustrated stamp: think / try / make"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M25 29h109v66H25zM25 42h109M33 35h3m6 0h3m6 0h3M51 56l-12 11 12 11m18-24-8 27m18-25 12 11-12 11M109 51v30m-9-15h19M47 105h64m-54-10-5 10m48-10 5 10"/><path d="M18 22l-6-6m130 6 7-7M19 102l-6 7m130-8 7 8"/></svg><figcaption>THINK / TRY / MAKE</figcaption></figure><h3>AI-native, not AI-everything.</h3><p>I use AI constantly for research, exploration, visual generation, prototyping and development. I’m interested in what it lets a small team—or one person—do that wasn’t practical before.</p></article><article><figure class="story-stamp" aria-label="Illustrated stamp: built out of curiosity"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M28 96h102M40 93V43h54v50M49 53h16v16H49zM72 53h14m-14 7h14m-37 18h37M97 57h24v36H97zM102 65h14m-14 8h14M35 38l32-18 31 18M58 28v-9h15v9"/><path d="m20 75 8-5-7-5M133 65l8 5-7 6M58 104h41"/></svg><figcaption>BUILT OUT OF CURIOSITY</figcaption></figure><h3>I make things for myself too.</h3><p>Side projects are usually how I learn. Sometimes they become useful products; sometimes they exist because I wanted to see whether an idea could work.</p></article><article><figure class="story-stamp ink-stamp" aria-label="Illustrated stamp: one more question"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M28 27h93v64H28zM28 39h93M35 33h2m5 0h2m5 0h2M43 51h48m-48 8h31m-31 9h23M39 101h86M60 91l-5 10m40-10 5 10"/><circle cx="102" cy="73" r="19"/><circle cx="102" cy="73" r="14"/><path d="m116 88 17 17 5-5-18-17M85 18c-4-8 4-15 10-10-8 4-6 10-3 13"/></svg><figcaption>ONE MORE QUESTION</figcaption></figure><h3>Probably overthinking something.</h3><p>Usually a design detail, an interaction, a business idea, or why something everyone accepts as normal couldn’t work completely differently.</p></article></div></section><section class="ae ae-current"><div class="personal-chapter-title"><h2>Currently</h2><figure class="story-stamp ink-stamp" aria-label="Illustrated stamp: from question to form"><svg viewBox="0 0 160 125" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M28 45h32v25H28zM99 45h32v25H99zM66 21h29v20H66zM66 83h29v20H66zM60 57h39M80 41v42M34 51h19m-19 7h12M105 52l8 9 12-11M73 28h15m-15 62h15m-15 7h10"/><circle cx="80" cy="58" r="7"/><path d="M19 35V17h33m58 0h32v19M18 83v30h35m58 0h32V83"/></svg><figcaption>FROM QUESTION TO FORM</figcaption></figure></div><div class="story-copy"><p>I’m looking for the next difficult, interesting thing to work on—particularly with teams where design has a seat at the table and I can have meaningful ownership over what gets built and how it shows up in the world.</p><p><strong>If that sounds like your kind of team, say hello.</strong></p><a class="btn fx-93" href="mailto:shubhamshinde52@gmail.com"><span class="btn-label">Say hello ${caseIcon('mail')}</span></a></div></section><section class="ae personal-career"><h2>My career,<br>so far</h2><div class="career-list"><p>I studied civil engineering before moving into design in 2020.</p><dl><div><dt>100kmph</dt><dd>Graphic design · Automotive campaigns</dd></div><div><dt>Prachyam</dt><dd>Creative leadership &amp; art direction · Films and culture</dd></div><div><dt>Phyllo</dt><dd>Social, campaigns &amp; product communication</dd></div><div><dt>Ecolab</dt><dd>Visual design &amp; design direction</dd></div><div><dt>WizCommerce <span>Now</span></dt><dd>Graphic Design Lead · B2B commerce</dd></div></dl><a class="career-resume" href="Shubham-Shinde-Resume.html" target="_blank" rel="noopener">View my résumé ↗</a></div></section><div class="folio-signoff"><span>Shubham Shinde</span><a href="#/work">Explore my work</a></div></article>`}
 const STEPS=[['Business context','Daulat: design around the consultation.','The website’s purpose shaped the hierarchy and calls to action. Culturally rooted imagery supported a distinct identity; trust and recall were objectives, not assumed results.'],['Visual direction','Lachit: one treatment, twelve days.','The production combined AI-assisted panels, Photoshop compositing and custom maps. My role joined visual direction with hands-on execution under a clear deadline.'],['Systems','Studio Vistara: test the identity in context.','The logo was developed alongside signage, print and campaign applications. The 3D animation added another way to express the same identity.'],['Ownership','Indiclass: carry the idea through execution.','As sole contributor, I connected the logo, final title, styleframes and motion treatment into one visual direction.']];
-function approachDoodle(kind){const drawings={spark:'<path d="M58 12 49 83M15 39l78 22M22 77 86 20" stroke="#315ac5" stroke-width="7"/><circle cx="103" cy="83" r="7" fill="#ef7e63" stroke="none"/>',pencil:'<path d="m27 90 57-67 16 14-57 67-24 12Z" fill="#f3cd64"/><path d="m84 23 9-10 16 14-9 10" fill="#ef7e63"/><path d="m27 90 16 14-24 12Z" fill="#f4efe3"/><path d="m37 96 55-66M19 116l8-26 57-67 16 14-57 67Z"/><path d="M11 128c32-9 72 7 111-4" stroke="#315ac5"/>',swatches:'<path d="m23 28 57-8 13 93-57 8Z" fill="#ef7e63"/><path d="m47 21 55 14-23 91-56-14Z" fill="#f3cd64"/><path d="m71 27 51 30-47 80-51-30Z" fill="#315ac5"/><circle cx="47" cy="106" r="6" fill="#f4efe3"/>',arrow:'<path d="M12 19c87-18 115 65 36 81-17 3-23-15-9-22 23-11 41 28 40 45M59 108l20 19 19-20" fill="none" stroke="#ef7e63" stroke-width="5"/>',frames:'<path d="m21 33 85-9 11 95-85 9Z" fill="#b9ceaa"/><path d="m9 17 85 8-9 95-85-8Z" fill="#f3cd64"/><path d="m26 42 39 4-4 43-39-4Z" fill="#315ac5"/><path d="m39 54 15 13-17 10Z" fill="#f4efe3" stroke="none"/>',orbit:'<ellipse cx="64" cy="68" rx="58" ry="23" transform="rotate(-28 64 68)" fill="none" stroke="#315ac5"/><circle cx="64" cy="68" r="28" fill="#ef7e63"/><path d="M58 42c-18 20-10 46 14 52M38 65l51 5" fill="none"/><path d="m105 9 3 15 15 3-15 3-3 15-3-15-15-3 15-3Z" fill="#f3cd64" stroke="none"/>'};return `<svg class="approach-doodle doodle-${kind}" viewBox="0 0 140 145" fill="none" stroke="#292824" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${drawings[kind]||drawings.spark}</svg>`}
-function approach(){return `<section class="approach-hero"><div><span class="eyebrow">A look inside my process</span><h1>Think it through.<br><span>Make it feel.</span></h1><p>I move between research, art direction and hands-on design—connecting the story to the way it looks, moves and works.</p><a class="approach-inline-link" href="#/work">See where the process leads ${caseIcon('work')}</a></div><figure><img src="assets/redesign-v2/approach-studio.png" alt="Hand-drawn designer arranging a few coloured paper shapes at a desk" width="1536" height="1024"><figcaption>Curiosity → direction → craft → refinement</figcaption></figure></section><section class="process-playground"><div class="process-heading">${approachDoodle('pencil')}${approachDoodle('spark')}<span class="eyebrow">From a question to a finished piece</span><h2>A little structure.<br>A lot of exploration.</h2><p>Choose a stage to look inside.</p></div><div class="process-tabs" role="tablist" aria-label="Explore my process">${['Understand','Explore','Make','Refine'].map((label,i)=>`<button role="tab" id="process-tab-${i}" aria-controls="process-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-process="${i}"><span class="process-symbol" aria-hidden="true">${['?','✳','✎','✓'][i]}</span>${label}</button>`).join('')}</div><div id="process-panel" role="tabpanel" aria-labelledby="process-tab-0" tabindex="0">${processPanel(0)}</div></section><section class="approach-practice"><div class="practice-heading">${approachDoodle('arrow')}${approachDoodle('swatches')}<span class="eyebrow">Different mediums. The same curiosity.</span><h2>The thinking,<br>out in the world.</h2></div><div class="practice-examples">${[['bhabha','Start with the story.','Archive, typography and compositing build a connected visual world.'],['vistara','Build a visual language.','A mark becomes a system across architecture, space and print.'],['solace','Design the experience.','Identity and interface work together to create a calmer digital space.']].map(([id,title,copy])=>{const p=PROJECTS.find(p=>p.id===id);return `<a class="practice-example" href="#/project/${id}">${approachDoodle(id==='bhabha'?'frames':id==='vistara'?'swatches':'orbit')}<figure>${picture(id,p.title+' — selected project artwork')}</figure><div><span class="eyebrow">${p.title}</span><h3>${title}</h3><p>${copy}</p><span class="practice-open">Explore the project ${caseIcon('work')}</span></div></a>`}).join('')}</div></section><section class="approach-invite">${approachDoodle('orbit')}${approachDoodle('spark')}<span class="invite-doodle" aria-hidden="true">✳</span><div><span class="eyebrow">Have something in mind?</span><h2>Let’s start with<br>a good question.</h2><a class="btn fx-93" href="mailto:shubhamshinde52@gmail.com"><span class="btn-label">Tell me what you’re thinking ${caseIcon('brief')}</span></a></div></section>`}
-function processPanel(index){const stages=[{title:'Find the story worth telling.',body:'I start with the context: who the work is for, what it needs to communicate and what makes it distinctive.',notes:['The audience','The central idea','The right references'],out:'A clear creative brief',graphic:'<circle cx="190" cy="115" r="72" fill="#f7cd60"/><circle cx="190" cy="115" r="48" fill="none" stroke="#25251f" stroke-width="5"/><path d="m226 152 56 59" stroke="#25251f" stroke-width="16" stroke-linecap="round"/><path d="M65 78h61M65 95h42M270 58l35-20M282 91h42M78 179l28 15" stroke="#305bc7" stroke-width="5" stroke-linecap="round"/>'},{title:'Give the idea a visual direction.',body:'I explore references, compositions, colour and type. The aim is to find a direction that belongs to the story, then develop it into a coherent visual language.',notes:['Sketches & references','Colour & typography','Composition & rhythm'],out:'A direction to build on',graphic:'<path d="m75 55 130-16 17 159-130 15Z" fill="#f27f68" stroke="#25251f" stroke-width="3"/><path d="m189 72 120 12-12 140-120-12Z" fill="#f7cd60" stroke="#25251f" stroke-width="3"/><circle cx="147" cy="98" r="23" fill="#315ac5"/><path d="m113 165 45-47 39 39M218 112h56M214 131h37M212 164h56" fill="none" stroke="#25251f" stroke-width="4"/>'},{title:'Get hands-on with the details.',body:'I turn the direction into the work itself—from an identity and its applications to a motion sequence or website. Design and execution stay connected.',notes:['Build the system','Compose the frames','Connect the touchpoints'],out:'A working visual system',graphic:'<rect x="64" y="48" width="254" height="155" rx="9" fill="#315ac5" stroke="#25251f" stroke-width="4"/><rect x="79" y="64" width="224" height="121" fill="#f7f0de"/><path d="m43 220 37-17h220l37 17Z" fill="#f27f68" stroke="#25251f" stroke-width="4"/><rect x="98" y="86" width="78" height="78" fill="#b3c9a5"/><path d="m124 105 32 20-32 20Z" fill="#315ac5"/><path d="M195 94h84M195 115h60M195 147h75" stroke="#25251f" stroke-width="5"/>'},{title:'Keep going until it holds together.',body:'I review the work in context: the pacing of a sequence, the balance of a layout and the consistency of the details. Refinement makes the direction feel complete.',notes:['Review in context','Tune the details','Prepare the final work'],out:'A considered final piece',graphic:'<path d="m91 43 202 16-16 166-202-16Z" fill="#b3c9a5" stroke="#25251f" stroke-width="4"/><path d="m129 132 35 34 73-85" fill="none" stroke="#315ac5" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><path d="M54 75 30 61M57 108H23M313 164l27 15M305 194l17 28" stroke="#ed7e65" stroke-width="5" stroke-linecap="round"/>'}];const p=stages[index];return `<div class="process-drawing stage-${index}"><svg viewBox="0 0 380 260" role="img" aria-label="${['Magnifying glass for research','Sketches and colour studies','Design taking shape on a screen','Reviewing the final work'][index]}">${p.graphic}</svg><span>${p.out}</span></div><div class="process-copy"><span class="eyebrow">${['Understand','Explore','Make','Refine'][index]}</span><h3>${p.title}</h3><p>${p.body}</p><ul>${p.notes.map(x=>`<li>${x}</li>`).join('')}</ul></div>`}
+function approach(){
+  return `<article class="approach-page" aria-label="Shubham Shinde — Approach &amp; Methodology">
+    <header class="approach-hero">
+      <div class="pill-badge-group">
+        <span class="pill-badge-id">00</span>
+        <span class="pill-badge-name">Philosophy &amp; First Principles</span>
+      </div>
+      <h1 class="approach-h1">
+        I don’t design from templates.<br>
+        <em>I build from first principles.</em>
+      </h1>
+      <p class="approach-lead">
+        Coming from civil engineering into documentary film direction and brand systems fundamentally changed how I view visual design. I do not treat a screen or page as a blank canvas for cosmetic decoration. I treat it as an engineered structure designed to carry human attention under stress.
+      </p>
+
+      <div class="spec-ledger">
+        <div class="spec-item">
+          <span class="spec-label">FOUNDATION</span>
+          <span class="spec-val">Civil Engineering &amp; Structural Loads</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">CORE DOMAINS</span>
+          <span class="spec-val">Brand Identity · Film &amp; Motion · High-Density B2B · AI</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">CURRENT ROLE</span>
+          <span class="spec-val">Design Lead @ WizCommerce</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">DISCIPLINE</span>
+          <span class="spec-val">Zero Cosmetic Padding</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="approach-jump-nav" aria-label="Methodology sections">
+      <span class="jump-title">6 Master Disciplines:</span>
+      <div class="jump-links">
+        <button type="button" class="jump-pill" data-approach-jump="load"><span>01</span> Structural Load</button>
+        <button type="button" class="jump-pill" data-approach-jump="pacing"><span>02</span> 24fps Pacing</button>
+        <button type="button" class="jump-pill" data-approach-jump="materiality"><span>03</span> Physical Proof</button>
+        <button type="button" class="jump-pill" data-approach-jump="systems"><span>04</span> B2B Architecture</button>
+        <button type="button" class="jump-pill" data-approach-jump="subtraction"><span>05</span> The Subtraction Dial</button>
+        <button type="button" class="jump-pill" data-approach-jump="execution"><span>06</span> Direct Craft</button>
+      </div>
+    </nav>
+
+    <section class="approach-section" id="load" tabindex="-1">
+      <div class="pill-badge-group">
+        <span class="pill-badge-id">01</span>
+        <span class="pill-badge-name">Structural Load &amp; Hierarchy</span>
+      </div>
+      <div class="section-head">
+        <div class="section-head-text">
+          <h2 class="approach-h2">Calculate the loads before choosing the paint.</h2>
+          <p class="section-desc">
+            In civil engineering, if your load calculations are wrong, the bridge collapses. Digital interfaces and brand identities behave the same way, just with attention instead of concrete. Before touching typography, color, or micro-interactions, I identify the hierarchy under stress: what single message must survive, where the eye lands first, and what can be removed without losing the core idea.
+          </p>
+        </div>
+        <div class="section-stamp-icon" title="Cantilever Truss Schematic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 20h18M3 20L12 5l9 15M12 5v15M7.5 12.5h9"/>
+            <circle cx="12" cy="5" r="2" fill="#bd1715" stroke="none"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="blueprint-card">
+        <div class="card-bar">
+          <span>STRUCTURAL SCHEMATIC · HIERARCHY LOAD MATRIX</span>
+          <span>12°58′N 77°35′E · BENGALURU</span>
+        </div>
+        <div class="blueprint-diagram" aria-label="Architectural truss hierarchy diagram">
+          <svg viewBox="0 0 520 180" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M30 150h460M60 150V55h400v95M60 55l200-35 200 35" stroke="#1f1d19" />
+            <path d="M120 150V85h280v65M120 85l140-22 140 22" stroke="#bd1715" stroke-dasharray="3 3" opacity="0.8" />
+            <path d="M260 20v130M60 100h400" stroke="#1f1d19" stroke-width="0.8" opacity="0.35" />
+            <circle cx="260" cy="20" r="4.5" fill="#bd1715" stroke="none" />
+            <circle cx="60" cy="55" r="3" fill="#1f1d19" stroke="none" />
+            <circle cx="460" cy="55" r="3" fill="#1f1d19" stroke="none" />
+            <path d="M30 160v-20M120 158v-16M260 158v-16M400 158v-16M490 160v-20" stroke="#1f1d19" opacity="0.4" />
+            <text x="70" y="45" font-family="monospace" font-size="9" fill="#1f1d19" opacity="0.7">COMPRESSION NODE 01</text>
+            <text x="340" y="45" font-family="monospace" font-size="9" fill="#1f1d19" opacity="0.7">COMPRESSION NODE 02</text>
+            <text x="210" y="15" font-family="monospace" font-size="9" fill="#bd1715" font-weight="600">APEX LOAD POINT</text>
+          </svg>
+        </div>
+        <div class="card-grid-2">
+          <div class="tenet">
+            <h4>Zero Cosmetic Padding</h4>
+            <p>Every element on screen must earn its right to exist. If a border, decorative gradient, or badge doesn't orient the user, it is ruthlessly deleted.</p>
+          </div>
+          <div class="tenet">
+            <h4>Rigid Baseline Geometry</h4>
+            <p>Rhythm is built on mathematical scales. Layouts hold their posture and proportions whether rendered at 380px or 2560px.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach-section" id="pacing" tabindex="-1">
+      <div class="pill-badge-group">
+        <span class="pill-badge-id">02</span>
+        <span class="pill-badge-name">24fps Viewport Pacing</span>
+      </div>
+      <div class="section-head">
+        <div class="section-head-text">
+          <h2 class="approach-h2">Directing viewport momentum like a film sequence.</h2>
+          <p class="section-desc">
+            Directing documentary projects at Prachyam taught me that human beings don’t experience visual work statically; they experience it through pacing, focal length, contrast, and atmospheric tone. A website shouldn't shout at 100% volume across every scroll. It requires wide establishing shots, intimate details, breathing room, and controlled momentum.
+          </p>
+        </div>
+        <div class="section-stamp-icon" title="35mm Film Gate &amp; Shutter" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="2" />
+            <line x1="7" y1="4" x2="7" y2="20" />
+            <line x1="17" y1="4" x2="17" y2="20" />
+            <circle cx="12" cy="12" r="3" stroke="#bd1715" stroke-width="1.8" />
+            <line x1="3" y1="8" x2="7" y2="8" /><line x1="3" y1="12" x2="7" y2="12" /><line x1="3" y1="16" x2="7" y2="16" />
+            <line x1="17" y1="8" x2="21" y2="8" /><line x1="17" y1="12" x2="21" y2="12" /><line x1="17" y1="16" x2="21" y2="16" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="filmstrip-box">
+        <div class="card-bar dark">
+          <span>HOMI BHABHA · 35MM CINEMATIC SEQUENCE</span>
+          <span>AR 16:9 · 24 FPS · PRACHYAM DIRECTED</span>
+        </div>
+        <div class="filmstrip-frames">
+          <figure class="film-frame">
+            <img src="assets/frame0.webp" alt="Archival scientific documentation frame from Homi Bhabha" loading="lazy" width="2302" height="1676">
+            <figcaption class="frame-tag"><span class="frame-time">00:01:14</span>Establishing Archive</figcaption>
+          </figure>
+          <figure class="film-frame">
+            <img src="assets/frame1.webp" alt="Documentary typography and atmosphere from Homi Bhabha" loading="lazy" width="2916" height="1650">
+            <figcaption class="frame-tag"><span class="frame-time">00:04:28</span>Focal Tension</figcaption>
+          </figure>
+          <figure class="film-frame">
+            <img src="assets/frame2.webp" alt="Historical archival compositing from Homi Bhabha" loading="lazy" width="2970" height="1566">
+            <figcaption class="frame-tag"><span class="frame-time">00:08:52</span>Atmospheric Climax</figcaption>
+          </figure>
+        </div>
+        <div class="filmstrip-footer">
+          <div class="tenet dark">
+            <h4>Focal Length Modulation</h4>
+            <p>Alternating dense information with atmospheric pauses allows high-intent takeaways to hit with clarity instead of cognitive fatigue.</p>
+          </div>
+          <div class="tenet dark">
+            <h4>Rhythm Over Commotion</h4>
+            <p>Motion exists solely to clarify spatial relationships, guide handoffs, and reward interaction—never as cosmetic distraction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach-section" id="materiality" tabindex="-1">
+      <div class="pill-badge-group">
+        <span class="pill-badge-id">03</span>
+        <span class="pill-badge-name">Physical Proof &amp; Materiality</span>
+      </div>
+      <div class="section-head">
+        <div class="section-head-text">
+          <h2 class="approach-h2">If it only looks good in Figma, it doesn’t work in reality.</h2>
+          <p class="section-desc">
+            A vector on a glowing backlit display is deceptive: it has zero mass, no friction, and no ambient shadow. When creating brand identities, packaging, and editorial publications, I test marks where they will actually be touched: on 120gsm uncoated paper, cast architectural concrete, exterior signage, and physical book spreads.
+          </p>
+        </div>
+        <div class="section-stamp-icon" title="Precision Caliper &amp; Gauge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 6v12M20 6v12M9 6v6M15 6v6M4 18h16" />
+            <circle cx="12" cy="18" r="1.5" fill="#bd1715" stroke="none" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="proof-card">
+        <div class="proof-hero-media">
+          <img src="assets/vistaranew4.webp" alt="Studio Vistara brand mark tested in architectural concrete and print reality" loading="lazy" width="1400" height="808">
+          <div class="proof-badge">STUDIO VISTARA · ARCHITECTURAL PROOF</div>
+        </div>
+        <div class="proof-specs-grid">
+          <div class="spec-block">
+            <span class="spec-num">01</span>
+            <h4>Spatial Verification</h4>
+            <p>Evaluating letterforms against natural sunlight, concrete textures, and varying viewing distances before declaring a brand guideline complete.</p>
+          </div>
+          <div class="spec-block">
+            <span class="spec-num">02</span>
+            <h4>Tactile Degradation</h4>
+            <p>A resilient identity survives low-contrast photocopies, embroidered stitches on canvas, and low-res mobile avatars without collapsing.</p>
+          </div>
+          <div class="spec-block">
+            <span class="spec-num">03</span>
+            <h4>Substrate Friction</h4>
+            <p>Screen vectors have no weight. Print demands calculating ink absorption, paper bulk, and tactile texture from day one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach-section" id="systems" tabindex="-1">
+      <div class="pill-badge-group">
+        <span class="pill-badge-id">04</span>
+        <span class="pill-badge-name">Systems Architecture &amp; Density</span>
+      </div>
+      <div class="section-head">
+        <div class="section-head-text">
+          <h2 class="approach-h2">Complex B2B workflows without enterprise ugliness.</h2>
+          <p class="section-desc">
+            At WizCommerce, I design for wholesale commerce—an industry handling millions in transaction volume, thousands of catalog SKUs, and fast-moving sales reps. The lazy approach to enterprise design is hiding complexity behind ten nested popups. My approach is organizing density with uncompromising typographic discipline: power users work at speed, and new users never feel lost.
+          </p>
+        </div>
+        <div class="section-stamp-icon" title="Modular Data Matrix" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
+            <path d="M10 6.5h4M6.5 10v4M14 17.5h-4" stroke="#bd1715" stroke-width="1.6" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="b2b-card">
+        <div class="card-bar">
+          <span>WIZCOMMERCE · PRODUCT &amp; BRAND DESIGN LEAD</span>
+          <span>HIGH DENSITY ENGINE · LIVE PRODUCT</span>
+        </div>
+        <div class="b2b-media-frame">
+          <img src="assets/wizcrm.webp" alt="WizCommerce wholesale B2B platform interface and workflow" loading="lazy" width="1536" height="1024">
+        </div>
+        <div class="card-grid-2">
+          <div class="tenet">
+            <h4>Hierarchical Contrast</h4>
+            <p>Actionable data is highlighted; secondary metadata recedes. Density is managed through optical weight, baseline rhythm, and type scale—not blank panels.</p>
+          </div>
+          <div class="tenet">
+            <h4>Human Storytelling in B2B</h4>
+            <p>B2B buyers and sales reps are human beings. Enterprise products deserve the same aesthetic care, motion physics, and tactile polish as consumer software.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach-section" id="subtraction" tabindex="-1">
+      <div class="pill-badge-group">
+        <span class="pill-badge-id">05</span>
+        <span class="pill-badge-name">The Subtraction Dial</span>
+      </div>
+      <div class="section-head">
+        <div class="section-head-text">
+          <h2 class="approach-h2">
+            AI creates fifty options in an hour.<br>
+            <em>Taste knows which forty-nine to delete.</em>
+          </h2>
+          <p class="section-desc">
+            I do not romanticize doing manual grunt work when software can accelerate exploration. I actively integrate AI models for rapid mood panels, texture generation, and variant testing. But the danger of AI-driven design is that everything looks 80% finished and 100% generic. That remaining 20%—the exact typographic kerning, the refusal to use a cliché, the human perspective—is where real taste lives.
+          </p>
+        </div>
+        <div class="section-stamp-icon" title="Subtractive Aperture" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="5" x2="9" y2="10" /><line x1="3" y1="12" x2="9" y2="12" /><line x1="3" y1="19" x2="9" y2="14" />
+            <line x1="10" y1="3" x2="10" y2="9" /><line x1="10" y1="15" x2="10" y2="21" />
+            <line x1="10" y1="12" x2="21" y2="12" stroke="#bd1715" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="dial-block">
+        <div class="taste-stamp" aria-hidden="true">
+          <span>HUMAN<br>VERIFIED<br>2026</span>
+        </div>
+        <div class="dial-equation">
+          <div class="equation-col">
+            <span class="eq-tag">MACHINE VELOCITY</span>
+            <h4>Synthesis &amp; Exploration</h4>
+            <p>Rapid generation of variant layouts, concept explorations, color studies, and contextual drafts.</p>
+          </div>
+          <div class="dial-sym">+</div>
+          <div class="equation-col">
+            <span class="eq-tag">HUMAN DISCERNMENT</span>
+            <h4>Subtraction &amp; Craft</h4>
+            <p>Ruthless editorial elimination of noise, bespoke typography, spatial restraint, and emotional intent.</p>
+          </div>
+        </div>
+        <div class="dial-verdict">
+          <span>THE OUTCOME: WORK THAT FEELS DISTINCTIVE, REASONED, AND MADE BY A HUMAN EYE.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach-section" id="execution" tabindex="-1">
+      <div class="pill-badge-group">
+        <span class="pill-badge-id">06</span>
+        <span class="pill-badge-name">Direct Execution &amp; Collaboration</span>
+      </div>
+      <div class="section-head">
+        <div class="section-head-text">
+          <h2 class="approach-h2">Direct collaboration. Zero intermediary agency layers.</h2>
+          <p class="section-desc">
+            When you work with an agency, you brief an account director, who briefs a strategist, who briefs a junior designer. By the time the work reaches the screen, the soul has been squeezed out of it.
+          </p>
+        </div>
+        <div class="section-stamp-icon" title="Direct Conduit Node" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5" cy="12" r="3" fill="#1f1d19" />
+            <circle cx="19" cy="12" r="3" fill="#bd1715" />
+            <line x1="8" y1="12" x2="16" y2="12" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="terms-list">
+        <div class="term-row">
+          <div class="term-meta">
+            <span class="term-num">01</span>
+            <strong>DIRECT DIALOGUE</strong>
+          </div>
+          <p>You work directly with the designer making the creative choices. Decisions happen in real time, not through weekly status decks.</p>
+        </div>
+        <div class="term-row">
+          <div class="term-meta">
+            <span class="term-num">02</span>
+            <strong>LIVE PROTOTYPES</strong>
+          </div>
+          <p>Ideas are validated in actual browser code, uncompressed video frames, and interactive components early in the process.</p>
+        </div>
+        <div class="term-row">
+          <div class="term-meta">
+            <span class="term-num">03</span>
+            <strong>NO COSMETIC FILLER</strong>
+          </div>
+          <p>No 60-page PDF strategy presentations filled with corporate buzzwords. Every hour of work is spent on artifacts that can actually ship.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach-closing" id="contact" tabindex="-1">
+      <div class="pill-badge-group">
+        <span class="pill-badge-id">07</span>
+        <span class="pill-badge-name">Next Steps &amp; Engagement</span>
+      </div>
+      <h2 class="closing-h2">Have an idea, brand, or film that needs weight?</h2>
+      <p class="closing-desc">
+        Let’s talk about design lead roles, brand identities, film art direction, and digital systems.
+      </p>
+      <div class="closing-actions">
+        <a class="btn fx-93" href="mailto:shubhamshinde52@gmail.com">
+          <span class="btn-label">Start a conversation ↗</span>
+        </a>
+        <a class="btn fx-93" href="#/work">
+          <span class="btn-label">Explore selected work ↗</span>
+        </a>
+        <a class="btn fx-93" href="Shubham-Shinde-Resume.html" target="_blank" rel="noopener">
+          <span class="btn-label">View résumé ↗</span>
+        </a>
+      </div>
+    </section>
+  </article>`;
+}
 function studies(){return `<section class="page-intro"><span class="eyebrow">Case studies</span><h1>Projects & contributions.</h1><p>Explore the work by discipline, with my role and contribution in each project.</p></section>${projectIndex()}`}
 
 
@@ -757,7 +1188,7 @@ function headingReveals(){
 function entranceMotion(){
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(reduced)return ()=>{};
- const elements=Array.from(document.querySelectorAll('#app .hero-heading,#app .page-intro,#app .project-intro,#app .work-intro,#app .row-heading,#app .rail,#app .section-title,#app .film-card,#app .case-context,#app .story-opening,#app .story-evidence,#app .story-result,#app .case-work-heading,#app .project-story,#app .home-about,#app .about-body,#app .career-row,#app .index-card,#app .next-project,#app .name-footer'));
+ const elements=Array.from(document.querySelectorAll('#app .hero-heading,#app .page-intro,#app .project-intro,#app .work-intro,#app .row-heading,#app .rail,#app .section-title,#app .film-card,#app .case-context,#app .story-opening,#app .story-evidence,#app .story-result,#app .case-work-heading,#app .project-story,#app .home-about,#app .about-body,#app .career-row,#app .index-card,#app .next-project,#app .name-footer,#app .approach-hero,#app .approach-section,#app .approach-closing'));
  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add('is-revealed');observer.unobserve(entry.target)})},{threshold:0,rootMargin:'0px 0px -24px 0px'});
  elements.forEach(el=>{el.classList.add('scroll-reveal');observer.observe(el)});
  return ()=>observer.disconnect();
@@ -846,9 +1277,5 @@ window.addEventListener('hashchange',()=>{
 </script><script>
 document.addEventListener('click',e=>{const button=e.target.closest('[data-case-jump]');if(!button)return;const target=document.getElementById(button.dataset.caseJump);if(!target)return;target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});target.focus({preventScroll:true});});
 </script><script>
-function selectProcess(button){const panel=document.querySelector('#process-panel');if(!panel)return;document.querySelectorAll('[data-process]').forEach(b=>{b.setAttribute('aria-selected',String(b===button));b.tabIndex=b===button?0:-1});panel.innerHTML=processPanel(Number(button.dataset.process));panel.setAttribute('aria-labelledby',button.id);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)panel.animate([{opacity:.5,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:220,easing:'ease-out'});}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-process]');if(b)selectProcess(b)});
-document.addEventListener('keydown',e=>{const b=e.target.closest('[data-process]');if(!b||!['ArrowRight','ArrowLeft','Home','End'].includes(e.key))return;e.preventDefault();const tabs=[...document.querySelectorAll('[data-process]')];const i=e.key==='Home'?0:e.key==='End'?3:(tabs.indexOf(b)+(e.key==='ArrowRight'?1:3))%4;selectProcess(tabs[i]);tabs[i].focus()});
-</script><script>
-(()=>{const key='shubham-button-finish';let choice='default';try{choice=localStorage.getItem(key)||'default'}catch{}if(!['silver','gold','default'].includes(choice))choice='default';const picker=document.createElement('div');picker.className='finish-picker';picker.setAttribute('role','group');picker.setAttribute('aria-label','Button finish');picker.innerHTML='<span>Button finish</span><button data-finish="silver">Silver</button><button data-finish="gold">Gold</button><button data-finish="default">Default</button>';document.querySelector('#app').after(picker);function apply(value){if(value==='default')delete document.documentElement.dataset.buttonFinish;else document.documentElement.dataset.buttonFinish=value;picker.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.finish===value)));try{localStorage.setItem(key,value)}catch{}}picker.addEventListener('click',e=>{const b=e.target.closest('[data-finish]');if(b)apply(b.dataset.finish)});apply(choice)})();
-</script></body></html>
+document.addEventListener('click',e=>{const button=e.target.closest('[data-approach-jump]');if(!button)return;const target=document.getElementById(button.dataset.approachJump);if(!target)return;target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});target.focus({preventScroll:true});});
+</script><script>try{localStorage.removeItem('shubham-button-finish');delete document.documentElement.dataset.buttonFinish;}catch(e){}</script></body></html>
