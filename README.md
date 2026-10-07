@@ -1,16 +1,15 @@
 # Shubham Shinde — Portfolio
 
-Static portfolio with local images and video, project case studies, illustrated process page and selectable Default, Silver and Gold button finishes.
+## Single source of truth
 
-## Open locally
+Edit `index.html` for the entire portfolio: home, work, project details, About and Approach. Shared CTA styling lives in `assets/cta-neon.css`. Assets live in `assets/`.
 
-Open `index.html` in a browser, or serve this directory with a static web server. Keep `assets/` beside the HTML files.
+Legacy page URLs are small redirects into the relevant route in `index.html`. Do not rebuild or edit those as independent pages.
 
-- `index.html`: current portfolio (Option 1).
-- `Shubham-Project-Layouts.html`: three project-page layout concepts.
-- `Shubham-Visual-Review.html`: visual review table with browser-local selections and JSON/Markdown exports.
-- `Shubham-Shinde-Resume.html`: printable resume.
+`Shubham-Shinde-Resume.html` is the separate printable resume. `Shubham-Visual-Review.html` is the separate review utility. `cta-preview.html` is a design reference, not the live button source.
 
-The portfolio chat uses local, preset answers; it does not call an AI service. Review notes and finish preferences stay in the browser. Personal review exports are not included.
+Serve this directory with a static server, or open `index.html`. GitHub Pages deploys this repository’s main branch.
 
-Original project media and artwork belong to their respective owners. No redistribution license is granted by this repository.
+The portfolio chat uses local preset answers. Review selections stay in the browser.
+
+Original project media and artwork belong to their respective owners. No redistribution license is granted.
