@@ -1,0 +1,14 @@
+/* Electric Neon Yellow — approved CTA option 1 */
+:root{--cta-neon:#f4ff2b;--cta-ink:#1f1d19}
+html:not(#cta-a#cta-b#cta-c) :is(button:not(.art-slide):not(.play-card),.btn,.folio-close,.career-resume,.back-link,.text-link,.folio-signoff a){background:#1f1d19!important;color:#f7f3eb!important;border:1px solid #1f1d19!important;border-radius:3px!important;box-shadow:2.5px 2.5px 0 #1f1d1940!important;text-shadow:none!important;font-family:var(--mono,monospace)!important;font-weight:500;letter-spacing:.06em;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important}
+html:not(#cta-a#cta-b#cta-c) :is(.btn,.career-resume,.back-link,.text-link,.folio-signoff a){display:inline-flex;align-items:center;gap:10px;padding:13px 24px;text-decoration:none;text-transform:uppercase;font-size:12px}
+html:not(#cta-a#cta-b#cta-c) .btn::before,html:not(#cta-a#cta-b#cta-c) .btn::after{display:none!important}html:not(#cta-a#cta-b#cta-c) .btn .btn-label{color:inherit!important;transform:none!important}.btn svg{color:inherit;stroke:currentColor}
+html:not(#cta-a#cta-b#cta-c) :is(.folio-close,.career-resume,.back-link,.text-link,.pill,.jump-pill,.dialog-close,.rail-next,.rail-prev){background:#ffffff99!important;color:#1f1d19!important;border-color:#b9b2a5!important;box-shadow:2px 2px 0 #b9b2a5!important}
+html:not(#cta-a#cta-b#cta-c) :is(button:not(.art-slide):not(.play-card),.btn,.folio-close,.career-resume,.back-link,.text-link,.folio-signoff a):hover:not(:disabled){box-shadow:4px 4px 0 #f4ff2b!important;border-color:#1f1d19!important}
+html:not(#cta-a#cta-b#cta-c) :is(button,.btn,.folio-close,.career-resume,.back-link,.text-link,.folio-signoff a):focus-visible{outline:2px solid #1f1d19!important;outline-offset:5px;box-shadow:0 0 0 4px #f4ff2b!important}
+html:not(#cta-a#cta-b#cta-c) :is(button.active,button[aria-pressed=true],button[aria-selected=true]){background:#f4ff2b!important;color:#1f1d19!important}
+button:disabled{opacity:.45;cursor:not-allowed;box-shadow:none!important}
+@media(prefers-reduced-motion:no-preference){html:not(#cta-a#cta-b#cta-c) :is(button:not(.art-slide):not(.play-card),.btn,.folio-close,.career-resume,.back-link,.text-link,.folio-signoff a):hover:not(:disabled){transform:translate(-1.5px,-1.5px)!important}html:not(#cta-a#cta-b#cta-c) :is(button:not(.art-slide):not(.play-card),.btn,.folio-close,.career-resume,.back-link,.text-link,.folio-signoff a):active:not(:disabled){transform:translate(1.5px,1.5px)!important;box-shadow:1px 1px 0 #f4ff2b!important}}
+@media(prefers-reduced-motion:reduce){button,.btn{transition:none!important}}
+.finish-picker{display:none!important}
+
