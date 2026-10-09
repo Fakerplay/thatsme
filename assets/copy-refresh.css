@@ -1,0 +1,11 @@
+/* Give the personal introduction room to read without changing the page structure. */
+html body #app .hero-storymaker .story-intro{max-width:1080px;width:100%}
+html body #app .hero-storymaker h1{max-width:23ch;margin-inline:auto;line-height:1.1;text-wrap:balance}
+html body #app .hero-storymaker .story-support{max-width:49ch;margin-inline:auto;min-height:0;text-wrap:pretty}
+html body #app .about-editorial .ae-intro-copy .personal-intro{display:block}
+html body #app .approach-page :is(.section-stamp-icon,.blueprint-diagram,.taste-stamp,.eq-tag,.film-frame-label,.term-num){display:none}
+html body #app .approach-page .jump-title{font-size:14px;text-transform:none;letter-spacing:0}
+html body #app .case-brief-copy{font-size:20px;line-height:1.6;margin-top:20px}
+@media(max-width:600px){html body #app .hero-storymaker h1{font-size:clamp(32px,8.2vw,48px)}html body #app .hero-storymaker .story-support{font-size:18px}}
+html:not(#copy-a#copy-b#copy-c#copy-d#copy-e) body #app .hero-storymaker .story-support{font-size:20px!important;line-height:1.5;color:#62645d}
+@media(max-width:600px){html:not(#copy-a#copy-b#copy-c#copy-d#copy-e) body #app .hero-storymaker .story-support{font-size:18px!important}}

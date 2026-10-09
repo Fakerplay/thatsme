@@ -1,0 +1,73 @@
+/* Sans-only implementation of the supplied tokens.
+   Area Normal trial files supplied by the user; HAL Timezone supplied by the user for secondary typography;
+   OC Highway -> JetBrains Mono. Gooper intentionally omitted. */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@font-face{font-family:"Area Normal";src:url("fonts/area-trial/AreaTrialNormal-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Area Normal";src:url("fonts/area-trial/AreaTrialNormal-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:"Area Normal";src:url("fonts/area-trial/AreaTrialNormal-Semibold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:"HAL Timezone";src:url("fonts/hal-timezone/HALTimezoneVariableUnlicensed-Upright.ttf") format("truetype");font-weight:200 900;font-style:normal;font-display:swap;}
+:root{
+ --font-area-normal:"Area Normal",Arial,sans-serif;
+ --font-hal-timezone:"HAL Timezone",Arial,sans-serif;
+ --font-oc-highway:'JetBrains Mono',monospace;
+ --sans:var(--font-area-normal);--serif:var(--font-area-normal);--mono:var(--font-oc-highway);
+ --text-caption:12px;--text-body-sm:14px;--text-body:18px;--text-subheading:20px;
+ --text-heading-sm:30px;--text-heading:40px;--text-heading-lg:60px;--text-display:80px;
+ --spacing-4:4px;--spacing-8:8px;--spacing-12:12px;--spacing-16:16px;
+ --spacing-20:20px;--spacing-24:24px;--spacing-32:32px;--spacing-36:36px;
+ --spacing-40:40px;--spacing-68:68px;--spacing-80:80px;--spacing-120:120px;--spacing-160:160px;
+ --radius-hero:40px;--radius-card:8px;--radius-link:44px;--radius-input:3px;--radius-button:800px;
+ --shadow-sm:rgba(18,25,97,.08) 0px 1px 4px 0px;
+ --shadow-xl:rgba(0,0,0,.16) 0px 28px 80px 0px;
+}
+/* Match the existing CTA override layer without changing shared layouts. */
+html:not(#type-a#type-b#type-c#type-d) :is(body,h1,h2,h3,h4,h5,h6,p,a,button,input,textarea,select,dt,dd,li,figcaption,.masthead,.row-title,.btn-label){font-family:var(--font-area-normal)!important;font-synthesis:none}
+html:not(#type-a#type-b#type-c#type-d) :is(h1,h2,h3,h4,h5,h6,strong){font-weight:500!important}
+html:not(#type-a#type-b#type-c#type-d) :is(em,i){font-style:normal!important}
+html:not(#type-a#type-b#type-c#type-d) h1{font-size:clamp(36px,5.6vw,var(--text-display));line-height:1.1;letter-spacing:-.029em}
+html:not(#type-a#type-b#type-c#type-d) h2{font-size:clamp(30px,4.2vw,var(--text-heading-lg));line-height:1.1;letter-spacing:-.029em}
+html:not(#type-a#type-b#type-c#type-d) h3{font-size:var(--text-heading-sm);line-height:1.2;letter-spacing:-.03em}
+html:not(#type-a#type-b#type-c#type-d) :is(.story-support,.page-intro>p,.reading-copy,.reading-copy p,.about-editorial .story-copy p,.about-editorial .ae-intro-copy p,.about-editorial .career-list>p,.case-note,.contribution-list li,.approach-page p){font-size:var(--text-body);line-height:1.4;letter-spacing:-.013em;font-weight:400}
+html:not(#type-a#type-b#type-c#type-d) :is(.main-nav a,.folio-bar,.case-jump button){font-family:var(--font-hal-timezone)!important;font-weight:400;font-size:12px;line-height:1.5;letter-spacing:-.012em}
+html:not(#type-a#type-b#type-c#type-d) :is(.eyebrow,.project-tag,.film-meta,.case-decision-number,.story-stamp figcaption){font-family:var(--font-oc-highway)!important;font-size:10px;line-height:1.1;letter-spacing:.1em;font-weight:400!important}
+html:not(#type-a#type-b#type-c#type-d) :is(.case-media figcaption,.ae-portrait figcaption,.career-list dd){font-size:var(--text-caption);line-height:1.2;letter-spacing:-.0125em}
+html:not(#type-a#type-b#type-c#type-d) :is(.row-title,.project-title-row h1){font-family:var(--font-area-normal)!important;font-weight:500!important}
+html:not(#type-a#type-b#type-c#type-d) :is(.btn,.btn-label,.career-resume,.folio-close,.back-link,.text-link,.folio-signoff a){font-family:var(--font-area-normal)!important;font-size:14px;line-height:1.4;letter-spacing:-.005em;text-transform:none;font-weight:500;border-radius:var(--radius-button)!important;box-shadow:var(--shadow-sm)!important}
+html:not(#type-a#type-b#type-c#type-d) :is(.hero-option,.approach-hero){border-radius:var(--radius-hero)}
+html:not(#type-a#type-b#type-c#type-d) :is(.index-card,.film-card,.chat-message){border-radius:var(--radius-card)}
+html:not(#type-a#type-b#type-c#type-d) :is(input,textarea,select){border-radius:var(--radius-input)!important}
+html:not(#type-a#type-b#type-c#type-d) dialog{box-shadow:var(--shadow-xl)}
+html:not(#type-a#type-b#type-c#type-d) .about-editorial .ae-intro h1{font-size:clamp(36px,4.3vw,60px);line-height:1.1;letter-spacing:-.029em}
+html:not(#type-a#type-b#type-c#type-d) :is(.case-section-title,.about-editorial .personality-grid h3){font-size:30px;line-height:1.2;letter-spacing:-.03em}
+html:not(#type-a#type-b#type-c#type-d) .about-editorial .ae h2{font-size:40px;line-height:1.2;letter-spacing:-.025em}
+html:not(#type-a#type-b#type-c#type-d) .about-editorial .personality-grid p{font-size:14px;line-height:1.43;letter-spacing:-.005em}
+@media(max-width:700px){
+ html:not(#type-a#type-b#type-c#type-d) :is(.case-section-title,.about-editorial .personality-grid h3){font-size:24px}
+ html:not(#type-a#type-b#type-c#type-d) .about-editorial .ae h2{font-size:30px}
+ html:not(#type-a#type-b#type-c#type-d) .header-right .btn{font-size:11px;padding:10px!important}
+ .site-header #search-toggle{display:none!important}
+ .site-header{grid-template-columns:auto minmax(0,1fr) auto!important;gap:8px!important}
+ html:not(#type-a#type-b#type-c#type-d) .masthead{font-size:clamp(15px,4.2vw,24px);white-space:nowrap;justify-self:center}
+}
+@media(max-width:700px){
+ .section-title{flex-wrap:wrap;min-width:0}
+ .section-title>*{min-width:0;max-width:100%}
+ html:not(#type-a#type-b#type-c#type-d) :is(.section-title a,.film-card h3){white-space:normal;overflow-wrap:anywhere}
+ html:not(#type-a#type-b#type-c#type-d) .film-card h3{font-size:20px}
+ html:not(#type-a#type-b#type-c#type-d) .hello-note{font-size:13px;max-width:210px;white-space:normal}
+}
+
+/* HAL roles from the supplied typography system; micro-labels retain OC fallback. */
+html:not(#type-a#type-b#type-c#type-d) :is(.main-nav a,.folio-bar,.case-jump button){font-family:var(--font-hal-timezone)!important;font-weight:200!important;font-size:12px;line-height:1.5;letter-spacing:-.012em}
+html:not(#type-a#type-b#type-c#type-d) :is(.case-section-title,.about-editorial .personality-grid h3,.approach-page h3){font-family:var(--font-hal-timezone)!important;font-weight:500!important;font-size:22px;line-height:1.3;letter-spacing:-.025em}
+html:not(#type-a#type-b#type-c#type-d) :is(.about-editorial .ae h2,.case-section-heading h2,.case-outcome h2){font-family:var(--font-hal-timezone)!important;font-weight:400!important;font-size:34px;line-height:1.2;letter-spacing:-.033em}
+html:not(#type-a#type-b#type-c#type-d) .story-kicker{font-family:var(--font-hal-timezone)!important;font-variant-caps:small-caps;font-size:20px;line-height:1.5;letter-spacing:-.012em}
+
+/* Navigation uses Area Normal; HAL remains on secondary headings. */
+html:not(#type-a#type-b#type-c#type-d) :is(.main-nav a,.folio-bar,.folio-bar a,.case-jump button,.back-link,.folio-signoff a,.career-resume){font-family:var(--font-area-normal)!important;font-weight:400!important}
+
+/* Soft editorial tags, with compact solid icons instead of coloured dots. */
+html:not(#type-a#type-b#type-c#type-d) .project-tags{gap:8px}
+html:not(#type-a#type-b#type-c#type-d) .project-tag{--tag-surface:#eceee8;display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border:0;border-radius:999px;background:var(--tag-surface);color:#242620;font-family:var(--font-hal-timezone)!important;font-size:20px;font-weight:400!important;line-height:1.2;letter-spacing:-.012em;white-space:nowrap}
+html:not(#type-a#type-b#type-c#type-d) .project-tag__icon{display:block;width:16px;height:16px;flex:0 0 16px}
+@media(max-width:700px){html:not(#type-a#type-b#type-c#type-d) .project-tag{font-size:20px;padding:8px 13px;gap:8px}}

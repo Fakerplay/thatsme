@@ -1,0 +1,56 @@
+/* About: restrained typography and a straightforward portrait. */
+body[data-page="about"]{background:#fafaf8}
+body[data-page="about"]::after{display:none}
+#app>.about-personal.about-editorial{width:calc(100% - 40px);max-width:1160px;margin:0 auto;padding:0;background:none;box-shadow:none;border:0;border-radius:0;color:#20211f;animation:none}
+#app>.about-personal.about-editorial .folio-bar{position:relative;inset:auto;display:flex;justify-content:space-between;align-items:center;padding:24px 0;margin:0;border-bottom:1px solid #dcdcd6;font-size:13px;background:none}
+#app>.about-personal.about-editorial .folio-bar>span{display:block}
+#app>.about-personal.about-editorial .folio-close{position:static;min-height:44px}
+#app>.about-personal.about-editorial>.ae{position:relative;top:auto;z-index:auto;display:grid;grid-template-columns:minmax(0,1fr);gap:28px;padding:48px 0;margin:0;min-height:0;height:auto;align-content:start;background:transparent!important;background-image:none!important;border:0;border-bottom:1px solid #dcdcd6;border-radius:0;box-shadow:none;transform:none;opacity:1}
+#app>.about-personal.about-editorial .story-stamp{display:none!important}
+#app>.about-personal.about-editorial .ae-intro{grid-template-columns:minmax(0,1fr);gap:28px}
+#app>.about-personal.about-editorial .ae-intro h1{grid-column:auto;grid-row:auto;margin:0;padding:0;max-width:24ch;font-size:clamp(34px,5vw,60px);line-height:1.1;letter-spacing:-.045em;color:#20211f}
+#app>.about-personal.about-editorial .ae-intro h1 span{color:#797b73}
+#app>.about-personal.about-editorial .ae-intro-grid{display:contents}
+#app>.about-personal.about-editorial .ae-intro-copy{grid-column:auto;grid-row:auto;max-width:56ch;margin:0;padding:0}
+#app>.about-personal.about-editorial .ae-intro-copy p{font-size:17px;line-height:1.75;margin:0 0 22px;max-width:none;color:#3e413b}
+#app>.about-personal.about-editorial .ae-intro-copy .personal-intro{font-size:16px;color:#686b63}
+#app>.about-personal.about-editorial .portrait-scene{display:none!important}
+#app>.about-personal.about-editorial .ae-portrait{grid-column:auto;grid-row:auto;display:block;position:relative;inset:auto;width:100%;max-width:420px;margin:0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;transform:none;align-self:start}
+#app>.about-personal.about-editorial .ae-portrait::before,#app>.about-personal.about-editorial .ae-portrait::after{display:none!important}
+#app>.about-personal.about-editorial .ae-portrait img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:4/5;object-fit:cover;border-radius:0;filter:grayscale(1)}
+#app>.about-personal.about-editorial .ae-portrait figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:14px 0;margin:0;font-size:12px;line-height:1.5;color:#676a62}
+#app>.about-personal.about-editorial .ae-portrait figcaption span{display:inline;font-size:12px;font-style:normal}
+#app>.about-personal.about-editorial .ae h2{font-size:clamp(28px,3.2vw,40px);line-height:1.16;letter-spacing:-.035em;margin:0;max-width:18ch;color:#20211f}
+#app>.about-personal.about-editorial .personal-chapter-title{display:block;position:static}
+#app>.about-personal.about-editorial .story-copy{max-width:61ch}
+#app>.about-personal.about-editorial .story-copy p{font-size:17px;line-height:1.8;margin:0 0 22px;max-width:none;color:#41443d}
+#app>.about-personal.about-editorial .story-copy strong{color:#20211f}
+#app>.about-personal.about-editorial .ae-personality{display:block}
+#app>.about-personal.about-editorial .ae-personality>h2{margin-bottom:36px;max-width:none}
+#app>.about-personal.about-editorial .personality-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:0 44px;margin:0}
+#app>.about-personal.about-editorial .personality-grid article{display:block;margin:0;padding:28px 0;border:0;border-top:1px solid #dcdcd6;border-radius:0;background:none;box-shadow:none;min-width:0}
+#app>.about-personal.about-editorial .personality-grid h3{margin:0 0 16px;font-size:23px;line-height:1.25;letter-spacing:-.025em;color:#20211f}
+#app>.about-personal.about-editorial .personality-grid p{margin:0;font-size:16px;line-height:1.75;color:#62655d}
+#app>.about-personal.about-editorial .career-list{max-width:none;padding:0}
+#app>.about-personal.about-editorial .career-list>p{font-size:17px;line-height:1.75;margin:0 0 30px;max-width:52ch}
+#app>.about-personal.about-editorial .career-list dl{margin:0 0 30px;border-bottom:1px solid #dcdcd6}
+#app>.about-personal.about-editorial .career-list dl>div{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:22px 0;border:0;border-top:1px solid #dcdcd6}
+#app>.about-personal.about-editorial .career-list dt{font-size:23px;letter-spacing:-.025em;margin:0}
+#app>.about-personal.about-editorial .career-list dd{font-size:15px;line-height:1.65;margin:0;color:#62655d}
+#app>.about-personal.about-editorial .career-list dt span{font-size:11px;margin-left:8px;padding:3px 6px;background:#eceee7;color:#444a3f;border:0;border-radius:0;vertical-align:middle}
+#app>.about-personal.about-editorial .folio-signoff{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin:0;padding:30px 0;background:none;border:0;font-size:14px}
+#app>.about-personal.about-editorial .folio-signoff>span{font-size:16px}
+html:not(#cta-a#cta-b#cta-c) body[data-page="about"] #app>.about-editorial :is(.btn,.folio-close,.career-resume,.folio-signoff a){font-family:var(--sans)!important;letter-spacing:0;text-transform:none;box-shadow:none!important;border-radius:0!important;background:#252722!important;color:#fafaf8!important;border-color:#252722!important;font-size:14px;padding:12px 18px;min-height:44px;transform:none!important}
+@media(min-width:701px){
+ #app>.about-personal.about-editorial{width:calc(100% - 96px)}
+ #app>.about-personal.about-editorial>.ae{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;padding-block:72px}
+ #app>.about-personal.about-editorial .ae-intro{grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr);column-gap:64px;row-gap:28px;padding-block:64px 80px}
+ #app>.about-personal.about-editorial .ae-intro h1{grid-column:1;grid-row:1;font-size:clamp(38px,4.3vw,60px)}
+ #app>.about-personal.about-editorial .ae-intro-copy{grid-column:1;grid-row:2}
+ #app>.about-personal.about-editorial .ae-portrait{grid-column:2;grid-row:1/3;margin:0}
+ #app>.about-personal.about-editorial .ae-personality{display:block}
+ #app>.about-personal.about-editorial .personality-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #app>.about-personal.about-editorial .personality-grid article{padding-block:32px}
+ #app>.about-personal.about-editorial .career-list dl>div{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:24px}
+}
+@media(prefers-reduced-motion:reduce){#app>.about-personal.about-editorial *{animation:none!important;transition:none!important}}

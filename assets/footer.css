@@ -1,0 +1,28 @@
+/* Portfolio footer: dark, spacious and built around direct contact. */
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer{display:block;width:calc(100% - 32px);max-width:none;margin:64px auto 16px;padding:clamp(28px,4vw,64px);border-radius:20px;background:#11120f;color:#f5f5ed;border:1px solid #252720;font-family:var(--font-area-normal)!important}
+.portfolio-footer .pf-main{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.portfolio-footer .pf-identity{display:flex;flex-direction:column;align-items:flex-start}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer a{font-family:var(--font-area-normal)!important;color:inherit;text-decoration:none;box-shadow:none;border:0;background:transparent;border-radius:0}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer .pf-name{position:relative;display:block;font-size:32px;font-weight:500;line-height:1.05;letter-spacing:-.04em;padding-right:36px}
+.pf-name>span{position:absolute;right:0;top:0;font-size:25px;color:#bbc99e}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer .pf-statement{font-size:clamp(26px,2.7vw,40px);font-weight:400;line-height:1.18;letter-spacing:-.035em;margin:40px 0 16px}
+.portfolio-footer .pf-location{font-size:13px;color:#a4a89b;margin:0}
+.portfolio-footer .pf-navigation{min-width:0}
+.portfolio-footer nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer nav a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px;padding:16px;background:#1d1f19;border-radius:4px;font-size:15px;line-height:1.4}
+.portfolio-footer nav a>span{color:#8c9580;font-size:16px}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer .pf-cta{display:flex;align-items:center;justify-content:space-between;min-height:60px;margin-top:24px;background:#f0f1e8;color:#20231b;border-radius:4px;overflow:hidden;font-size:16px}
+.pf-cta>span:first-child{padding:16px}
+.pf-cta .pf-arrow{display:grid;place-items:center;align-self:stretch;width:60px;flex:0 0 60px;background:#c3d5a2;font-size:24px}
+.portfolio-footer .pf-contact{display:flex;flex-direction:column;justify-content:space-between;min-width:0;padding:24px;background:#1d1f19;border-radius:8px;gap:30px}
+.portfolio-footer .pf-label{font-size:12px;line-height:1.5;color:#adb39f}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer .pf-contact p{font-size:22px;line-height:1.35;letter-spacing:-.025em;margin:0}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer .pf-contact a{font-size:13px;line-height:1.7;overflow-wrap:anywhere;border-bottom:1px solid #4b5141;padding-bottom:12px}
+.portfolio-footer .pf-contact a>span{margin-left:6px}
+.portfolio-footer .pf-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-top:24px;margin-top:56px;border-top:1px solid #30342a;color:#a4aa99;font-size:12px;line-height:1.5}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer a:hover{color:#c3d5a2}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer .pf-cta:hover{color:#20231b;background:#fff}
+html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer a:focus-visible{outline:2px solid #c3d5a2;outline-offset:5px}
+@media(min-width:760px){.portfolio-footer .pf-main{grid-template-columns:1fr 1fr;gap:40px}.portfolio-footer .pf-contact{grid-column:1/-1;flex-direction:row;align-items:center}.portfolio-footer .pf-contact p{flex:1}.portfolio-footer .pf-bottom{margin-top:64px}}
+@media(min-width:1200px){.portfolio-footer .pf-main{grid-template-columns:1fr 1.15fr 1fr;gap:clamp(32px,4vw,72px)}.portfolio-footer .pf-contact{grid-column:auto;flex-direction:column;align-items:stretch}.portfolio-footer .pf-contact p{flex:0}.portfolio-footer .pf-bottom{margin-top:96px}.portfolio-footer .pf-statement{margin-top:64px!important}}
+@media(max-width:380px){html:not(#footer-a#footer-b#footer-c#footer-d#footer-e) .portfolio-footer{padding:24px 20px}.portfolio-footer nav{grid-template-columns:1fr}}

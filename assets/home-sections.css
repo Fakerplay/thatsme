@@ -1,0 +1,16 @@
+/* Homepage chapters: cream introduction, neutral portfolio, dark cinema, sage closing. */
+body[data-page="home"]{background:#fafaf7;--muted:#62645d}
+body[data-page="home"]::after{display:none}
+body[data-page="home"] #app :is(.hero-storymaker,.brand-strip,.work-intro,.project-row,.more-work,.film-section,.card-play,.home-about){position:relative;isolation:isolate;background:transparent!important}
+body[data-page="home"] #app :is(.hero-storymaker,.brand-strip,.work-intro,.project-row,.more-work,.film-section,.card-play,.home-about)::before{content:"";position:absolute;inset-block:0;left:50%;width:var(--gallery-viewport,100vw);transform:translateX(-50%);z-index:-1;pointer-events:none;background:var(--home-section,#fafaf7)!important;opacity:1;border:0;box-shadow:none}
+body[data-page="home"] #app .hero-storymaker{--home-section:#f3efe5}
+body[data-page="home"] #app .brand-strip::before{display:none}
+body[data-page="home"] #app :is(.work-intro,.project-row,.more-work){--home-section:#fafaf7}
+body[data-page="home"] #app .project-row{padding-block:clamp(40px,5vw,72px);border-top:1px solid #dedfd7}
+body[data-page="home"] #app .film-section{--home-section:#1b1e19;--ink:#f5f4ec;--muted:#babeb2;--line:#454a40;color:#f5f4ec;padding-block:clamp(64px,7vw,104px)}
+body[data-page="home"] #app .film-section :is(h2,h3,a){color:#f5f4ec}
+body[data-page="home"] #app .film-section :is(.eyebrow,.film-meta,.section-title>p){color:#babeb2}
+body[data-page="home"] #app .film-section a:focus-visible{outline:2px solid #c3d5a2;outline-offset:6px}
+body[data-page="home"] #app :is(.card-play,.home-about){--home-section:#e1e7d8;--muted:#545e4c;color:#242a20}
+body[data-page="home"] #app .card-play{padding-top:clamp(56px,7vw,100px)}
+body[data-page="home"] #app .home-about{border-top:1px solid #c4ceba}
