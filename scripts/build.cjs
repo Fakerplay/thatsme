@@ -34,6 +34,7 @@ for(const page of pages){
  html=html.replace(/(<a href=")(work|about|studies)(\/">)/g,(all,pre,route,post)=>route===(page.page==='project'?'work':page.page)?pre+route+'/" class="active" aria-current="page">':all);
  // The skip link must target this document even with a shared base URL.
  html=html.replace('class="skip-link" href="#app"','class="skip-link" href="'+(page.route||'./')+'#app"');
+ if(page.page==='home')html=html.replace('</head>','<link rel="stylesheet" href="assets/home-intro.css?v=1"></head>').replace('<body data-page="home">','<body data-page="home"><script src="assets/home-intro.js?v=1"></script>');
  const destination=path.join(root,page.route,'index.html');fs.mkdirSync(path.dirname(destination),{recursive:true});fs.writeFileSync(destination,html);
 }
 fs.writeFileSync(path.join(root,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+pages.map(p=>'  <url><loc>'+esc(absolute(p.route))+'</loc></url>').join('\n')+'\n</urlset>\n');
