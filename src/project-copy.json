@@ -19,7 +19,13 @@
         "url": "https://prachyam.com/video/Kanhoji-Angre-Navy-Maratha-Army"
       }
     ],
-    "title": "Kanhoji Angre"
+    "title": "Kanhoji Angre",
+    "watchLinks": [
+      {
+        "label": "Watch on Prachyam",
+        "url": "https://prachyam.com/video/Kanhoji-Angre-Navy-Maratha-Army"
+      }
+    ]
   },
   "bhabha": {
     "summary": "I created 1960s-inspired graphics and motion for Prachyam’s Who Killed Bhabha?",
@@ -42,12 +48,34 @@
     },
     "links": [
       {
+        "label": "Watch film on Prachyam",
+        "url": "https://prachyam.com/video/who-killed-bhabha"
+      },
+      {
+        "label": "Watch film on YouTube",
+        "url": "https://www.youtube.com/watch?v=p6lDrkBhIdY"
+      },
+      {
         "label": "Watch the official trailer",
         "url": "https://www.youtube.com/watch?v=YOV3l_BdNSg"
       },
       {
         "label": "View the motion design project on Behance",
         "url": "https://www.behance.net/gallery/215507943/Homi-Bhabha-Motion-Design"
+      }
+    ],
+    "watchLinks": [
+      {
+        "label": "Watch on Prachyam",
+        "url": "https://prachyam.com/video/who-killed-bhabha"
+      },
+      {
+        "label": "Watch film on YouTube",
+        "url": "https://www.youtube.com/watch?v=p6lDrkBhIdY"
+      },
+      {
+        "label": "Watch trailer on YouTube",
+        "url": "https://www.youtube.com/watch?v=YOV3l_BdNSg"
       }
     ]
   },
@@ -178,7 +206,13 @@
         "url": "https://prachyam.com/video/chained-souls-girmitiya"
       }
     ],
-    "title": "Chained Souls: Girmitiya"
+    "title": "Chained Souls: Girmitiya",
+    "watchLinks": [
+      {
+        "label": "Watch on Prachyam",
+        "url": "https://prachyam.com/video/chained-souls-girmitiya"
+      }
+    ]
   },
   "indiclass": {
     "summary": "I developed the opening identity and motion-design styleframes for Prachyam’s Indiclass series.",
@@ -234,6 +268,16 @@
         "label": "Prachyam’s YouTube preview",
         "url": "https://www.youtube.com/watch?v=yaOM2Q5qhHY"
       }
+    ],
+    "watchLinks": [
+      {
+        "label": "Watch on Prachyam",
+        "url": "https://prachyam.com/video/Lachit-Borphukan-Battle-Of-Saraighat"
+      },
+      {
+        "label": "Watch trailer on YouTube",
+        "url": "https://www.youtube.com/watch?v=yaOM2Q5qhHY"
+      }
     ]
   },
   "phyllo": {
@@ -276,6 +320,16 @@
         "label": "Official film on YouTube",
         "url": "https://www.youtube.com/watch?v=N3E534MpkHU"
       }
+    ],
+    "watchLinks": [
+      {
+        "label": "Watch on Prachyam",
+        "url": "https://prachyam.com/video/saheb-who-never-left-1"
+      },
+      {
+        "label": "Watch film on YouTube",
+        "url": "https://www.youtube.com/watch?v=N3E534MpkHU"
+      }
     ]
   },
   "sanskrit": {
@@ -298,7 +352,17 @@
         "url": "https://www.youtube.com/watch?v=MWc1r3o4NW4"
       }
     ],
-    "title": "Gauri Mahulikar on Sanskrit"
+    "title": "Gauri Mahulikar on Sanskrit",
+    "watchLinks": [
+      {
+        "label": "Watch on Prachyam",
+        "url": "https://prachyam.com/indiclass/gauri-mahulikar-on-sanskrit"
+      },
+      {
+        "label": "Watch trailer on YouTube",
+        "url": "https://www.youtube.com/watch?v=MWc1r3o4NW4"
+      }
+    ]
   },
   "solace": {
     "summary": "I created Solace as a self-initiated AI wellness concept, shaping its product direction, identity and website.",
@@ -397,6 +461,16 @@
       },
       {
         "label": "Official trailer",
+        "url": "https://www.youtube.com/watch?v=Ybcb_NhV-I4"
+      }
+    ],
+    "watchLinks": [
+      {
+        "label": "Watch on Prachyam",
+        "url": "https://prachyam.com/video/gifts-of-india-wootz-steel"
+      },
+      {
+        "label": "Watch trailer on YouTube",
         "url": "https://www.youtube.com/watch?v=Ybcb_NhV-I4"
       }
     ]
