@@ -1,8 +1,8 @@
 /* Link employer mentions without replacing project navigation or interactive labels. */
 (()=>{
- const companies={WizCommerce:'https://wizcommerce.com/',Prachyam:'https://prachyam.com/',Phyllo:'https://www.getphyllo.com/',Ecolab:'https://www.ecolab.com/','100kmph':'https://100kmph.com/'};
+ const companies={Daulat:'https://daulat.co.in/',insightIQ:'https://www.insightiq.ai/use-cases/influencer-marketing',WizCommerce:'https://wizcommerce.com/',Prachyam:'https://prachyam.com/',Phyllo:'https://www.getphyllo.com/',Ecolab:'https://www.ecolab.com/','100kmph':'https://100kmph.com/'};
  const names=new Map(Object.entries(companies).map(([name,url])=>[name.toLowerCase(),url]));
- const pattern=/\b(WizCommerce|Prachyam|Phyllo|Ecolab|100kmph)\b/gi;
+ const pattern=/\b(WizCommerce|Prachyam|Phyllo|Ecolab|100kmph|Daulat|insightIQ)\b/gi;
  function linkMentions(root){
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const nodes=[];
   if(root.nodeType===Node.TEXT_NODE)nodes.push(root);

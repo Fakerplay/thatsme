@@ -2,7 +2,7 @@
 
 ## Editing and building
 
-The shared source is `src/site.html`. It contains the page templates, project data and interactions. Styles and media live in `assets/`.
+The shared source is `src/site.html`. It contains the page templates, project data and interactions. Reviewed project copy and verified destination links live in `src/project-copy.json`; these override legacy project text in the shared source and are embedded during the build. Styles and media live in `assets/`.
 
 After editing, run:
 

@@ -1,7 +1,8 @@
 const fs=require('node:fs');const path=require('node:path');const vm=require('node:vm');
 const root=path.resolve(__dirname,'..');
 const origin=(process.env.SITE_URL||'https://fakerplay.github.io/thatsme/').replace(/\/?$/,'/');
-const template=fs.readFileSync(path.join(root,'src/site.html'),'utf8').replace('<meta name="robots" content="noindex">','');
+const projectCopy=JSON.parse(fs.readFileSync(path.join(root,'src/project-copy.json'),'utf8'));
+const template=fs.readFileSync(path.join(root,'src/site.html'),'utf8').replace('<meta name="robots" content="noindex">','').replace('<script id="project-copy" type="application/json">{}</script>','<script id="project-copy" type="application/json">'+JSON.stringify(projectCopy).replace(/</g,'\\u003c')+'</script>');
 const json=id=>JSON.parse(template.match(new RegExp('<script id="'+id+'"[^>]*>([\\s\\S]*?)</script>'))[1]);
 const context=vm.createContext({document:{getElementById:id=>({textContent:JSON.stringify(json(id))}),querySelector:()=>({})},console});
 const start=template.indexOf('const A=JSON.parse(');const end=template.indexOf('function refineIcons()',start);
@@ -16,8 +17,8 @@ const pages=[
  {route:'studies/',page:'studies',title:'Design Case Studies — Shubham Shinde',description:'Read the briefs, contributions and design decisions behind Shubham Shinde’s selected brand, film and website projects.',html:site.studies()}
 ];
 for(const p of site.PROJECTS)pages.push({route:'project/'+p.id+'/',page:'project',title:p.title+' — '+p.type+' | Shubham Shinde',description:site.projectSummary(p),html:site.projectPage(p),project:p});
-const companies={WizCommerce:'https://wizcommerce.com/',Prachyam:'https://prachyam.com/',Phyllo:'https://www.getphyllo.com/',Ecolab:'https://www.ecolab.com/','100kmph':'https://100kmph.com/'};
-function companyLinks(html){let blocked=0;return html.split(/(<[^>]+>)/g).map(part=>{if(part[0]==='<'){if(/^<(a|button)\b/.test(part))blocked++;if(/^<\/(a|button)>/.test(part))blocked--;return part;}return blocked?part:part.replace(/\b(WizCommerce|Prachyam|Phyllo|Ecolab|100kmph)\b/g,name=>'<a class="company-link" href="'+companies[name]+'">'+name+'</a>')}).join('')}
+const companies={Daulat:'https://daulat.co.in/',insightIQ:'https://www.insightiq.ai/use-cases/influencer-marketing',WizCommerce:'https://wizcommerce.com/',Prachyam:'https://prachyam.com/',Phyllo:'https://www.getphyllo.com/',Ecolab:'https://www.ecolab.com/','100kmph':'https://100kmph.com/'};
+function companyLinks(html){let blocked=0;return html.split(/(<[^>]+>)/g).map(part=>{if(part[0]==='<'){if(/^<(a|button)\b/.test(part))blocked++;if(/^<\/(a|button)>/.test(part))blocked--;return part;}return blocked?part:part.replace(/\b(WizCommerce|Prachyam|Phyllo|Ecolab|100kmph|Daulat|insightIQ)\b/g,name=>'<a class="company-link" href="'+companies[name]+'">'+name+'</a>')}).join('')}
 const person={'@type':'Person','@id':absolute('#person'),name:'Shubham Shinde',url:origin,jobTitle:'Graphic Design Lead',worksFor:{'@type':'Organization',name:'WizCommerce',url:companies.WizCommerce},homeLocation:{'@type':'Place',name:'Bengaluru, India'},sameAs:['https://www.behance.net/shubhamshinde'],knowsAbout:['Brand identity','Art direction','Motion design','Website design'],image:absolute('assets/about-shubham-red.png')};
 for(const page of pages){
  const canonical=absolute(page.route);let hero=page.project?site.A[page.project.assets[0]]:'assets/about-shubham-red.png';if(!hero||hero.endsWith('.mp4'))hero='assets/about-shubham-red.png';
