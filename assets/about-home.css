@@ -55,3 +55,16 @@ html body #app>.about-folio.about-personal.about-short .career-company img{displ
 html body #app>.about-folio.about-personal.about-short .career-company:focus-visible{outline:2px solid currentColor;outline-offset:6px}
 html body #app>.about-folio.about-personal.about-short .career-list dl>div{align-items:center}
 @media(max-width:760px){html body #app>.about-folio.about-personal.about-short .personality-grid{grid-template-columns:1fr;gap:0}}
+
+/* Experience and services: simple typography, shared About spacing. */
+html body #app>.about-folio.about-personal.about-editorial>.about-stats{display:block;padding-block:48px;background:transparent!important}
+.about-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin:0}
+.about-stat-grid>div{display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:16px}
+html:not(#about-a#about-b#about-c#about-d#about-e) #app>.about-folio.about-personal.about-editorial .about-stat-grid dd{margin:0;color:#242620;font-size:clamp(48px,6vw,80px);line-height:1;letter-spacing:-.04em;font-weight:500}
+html:not(#about-a#about-b#about-c#about-d#about-e) #app>.about-folio.about-personal.about-editorial .about-stat-grid dt{font-size:16px;line-height:1.4;color:#62645d;max-width:23ch}
+.about-service-list{margin:0}
+.about-service-list>div{padding:24px 0;border-bottom:1px solid #dedfd7}
+.about-service-list>div:first-child{padding-top:0}
+.about-service-list>div:last-child{border-bottom:0;padding-bottom:0}
+.about-service-list dd{margin:10px 0 0;max-width:44ch}
+@media(max-width:760px){.about-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}html body #app>.about-folio.about-personal.about-editorial>.about-services>h2{margin-bottom:32px}}
