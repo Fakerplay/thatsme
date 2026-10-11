@@ -69,16 +69,17 @@
     ]
   },
   "cultural-motion": {
-    "summary": "I created motion sequences for Prachyam featuring illustrated portraits, devotional scenes and cultural practices.",
+    "summary": "A few more motion sequences I created at Prachyam, from illustrated portraits to devotional scenes and cultural practices.",
     "desc": "Illustrated portraits, devotional scenes and cultural motion work.",
     "body": "This selection includes a cave meditation scene, a guru portrait, kirtan, Krishna and Rukmini, and an Upanayan sequence.",
     "detail": "I worked on creative direction, visual design and motion treatment across these selected scenes.",
-    "context": "Prachyam · Selected cultural motion work",
+    "context": "Prachyam · Selected highlights",
     "contribution": [
       "Handled creative direction and visual design for the selected work.",
       "Worked on composition and motion treatment across the illustrated scenes."
     ],
-    "links": []
+    "links": [],
+    "title": "Other highlights from Prachyam"
   },
   "daulat": {
     "summary": "I designed Daulat’s website to introduce its wealth-management approach and guide visitors towards a consultation.",
@@ -162,16 +163,22 @@
     ]
   },
   "indentured": {
-    "summary": "I created selected motion sequences for Prachyam about indentured labour, using maps, archival material and typography.",
+    "summary": "I created motion sequences for Prachyam’s Chained Souls: Girmitiya, using maps, archival material and typography.",
     "desc": "I used maps, archive and motion to tell a history of indentured labour.",
-    "body": "I developed the visual direction and motion treatment for the sequences shown here. The work moves between scenes of workers, a map connecting India and Mauritius, historical material and typography.",
+    "body": "For Chained Souls: Girmitiya, I developed the visual direction and motion treatment for the sequences shown here. The work moves between scenes of workers, a map connecting India and Mauritius, historical material and typography.",
     "detail": "I brought together geographic movement, archival documents and scenes of working life through composition, typography and animation.",
-    "context": "Prachyam · Selected motion sequences",
+    "context": "Prachyam · Chained Souls: Girmitiya · Documentary",
     "contribution": [
       "Led creative direction and visual design for the selected sequences.",
       "Developed the composition, typography and motion treatment across maps, historical material and human scenes."
     ],
-    "links": []
+    "links": [
+      {
+        "label": "Film on Prachyam",
+        "url": "https://prachyam.com/video/chained-souls-girmitiya"
+      }
+    ],
+    "title": "Chained Souls: Girmitiya"
   },
   "indiclass": {
     "summary": "I developed the opening identity and motion-design styleframes for Prachyam’s Indiclass series.",
@@ -272,16 +279,26 @@
     ]
   },
   "sanskrit": {
-    "summary": "I created motion sequences for Prachyam’s Sanskrit project, combining script details, explanatory typography, maps and illustrations.",
+    "summary": "I created motion sequences for Prachyam’s Gauri Mahulikar on Sanskrit, combining script details, explanatory typography, maps and illustrations.",
     "desc": "Scripts, language maps and illustrated traditions in motion.",
-    "body": "I led creative direction and visual design for the selected Sanskrit sequences shown here. The work moves between close studies of script, typographic explanations and illustrated scenes.",
+    "body": "I led creative direction and visual design for the selected sequences from Gauri Mahulikar on Sanskrit. The work moves between close studies of script, typographic explanations and illustrated scenes.",
     "detail": "The selection covers Brahmi script, Shruti and Smruti, language families, and Shiv and Shakti. I developed the composition, typography and motion treatment across these pieces.",
-    "context": "Prachyam · Selected motion work",
+    "context": "Prachyam · Indiclass · Gauri Mahulikar on Sanskrit",
     "contribution": [
       "Led creative direction and hands-on visual design for the selected sequences.",
       "Developed composition, typography and motion treatments for script details, explanations, maps and illustrations."
     ],
-    "links": []
+    "links": [
+      {
+        "label": "Watch on Prachyam",
+        "url": "https://prachyam.com/indiclass/gauri-mahulikar-on-sanskrit"
+      },
+      {
+        "label": "Official trailer",
+        "url": "https://www.youtube.com/watch?v=MWc1r3o4NW4"
+      }
+    ],
+    "title": "Gauri Mahulikar on Sanskrit"
   },
   "solace": {
     "summary": "I created Solace as a self-initiated AI wellness concept, shaping its product direction, identity and website.",
