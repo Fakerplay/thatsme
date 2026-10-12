@@ -474,5 +474,30 @@
         "url": "https://www.youtube.com/watch?v=Ybcb_NhV-I4"
       }
     ]
+  },
+  "wizcrm": {
+    "summary": "I designed WizCRM’s landing page and product visuals, connecting its CRM and AI features to everyday sales tasks.",
+    "context": "WizCommerce · CRM landing page · Three-day design scope",
+    "contribution": [
+      "Researched the product and shaped the landing page’s visual direction.",
+      "Designed the page and supporting illustrations around accounts, follow-ups, quotes and deals.",
+      "Created motion studies to show product features and interactions."
+    ],
+    "story": {
+      "challenge": "Explain WizCRM’s core capabilities and AI features in one connected landing page, with three days for research, design and supporting visuals while the interface was still evolving.",
+      "decisions": [
+        "Lead with the product. A focused hero, editorial typography and a consistent lavender palette connect the page.",
+        "Build illustrations around everyday tasks: reviewing accounts, creating follow-ups, managing quotes and tracking deals.",
+        "Show what AI helps someone do, using specific moments such as prioritising opportunities and creating tasks."
+      ],
+      "result": "The finished showcase brings together the landing page, device mockups, feature illustrations and motion studies."
+    },
+    "links": [
+      {
+        "label": "Visit WizCommerce",
+        "url": "https://wizcommerce.com/"
+      }
+    ],
+    "ownership": ""
   }
 }
