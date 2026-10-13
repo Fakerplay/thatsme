@@ -1,0 +1,1 @@
+(()=>{const note=document.getElementById('portfolio-note');if(!note)return;try{if(sessionStorage.getItem('portfolio-note-collapsed')==='1')note.open=false;}catch(e){}note.addEventListener('toggle',()=>{try{sessionStorage.setItem('portfolio-note-collapsed',note.open?'0':'1')}catch(e){}})})();
