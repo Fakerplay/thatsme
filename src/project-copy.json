@@ -499,5 +499,18 @@
       }
     ],
     "ownership": ""
+  },
+  "benchmark-report": {
+    "summary": "I designed WizCommerce’s B2B benchmark report and landing page, turning dense industry research into clear layouts, charts and takeaways.",
+    "links": [
+      {
+        "label": "Full project on Behance",
+        "url": "https://www.behance.net/gallery/257032287/The-State-of-B2B-Commerce-Report-Design-2026"
+      },
+      {
+        "label": "Explore the live report",
+        "url": "https://wizcommerce.com/templates/b2b-ecommerce-benchmark-report-2026/"
+      }
+    ]
   }
 }
