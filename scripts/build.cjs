@@ -1,6 +1,6 @@
 const fs=require('node:fs');const path=require('node:path');const vm=require('node:vm');
 const root=path.resolve(__dirname,'..');
-const origin=(process.env.SITE_URL||'https://fakerplay.github.io/thatsme/').replace(/\/?$/,'/');
+const origin=(process.env.SITE_URL||'https://studioshubham.vercel.app/').replace(/\/?$/,'/');
 const projectCopy=JSON.parse(fs.readFileSync(path.join(root,'src/project-copy.json'),'utf8'));
 const template=fs.readFileSync(path.join(root,'src/site.html'),'utf8').replace('<meta name="robots" content="noindex">','').replace('<script id="project-copy" type="application/json">{}</script>','<script id="project-copy" type="application/json">'+JSON.stringify(projectCopy).replace(/</g,'\\u003c')+'</script>');
 const json=id=>JSON.parse(template.match(new RegExp('<script id="'+id+'"[^>]*>([\\s\\S]*?)</script>'))[1]);
@@ -19,11 +19,20 @@ const pages=[
 for(const p of site.PROJECTS)pages.push({route:'project/'+p.id+'/',page:'project',title:p.title+' — '+p.type+' | Shubham Shinde',description:site.projectSummary(p),html:site.projectPage(p),project:p});
 const companies={Daulat:'https://daulat.co.in/',insightIQ:'https://www.insightiq.ai/use-cases/influencer-marketing',WizCommerce:'https://wizcommerce.com/',Prachyam:'https://prachyam.com/',Phyllo:'https://www.getphyllo.com/',Ecolab:'https://www.ecolab.com/','100kmph':'https://100kmph.com/'};
 function companyLinks(html){let blocked=0;return html.split(/(<[^>]+>)/g).map(part=>{if(part[0]==='<'){if(/^<(a|button)\b/.test(part))blocked++;if(/^<\/(a|button)>/.test(part))blocked--;return part;}return blocked?part:part.replace(/\b(WizCommerce|Prachyam|Phyllo|Ecolab|100kmph|Daulat|insightIQ)\b/g,name=>'<a class="company-link" href="'+companies[name]+'">'+name+'</a>')}).join('')}
-const person={'@type':'Person','@id':absolute('#person'),name:'Shubham Shinde',url:origin,jobTitle:'Graphic Design Lead',worksFor:{'@type':'Organization',name:'WizCommerce',url:companies.WizCommerce},homeLocation:{'@type':'Place',name:'Bengaluru, India'},sameAs:['https://www.behance.net/shubhamshinde'],knowsAbout:['Brand identity','Art direction','Motion design','Website design'],image:absolute('assets/about-shubham-red.png')};
+const person={'@type':'Person','@id':absolute('#person'),name:'Shubham Shinde',url:origin,jobTitle:'Graphic Design Lead',worksFor:{'@type':'Organization',name:'WizCommerce',url:companies.WizCommerce},homeLocation:{'@type':'Place',name:'Bengaluru, India'},sameAs:['https://www.behance.net/shubhamshinde','https://www.linkedin.com/in/shubhamshinde'],knowsAbout:['Brand identity','Art direction','Motion design','Website design'],image:absolute('assets/about-shubham-red.webp')};
 for(const page of pages){
- const canonical=absolute(page.route);let hero=page.project?site.A[page.project.assets[0]]:'assets/about-shubham-red.png';if(!hero||hero.endsWith('.mp4'))hero='assets/about-shubham-red.png';
+ const canonical=absolute(page.route);
+ const visuals=page.project?page.project.assets.map(key=>site.A[key]).filter(Boolean):[];
+ const hero=visuals.map(file=>file.endsWith('.mp4')?file.replace(/\.mp4$/,'.jpg'):file).find(file=>/\.(webp|png|jpe?g)$/i.test(file)&&fs.existsSync(path.join(root,file)))||'assets/about-shubham-red.webp';
  const graph=[person,{'@type':'WebSite','@id':absolute('#website'),url:origin,name:'Shubham Shinde — Portfolio',inLanguage:'en',publisher:{'@id':person['@id']}},{'@type':page.page==='about'?'AboutPage':page.page==='work'||page.page==='studies'?'CollectionPage':'WebPage','@id':canonical+'#webpage',url:canonical,name:page.title,description:page.description,isPartOf:{'@id':absolute('#website')},about:{'@id':person['@id']},inLanguage:'en'}];
  if(page.project)graph.push({'@type':'CreativeWork','@id':canonical+'#work',name:page.project.title,description:page.description,url:canonical,contributor:{'@id':person['@id']},image:absolute(hero)});
+ if(page.route){
+  const crumbs=[{name:'Home',item:origin}];
+  if(page.project)crumbs.push({name:'Work',item:absolute('work/')});
+  crumbs.push({name:page.project?page.project.title:page.page[0].toUpperCase()+page.page.slice(1),item:canonical});
+  graph.push({'@type':'BreadcrumbList','@id':canonical+'#breadcrumbs',itemListElement:crumbs.map((crumb,index)=>({'@type':'ListItem',position:index+1,...crumb}))});
+  graph[2].breadcrumb={'@id':canonical+'#breadcrumbs'};
+ }
  const base=page.route?'../'.repeat(page.route.split('/').filter(Boolean).length):'./';
  let html=template.replace('<head>','<head><base href="'+base+'">').replace(/<title>.*?<\/title>/,'<title>'+esc(page.title)+'</title>').replace(/<meta name="description"[^>]*>/,'<meta name="description" content="'+esc(page.description)+'">');
  const metadata='<link rel="canonical" href="'+canonical+'"><meta property="og:type" content="website"><meta property="og:site_name" content="Shubham Shinde"><meta property="og:title" content="'+esc(page.title)+'"><meta property="og:description" content="'+esc(page.description)+'"><meta property="og:url" content="'+canonical+'"><meta property="og:image" content="'+absolute(hero)+'"><meta property="og:image:alt" content="'+esc(page.project?page.project.title+' — selected project visual':'Portrait of Shubham Shinde')+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+esc(page.title)+'"><meta name="twitter:description" content="'+esc(page.description)+'"><meta name="twitter:image" content="'+absolute(hero)+'"><script type="application/ld+json">'+JSON.stringify({'@context':'https://schema.org','@graph':graph}).replace(/</g,'\\u003c')+'</script>';

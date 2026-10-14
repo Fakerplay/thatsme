@@ -14,5 +14,18 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "thatsme-nine.vercel.app"
+        }
+      ],
+      "destination": "https://studioshubham.vercel.app/:path*",
+      "permanent": true
+    }
   ]
 }

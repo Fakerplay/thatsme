@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fakerplay.github.io/thatsme/sitemap.xml
+Sitemap: https://studioshubham.vercel.app/sitemap.xml
