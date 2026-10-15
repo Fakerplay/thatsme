@@ -8,6 +8,19 @@ const context=vm.createContext({document:{getElementById:id=>({textContent:JSON.
 const start=template.indexOf('const A=JSON.parse(');const end=template.indexOf('function refineIcons()',start);
 vm.runInContext(template.slice(start,end)+'\nglobalThis.site={A,PROJECTS,home,about,studies,footer,gallery,films,projectPage,projectSummary};',context);
 const site=context.site;
+
+// Speed: move the big inline stylesheet run and the main app script into hashed, cacheable files shared by every page.
+const crypto=require('node:crypto');
+for(const f of fs.readdirSync(path.join(root,'assets')))if(/^site\.[0-9a-f]{10}\.(css|js)$/.test(f))fs.unlinkSync(path.join(root,'assets',f));
+const hashed=(ext,body)=>{const name='assets/site.'+crypto.createHash('sha256').update(body).digest('hex').slice(0,10)+'.'+ext;fs.writeFileSync(path.join(root,name),body);return name;};
+let shell=template;
+{const run=shell.match(/<style>[\s\S]*?<style id="about-ink-refinement">[\s\S]*?<\/style>/)[0];
+ const css=[...run.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)].map(m=>m[1]).join('\n');
+ const rest=run.replace(/<style[^>]*>[\s\S]*?<\/style>/g,'').trim();
+ if(/<(?!link rel="icon")/.test(rest))throw new Error('Unexpected markup inside the inline style run');
+ shell=shell.replace(run,'<link rel="stylesheet" href="'+hashed('css',css)+'">'+rest);}
+{const m=shell.match(/<script>(\s*const A=JSON\.parse\([\s\S]*?)<\/script>/);
+ shell=shell.replace(m[0],'<script src="'+hashed('js',m[1].replace(/<\/script/gi,'<\\/script'))+'"></script>');}
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const absolute=relative=>new URL(relative,origin).href;
 const pages=[
@@ -34,7 +47,7 @@ for(const page of pages){
   graph[2].breadcrumb={'@id':canonical+'#breadcrumbs'};
  }
  const base=page.route?'../'.repeat(page.route.split('/').filter(Boolean).length):'./';
- let html=template.replace('<head>','<head><base href="'+base+'">').replace(/<title>.*?<\/title>/,'<title>'+esc(page.title)+'</title>').replace(/<meta name="description"[^>]*>/,'<meta name="description" content="'+esc(page.description)+'">');
+ let html=shell.replace('<head>','<head><base href="'+base+'">').replace(/<title>.*?<\/title>/,'<title>'+esc(page.title)+'</title>').replace(/<meta name="description"[^>]*>/,'<meta name="description" content="'+esc(page.description)+'">');
  const metadata='<link rel="canonical" href="'+canonical+'"><meta property="og:type" content="website"><meta property="og:site_name" content="Shubham Shinde"><meta property="og:title" content="'+esc(page.title)+'"><meta property="og:description" content="'+esc(page.description)+'"><meta property="og:url" content="'+canonical+'"><meta property="og:image" content="'+absolute(hero)+'"><meta property="og:image:alt" content="'+esc(page.project?page.project.title+' — selected project visual':'Portrait of Shubham Shinde')+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+esc(page.title)+'"><meta name="twitter:description" content="'+esc(page.description)+'"><meta name="twitter:image" content="'+absolute(hero)+'"><script type="application/ld+json">'+JSON.stringify({'@context':'https://schema.org','@graph':graph}).replace(/</g,'\\u003c')+'</script>';
  html=html.replace('</head>',metadata+'<noscript><style>.option-enter{opacity:1!important;transform:none!important}.motion-toggle,.rail-prev,.rail-next,.filter-bar{display:none!important}.case-media-open{cursor:default}</style></noscript></head>').replace('<body>','<body data-page="'+page.page+'">');
  html=html.replace('<main id="app" tabindex="-1"></main>','<main id="app" tabindex="-1">'+companyLinks(page.html+site.footer())+'</main>');
