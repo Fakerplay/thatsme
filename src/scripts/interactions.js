@@ -31,7 +31,8 @@ function entranceMotion(){
  const animations=new Map();
  const tokens=getComputedStyle(document.documentElement);
  const easing=tokens.getPropertyValue('--reveal-ease').trim();
- const duration=parseFloat(tokens.getPropertyValue('--reveal-duration'));
+ const durationToken=tokens.getPropertyValue('--reveal-duration').trim();
+ const duration=parseFloat(durationToken)*(durationToken.endsWith('ms')?1:1000);
  const observer=new IntersectionObserver(entries=>{
   const entering=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);
   entering.forEach((entry,index)=>{
