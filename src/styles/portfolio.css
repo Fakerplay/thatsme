@@ -78,8 +78,7 @@ em,i{font-style:normal}h1 em,h2 em{font-weight:inherit}
 @media(prefers-reduced-motion:reduce){.text-link,.pill,.pill .cta-icon{transition:none}.pill:hover .cta-icon{transform:none}}
 
 /* Quiet entrance and navigation motion; gallery movement keeps its own timing. */
-.scroll-reveal{opacity:0;transform:translate3d(0,18px,0);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
-.scroll-reveal.is-revealed{opacity:1;transform:translate3d(0,0,0)}
+:root{--reveal-ease:cubic-bezier(0.23,1,0.32,1);--reveal-duration:700ms}
 .site-header{animation:header-enter .6s cubic-bezier(.22,1,.36,1) both}
 @keyframes header-enter{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes page-out{to{opacity:0}}
