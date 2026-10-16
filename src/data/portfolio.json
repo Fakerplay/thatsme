@@ -1,0 +1,1580 @@
+{
+  "A": {
+    "bhabha": "assets/bhabha.webp",
+    "ecolab": "assets/ecolab1.webp",
+    "solaris": "assets/solaris0.webp",
+    "wizcrm": "assets/wizcrm-showcase/wizcrm.webp",
+    "daulat": "assets/portfolio-files/original-daulat-04.webp",
+    "prachyam": "assets/prachyam.webp",
+    "frame0": "assets/frame0.webp",
+    "frame1": "assets/frame1.webp",
+    "frame2": "assets/frame2.webp",
+    "portrait": "assets/redesign-v2/portrait.webp",
+    "film0": "assets/film0.jpg",
+    "film1": "assets/film1.jpg",
+    "film2": "assets/film2.jpg",
+    "film3": "assets/film3.jpg",
+    "film4": "assets/film4.jpg",
+    "film5": "assets/film5.png",
+    "film6": "assets/film6.jpg",
+    "film7": "assets/film7.jpg",
+    "solaris0": "assets/solaris0.webp",
+    "solaris1": "assets/solaris1.webp",
+    "solaris2": "assets/solaris2.webp",
+    "solaris3": "assets/solaris3.webp",
+    "daulat1": "assets/daulat1.webp",
+    "ecolab1": "assets/ecolab1.webp",
+    "ikea": "assets/redesign-v2/ikea.webp",
+    "solace0": "assets/solace0.webp",
+    "solace1": "assets/redesign-v2/solace1.webp",
+    "solace2": "assets/solace2.webp",
+    "solace3": "assets/solace3.webp",
+    "solace4": "assets/redesign-v2/solace4.webp",
+    "solace5": "assets/redesign-v2/solace5.webp",
+    "solace6": "assets/redesign-v2/solace6.webp",
+    "vistara0": "assets/vistara0.webp",
+    "vistara1": "assets/vistara1.webp",
+    "solace": "assets/solace0.webp",
+    "vistara": "assets/portfolio-files/original-vistara-01.jpg",
+    "vistaranew0": "assets/vistaranew0.webp",
+    "vistaranew1": "assets/vistaranew1.webp",
+    "vistaranew2": "assets/vistaranew2.webp",
+    "vistaranew4": "assets/vistaranew4.webp",
+    "vistaranew5": "assets/vistaranew5.webp",
+    "vistaranew7": "assets/vistaranew7.webp",
+    "daulatnew1": "assets/redesign-v2/daulatnew1.webp",
+    "daulatnew2": "assets/daulatnew2.webp",
+    "daulatnew3": "assets/daulatnew3.webp",
+    "daulatnew4": "assets/daulatnew4.webp",
+    "daulatnew5": "assets/daulatnew5.webp",
+    "daulatnew7": "assets/daulatnew7.webp",
+    "bhabhaextra0": "assets/bhabhaextra0.webp",
+    "bhabhaextra1": "assets/bhabhaextra1.webp",
+    "bhabhaextra2": "assets/bhabhaextra2.webp",
+    "bhabhaextra4": "assets/bhabhaextra4.webp",
+    "bhabhaextra5": "assets/bhabhaextra5.webp",
+    "ecolabextra0": "assets/ecolab1.webp",
+    "ecolabextra1": "assets/redesign-v2/ecolabextra1.webp",
+    "ecolabextra6": "assets/ecolabextra6.webp",
+    "ecolabextra7": "assets/ecolabextra7.webp",
+    "ikeaextra0": "assets/ikeaextra0.webp",
+    "ikeaextra1": "assets/ikeaextra1.webp",
+    "ikeaextra2": "assets/ikeaextra2.webp",
+    "ikeaextra3": "assets/ikeaextra3.webp",
+    "ikeaextra5": "assets/ikea.webp",
+    "ikeaextra6": "assets/ikeaextra6.webp",
+    "solarisextra0": "assets/redesign-v2/solarisextra0.webp",
+    "solarisextra3": "assets/solarisextra3.webp",
+    "solarisextra4": "assets/solarisextra4.webp",
+    "solaceextra2": "assets/solaceextra2.webp",
+    "solaceextra3": "assets/redesign-v2/solaceextra3.webp",
+    "solaceextra4": "assets/solaceextra4.webp",
+    "daulatnew0": "assets/daulat1.webp",
+    "ecolabgif0": "assets/ecolabgif0.webp",
+    "ecolabgif1": "assets/ecolabgif1.webp",
+    "ecolabgif2": "assets/ecolabgif2.webp",
+    "solacegif0": "assets/solacegif0.webp",
+    "solacegif1": "assets/solacegif1.webp",
+    "daulatgif0": "assets/redesign-v2/daulatgif0.webp",
+    "daulatgif1": "assets/redesign-v2/daulatgif1.webp",
+    "daulatgif2": "assets/daulatgif2.webp",
+    "solarisextra5": "assets/solarisextra5.webp",
+    "daulatnew6": "assets/daulatnew6.webp",
+    "brochure0": "assets/brochure0.webp",
+    "brochure1": "assets/brochure1.webp",
+    "brochure2": "assets/brochure2.webp",
+    "brochure3": "assets/brochure3.webp",
+    "brochure4": "assets/brochure4.webp",
+    "brochure5": "assets/brochure5.webp",
+    "brochure6": "assets/brochure6.webp",
+    "brochure7": "assets/redesign-v2/brochure7.webp",
+    "indiclass0": "assets/indiclass0.webp",
+    "lachit0": "assets/lachit0.webp",
+    "lachit1": "assets/lachit1.webp",
+    "lachit2": "assets/lachit2.webp",
+    "lachit3": "assets/lachit3.webp",
+    "lachit4": "assets/lachit4.webp",
+    "lachit5": "assets/lachit5.webp",
+    "lachit6": "assets/lachit6.webp",
+    "phyllo0": "assets/phyllo0.webp",
+    "phyllo1": "assets/phyllo1.webp",
+    "phyllo2": "assets/phyllo2.webp",
+    "phyllo3": "assets/phyllo3.webp",
+    "phyllo4": "assets/phyllo4.webp",
+    "phyllo5": "assets/phyllo5.webp",
+    "phyllo6": "assets/phyllo6.webp",
+    "phyllo7": "assets/phyllo7.webp",
+    "vibe0": "assets/vibe0.webp",
+    "vibe1": "assets/vibe1.webp",
+    "vibe2": "assets/vibe2.webp",
+    "vibe3": "assets/vibe3.webp",
+    "vibe4": "assets/vibe4.webp",
+    "vibe5": "assets/vibe5.webp",
+    "vibe6": "assets/vibe6.webp",
+    "brochurecover": "assets/brochurecover.webp",
+    "brochurespread": "assets/brochurespread.webp",
+    "indiclass": "assets/indiclassframe3.webp",
+    "lachit": "assets/lachit0.webp",
+    "vibe": "assets/vibe0.webp",
+    "phyllo": "assets/phyllo2.webp",
+    "brochure": "assets/portfolio-files/original-brochure-01.jpg",
+    "vibelogos": "assets/vibelogos.mp4",
+    "vistaralogo": "assets/vistaralogo.mp4",
+    "vibemotion0": "assets/vibemotion0.webp",
+    "vibemotion1": "assets/vibemotion1.webp",
+    "vibemotion2": "assets/redesign-v2/vibemotion2.webp",
+    "indiclassframe0": "assets/indiclassframe0.webp",
+    "indiclassframe1": "assets/indiclassframe1.webp",
+    "indiclassframe2": "assets/indiclassframe2.webp",
+    "indiclassframe3": "assets/indiclassframe3.webp",
+    "indiclassframe4": "assets/indiclassframe4.webp",
+    "indiclassframe5": "assets/indiclassframe5.webp",
+    "ecolabextra2": "assets/redesign-v2/ecolabextra2.webp",
+    "ecolabextra3": "assets/redesign-v2/ecolabextra3.webp",
+    "ecolabextra4": "assets/redesign-v2/ecolabextra4.webp",
+    "ecolabextra5": "assets/redesign-v2/ecolabextra5.webp",
+    "crm-tablet": "assets/wizcrm-showcase/crm-tablet.webp",
+    "crm-features": "assets/wizcrm-showcase/crm-features.webp",
+    "crm-ai": "assets/wizcrm-showcase/crm-ai.webp",
+    "crm-laptop": "assets/wizcrm-showcase/crm-laptop.webp",
+    "crm-direction": "assets/wizcrm-showcase/crm-direction.webp",
+    "crm-opportunities": "assets/wizcrm-showcase/crm-opportunities.webp",
+    "crm-page": "assets/wizcrm-showcase/crm-page.webp",
+    "original-crm-cards": "assets/wizcrm-showcase/original-crm-cards.mp4",
+    "original-crm-features": "assets/wizcrm-showcase/original-crm-features.mp4",
+    "original-crm-tabs": "assets/wizcrm-showcase/original-crm-tabs.mp4",
+    "crm-home-pipeline": "assets/wizcrm-showcase/crm-home-pipeline.webp",
+    "crm-home-dashboard": "assets/wizcrm-showcase/crm-home-dashboard.webp",
+    "crm-home-desktop": "assets/wizcrm-showcase/crm-home-desktop.webp",
+    "crm-home-features": "assets/wizcrm-showcase/crm-home-features.webp",
+    "original-crm-home-copilot": "assets/wizcrm-showcase/original-crm-home-copilot.mp4",
+    "bhabha-motion-01": "assets/bhabha-motion/clip-01.mp4",
+    "bhabha-motion-02": "assets/bhabha-motion/clip-02.mp4",
+    "bhabha-motion-03": "assets/bhabha-motion/clip-03.mp4",
+    "bhabha-motion-04": "assets/bhabha-motion/clip-04.mp4",
+    "bhabha-motion-05": "assets/bhabha-motion/clip-05.mp4",
+    "bhabha-motion-06": "assets/bhabha-motion/clip-06.mp4",
+    "bhabha-motion-07": "assets/bhabha-motion/clip-07.mp4",
+    "bhabha-motion-08": "assets/bhabha-motion/clip-08.mp4",
+    "bhabha-motion-09": "assets/bhabha-motion/clip-09.mp4",
+    "bhabha-motion-10": "assets/bhabha-motion/clip-10.mp4",
+    "bhabha-motion-11": "assets/bhabha-motion/clip-11.mp4",
+    "bhabha-motion-12": "assets/bhabha-motion/clip-12.mp4",
+    "bhabha-motion-13": "assets/bhabha-motion/clip-13.mp4",
+    "bhabha-motion-14": "assets/bhabha-motion/clip-14.mp4",
+    "bhabha-motion-15": "assets/bhabha-motion/clip-15.mp4",
+    "bhabha-motion-16": "assets/bhabha-motion/clip-16.mp4",
+    "bhabha-motion-17": "assets/bhabha-motion/clip-17.mp4",
+    "bhabha-motion-18": "assets/bhabha-motion/clip-18.mp4",
+    "approach-studio": "assets/redesign-v2/approach-studio.webp",
+    "original-vistara-01": "assets/portfolio-files/original-vistara-01.jpg",
+    "original-vistara-02": "assets/portfolio-files/original-vistara-02.jpg",
+    "original-vistara-03": "assets/portfolio-files/original-vistara-03.jpg",
+    "original-vistara-04": "assets/portfolio-files/original-vistara-04.webp",
+    "original-vistara-05": "assets/portfolio-files/original-vistara-05.webp",
+    "original-vistara-06": "assets/portfolio-files/original-vistara-06.webp",
+    "original-vistara-07": "assets/portfolio-files/original-vistara-07.webp",
+    "original-brochure-01": "assets/portfolio-files/original-brochure-01.jpg",
+    "original-brochure-02": "assets/portfolio-files/original-brochure-02.jpg",
+    "original-brochure-03": "assets/portfolio-files/original-brochure-03.jpg",
+    "original-brochure-04": "assets/portfolio-files/original-brochure-04.jpg",
+    "original-brochure-05": "assets/portfolio-files/original-brochure-05.jpg",
+    "original-brochure-06": "assets/portfolio-files/original-brochure-06.jpg",
+    "original-brochure-07": "assets/portfolio-files/original-brochure-07.jpg",
+    "original-brochure-08": "assets/portfolio-files/original-brochure-08.jpg",
+    "original-brochure-09": "assets/portfolio-files/original-brochure-09.webp",
+    "original-brochure-10": "assets/portfolio-files/original-brochure-10.webp",
+    "original-brochure-11": "assets/portfolio-files/original-brochure-11.png",
+    "original-bhabha-01": "assets/portfolio-files/original-bhabha-01.mp4",
+    "original-lachit-01": "assets/portfolio-files/original-lachit-01.mp4",
+    "original-lachit-02": "assets/portfolio-files/original-lachit-02.mp4",
+    "original-lachit-03": "assets/portfolio-files/original-lachit-03.mp4",
+    "original-lachit-04": "assets/portfolio-files/original-lachit-04.mp4",
+    "original-lachit-05": "assets/portfolio-files/original-lachit-05.mp4",
+    "original-lachit-06": "assets/portfolio-files/original-lachit-06.mp4",
+    "original-angre-01": "assets/portfolio-files/original-angre-01.mp4",
+    "original-angre-02": "assets/portfolio-files/original-angre-02.mp4",
+    "original-angre-03": "assets/portfolio-files/original-angre-03.mp4",
+    "original-angre-04": "assets/portfolio-files/original-angre-04.mp4",
+    "original-angre-05": "assets/portfolio-files/original-angre-05.mp4",
+    "original-indentured-01": "assets/portfolio-files/original-indentured-01.mp4",
+    "original-indentured-02": "assets/portfolio-files/original-indentured-02.mp4",
+    "original-indentured-03": "assets/portfolio-files/original-indentured-03.mp4",
+    "original-indentured-04": "assets/portfolio-files/original-indentured-04.mp4",
+    "original-indentured-05": "assets/portfolio-files/original-indentured-05.mp4",
+    "original-cultural-motion-01": "assets/portfolio-files/original-cultural-motion-01.mp4",
+    "original-cultural-motion-02": "assets/portfolio-files/original-cultural-motion-02.mp4",
+    "original-cultural-motion-03": "assets/portfolio-files/original-cultural-motion-03.mp4",
+    "original-cultural-motion-04": "assets/portfolio-files/original-cultural-motion-04.mp4",
+    "original-cultural-motion-05": "assets/portfolio-files/original-cultural-motion-05.mp4",
+    "original-sanskrit-01": "assets/portfolio-files/original-sanskrit-01.mp4",
+    "original-sanskrit-02": "assets/portfolio-files/original-sanskrit-02.mp4",
+    "original-sanskrit-03": "assets/portfolio-files/original-sanskrit-03.mp4",
+    "original-sanskrit-04": "assets/portfolio-files/original-sanskrit-04.mp4",
+    "original-wootz-01": "assets/portfolio-files/original-wootz-01.mp4",
+    "original-wootz-02": "assets/portfolio-files/original-wootz-02.mp4",
+    "original-wootz-03": "assets/portfolio-files/original-wootz-03.mp4",
+    "original-wootz-04": "assets/portfolio-files/original-wootz-04.mp4",
+    "original-sahebs-01": "assets/portfolio-files/original-sahebs-01.jpg",
+    "original-sahebs-02": "assets/portfolio-files/original-sahebs-02.jpg",
+    "original-sahebs-03": "assets/portfolio-files/original-sahebs-03.jpg",
+    "original-sahebs-04": "assets/portfolio-files/original-sahebs-04.jpg",
+    "original-sahebs-05": "assets/portfolio-files/original-sahebs-05.jpg",
+    "original-sahebs-06": "assets/portfolio-files/original-sahebs-06.jpg",
+    "original-sahebs-07": "assets/portfolio-files/original-sahebs-07.mp4",
+    "angre": "assets/portfolio-files/original-angre-01.jpg",
+    "indentured": "assets/portfolio-files/original-indentured-01.jpg",
+    "cultural-motion": "assets/portfolio-files/original-cultural-motion-01.jpg",
+    "sanskrit": "assets/portfolio-files/original-sanskrit-01.jpg",
+    "wootz": "assets/portfolio-files/original-wootz-01.jpg",
+    "sahebs": "assets/portfolio-files/original-sahebs-01.jpg",
+    "original-daulat-01": "assets/portfolio-files/original-daulat-01.webp",
+    "original-daulat-02": "assets/portfolio-files/original-daulat-02.webp",
+    "original-daulat-03": "assets/portfolio-files/original-daulat-03.webp",
+    "original-daulat-04": "assets/portfolio-files/original-daulat-04.webp",
+    "original-daulat-05": "assets/portfolio-files/original-daulat-05.webp",
+    "daulat-case-brief": "assets/portfolio-files/daulat-case-brief.webp",
+    "daulat-case-illustrations": "assets/portfolio-files/daulat-case-illustrations.webp",
+    "daulat-case-typography": "assets/portfolio-files/daulat-case-typography.webp",
+    "daulat-case-mobile": "assets/portfolio-files/daulat-case-mobile.webp",
+    "solaris-supplied-01": "assets/portfolio-files/solaris-supplied-01.jpg",
+    "solaris-supplied-02": "assets/portfolio-files/solaris-supplied-02.jpg",
+    "solaris-supplied-03": "assets/portfolio-files/solaris-supplied-03.webp",
+    "solaris-supplied-04": "assets/portfolio-files/solaris-supplied-04.jpg",
+    "solaris-supplied-05": "assets/portfolio-files/solaris-supplied-05.jpg",
+    "solaris-supplied-06": "assets/portfolio-files/solaris-supplied-06.jpg",
+    "solaris-supplied-07": "assets/portfolio-files/solaris-supplied-07.jpg",
+    "solaris-supplied-08": "assets/portfolio-files/solaris-supplied-08.jpg",
+    "benchmark-report": "assets/benchmark-report/cover.webp",
+    "benchmark-contents": "assets/benchmark-report/contents.webp",
+    "benchmark-chapters": "assets/benchmark-report/chapters.webp",
+    "benchmark-data": "assets/benchmark-report/data.webp",
+    "benchmark-takeaway": "assets/benchmark-report/takeaway.webp",
+    "benchmark-merchandising": "assets/benchmark-report/merchandising.webp",
+    "benchmark-charts": "assets/benchmark-report/charts.webp",
+    "benchmark-interview": "assets/benchmark-report/interview.webp",
+    "benchmark-summary": "assets/benchmark-report/summary.webp",
+    "benchmark-landing": "assets/benchmark-report/landing.webp",
+    "benchmark-cta": "assets/benchmark-report/cta.webp",
+    "original-benchmark-insight": "assets/benchmark-report/original-benchmark-insight.mp4",
+    "original-benchmark-criteria": "assets/benchmark-report/original-benchmark-criteria.mp4",
+    "benchmark-poster-orders": "assets/benchmark-report/benchmark-poster-orders.gif",
+    "benchmark-poster-images": "assets/benchmark-report/benchmark-poster-images.gif",
+    "benchmark-poster-seats": "assets/benchmark-report/benchmark-poster-seats.gif"
+  },
+  "FILMS": [
+    {
+      "title": "Shefali Vaidya Teaches Sarees",
+      "url": "https://prachyam.com/indiclass/shefali-vaidya-teaches-sarees",
+      "asset": "film0",
+      "type": "Indiclass"
+    },
+    {
+      "title": "The War We Are Losing",
+      "url": "https://prachyam.com/video/the-war-we-are-losing-christian-conversion-of-bheels",
+      "asset": "film1",
+      "type": "Documentary"
+    },
+    {
+      "title": "Chained Souls: Girmitiya",
+      "url": "https://prachyam.com/video/chained-souls-girmitiya",
+      "asset": "film2",
+      "type": "Documentary"
+    },
+    {
+      "title": "Gifts of India: Wootz Steel",
+      "url": "https://prachyam.com/video/gifts-of-india-wootz-steel",
+      "asset": "film3",
+      "type": "Documentary"
+    },
+    {
+      "title": "The Eternal Civilization",
+      "url": "https://prachyam.com/video/the-eternal-civilization",
+      "asset": "film4",
+      "type": "Documentary"
+    },
+    {
+      "title": "Gauri Mahulikar on Sanskrit",
+      "url": "https://prachyam.com/indiclass/gauri-mahulikar-on-sanskrit",
+      "asset": "film5",
+      "type": "Indiclass"
+    },
+    {
+      "title": "Indian Mathematics",
+      "url": "https://prachyam.com/indiclass/indian-mathematics",
+      "asset": "film6",
+      "type": "Indiclass"
+    },
+    {
+      "title": "The Myth of Aryan Invasion",
+      "url": "https://prachyam.com/indiclass/aryan-invasion-myth",
+      "asset": "film7",
+      "type": "Indiclass"
+    }
+  ],
+  "DIM": {
+    "bhabha": [
+      1536,
+      1024
+    ],
+    "ecolab": [
+      1600,
+      1018
+    ],
+    "solaris": [
+      1400,
+      788
+    ],
+    "wizcrm": [
+      1448,
+      1086
+    ],
+    "daulat": [
+      1448,
+      1086
+    ],
+    "prachyam": [
+      1086,
+      1448
+    ],
+    "frame0": [
+      2302,
+      1676
+    ],
+    "frame1": [
+      2916,
+      1650
+    ],
+    "frame2": [
+      2970,
+      1566
+    ],
+    "portrait": [
+      1254,
+      1254
+    ],
+    "film0": [
+      500,
+      281
+    ],
+    "film1": [
+      500,
+      281
+    ],
+    "film2": [
+      500,
+      281
+    ],
+    "film3": [
+      500,
+      281
+    ],
+    "film4": [
+      500,
+      281
+    ],
+    "film5": [
+      500,
+      281
+    ],
+    "film6": [
+      500,
+      281
+    ],
+    "film7": [
+      500,
+      281
+    ],
+    "solaris0": [
+      1400,
+      788
+    ],
+    "solaris1": [
+      1400,
+      1050
+    ],
+    "solaris2": [
+      1400,
+      788
+    ],
+    "solaris3": [
+      1400,
+      758
+    ],
+    "daulat1": [
+      1400,
+      788
+    ],
+    "ecolab1": [
+      1600,
+      1018
+    ],
+    "ikea": [
+      1672,
+      940
+    ],
+    "solace0": [
+      1400,
+      741
+    ],
+    "solace1": [
+      1672,
+      941
+    ],
+    "solace2": [
+      1400,
+      814
+    ],
+    "solace3": [
+      1400,
+      1201
+    ],
+    "solace4": [
+      1672,
+      941
+    ],
+    "solace5": [
+      1672,
+      941
+    ],
+    "solace6": [
+      1672,
+      940
+    ],
+    "vistara0": [
+      1200,
+      675
+    ],
+    "vistara1": [
+      2000,
+      1334
+    ],
+    "solace": [
+      1400,
+      741
+    ],
+    "vistara": [
+      1500,
+      1000
+    ],
+    "crm-tablet": [
+      1536,
+      1024
+    ],
+    "crm-features": [
+      2000,
+      1278
+    ],
+    "crm-ai": [
+      1920,
+      1080
+    ],
+    "crm-laptop": [
+      1484,
+      1060
+    ],
+    "crm-direction": [
+      2000,
+      1581
+    ],
+    "crm-opportunities": [
+      2000,
+      1778
+    ],
+    "crm-page": [
+      2000,
+      8926
+    ],
+    "original-crm-cards": [
+      1920,
+      852
+    ],
+    "original-crm-features": [
+      1920,
+      906
+    ],
+    "original-crm-tabs": [
+      1920,
+      1080
+    ],
+    "crm-home-pipeline": [
+      2880,
+      2086
+    ],
+    "crm-home-dashboard": [
+      2880,
+      2086
+    ],
+    "crm-home-desktop": [
+      1387,
+      949
+    ],
+    "crm-home-features": [
+      4096,
+      2617
+    ],
+    "original-crm-home-copilot": [
+      1920,
+      848
+    ],
+    "vistaranew0": [
+      1400,
+      856
+    ],
+    "vistaranew1": [
+      1400,
+      933
+    ],
+    "vistaranew2": [
+      1400,
+      1053
+    ],
+    "vistaranew4": [
+      1400,
+      808
+    ],
+    "vistaranew5": [
+      1400,
+      808
+    ],
+    "vistaranew7": [
+      1400,
+      808
+    ],
+    "daulatnew1": [
+      1672,
+      941
+    ],
+    "daulatnew2": [
+      1400,
+      1046
+    ],
+    "daulatnew3": [
+      1400,
+      778
+    ],
+    "daulatnew4": [
+      1400,
+      1352
+    ],
+    "daulatnew5": [
+      1400,
+      789
+    ],
+    "daulatnew7": [
+      1400,
+      1906
+    ],
+    "bhabhaextra0": [
+      1600,
+      851
+    ],
+    "bhabhaextra1": [
+      1600,
+      896
+    ],
+    "bhabhaextra2": [
+      1600,
+      886
+    ],
+    "bhabhaextra4": [
+      1600,
+      1155
+    ],
+    "bhabhaextra5": [
+      1600,
+      1349
+    ],
+    "ecolabextra0": [
+      1600,
+      1018
+    ],
+    "ecolabextra1": [
+      1672,
+      941
+    ],
+    "ecolabextra6": [
+      600,
+      338
+    ],
+    "ecolabextra7": [
+      600,
+      338
+    ],
+    "ikeaextra0": [
+      1600,
+      900
+    ],
+    "ikeaextra1": [
+      1600,
+      900
+    ],
+    "ikeaextra2": [
+      1400,
+      788
+    ],
+    "ikeaextra3": [
+      1400,
+      788
+    ],
+    "ikeaextra5": [
+      1024,
+      1536
+    ],
+    "ikeaextra6": [
+      1024,
+      1024
+    ],
+    "solarisextra0": [
+      1672,
+      941
+    ],
+    "solarisextra3": [
+      1400,
+      739
+    ],
+    "solarisextra4": [
+      1400,
+      739
+    ],
+    "solaceextra2": [
+      1400,
+      1418
+    ],
+    "solaceextra3": [
+      1672,
+      941
+    ],
+    "solaceextra4": [
+      1400,
+      836
+    ],
+    "daulatnew0": [
+      1400,
+      788
+    ],
+    "bhabhagif0": [
+      400,
+      224
+    ],
+    "bhabhagif1": [
+      454,
+      256
+    ],
+    "ecolabgif0": [
+      600,
+      338
+    ],
+    "ecolabgif1": [
+      600,
+      338
+    ],
+    "ecolabgif2": [
+      600,
+      338
+    ],
+    "solacegif0": [
+      600,
+      375
+    ],
+    "solacegif1": [
+      600,
+      557
+    ],
+    "daulatgif0": [
+      1672,
+      941
+    ],
+    "daulatgif1": [
+      1672,
+      941
+    ],
+    "daulatgif2": [
+      600,
+      368
+    ],
+    "solarisextra5": [
+      1400,
+      394
+    ],
+    "daulatnew6": [
+      1400,
+      789
+    ],
+    "brochure0": [
+      1898,
+      1361
+    ],
+    "brochure1": [
+      2000,
+      1359
+    ],
+    "brochure2": [
+      2000,
+      1000
+    ],
+    "brochure3": [
+      1400,
+      922
+    ],
+    "brochure4": [
+      1400,
+      700
+    ],
+    "brochure5": [
+      1400,
+      922
+    ],
+    "brochure6": [
+      2000,
+      1900
+    ],
+    "brochure7": [
+      1672,
+      941
+    ],
+    "indiclass0": [
+      833,
+      2600
+    ],
+    "lachit0": [
+      2000,
+      1121
+    ],
+    "lachit1": [
+      2000,
+      1121
+    ],
+    "lachit2": [
+      2000,
+      1500
+    ],
+    "lachit3": [
+      2000,
+      2119
+    ],
+    "lachit4": [
+      2000,
+      1121
+    ],
+    "lachit5": [
+      2000,
+      1121
+    ],
+    "lachit6": [
+      2000,
+      1121
+    ],
+    "phyllo0": [
+      1400,
+      100
+    ],
+    "phyllo1": [
+      1400,
+      426
+    ],
+    "phyllo2": [
+      2000,
+      2500
+    ],
+    "phyllo3": [
+      2000,
+      2499
+    ],
+    "phyllo4": [
+      2000,
+      2500
+    ],
+    "phyllo5": [
+      2000,
+      2500
+    ],
+    "phyllo6": [
+      2000,
+      2499
+    ],
+    "phyllo7": [
+      2000,
+      2500
+    ],
+    "vibe0": [
+      1200,
+      800
+    ],
+    "vibe1": [
+      1400,
+      949
+    ],
+    "vibe2": [
+      800,
+      600
+    ],
+    "vibe3": [
+      1400,
+      933
+    ],
+    "vibe4": [
+      1024,
+      1536
+    ],
+    "vibe5": [
+      1024,
+      1536
+    ],
+    "vibe6": [
+      1024,
+      1536
+    ],
+    "brochurecover": [
+      1536,
+      1024
+    ],
+    "brochurespread": [
+      1536,
+      1024
+    ],
+    "indiclass": [
+      560,
+      332
+    ],
+    "lachit": [
+      2000,
+      1121
+    ],
+    "vibe": [
+      1200,
+      800
+    ],
+    "phyllo": [
+      2000,
+      2500
+    ],
+    "brochure": [
+      2040,
+      1344
+    ],
+    "vibelogos": [
+      1280,
+      360
+    ],
+    "vistaralogo": [
+      1080,
+      1080
+    ],
+    "vibemotion0": [
+      800,
+      450
+    ],
+    "vibemotion1": [
+      800,
+      450
+    ],
+    "vibemotion2": [
+      1672,
+      941
+    ],
+    "indiclassframe0": [
+      1164,
+      750
+    ],
+    "indiclassframe1": [
+      560,
+      330
+    ],
+    "indiclassframe2": [
+      590,
+      330
+    ],
+    "indiclassframe3": [
+      560,
+      332
+    ],
+    "indiclassframe4": [
+      558,
+      332
+    ],
+    "indiclassframe5": [
+      560,
+      332
+    ],
+    "ecolabextra2": [
+      1672,
+      941
+    ],
+    "ecolabextra3": [
+      1672,
+      941
+    ],
+    "ecolabextra4": [
+      1672,
+      941
+    ],
+    "ecolabextra5": [
+      1672,
+      941
+    ],
+    "bhabha-motion-01": [
+      1280,
+      720
+    ],
+    "bhabha-motion-02": [
+      1280,
+      720
+    ],
+    "bhabha-motion-03": [
+      1280,
+      720
+    ],
+    "bhabha-motion-04": [
+      1280,
+      720
+    ],
+    "bhabha-motion-05": [
+      1280,
+      720
+    ],
+    "bhabha-motion-06": [
+      1280,
+      720
+    ],
+    "bhabha-motion-07": [
+      1280,
+      720
+    ],
+    "bhabha-motion-08": [
+      1280,
+      720
+    ],
+    "bhabha-motion-09": [
+      1280,
+      720
+    ],
+    "bhabha-motion-10": [
+      1280,
+      776
+    ],
+    "bhabha-motion-11": [
+      1280,
+      720
+    ],
+    "bhabha-motion-12": [
+      1280,
+      720
+    ],
+    "bhabha-motion-13": [
+      1280,
+      720
+    ],
+    "bhabha-motion-14": [
+      1280,
+      720
+    ],
+    "bhabha-motion-15": [
+      1280,
+      720
+    ],
+    "bhabha-motion-16": [
+      1280,
+      720
+    ],
+    "bhabha-motion-17": [
+      1280,
+      720
+    ],
+    "bhabha-motion-18": [
+      1280,
+      720
+    ],
+    "approach-studio": [
+      1672,
+      941
+    ],
+    "original-vistara-01": [
+      1500,
+      1000
+    ],
+    "original-vistara-02": [
+      1500,
+      1125
+    ],
+    "original-vistara-03": [
+      1500,
+      1000
+    ],
+    "original-vistara-04": [
+      1920,
+      1440
+    ],
+    "original-vistara-05": [
+      1920,
+      1440
+    ],
+    "original-vistara-06": [
+      1920,
+      1440
+    ],
+    "original-vistara-07": [
+      1284,
+      1249
+    ],
+    "original-brochure-01": [
+      2040,
+      1344
+    ],
+    "original-brochure-02": [
+      2040,
+      1344
+    ],
+    "original-brochure-03": [
+      2040,
+      1344
+    ],
+    "original-brochure-04": [
+      2040,
+      1344
+    ],
+    "original-brochure-05": [
+      2040,
+      1344
+    ],
+    "original-brochure-06": [
+      2040,
+      1344
+    ],
+    "original-brochure-07": [
+      2040,
+      1344
+    ],
+    "original-brochure-08": [
+      2040,
+      1344
+    ],
+    "original-brochure-09": [
+      2432,
+      2310
+    ],
+    "original-brochure-10": [
+      2329,
+      1765
+    ],
+    "original-brochure-11": [
+      1857,
+      1293
+    ],
+    "original-bhabha-01": [
+      1440,
+      810
+    ],
+    "original-lachit-01": [
+      1440,
+      810
+    ],
+    "original-lachit-02": [
+      1440,
+      810
+    ],
+    "original-lachit-03": [
+      1440,
+      810
+    ],
+    "original-lachit-04": [
+      1440,
+      810
+    ],
+    "original-lachit-05": [
+      1440,
+      810
+    ],
+    "original-lachit-06": [
+      1440,
+      810
+    ],
+    "original-angre-01": [
+      1440,
+      810
+    ],
+    "original-angre-02": [
+      1440,
+      808
+    ],
+    "original-angre-03": [
+      1440,
+      810
+    ],
+    "original-angre-04": [
+      1440,
+      810
+    ],
+    "original-angre-05": [
+      1440,
+      810
+    ],
+    "original-indentured-01": [
+      1440,
+      810
+    ],
+    "original-indentured-02": [
+      1440,
+      810
+    ],
+    "original-indentured-03": [
+      1440,
+      810
+    ],
+    "original-indentured-04": [
+      1440,
+      810
+    ],
+    "original-indentured-05": [
+      1440,
+      810
+    ],
+    "original-cultural-motion-01": [
+      1440,
+      810
+    ],
+    "original-cultural-motion-02": [
+      1440,
+      810
+    ],
+    "original-cultural-motion-03": [
+      1440,
+      810
+    ],
+    "original-cultural-motion-04": [
+      1440,
+      810
+    ],
+    "original-cultural-motion-05": [
+      1440,
+      810
+    ],
+    "original-sanskrit-01": [
+      1440,
+      810
+    ],
+    "original-sanskrit-02": [
+      1440,
+      810
+    ],
+    "original-sanskrit-03": [
+      1440,
+      810
+    ],
+    "original-sanskrit-04": [
+      1440,
+      810
+    ],
+    "original-wootz-01": [
+      1440,
+      810
+    ],
+    "original-wootz-02": [
+      1440,
+      810
+    ],
+    "original-wootz-03": [
+      1440,
+      810
+    ],
+    "original-wootz-04": [
+      1440,
+      810
+    ],
+    "original-sahebs-01": [
+      2395,
+      3597
+    ],
+    "original-sahebs-02": [
+      2000,
+      2000
+    ],
+    "original-sahebs-03": [
+      1998,
+      2000
+    ],
+    "original-sahebs-04": [
+      2000,
+      2000
+    ],
+    "original-sahebs-05": [
+      1079,
+      1079
+    ],
+    "original-sahebs-06": [
+      1081,
+      1072
+    ],
+    "original-sahebs-07": [
+      1280,
+      720
+    ],
+    "angre": [
+      1440,
+      810
+    ],
+    "indentured": [
+      1440,
+      810
+    ],
+    "cultural-motion": [
+      1440,
+      810
+    ],
+    "sanskrit": [
+      1440,
+      810
+    ],
+    "wootz": [
+      1440,
+      810
+    ],
+    "sahebs": [
+      2395,
+      3597
+    ],
+    "original-daulat-01": [
+      1672,
+      941
+    ],
+    "original-daulat-02": [
+      1672,
+      941
+    ],
+    "original-daulat-03": [
+      1448,
+      1086
+    ],
+    "original-daulat-04": [
+      1448,
+      1086
+    ],
+    "original-daulat-05": [
+      1672,
+      941
+    ],
+    "daulat-case-brief": [
+      1540,
+      1027
+    ],
+    "daulat-case-illustrations": [
+      1049,
+      1012
+    ],
+    "daulat-case-typography": [
+      1571,
+      889
+    ],
+    "daulat-case-mobile": [
+      1586,
+      1004
+    ],
+    "solaris-supplied-01": [
+      2880,
+      1374
+    ],
+    "solaris-supplied-02": [
+      1920,
+      1440
+    ],
+    "solaris-supplied-03": [
+      1490,
+      1129
+    ],
+    "solaris-supplied-04": [
+      1920,
+      1281
+    ],
+    "solaris-supplied-05": [
+      2880,
+      1452
+    ],
+    "solaris-supplied-06": [
+      2880,
+      1451
+    ],
+    "solaris-supplied-07": [
+      2880,
+      1620
+    ],
+    "solaris-supplied-08": [
+      2880,
+      1977
+    ],
+    "benchmark-report": [
+      1920,
+      1434
+    ],
+    "benchmark-contents": [
+      1440,
+      614
+    ],
+    "benchmark-chapters": [
+      1440,
+      614
+    ],
+    "benchmark-data": [
+      5504,
+      3072
+    ],
+    "benchmark-takeaway": [
+      2752,
+      1536
+    ],
+    "benchmark-merchandising": [
+      2752,
+      1536
+    ],
+    "benchmark-charts": [
+      1440,
+      1713
+    ],
+    "benchmark-interview": [
+      1440,
+      1047
+    ],
+    "benchmark-summary": [
+      2752,
+      1536
+    ],
+    "benchmark-landing": [
+      1440,
+      864
+    ],
+    "benchmark-cta": [
+      1440,
+      671
+    ],
+    "original-benchmark-insight": [
+      3376,
+      1440
+    ],
+    "original-benchmark-criteria": [
+      3840,
+      2160
+    ],
+    "benchmark-poster-orders": [
+      1152,
+      1440
+    ],
+    "benchmark-poster-images": [
+      1152,
+      1440
+    ],
+    "benchmark-poster-seats": [
+      1152,
+      1440
+    ]
+  },
+  "FEATURED": [
+    "daulat",
+    "bhabha",
+    "ecolab",
+    "vistara"
+  ],
+  "CASE_DECISION_MEDIA": {
+    "wizcrm": [
+      "crm-direction",
+      "crm-features",
+      "crm-opportunities"
+    ],
+    "daulat": [
+      "daulat-case-illustrations",
+      "daulat-case-typography",
+      "daulat-case-mobile"
+    ],
+    "bhabha": [
+      "bhabhaextra1",
+      "bhabha-motion-01",
+      "frame1"
+    ],
+    "ecolab": [
+      "ecolabextra1",
+      "ecolabgif0",
+      "ecolabextra4"
+    ],
+    "vistara": [
+      "original-vistara-06",
+      "original-vistara-03",
+      "vistaralogo"
+    ],
+    "lachit": [
+      "lachit0",
+      "lachit3",
+      "original-lachit-02"
+    ],
+    "benchmark-report": [
+      "benchmark-contents",
+      "benchmark-data",
+      "benchmark-landing"
+    ]
+  },
+  "TAG_COLORS": {
+    "Fintech": "#2563EB",
+    "AI": "#FF2424",
+    "Tools": "#D51FE4",
+    "B2B": "#42C7E8",
+    "Education": "#F97316",
+    "Health": "#10B981",
+    "Brand": "#F59E0B",
+    "Identity": "#EAB308",
+    "Web": "#3B82F6",
+    "Digital": "#0284C7",
+    "Editorial": "#9A3412",
+    "Film": "#9333EA",
+    "Automotive": "#374151",
+    "Campaign": "#EC4899",
+    "Mobility": "#0D9488",
+    "SaaS": "#6366F1",
+    "Content": "#F43F5E",
+    "UI/UX": "#3B82F6",
+    "Experiments": "#A855F7"
+  },
+  "PROJECT_TAGS": {
+    "daulat": [
+      "Fintech",
+      "Web",
+      "Brand"
+    ],
+    "bhabha": [
+      "Film",
+      "Editorial",
+      "Education"
+    ],
+    "ecolab": [
+      "Brand",
+      "Film",
+      "Campaign"
+    ],
+    "vistara": [
+      "Brand",
+      "Identity"
+    ],
+    "solaris": [
+      "Fintech",
+      "Brand"
+    ],
+    "solace": [
+      "AI",
+      "Health",
+      "Digital"
+    ],
+    "ikea": [
+      "Campaign",
+      "Brand",
+      "Editorial"
+    ],
+    "indiclass": [
+      "Education",
+      "Editorial",
+      "Film"
+    ],
+    "lachit": [
+      "Film",
+      "Editorial",
+      "Education"
+    ],
+    "vibe": [
+      "Brand",
+      "Identity"
+    ],
+    "phyllo": [
+      "B2B",
+      "SaaS",
+      "Campaign"
+    ],
+    "brochure": [
+      "Editorial",
+      "Brand",
+      "Education"
+    ],
+    "angre": [
+      "Film",
+      "Editorial",
+      "Education"
+    ],
+    "indentured": [
+      "Education",
+      "Film",
+      "Editorial"
+    ],
+    "cultural-motion": [
+      "Film",
+      "Editorial",
+      "Education"
+    ],
+    "sanskrit": [
+      "Education",
+      "Film",
+      "Editorial"
+    ],
+    "wootz": [
+      "Film",
+      "Editorial",
+      "Education"
+    ],
+    "sahebs": [
+      "Campaign",
+      "Editorial",
+      "Film"
+    ],
+    "wizcrm": [
+      "B2B",
+      "AI",
+      "SaaS"
+    ]
+  },
+  "MEDIA_DESCRIPTIONS": {
+    "bhabha-motion-03": "Airport — documentary motion sequence",
+    "bhabha-motion-09": "CIA archival photographs — documentary sequence",
+    "bhabha-motion-13": "Aircraft fuselage and burning engine over snowy mountains — motion sequence",
+    "bhabha-motion-14": "Air India aircraft approaching snowy mountains — overhead motion sequence",
+    "bhabha-motion-15": "Aircraft and burning wings above a mountain landscape — motion sequence",
+    "bhabha-motion-16": "Adams Prize and honours — animated typography and trophy graphics",
+    "bhabha-motion-17": "International connections — animated map with the United States highlighted",
+    "bhabha-motion-18": "Dark grid texture — documentary motion study",
+    "bhabha": "Homi Bhabha documentary cover"
+  },
+  "CATEGORIES": [
+    "Web & digital",
+    "Film & motion",
+    "Brand identity",
+    "Advertising & social",
+    "Editorial & print"
+  ],
+  "HOME_MEDIA_EXCLUSIONS": {
+    "ecolab": [
+      "ecolabgif1",
+      "ecolabextra4"
+    ],
+    "solace": [
+      "solacegif1",
+      "solace1",
+      "solace4"
+    ],
+    "daulat": [
+      "original-daulat-02",
+      "original-daulat-05",
+      "daulat-case-illustrations"
+    ],
+    "solaris": [
+      "solaris1"
+    ]
+  },
+  "SOURCES": {
+    "indiclass": "https://www.behance.net/gallery/179967223/Indiclass-Motion-Design",
+    "lachit": "https://www.behance.net/gallery/191869961/Lachit-Borphukan-Film-Showreel",
+    "vibe": "https://www.behance.net/gallery/231374833/The-Vibe-Collective",
+    "phyllo": "https://www.behance.net/gallery/216414569/Social-Media-Portfolio-2024",
+    "brochure": "https://www.behance.net/gallery/208727311/Brochure-Design-Prachyam",
+    "solace": "https://www.behance.net/gallery/243825305/Solace-AI-Website-Branding",
+    "vistara": "https://www.behance.net/gallery/234194077/Studio-Vistara-Brand-Identity-Logo-Design",
+    "ikea": "https://www.behance.net/gallery/232710787/Invisible-Hand-IKEA",
+    "solaris": "https://www.behance.net/gallery/237296219/Solaris-Fintech-Branding-Creative-Direction",
+    "daulat": "https://www.behance.net/gallery/251056585/Daulat-Wealth-Management-Website-Design",
+    "bhabha": "https://www.behance.net/gallery/215507943/Homi-Bhabha-Motion-Design",
+    "ecolab": "https://www.behance.net/gallery/254027613/Video-Work-for-Ecolab",
+    "angre": "https://www.behance.net/gallery/197156949/Kanhoji-Angre-Animated-Film-Showcase",
+    "benchmark-report": "https://www.behance.net/gallery/257032287/The-State-of-B2B-Commerce-Report-Design-2026"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "shubham-portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "predev": "node scripts/prepare-assets.mjs",
+    "dev": "astro dev",
+    "prebuild": "node scripts/prepare-assets.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "python3 scripts/check-static.py dist",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.4.0"
+  }
+}

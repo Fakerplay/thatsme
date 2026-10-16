@@ -1,0 +1,53 @@
+{
+  "id": "wootz",
+  "title": "Wootz Steel",
+  "type": "Film & motion",
+  "category": "Film & motion",
+  "year": "",
+  "role": "Creative Lead & Art Direction",
+  "ownership": "Sole contributor",
+  "context": "Prachyam · Gifts of India · Selected motion work",
+  "desc": "Titles, maps and illustrated scenes for a documentary on Wootz steel.",
+  "lead": "I created titles, maps and historical motion sequences for Prachyam’s Wootz Steel documentary.",
+  "body": "Wootz Steel is a short documentary in Prachyam’s Gifts of India collection, exploring the history and craft of steelmaking. I led the creative direction and visual design of the selected motion work shown here.",
+  "detail": "My work spans the title treatment, geographic sequences and illustrated historical environments, with composition, typography and motion treatment across these pieces.",
+  "contribution": [
+    "Led creative direction and hands-on visual design for the selected sequences.",
+    "Developed composition, typography and motion treatments across titles, maps and historical scenes."
+  ],
+  "assets": [
+    "original-wootz-01",
+    "original-wootz-02",
+    "original-wootz-03",
+    "original-wootz-04"
+  ],
+  "captions": [
+    "Wootz Steel — title sequence",
+    "Geography — animated map",
+    "Crusades — historical sequence",
+    "Gurukul — illustrated environment"
+  ],
+  "color": "#705c44",
+  "watchLinks": [
+    {
+      "label": "Watch on Prachyam",
+      "url": "https://prachyam.com/video/gifts-of-india-wootz-steel"
+    },
+    {
+      "label": "Watch trailer on YouTube",
+      "url": "https://www.youtube.com/watch?v=Ybcb_NhV-I4"
+    }
+  ],
+  "externalLinks": [
+    {
+      "label": "Film on Prachyam",
+      "url": "https://prachyam.com/video/gifts-of-india-wootz-steel"
+    },
+    {
+      "label": "Official trailer",
+      "url": "https://www.youtube.com/watch?v=Ybcb_NhV-I4"
+    }
+  ],
+  "order": 18,
+  "summary": "I created titles, maps and historical motion sequences for Prachyam’s Wootz Steel documentary."
+}

@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
-  "buildCommand": "node scripts/vercel-build.cjs",
-  "outputDirectory": "public",
+  "framework": "astro",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "trailingSlash": true,
   "headers": [
     {
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "source": "/assets/site.(.*)",
+      "source": "/_astro/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -36,5 +36,6 @@
       "destination": "https://studioshubham.vercel.app/:path*",
       "permanent": true
     }
-  ]
+  ],
+  "installCommand": "npm ci"
 }

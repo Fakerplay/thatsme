@@ -1,0 +1,13 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+import ProjectGallery from '../components/ProjectGallery.astro';
+import { PROJECTS } from '../lib/projects.js';
+import { films } from '../lib/render.js';
+import { companyLinks } from '../lib/links.js';
+---
+<Portfolio page="work" route="work/" title="Selected Design Work — Shubham Shinde" description="Explore Shubham Shinde’s brand identities, websites, films and campaigns, with details of his role in each project.">
+<section class="page-intro"><h1>My work</h1><p>A selection of brand identities, films, websites and campaigns I’ve worked on.</p></section>
+{PROJECTS.slice(0,4).map(project=><ProjectGallery project={project} />)}
+<Fragment set:html={companyLinks(films())} />
+<section class="more-work">{PROJECTS.slice(4).map(project=><ProjectGallery project={project} />)}</section>
+</Portfolio>

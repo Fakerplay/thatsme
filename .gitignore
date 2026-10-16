@@ -7,3 +7,7 @@ Thumbs.db
 
 .vercel/
 public/
+
+node_modules/
+dist/
+.astro/

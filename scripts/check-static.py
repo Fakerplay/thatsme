@@ -1,8 +1,9 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlparse, unquote
-import json,xml.etree.ElementTree as ET
+import json,sys,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[1]
+if len(sys.argv)>1:root=root/sys.argv[1]
 class Page(HTMLParser):
  def __init__(self):super().__init__();self.tags=[];self.main=False;self.text=[];self.json=[];self.ld=False;self.buf=''
  def handle_starttag(self,t,attrs):
@@ -39,8 +40,8 @@ for f in files:
    check('alt' in d,'missing alt');check(bool(d.get('src')) or d.get('id')=='lightbox-image','missing image src')
   for attr in (['src','poster'] if t in ['img','video','script'] else ['href'] if t in ['a','link'] else []):
    v=d.get(attr,'');u=urlparse(v)
-   if not v or u.scheme or v.startswith('#'):continue
-   target=root/unquote(u.path)
+   if not v or u.scheme or v.startswith('#') or v=='/_vercel/insights/script.js':continue
+   target=root/unquote(u.path).lstrip('/')
    if u.path.endswith('/'):target=target/'index.html'
    check(target.exists(),'missing local target '+v)
  check(not any(t=='a' and d.get('href','').startswith('#/') for t,d in p.tags),'hash page link remains')

@@ -1,0 +1,6 @@
+---
+import {gallery,homeGallery} from '../lib/render.js';
+import {companyLinks} from '../lib/links.js';
+const {project,homepage=false}=Astro.props;
+---
+<Fragment set:html={companyLinks(homepage?homeGallery(project):gallery(project))} />

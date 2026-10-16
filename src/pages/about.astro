@@ -1,0 +1,6 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+import {about} from '../lib/render.js';
+import {companyLinks} from '../lib/links.js';
+---
+<Portfolio page="about" route="about/" title="About Shubham Shinde — Design Lead in Bengaluru" description="Meet Shubham Shinde, Graphic Design Lead at WizCommerce. His experience spans brand identities, film, motion and websites."><Fragment set:html={companyLinks(about())} /></Portfolio>

@@ -1,0 +1,9 @@
+---
+import Portfolio from '../../layouts/Portfolio.astro';
+import {PROJECTS} from '../../lib/projects.js';
+import {projectPage,projectSummary} from '../../lib/render.js';
+import {companyLinks} from '../../lib/links.js';
+export function getStaticPaths(){return PROJECTS.map(project=>({params:{id:project.id},props:{project}}));}
+const {project}=Astro.props;
+---
+<Portfolio page="project" route={'project/'+project.id+'/'} project={project} title={project.title+' — '+project.type+' | Shubham Shinde'} description={projectSummary(project)}><Fragment set:html={companyLinks(projectPage(project))} /></Portfolio>

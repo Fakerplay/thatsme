@@ -1,0 +1,72 @@
+{
+  "id": "benchmark-report",
+  "title": "B2B Commerce Benchmark Report",
+  "type": "Editorial & digital design",
+  "category": "Web & digital",
+  "year": "2026",
+  "role": "Art direction, editorial design, data visualisation & landing page design",
+  "context": "WizCommerce · B2B commerce research",
+  "ownership": "",
+  "desc": "I designed WizCommerce’s B2B benchmark report and landing page, turning dense industry research into clear layouts, charts and takeaways.",
+  "lead": "I designed WizCommerce’s B2B benchmark report and landing page, turning dense industry research into clear layouts, charts and takeaways.",
+  "body": "A 50-page report on B2B wholesale commerce, supported by a landing page for readers to download it.",
+  "detail": "An orange-and-black visual system connects the report, charts and digital touchpoints.",
+  "assets": [
+    "benchmark-report",
+    "benchmark-contents",
+    "benchmark-chapters",
+    "benchmark-data",
+    "benchmark-takeaway",
+    "benchmark-merchandising",
+    "benchmark-charts",
+    "benchmark-interview",
+    "benchmark-summary",
+    "benchmark-landing",
+    "benchmark-cta"
+  ],
+  "captions": [
+    "Benchmark report — cover",
+    "Contents and introduction — editorial layout",
+    "Chapter openers — data, trends and wholesaler insights",
+    "Benchmark charts and company overview",
+    "Benchmark analysis and takeaway spread",
+    "Product merchandising — report spread",
+    "Data visualisation — comparative bar charts",
+    "Industry perspective — interview spread",
+    "Summary and closing spread",
+    "Report download — landing page",
+    "Report campaign — call to action"
+  ],
+  "color": "#f47b20",
+  "tags": [
+    "B2B",
+    "Editorial",
+    "Web"
+  ],
+  "contribution": [
+    "Set the art direction and editorial layout system for the report.",
+    "Designed charts, benchmark spreads and takeaway pages to make the findings easier to scan.",
+    "Extended the report’s visual language to its download landing page."
+  ],
+  "story": {
+    "challenge": "Make a research-heavy B2B commerce report easy to navigate, without losing the detail that makes it useful.",
+    "decisions": [
+      "Use a consistent grid and strong typography so readers can find the benchmark, evidence and takeaway quickly.",
+      "Give charts and key figures room to breathe, using orange to draw attention to the important comparison.",
+      "Carry the same visual language into the landing page, connecting the report and its digital introduction."
+    ],
+    "result": "A 50-page report design and an accompanying landing page, with one visual system across editorial layouts, data visualisation and digital promotion."
+  },
+  "externalLinks": [
+    {
+      "label": "Full project on Behance",
+      "url": "https://www.behance.net/gallery/257032287/The-State-of-B2B-Commerce-Report-Design-2026"
+    },
+    {
+      "label": "Explore the live report",
+      "url": "https://wizcommerce.com/templates/b2b-ecommerce-benchmark-report-2026/"
+    }
+  ],
+  "order": 0,
+  "summary": "I designed WizCommerce’s B2B benchmark report and landing page, turning dense industry research into clear layouts, charts and takeaways."
+}

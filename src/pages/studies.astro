@@ -1,0 +1,6 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+import {studies} from '../lib/render.js';
+import {companyLinks} from '../lib/links.js';
+---
+<Portfolio page="studies" route="studies/" title="Design Case Studies — Shubham Shinde" description="Read the briefs, contributions and design decisions behind Shubham Shinde’s selected brand, film and website projects."><Fragment set:html={companyLinks(studies())} /></Portfolio>

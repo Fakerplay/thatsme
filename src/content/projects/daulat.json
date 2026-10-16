@@ -1,0 +1,65 @@
+{
+  "id": "daulat",
+  "title": "Daulat",
+  "type": "Digital experience",
+  "year": "",
+  "role": "Website design",
+  "desc": "I designed a wealth-management website with engraved illustrations and clear paths to consultation.",
+  "lead": "I designed Daulat’s website to introduce its wealth-management approach and guide visitors towards a consultation.",
+  "body": "I translated Daulat’s brief into website layouts, typography and imagery. Green and gold illustrations and an editorial type treatment carry the design across desktop and mobile.",
+  "detail": "The design pairs Playfair Display with botanical and financial illustrations. I used a clear page hierarchy to introduce the firm’s approach, explain its services and lead visitors to a conversation.",
+  "assets": [
+    "original-daulat-01",
+    "original-daulat-02",
+    "original-daulat-03",
+    "original-daulat-04",
+    "original-daulat-05",
+    "daulat-case-brief",
+    "daulat-case-illustrations",
+    "daulat-case-typography",
+    "daulat-case-mobile"
+  ],
+  "captions": [
+    "Brand message — print composition",
+    "Brand identity — botanical composition",
+    "Website — tablet presentation",
+    "Website — responsive device presentation",
+    "Brand illustrations — engraved artwork",
+    "The brief — founder’s vision",
+    "Illustration system — green and gold engravings",
+    "Typography — Playfair Display",
+    "Website — mobile screens"
+  ],
+  "color": "#66885d",
+  "category": "Web & digital",
+  "contribution": [
+    "Designed the website layouts and responsive presentation.",
+    "Developed the typography, imagery and page hierarchy around Daulat’s positioning and consultation journey."
+  ],
+  "story": {
+    "context": "Wealth-management website",
+    "challenge": "I needed to express the founder’s vision of wealth as confidence and freedom while making the firm’s offering easy to understand.",
+    "ownership": "My work focused on website design: translating the positioning into page structure, typography, imagery and the consultation journey.",
+    "decisions": [
+      "I used green and gold engravings, botanical forms and financial imagery to give the website a consistent visual language.",
+      "I paired Playfair Display with a clear hierarchy of headings and supporting text to organise the story.",
+      "I adapted the design for mobile and kept the consultation action prominent."
+    ],
+    "result": "I produced a website design with a consistent visual language across desktop and mobile, from the opening message to the consultation prompt.",
+    "evidence": "original-daulat-04"
+  },
+  "context": "Daulat Wealth Management · Website design",
+  "ownership": "Sole contributor",
+  "externalLinks": [
+    {
+      "label": "View design process on Behance",
+      "url": "https://www.behance.net/gallery/251056585/Daulat-Wealth-Management-Website-Design"
+    },
+    {
+      "label": "Visit Daulat",
+      "url": "https://daulat.co.in/"
+    }
+  ],
+  "order": 12,
+  "summary": "I designed Daulat’s website to introduce its wealth-management approach and guide visitors towards a consultation."
+}
