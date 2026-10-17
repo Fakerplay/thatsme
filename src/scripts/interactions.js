@@ -39,13 +39,13 @@ function entranceMotion(){
    const el=entry.target;observer.unobserve(el);
    if(preference.matches||el.contains(document.activeElement))return;
    const animation=el.animate([
-    {opacity:0,filter:'blur(5px)',transform:'translate3d(0,16px,0)'},
+    {opacity:0,filter:'blur(12px)',transform:'translate3d(0,32px,0)'},
     {opacity:1,filter:'blur(0px)',transform:'translate3d(0,0,0)'}
    ],{duration,easing,delay:Math.min(index,3)*50,fill:'backwards'});
    animations.set(el,animation);
    animation.finished.catch(()=>{}).finally(()=>animations.delete(el));
   });
- },{threshold:0,rootMargin:'0px 0px -24px 0px'});
+ },{threshold:0,rootMargin:'0px 0px -100px 0px'});
  elements.forEach(el=>observer.observe(el));
  const finishFocused=event=>animations.forEach((animation,el)=>{if(el.contains(event.target))animation.cancel()});
  const stop=()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());animations.clear()};
