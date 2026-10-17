@@ -22,7 +22,8 @@ function entranceMotion(){
  const EASE='cubic-bezier(.16,1,.3,1)',STEP=90,MAX_WAIT=360;
  const VISUAL='.rail,figure,.film-card,.index-card img,.case-media,.story-object';
  const UNIT=VISUAL+',h1,h2,h3,p,dl,ul,ol,.project-tags,.pf-navigation,.pf-bottom,.pf-name,.pf-label,.btn,.text-link,.back-link,.case-all-work,.case-detail-links,.case-icon,.case-decision-number,.intro-links,.story-bottom,.motion-toggle,.rail-prev,.rail-next';
- const candidates=[...document.querySelectorAll('#app :is('+UNIT+')')].filter(el=>!el.closest('[hidden]'));
+ const hero=document.querySelector('#app .hero-storymaker');
+ const candidates=[...document.querySelectorAll('#app :is('+UNIT+')')].filter(el=>!el.closest('[hidden]')&&!(hero&&hero.contains(el)));
  // Only the outermost unit animates, so nothing moves twice.
  const units=candidates.filter(el=>{for(let p=el.parentElement;p&&p!==app;p=p.parentElement)if(p.matches(UNIT))return false;return true});
  const animations=new Map(),waiting=new Set();
@@ -37,7 +38,7 @@ function entranceMotion(){
   // Opacity/translate/blur have no end value, so each element settles on its own styles (rotations, faded text) without a snap.
   const frames=visual
    ?[{opacity:0,translate:'0 18px',clipPath:'inset(14% 4% 14% 4% round 14px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)'}]
-   :[{opacity:0,translate:'0 16px',filter:'blur(6px)'},{}];
+   :[{opacity:0,translate:'0 18px',filter:'blur(14px)'},{}];
   const animation=el.animate(frames,{duration:visual?1200:900,delay:start-now,easing:EASE,fill:'backwards'});
   show(el);
   animations.set(el,animation);
@@ -58,10 +59,32 @@ function entranceMotion(){
  // Hide before anything can be seen, so a unit never shows, vanishes, then fades back in.
  units.forEach(el=>{if(el.getBoundingClientRect().bottom>0)el.classList.add('reveal-wait');observer.observe(el)});
  requestAnimationFrame(()=>requestAnimationFrame(release));
- const introObserver=new MutationObserver(()=>{if(introActive())return;queueEnd=0;[...waiting].forEach(reveal);waiting.clear();introObserver.disconnect()});
+ // Hero: the headline builds word by word out of a heavy blur, then the line, the button and the illustration follow.
+ const heroParts=[];
+ const playHero=()=>{
+  if(!hero||preference.matches)return;
+  const h1=hero.querySelector('h1'),support=hero.querySelector('.story-support'),cta=hero.querySelector('.story-bottom'),art=hero.querySelector('.story-object');
+  const run=(el,frames,opts)=>{if(!el)return;const a=el.animate(frames,{easing:EASE,fill:'backwards',...opts});heroParts.push(a);el.classList.remove('reveal-wait')};
+  let wordsEnd=0;
+  if(h1){
+   if(!h1.dataset.split){h1.dataset.split='1';h1.setAttribute('aria-label',h1.textContent.trim());
+    const words=h1.textContent.trim().split(/\s+/);h1.textContent='';
+    words.forEach((w,i)=>{const span=document.createElement('span');span.className='hero-word';span.setAttribute('aria-hidden','true');span.textContent=w;h1.append(span);if(i<words.length-1)h1.append(' ')});}
+   h1.classList.remove('reveal-wait');
+   const spans=[...h1.querySelectorAll('.hero-word')];
+   spans.forEach((span,i)=>run(span,[{opacity:0,translate:'0 0.5em',filter:'blur(18px)'},{}],{duration:1300,delay:120+i*65}));
+   wordsEnd=120+spans.length*65;
+  }
+  run(support,[{opacity:0,translate:'0 16px',filter:'blur(14px)'},{}],{duration:1100,delay:wordsEnd+150});
+  run(cta,[{opacity:0,translate:'0 14px',filter:'blur(10px)'},{}],{duration:1000,delay:wordsEnd+320});
+  run(art,[{opacity:0,scale:'1.04',clipPath:'inset(14% 6% 14% 6% round 24px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)'}],{duration:1600,delay:wordsEnd+200});
+ };
+ if(hero&&hero.getBoundingClientRect().bottom>0){hero.querySelectorAll('h1,.story-support,.story-bottom,.story-object').forEach(el=>el.classList.add('reveal-wait'))}
+ const introObserver=new MutationObserver(()=>{if(introActive())return;queueEnd=0;[...waiting].forEach(reveal);waiting.clear();playHero();introObserver.disconnect()});
  if(introActive())introObserver.observe(root,{attributes:true,attributeFilter:['class']});
+ else if(hero&&hero.getBoundingClientRect().bottom>0)playHero();
  const onFocus=event=>{const el=event.target.closest?.('.reveal-wait');if(el){observer.unobserve(el);show(el)}animations.forEach((a,el)=>{if(el.contains(event.target))a.finish()})};
- const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(a=>a.cancel());animations.clear();units.forEach(show);release()};
+ const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(a=>a.cancel());animations.clear();heroParts.forEach(a=>a.cancel());units.forEach(show);hero?.querySelectorAll('.reveal-wait').forEach(show);release()};
  const reduce=()=>{if(preference.matches)stop()};
  document.addEventListener('focusin',onFocus);preference.addEventListener('change',reduce);
  return ()=>{stop();document.removeEventListener('focusin',onFocus);preference.removeEventListener('change',reduce)};

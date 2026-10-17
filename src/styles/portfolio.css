@@ -561,3 +561,4 @@ html body #app .project-row-heading{margin:0;font:inherit;max-width:none}html:no
 .case-watch-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px}.case-watch-links a{max-width:100%;white-space:normal}
 .reveal-wait{opacity:0}
 @media(prefers-reduced-motion:reduce){.reveal-wait{opacity:1}}
+.hero-word{display:inline-block}
