@@ -562,3 +562,12 @@ html body #app .project-row-heading{margin:0;font:inherit;max-width:none}html:no
 .reveal-wait{opacity:0}
 @media(prefers-reduced-motion:reduce){.reveal-wait{opacity:1}}
 .hero-word{display:inline-block}
+.text-morph{position:relative;display:inline-block;white-space:nowrap;vertical-align:bottom}
+.morph-letter{display:inline-block;white-space:pre}
+/* Home project rows: spacing +20% (Oct 18 2026) */
+#app .project-row .row-title{margin-bottom:10px}
+#app .project-row .row-heading>p{margin-top:24px}
+#app .project-row .row-heading .project-tags{margin-top:17px;gap:10px!important}
+#app .project-row .row-heading{margin-bottom:26px}
+#app .project-row>.rail.natural-rail{padding-bottom:26px}
+@media(width<=767px){#app .project-row .row-heading>p{margin-top:16px}}

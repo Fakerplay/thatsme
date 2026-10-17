@@ -60,16 +60,51 @@ function entranceMotion(){
  units.forEach(el=>{if(el.getBoundingClientRect().bottom>0)el.classList.add('reveal-wait');observer.observe(el)});
  requestAnimationFrame(()=>requestAnimationFrame(release));
  // Hero: the headline builds word by word out of a heavy blur, then the line, the button and the illustration follow.
- const heroParts=[];
+ const heroParts=[];let morphTarget=null,morphTimer=0,morphStopped=false;
+ // Text morph: letters keyed by character + occurrence; shared letters glide (FLIP), others blur in/out.
+ const MORPH_WORDS=['design lead','art director','hands-on designer'];
+ const startMorph=(box,delay)=>{
+  let index=0;const letters=new Map();
+  const keysFor=word=>{const seen={};return [...word].map(c=>{seen[c]=(seen[c]||0)+1;return c+'#'+seen[c]})};
+  const build=word=>{box.textContent='';letters.clear();keysFor(word).forEach((k,i)=>{const el=document.createElement('span');el.className='morph-letter';el.textContent=word[i]===' '?'\u00a0':word[i];letters.set(k,el);box.append(el)})};
+  build(MORPH_WORDS[0]);
+  const change=()=>{
+   if(morphStopped)return;
+   if(document.hidden||preference.matches||box.getBoundingClientRect().bottom<0){morphTimer=setTimeout(change,2600);return}
+   index=(index+1)%MORPH_WORDS.length;const word=MORPH_WORDS[index];
+   const boxRect=box.getBoundingClientRect(),oldWidth=boxRect.width;
+   const before=new Map();letters.forEach((el,k)=>{const r=el.getBoundingClientRect();before.set(k,{x:r.left-boxRect.left,y:r.top-boxRect.top})});
+   const keys=keysFor(word),next=new Map();
+   keys.forEach((k,i)=>{let el=letters.get(k);if(!el){el=document.createElement('span');el.className='morph-letter';el.textContent=word[i]===' '?'\u00a0':word[i];el.dataset.fresh='1'}next.set(k,el)});
+   const leaving=[...letters].filter(([k])=>!next.has(k));
+   box.style.width='';box.replaceChildren(...next.values());
+   const newRect=box.getBoundingClientRect(),newWidth=newRect.width;
+   // Width eases so the centred line re-centres smoothly instead of jumping.
+   box.animate([{width:oldWidth+'px'},{width:newWidth+'px'}],{duration:700,easing:EASE});
+   leaving.forEach(([k,el])=>{const b=before.get(k);el.style.cssText='position:absolute;left:'+b.x+'px;top:'+b.y+'px';box.append(el);el.animate([{opacity:1,filter:'blur(0px)'},{opacity:0,filter:'blur(10px)',translate:'0 -0.25em'}],{duration:380,easing:'ease-in',fill:'forwards'}).finished.then(()=>el.remove()).catch(()=>{})});
+   let fresh=0;
+   next.forEach((el,k)=>{
+    if(el.dataset.fresh){delete el.dataset.fresh;el.animate([{opacity:0,filter:'blur(10px)',translate:'0 0.3em'},{}],{duration:620,delay:160+fresh++*28,easing:EASE,fill:'backwards'});return}
+    const b=before.get(k),r=el.getBoundingClientRect(),dx=b.x-(r.left-newRect.left),dy=b.y-(r.top-newRect.top);
+    if(dx||dy)el.animate([{translate:dx+'px '+dy+'px'},{translate:'0 0'}],{duration:700,easing:EASE});
+   });
+   letters.clear();next.forEach((el,k)=>letters.set(k,el));
+   morphTimer=setTimeout(change,3200);
+  };
+  morphTimer=setTimeout(change,delay+2200);
+ };
  const playHero=()=>{
   if(!hero||preference.matches)return;
   const h1=hero.querySelector('h1'),support=hero.querySelector('.story-support'),cta=hero.querySelector('.story-bottom'),art=hero.querySelector('.story-object');
   const run=(el,frames,opts)=>{if(!el)return;const a=el.animate(frames,{easing:EASE,fill:'backwards',...opts});heroParts.push(a);el.classList.remove('reveal-wait')};
   let wordsEnd=0;
   if(h1){
-   if(!h1.dataset.split){h1.dataset.split='1';h1.setAttribute('aria-label',h1.textContent.trim());
-    const words=h1.textContent.trim().split(/\s+/);h1.textContent='';
-    words.forEach((w,i)=>{const span=document.createElement('span');span.className='hero-word';span.setAttribute('aria-hidden','true');span.textContent=w;h1.append(span);if(i<words.length-1)h1.append(' ')});}
+   if(!h1.dataset.split){h1.dataset.split='1';const full=h1.textContent.trim();h1.setAttribute('aria-label',full);
+    const m=full.match(/^(.*?\breliable)\s/);const prefix=m?m[1]:full;
+    h1.textContent='';
+    prefix.split(/\s+/).forEach((w,i)=>{if(i)h1.append(' ');const span=document.createElement('span');span.className='hero-word';span.setAttribute('aria-hidden','true');span.textContent=w;h1.append(span)});
+    if(m){h1.append(' ');const morph=document.createElement('span');morph.className='hero-word text-morph';morph.setAttribute('aria-hidden','true');h1.append(morph);const dot=document.createElement('span');dot.className='hero-word';dot.setAttribute('aria-hidden','true');dot.textContent='.';h1.append(dot);morphTarget=morph;}
+   }
    h1.classList.remove('reveal-wait');
    const spans=[...h1.querySelectorAll('.hero-word')];
    spans.forEach((span,i)=>run(span,[{opacity:0,translate:'0 0.5em',filter:'blur(18px)'},{}],{duration:1300,delay:120+i*65}));
@@ -77,6 +112,7 @@ function entranceMotion(){
   }
   run(support,[{opacity:0,translate:'0 16px',filter:'blur(14px)'},{}],{duration:1100,delay:wordsEnd+150});
   run(cta,[{opacity:0,translate:'0 14px',filter:'blur(10px)'},{}],{duration:1000,delay:wordsEnd+320});
+  if(morphTarget)startMorph(morphTarget,wordsEnd+1400);
   run(art,[{opacity:0,scale:'1.04',clipPath:'inset(14% 6% 14% 6% round 24px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)'}],{duration:1600,delay:wordsEnd+200});
  };
  if(hero&&hero.getBoundingClientRect().bottom>0){hero.querySelectorAll('h1,.story-support,.story-bottom,.story-object').forEach(el=>el.classList.add('reveal-wait'))}
@@ -84,7 +120,7 @@ function entranceMotion(){
  if(introActive())introObserver.observe(root,{attributes:true,attributeFilter:['class']});
  else if(hero&&hero.getBoundingClientRect().bottom>0)playHero();
  const onFocus=event=>{const el=event.target.closest?.('.reveal-wait');if(el){observer.unobserve(el);show(el)}animations.forEach((a,el)=>{if(el.contains(event.target))a.finish()})};
- const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(a=>a.cancel());animations.clear();heroParts.forEach(a=>a.cancel());units.forEach(show);hero?.querySelectorAll('.reveal-wait').forEach(show);release()};
+ const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(a=>a.cancel());animations.clear();heroParts.forEach(a=>a.cancel());morphStopped=true;clearTimeout(morphTimer);units.forEach(show);hero?.querySelectorAll('.reveal-wait').forEach(show);release()};
  const reduce=()=>{if(preference.matches)stop()};
  document.addEventListener('focusin',onFocus);preference.addEventListener('change',reduce);
  return ()=>{stop();document.removeEventListener('focusin',onFocus);preference.removeEventListener('change',reduce)};
