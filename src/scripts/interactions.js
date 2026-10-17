@@ -18,10 +18,7 @@ function entranceMotion(){
  const root=document.documentElement;
  const release=()=>root.classList.remove('reveal-pending');
  const preference=matchMedia('(prefers-reduced-motion: reduce)');
- if(preference.matches||!('IntersectionObserver' in window)||!Element.prototype.animate){
-  const h=document.querySelector('#app .hero-storymaker h1');
-  if(h&&preference.matches){const full=h.textContent.trim(),m=full.match(/^(.*?\breliable)\s/);if(m){h.setAttribute('aria-label',full);h.textContent=m[1]+' design lead.'}}
-  release();return ()=>{};}
+ if(preference.matches||!('IntersectionObserver' in window)||!Element.prototype.animate){release();return ()=>{};}
  const EASE='cubic-bezier(.16,1,.3,1)',STEP=90,MAX_WAIT=360;
  const VISUAL='.rail,figure,.film-card,.index-card img,.case-media,.story-object';
  const UNIT=VISUAL+',h1,h2,h3,p,dl,ul,ol,.project-tags,.pf-navigation,.pf-bottom,.pf-name,.pf-label,.btn,.text-link,.back-link,.case-all-work,.case-detail-links,.case-icon,.case-decision-number,.intro-links,.story-bottom,.motion-toggle,.rail-prev,.rail-next';
@@ -63,56 +60,38 @@ function entranceMotion(){
  units.forEach(el=>{if(el.getBoundingClientRect().bottom>0)el.classList.add('reveal-wait');observer.observe(el)});
  requestAnimationFrame(()=>requestAnimationFrame(release));
  // Hero: the headline builds word by word out of a heavy blur, then the line, the button and the illustration follow.
- const heroParts=[];let morphTarget=null,morphTimer=0,morphStopped=false,morphCleanup=()=>{};
- // Text morph. Letters are matched by longest common subsequence, so shared letters keep their order and glide (FLIP on transform);
- // the rest exit/enter. Each letter's x comes from a Range over the full word, so kerning and ligature spacing are preserved.
- // Positions are read from where letters currently are, so a change mid-morph retargets instead of snapping.
+ const heroParts=[];let morphTarget=null,morphTimer=0,morphStopped=false;
+ // Text morph: letters keyed by character + occurrence; shared letters glide (FLIP), others blur in/out.
  const MORPH_WORDS=['design lead','art director','hands-on designer'];
- const MORPH={dwellFirst:3500,dwell:2800,glide:600,exit:220,enter:420,enterDelay:120,stagger:20};
- const lcs=(a,b)=>{const n=a.length,m=b.length,t=Array.from({length:n+1},()=>new Array(m+1).fill(0));
-  for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)t[i][j]=a[i]===b[j]?t[i+1][j+1]+1:Math.max(t[i+1][j],t[i][j+1]);
-  const pairs=new Map();let i=0,j=0;while(i<n&&j<m){if(a[i]===b[j]){pairs.set(j,i);i++;j++}else if(t[i+1][j]>=t[i][j+1])i++;else j++}return pairs};
  const startMorph=(box,delay)=>{
-  let index=0,word=MORPH_WORDS[0],letters=[],heroVisible=true,boxAnim=null;
-  box.textContent='';
-  const measurer=document.createElement('span');measurer.className='morph-measure';box.append(measurer);
-  const layer=document.createElement('span');layer.className='morph-layer';box.append(layer);
-  const positions=w=>{measurer.textContent=w;const node=measurer.firstChild,base=measurer.getBoundingClientRect().left,out=[];
-   for(let i=0;i<w.length;i++){const r=document.createRange();r.setStart(node,i);r.setEnd(node,i+1);out.push(r.getBoundingClientRect().left-base)}
-   return {xs:out,width:measurer.getBoundingClientRect().width}};
-  const makeLetter=(ch,x)=>{const el=document.createElement('span');el.className='morph-letter';el.textContent=ch===' '?'\u00a0':ch;el.style.transform='translateX('+x+'px)';layer.append(el);return el};
-  const place=()=>{const p=positions(word);box.style.width=p.width+'px';letters.forEach((el,i)=>{el.getAnimations().forEach(a=>a.cancel());el.style.transform='translateX('+p.xs[i]+'px)'})};
-  const init=()=>{const p=positions(word);box.style.width=p.width+'px';letters=[...word].map((ch,i)=>makeLetter(ch,p.xs[i]))};
-  init();document.fonts?.ready.then(()=>{if(!morphStopped)place()});
-  const onResize=()=>{if(!morphStopped)place()};window.addEventListener('resize',onResize);
-  const io=new IntersectionObserver(e=>{heroVisible=e[0].isIntersecting});io.observe(box);
-  morphCleanup=()=>{window.removeEventListener('resize',onResize);io.disconnect()};
+  let index=0;const letters=new Map();
+  const keysFor=word=>{const seen={};return [...word].map(c=>{seen[c]=(seen[c]||0)+1;return c+'#'+seen[c]})};
+  const build=word=>{box.textContent='';letters.clear();keysFor(word).forEach((k,i)=>{const el=document.createElement('span');el.className='morph-letter';el.textContent=word[i]===' '?'\u00a0':word[i];letters.set(k,el);box.append(el)})};
+  build(MORPH_WORDS[0]);
   const change=()=>{
    if(morphStopped)return;
-   if(document.hidden||!heroVisible||preference.matches){morphTimer=setTimeout(change,1000);return}
-   const boxLeft=box.getBoundingClientRect().left;
-   // Where every letter is right now, including mid-flight ones.
-   const current=letters.map(el=>el.getBoundingClientRect().left-boxLeft);
-   const oldWidth=box.getBoundingClientRect().width;
-   const prev=word;index=(index+1)%MORPH_WORDS.length;word=MORPH_WORDS[index];
-   const p=positions(word),pairs=lcs(prev,word),kept=new Set(pairs.values());
-   // Exits: blur up and out from where they stand.
-   letters.forEach((el,i)=>{if(kept.has(i))return;el.getAnimations().forEach(a=>a.cancel());el.style.transform='translateX('+current[i]+'px)';
-    el.animate([{opacity:1,filter:'blur(0px)',translate:'0 0'},{opacity:0,filter:'blur(4px)',translate:'0 -0.15em'}],{duration:MORPH.exit,easing:'cubic-bezier(.4,0,1,1)',fill:'forwards'}).finished.then(()=>el.remove()).catch(()=>el.remove())});
-   const centre=(word.length-1)/2;
-   letters=[...word].map((ch,j)=>{
-    if(pairs.has(j)){const i=pairs.get(j),el=letters[i];el.getAnimations().forEach(a=>a.cancel());el.style.transform='translateX('+p.xs[j]+'px)';
-     if(Math.abs(current[i]-p.xs[j])>.5)el.animate([{transform:'translateX('+current[i]+'px)'},{transform:'translateX('+p.xs[j]+'px)'}],{duration:MORPH.glide,easing:EASE});
-     return el}
-    const el=makeLetter(ch,p.xs[j]);
-    el.animate([{opacity:0,filter:'blur(6px)',translate:'0 0.2em'},{opacity:1,filter:'blur(0px)',translate:'0 0'}],{duration:MORPH.enter,delay:MORPH.enterDelay+Math.round(Math.abs(j-centre))*MORPH.stagger,easing:EASE,fill:'backwards'});
-    return el});
-   // The slot eases to the new width so the centred line re-centres instead of jumping.
-   boxAnim?.cancel();box.style.width=p.width+'px';
-   boxAnim=box.animate([{width:oldWidth+'px'},{width:p.width+'px'}],{duration:MORPH.glide,easing:EASE});
-   morphTimer=setTimeout(change,MORPH.glide+MORPH.dwell);
+   if(document.hidden||preference.matches||box.getBoundingClientRect().bottom<0){morphTimer=setTimeout(change,2600);return}
+   index=(index+1)%MORPH_WORDS.length;const word=MORPH_WORDS[index];
+   const boxRect=box.getBoundingClientRect(),oldWidth=boxRect.width;
+   const before=new Map();letters.forEach((el,k)=>{const r=el.getBoundingClientRect();before.set(k,{x:r.left-boxRect.left,y:r.top-boxRect.top})});
+   const keys=keysFor(word),next=new Map();
+   keys.forEach((k,i)=>{let el=letters.get(k);if(!el){el=document.createElement('span');el.className='morph-letter';el.textContent=word[i]===' '?'\u00a0':word[i];el.dataset.fresh='1'}next.set(k,el)});
+   const leaving=[...letters].filter(([k])=>!next.has(k));
+   box.style.width='';box.replaceChildren(...next.values());
+   const newRect=box.getBoundingClientRect(),newWidth=newRect.width;
+   // Width eases so the centred line re-centres smoothly instead of jumping.
+   box.animate([{width:oldWidth+'px'},{width:newWidth+'px'}],{duration:700,easing:EASE});
+   leaving.forEach(([k,el])=>{const b=before.get(k);el.style.cssText='position:absolute;left:'+b.x+'px;top:'+b.y+'px';box.append(el);el.animate([{opacity:1,filter:'blur(0px)'},{opacity:0,filter:'blur(10px)',translate:'0 -0.25em'}],{duration:380,easing:'ease-in',fill:'forwards'}).finished.then(()=>el.remove()).catch(()=>{})});
+   let fresh=0;
+   next.forEach((el,k)=>{
+    if(el.dataset.fresh){delete el.dataset.fresh;el.animate([{opacity:0,filter:'blur(10px)',translate:'0 0.3em'},{}],{duration:620,delay:160+fresh++*28,easing:EASE,fill:'backwards'});return}
+    const b=before.get(k),r=el.getBoundingClientRect(),dx=b.x-(r.left-newRect.left),dy=b.y-(r.top-newRect.top);
+    if(dx||dy)el.animate([{translate:dx+'px '+dy+'px'},{translate:'0 0'}],{duration:700,easing:EASE});
+   });
+   letters.clear();next.forEach((el,k)=>letters.set(k,el));
+   morphTimer=setTimeout(change,3200);
   };
-  morphTimer=setTimeout(change,delay+MORPH.dwellFirst);
+  morphTimer=setTimeout(change,delay+2200);
  };
  const playHero=()=>{
   if(!hero||preference.matches)return;
@@ -124,7 +103,7 @@ function entranceMotion(){
     const m=full.match(/^(.*?\breliable)\s/);const prefix=m?m[1]:full;
     h1.textContent='';
     prefix.split(/\s+/).forEach((w,i)=>{if(i)h1.append(' ');const span=document.createElement('span');span.className='hero-word';span.setAttribute('aria-hidden','true');span.textContent=w;h1.append(span)});
-    if(m){h1.append(document.createElement('br'));const morph=document.createElement('span');morph.className='hero-word text-morph';morph.setAttribute('aria-hidden','true');h1.append(morph);const dot=document.createElement('span');dot.className='hero-word';dot.setAttribute('aria-hidden','true');dot.textContent='.';h1.append(dot);morphTarget=morph;}
+    if(m){h1.append(' ');const morph=document.createElement('span');morph.className='hero-word text-morph';morph.setAttribute('aria-hidden','true');h1.append(morph);const dot=document.createElement('span');dot.className='hero-word';dot.setAttribute('aria-hidden','true');dot.textContent='.';h1.append(dot);morphTarget=morph;}
    }
    h1.classList.remove('reveal-wait');
    const spans=[...h1.querySelectorAll('.hero-word')];
@@ -133,7 +112,7 @@ function entranceMotion(){
   }
   run(support,[{opacity:0,translate:'0 16px',filter:'blur(14px)'},{}],{duration:1100,delay:wordsEnd+150});
   run(cta,[{opacity:0,translate:'0 14px',filter:'blur(10px)'},{}],{duration:1000,delay:wordsEnd+320});
-  if(morphTarget)startMorph(morphTarget,wordsEnd+1300);
+  if(morphTarget)startMorph(morphTarget,wordsEnd+1400);
   run(art,[{opacity:0,scale:'1.04',clipPath:'inset(14% 6% 14% 6% round 24px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)'}],{duration:1600,delay:wordsEnd+200});
  };
  if(hero&&hero.getBoundingClientRect().bottom>0){hero.querySelectorAll('h1,.story-support,.story-bottom,.story-object').forEach(el=>el.classList.add('reveal-wait'))}
@@ -141,7 +120,7 @@ function entranceMotion(){
  if(introActive())introObserver.observe(root,{attributes:true,attributeFilter:['class']});
  else if(hero&&hero.getBoundingClientRect().bottom>0)playHero();
  const onFocus=event=>{const el=event.target.closest?.('.reveal-wait');if(el){observer.unobserve(el);show(el)}animations.forEach((a,el)=>{if(el.contains(event.target))a.finish()})};
- const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(a=>a.cancel());animations.clear();heroParts.forEach(a=>a.cancel());morphStopped=true;clearTimeout(morphTimer);morphCleanup();units.forEach(show);hero?.querySelectorAll('.reveal-wait').forEach(show);release()};
+ const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(a=>a.cancel());animations.clear();heroParts.forEach(a=>a.cancel());morphStopped=true;clearTimeout(morphTimer);units.forEach(show);hero?.querySelectorAll('.reveal-wait').forEach(show);release()};
  const reduce=()=>{if(preference.matches)stop()};
  document.addEventListener('focusin',onFocus);preference.addEventListener('change',reduce);
  return ()=>{stop();document.removeEventListener('focusin',onFocus);preference.removeEventListener('change',reduce)};
