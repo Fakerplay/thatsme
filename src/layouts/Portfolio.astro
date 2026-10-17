@@ -17,6 +17,8 @@ const clientData = JSON.stringify({A:data.A,PROJECTS:PROJECTS.map(({id,title,des
 <head>
   <base href={base} />
   <HeadAssets />
+  <style is:inline>html.reveal-pending #app{opacity:0}</style>
+  <script is:inline>if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){document.documentElement.classList.add('reveal-pending');setTimeout(function(){document.documentElement.classList.remove('reveal-pending')},1500)}</script>
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta name="description" content={description} />

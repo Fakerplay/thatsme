@@ -12,48 +12,63 @@ function aboutStackPanels(){
 }
 
 // Animate on entry instead of hiding content in CSS: failed/disabled JS stays readable.
+// The inline head script adds .reveal-pending so nothing paints before we decide what animates.
 function entranceMotion(){
+ const root=document.documentElement;
+ const release=()=>root.classList.remove('reveal-pending');
  const preference=matchMedia('(prefers-reduced-motion: reduce)');
- if(preference.matches||!('IntersectionObserver' in window))return ()=>{};
+ if(preference.matches||!('IntersectionObserver' in window)){release();return ()=>{};}
  const animations=new Map(),waiting=new Set();
- const easing='cubic-bezier(.23,1,.32,1)';
+ const easing='cubic-bezier(.22,1,.36,1)';
  const visualCandidates=[...document.querySelectorAll('#app .rail,#app figure,#app .film-card img,#app .index-card img,#app .case-media,#app .story-object')];
  const visuals=visualCandidates.filter(el=>!visualCandidates.some(parent=>parent!==el&&parent.contains(el)));
  const texts=[...document.querySelectorAll('#app h1,#app h2,#app h3,#app p,#app dl,#app .project-tags,#app .pf-navigation,#app .pf-bottom')]
   .filter(el=>!visuals.some(parent=>parent.contains(el)))
   .filter(el=>!el.parentElement.closest('p,dl,.pf-navigation,.pf-bottom'));
  const visualSet=new Set(visuals);
- const reveal=(el,delay)=>{
+ // One shared queue: items entering close together cascade 70ms apart instead of popping in at once or out of order.
+ let queueEnd=0;
+ const STEP=70,MAX_WAIT=280;
+ const reveal=(el,minDelay=0)=>{
   if(preference.matches||el.contains(document.activeElement))return;
+  const now=performance.now();
+  const start=Math.max(now+minDelay,Math.min(queueEnd,now+MAX_WAIT));
+  queueEnd=start+STEP;
   const visual=visualSet.has(el);
   const frames=visual?[
-   {opacity:0,clipPath:'inset(8% 0 18% 0 round 12px)'},
-   {opacity:1,clipPath:'inset(0% 0 0% 0 round 0px)'}
+   {opacity:0,clipPath:'inset(6% 0 6% 0)',transform:'translate3d(0,24px,0)'},
+   {opacity:1,clipPath:'inset(0% 0 0% 0)',transform:'translate3d(0,0,0)'}
   ]:[
-   {opacity:0,filter:'blur(6px)',transform:'translate3d(0,20px,0)'},
-   {opacity:1,filter:'blur(0px)',transform:'translate3d(0,0,0)'}
+   {opacity:0,transform:'translate3d(0,14px,0)'},
+   {opacity:1,transform:'translate3d(0,0,0)'}
   ];
-  const animation=el.animate(frames,{duration:visual?1100:950,easing,delay,fill:'backwards'});
+  const animation=el.animate(frames,{duration:visual?900:700,easing,delay:start-now,fill:'backwards'});
   animations.set(el,animation);
   animation.finished.catch(()=>{}).finally(()=>animations.delete(el));
  };
+ const introActive=()=>root.classList.contains('home-intro-active');
  const observer=new IntersectionObserver(entries=>{
-  const entering=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);
-  entering.forEach((entry,index)=>{
-   observer.unobserve(entry.target);
-   if(document.documentElement.classList.contains('home-intro-active')&&entry.target.closest('.hero-option'))waiting.add(entry.target);
-   else reveal(entry.target,Math.min(index,3)*80);
+  entries.sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top).forEach(entry=>{
+   const el=entry.target,top=entry.boundingClientRect.top;
+   // Already scrolled past (reload mid-page, anchor jump, fast fling): show it as-is, never animate in from the wrong side.
+   if(top<0){observer.unobserve(el);return}
+   if(!entry.isIntersecting)return;
+   observer.unobserve(el);
+   if(introActive()&&el.closest('.hero-option'))waiting.add(el);
+   else reveal(el);
   });
- },{threshold:0,rootMargin:'0px 0px -64px 0px'});
+ },{threshold:0,rootMargin:'0px 0px -8% 0px'});
  [...texts,...visuals].forEach(el=>observer.observe(el));
+ // The first observer callback runs before the next paint, so lifting the guard on the frame after it is flicker-free.
+ requestAnimationFrame(()=>requestAnimationFrame(release));
  // Wait until the welcome overlay clears, so hero motion is actually visible.
  const introObserver=new MutationObserver(()=>{
-  if(document.documentElement.classList.contains('home-intro-active'))return;
-  [...waiting].forEach((el,i)=>reveal(el,Math.min(i,3)*100));waiting.clear();introObserver.disconnect();
+  if(introActive())return;
+  queueEnd=0;[...waiting].forEach(el=>reveal(el));waiting.clear();introObserver.disconnect();
  });
- if(document.documentElement.classList.contains('home-intro-active'))introObserver.observe(document.documentElement,{attributes:true,attributeFilter:['class']});
- const finishFocused=event=>animations.forEach((animation,el)=>{if(el.contains(event.target))animation.cancel()});
- const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(animation=>animation.cancel());animations.clear()};
+ if(introActive())introObserver.observe(root,{attributes:true,attributeFilter:['class']});
+ const finishFocused=event=>animations.forEach((animation,el)=>{if(el.contains(event.target))animation.finish()});
+ const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(animation=>animation.cancel());animations.clear();release()};
  const reduce=()=>{if(preference.matches)stop()};
  document.addEventListener('focusin',finishFocused);preference.addEventListener('change',reduce);
  return ()=>{stop();document.removeEventListener('focusin',finishFocused);preference.removeEventListener('change',reduce)};
