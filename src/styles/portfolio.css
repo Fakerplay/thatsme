@@ -559,5 +559,3 @@ body[data-page="project"] .case-media-open:focus-visible{outline:2px solid var(-
 html body #app .project-row-heading{margin:0;font:inherit;max-width:none}html:not(#seo-a#seo-b#seo-c#seo-d#seo-e) #app .index-caption h2{font-size:22px;line-height:1.2;letter-spacing:-.03em}
 .text-link .cta-icon,.text-link:hover .cta-icon{width:18px;height:18px;padding:0;margin:0;background:transparent!important;color:inherit!important;border:0;border-radius:0;box-sizing:border-box;flex-shrink:0;stroke:currentColor;stroke-width:1.6;transform:none}
 .case-watch-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px}.case-watch-links a{max-width:100%;white-space:normal}
-.reveal-wait{opacity:0}
-@media(prefers-reduced-motion:reduce){.reveal-wait{opacity:1}}

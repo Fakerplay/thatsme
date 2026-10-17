@@ -11,68 +11,8 @@ function aboutStackPanels(){
  return ()=>{observer.disconnect();window.removeEventListener('resize',measure)};
 }
 
-// Animate on entry instead of hiding content in CSS: failed/disabled JS stays readable.
-// The inline head script adds .reveal-pending so nothing paints before we decide what animates.
-function entranceMotion(){
- const root=document.documentElement;
- const release=()=>root.classList.remove('reveal-pending');
- const preference=matchMedia('(prefers-reduced-motion: reduce)');
- if(preference.matches||!('IntersectionObserver' in window)){release();return ()=>{};}
- const animations=new Map(),waiting=new Set();
- const easing='cubic-bezier(.22,1,.36,1)';
- const VISUAL='.rail,figure,.film-card,.index-card img,.case-media,.story-object';
- const UNIT=VISUAL+',h1,h2,h3,p,dl,ul,ol,.project-tags,.pf-navigation,.pf-bottom,.pf-name,.pf-label,.btn,.text-link,.back-link,.case-all-work,.case-detail-links,.case-icon,.case-decision-number,.intro-links,.story-bottom,.motion-toggle,.rail-prev,.rail-next';
- // Everything visible gets one reveal, and only the outermost unit animates, so nothing pops in beside a fading neighbour or moves twice.
- const candidates=[...document.querySelectorAll('#app :is('+UNIT+')')].filter(el=>!el.closest('[hidden],.name-footer'));
- const units=candidates.filter(el=>{for(let p=el.parentElement;p&&p!==app;p=p.parentElement)if(p.matches(UNIT))return false;return true});
- const visuals=units.filter(el=>el.matches(VISUAL));
- const texts=units.filter(el=>!el.matches(VISUAL));
- const visualSet=new Set(visuals);
- // One shared queue: items entering close together cascade 70ms apart instead of popping in at once or out of order.
- let queueEnd=0;
- const STEP=70,MAX_WAIT=280;
- const reveal=(el,minDelay=0)=>{
-  if(preference.matches||el.contains(document.activeElement)){el.classList.remove('reveal-wait');return}
-  const now=performance.now();
-  const start=Math.max(now+minDelay,Math.min(queueEnd,now+MAX_WAIT));
-  queueEnd=start+STEP;
-  const visual=visualSet.has(el);
-  // Single "from" keyframes: each element animates back to its own styled opacity/rotation, so nothing snaps at the end.
-  const frames=visual?[{opacity:0,translate:'0 24px',clipPath:'inset(6% 0 6% 0)'}]:[{opacity:0,translate:'0 14px'}];
-  const animation=el.animate(frames,{duration:visual?900:700,easing,delay:start-now,fill:'backwards'});
-  el.classList.remove('reveal-wait');
-  animations.set(el,animation);
-  animation.finished.catch(()=>{}).finally(()=>animations.delete(el));
- };
- const introActive=()=>root.classList.contains('home-intro-active');
- const observer=new IntersectionObserver(entries=>{
-  entries.sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top).forEach(entry=>{
-   const el=entry.target,top=entry.boundingClientRect.top;
-   // Already scrolled past (reload mid-page, anchor jump, fast fling): show it as-is, never animate in from the wrong side.
-   if(top<0){observer.unobserve(el);el.classList.remove('reveal-wait');return}
-   if(!entry.isIntersecting)return;
-   observer.unobserve(el);
-   if(introActive()&&el.closest('.hero-option'))waiting.add(el);
-   else reveal(el);
-  });
- },{threshold:0,rootMargin:'0px 0px -8% 0px'});
- // Hide each unit before it can be seen, so it never shows, vanishes, then fades back in at the trigger line.
- const all=[...texts,...visuals];
- all.forEach(el=>{if(el.getBoundingClientRect().bottom>0)el.classList.add('reveal-wait');observer.observe(el)});
- // The first observer callback runs before the next paint, so lifting the guard on the frame after it is flicker-free.
- requestAnimationFrame(()=>requestAnimationFrame(release));
- // Wait until the welcome overlay clears, so hero motion is actually visible.
- const introObserver=new MutationObserver(()=>{
-  if(introActive())return;
-  queueEnd=0;[...waiting].forEach(el=>reveal(el));waiting.clear();introObserver.disconnect();
- });
- if(introActive())introObserver.observe(root,{attributes:true,attributeFilter:['class']});
- const finishFocused=event=>{event.target.closest?.('.reveal-wait')?.classList.remove('reveal-wait');animations.forEach((animation,el)=>{if(el.contains(event.target))animation.finish()})};
- const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(animation=>animation.cancel());animations.clear();all.forEach(el=>el.classList.remove('reveal-wait'));release()};
- const reduce=()=>{if(preference.matches)stop()};
- document.addEventListener('focusin',finishFocused);preference.addEventListener('change',reduce);
- return ()=>{stop();document.removeEventListener('focusin',finishFocused);preference.removeEventListener('change',reduce)};
-}
+// Scroll reveal animations removed at Shubham's request (Oct 18 2026): content renders as-is.
+function entranceMotion(){return ()=>{};}
 
 function bindHeroOption(){
  const section=document.querySelector('.hero-option');if(!section||section.classList.contains('hero-storymaker'))return ()=>{};
@@ -100,7 +40,7 @@ function bindHeroOption(){
  return ()=>{stopped=true;clearInterval(interval);timers.forEach(clearTimeout);section.querySelectorAll('*').forEach(el=>el.getAnimations().forEach(a=>a.cancel()));preference.removeEventListener('change',reduce)};
 }
 
-function bindInteractions(){const disposers=[entranceMotion(),bindHeroOption(),aboutStackPanels()];const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelectorAll('.rail').forEach(rail=>{const row=rail.closest('.project-row'),prev=row.querySelector('.rail-prev'),next=row.querySelector('.rail-next');let holdUntil=0;const hold=()=>{holdUntil=performance.now()+1800};const update=()=>{prev.disabled=rail.scrollLeft<4;next.disabled=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-4};const move=n=>{hold();rail.scrollBy({left:n*Math.max(280,rail.clientWidth*.7),behavior:reduced?'instant':'smooth'})};prev.onclick=()=>move(-1);next.onclick=()=>move(1);rail.addEventListener('scroll',update,{passive:true});rail.addEventListener('dragstart',e=>e.preventDefault());rail.addEventListener('keydown',e=>{if(e.target!==rail)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();move(e.key==='ArrowRight'?1:-1)}});let start=0,left=0,drag=false,moved=false;rail.addEventListener('pointerdown',e=>{if(e.pointerType==='touch'||e.button!==0)return;start=e.clientX;left=rail.scrollLeft;drag=true;moved=false});const pointermove=e=>{if(!drag)return;const delta=e.clientX-start;if(Math.abs(delta)>6){moved=true;rail.classList.add('dragging');rail.scrollLeft=left-delta;e.preventDefault()}};const pointerup=()=>{drag=false;rail.classList.remove('dragging')};window.addEventListener('pointermove',pointermove,{passive:false});window.addEventListener('pointerup',pointerup);rail.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopImmediatePropagation();moved=false}},true);disposers.push(()=>{window.removeEventListener('pointermove',pointermove);window.removeEventListener('pointerup',pointerup)});rail.querySelectorAll('img').forEach(i=>i.addEventListener('load',update));requestAnimationFrame(update);window.addEventListener('resize',update);disposers.push(()=>window.removeEventListener('resize',update));if(rail.hasAttribute('data-moving')){const toggle=row.querySelector('.motion-toggle');const preference=matchMedia('(prefers-reduced-motion: reduce)');let paused=preference.matches,touching=false,visible=true,last=0,position=0,raf=0,cycle=0;const originals=Array.from(rail.children);const clones=originals.map(el=>{const copy=el.cloneNode(true);copy.setAttribute('aria-hidden','true');copy.tabIndex=-1;copy.querySelectorAll('a,button').forEach(c=>c.tabIndex=-1);rail.appendChild(copy);return copy});const measure=()=>{cycle=clones[0].offsetLeft-originals[0].offsetLeft;position=cycle;rail.scrollLeft=position;};requestAnimationFrame(measure);window.addEventListener('resize',measure);disposers.push(()=>window.removeEventListener('resize',measure));const label=()=>{toggle.textContent=paused?'Play motion':'Pause motion';toggle.setAttribute('aria-pressed',String(!paused));toggle.setAttribute('aria-label',paused?'Play gallery motion':'Pause gallery motion')};label();toggle.onclick=()=>{paused=!paused;label()};rail.addEventListener('wheel',e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY)||e.shiftKey)hold()},{passive:true});rail.addEventListener('touchstart',()=>{touching=true;hold()},{passive:true});const endTouch=()=>{touching=false;hold()};rail.addEventListener('touchend',endTouch,{passive:true});rail.addEventListener('touchcancel',endTouch,{passive:true});const changed=()=>{paused=preference.matches;label()};preference.addEventListener?.('change',changed);disposers.push(()=>preference.removeEventListener?.('change',changed));let observer;if(typeof IntersectionObserver!=='undefined'){observer=new IntersectionObserver(entries=>visible=entries[0].isIntersecting);observer.observe(rail)}const tick=now=>{const dt=Math.min(now-last,40);last=now;const max=rail.scrollWidth-rail.clientWidth;if(!document.body.classList.contains('review-active')&&!paused&&!touching&&!drag&&!document.hidden&&!dialog.open&&!searchDialog.open&&!rail.contains(document.activeElement)&&visible&&now>holdUntil&&max>1){if(Math.abs(position-rail.scrollLeft)>2)position=rail.scrollLeft;position-=dt*.045;if(cycle>0){if(position<0)position+=cycle;else if(position>=cycle)position-=cycle}rail.scrollLeft=position}else position=rail.scrollLeft;raf=requestAnimationFrame(tick)};raf=requestAnimationFrame(tick);disposers.push(()=>{cancelAnimationFrame(raf);observer?.disconnect()})}});
+function bindInteractions(){const disposers=[bindHeroOption(),aboutStackPanels()];const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelectorAll('.rail').forEach(rail=>{const row=rail.closest('.project-row'),prev=row.querySelector('.rail-prev'),next=row.querySelector('.rail-next');let holdUntil=0;const hold=()=>{holdUntil=performance.now()+1800};const update=()=>{prev.disabled=rail.scrollLeft<4;next.disabled=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-4};const move=n=>{hold();rail.scrollBy({left:n*Math.max(280,rail.clientWidth*.7),behavior:reduced?'instant':'smooth'})};prev.onclick=()=>move(-1);next.onclick=()=>move(1);rail.addEventListener('scroll',update,{passive:true});rail.addEventListener('dragstart',e=>e.preventDefault());rail.addEventListener('keydown',e=>{if(e.target!==rail)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();move(e.key==='ArrowRight'?1:-1)}});let start=0,left=0,drag=false,moved=false;rail.addEventListener('pointerdown',e=>{if(e.pointerType==='touch'||e.button!==0)return;start=e.clientX;left=rail.scrollLeft;drag=true;moved=false});const pointermove=e=>{if(!drag)return;const delta=e.clientX-start;if(Math.abs(delta)>6){moved=true;rail.classList.add('dragging');rail.scrollLeft=left-delta;e.preventDefault()}};const pointerup=()=>{drag=false;rail.classList.remove('dragging')};window.addEventListener('pointermove',pointermove,{passive:false});window.addEventListener('pointerup',pointerup);rail.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopImmediatePropagation();moved=false}},true);disposers.push(()=>{window.removeEventListener('pointermove',pointermove);window.removeEventListener('pointerup',pointerup)});rail.querySelectorAll('img').forEach(i=>i.addEventListener('load',update));requestAnimationFrame(update);window.addEventListener('resize',update);disposers.push(()=>window.removeEventListener('resize',update));if(rail.hasAttribute('data-moving')){const toggle=row.querySelector('.motion-toggle');const preference=matchMedia('(prefers-reduced-motion: reduce)');let paused=preference.matches,touching=false,visible=true,last=0,position=0,raf=0,cycle=0;const originals=Array.from(rail.children);const clones=originals.map(el=>{const copy=el.cloneNode(true);copy.setAttribute('aria-hidden','true');copy.tabIndex=-1;copy.querySelectorAll('a,button').forEach(c=>c.tabIndex=-1);rail.appendChild(copy);return copy});const measure=()=>{cycle=clones[0].offsetLeft-originals[0].offsetLeft;position=cycle;rail.scrollLeft=position;};requestAnimationFrame(measure);window.addEventListener('resize',measure);disposers.push(()=>window.removeEventListener('resize',measure));const label=()=>{toggle.textContent=paused?'Play motion':'Pause motion';toggle.setAttribute('aria-pressed',String(!paused));toggle.setAttribute('aria-label',paused?'Play gallery motion':'Pause gallery motion')};label();toggle.onclick=()=>{paused=!paused;label()};rail.addEventListener('wheel',e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY)||e.shiftKey)hold()},{passive:true});rail.addEventListener('touchstart',()=>{touching=true;hold()},{passive:true});const endTouch=()=>{touching=false;hold()};rail.addEventListener('touchend',endTouch,{passive:true});rail.addEventListener('touchcancel',endTouch,{passive:true});const changed=()=>{paused=preference.matches;label()};preference.addEventListener?.('change',changed);disposers.push(()=>preference.removeEventListener?.('change',changed));let observer;if(typeof IntersectionObserver!=='undefined'){observer=new IntersectionObserver(entries=>visible=entries[0].isIntersecting);observer.observe(rail)}const tick=now=>{const dt=Math.min(now-last,40);last=now;const max=rail.scrollWidth-rail.clientWidth;if(!document.body.classList.contains('review-active')&&!paused&&!touching&&!drag&&!document.hidden&&!dialog.open&&!searchDialog.open&&!rail.contains(document.activeElement)&&visible&&now>holdUntil&&max>1){if(Math.abs(position-rail.scrollLeft)>2)position=rail.scrollLeft;position-=dt*.045;if(cycle>0){if(position<0)position+=cycle;else if(position>=cycle)position-=cycle}rail.scrollLeft=position}else position=rail.scrollLeft;raf=requestAnimationFrame(tick)};raf=requestAnimationFrame(tick);disposers.push(()=>{cancelAnimationFrame(raf);observer?.disconnect()})}});
 const clipVisibility=new Map();const clipObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{clipVisibility.set(entry.target,entry.isIntersecting);if(entry.target.controls){if(!entry.isIntersecting)entry.target.pause()}else if(entry.isIntersecting&&!document.hidden&&!reduced)entry.target.play().catch(()=>{});else entry.target.pause()})},{threshold:.05});document.querySelectorAll('#app video').forEach(video=>clipObserver.observe(video));const videoTabState=()=>clipVisibility.forEach((visible,video)=>{if(video.controls){if(document.hidden)video.pause()}else if(visible&&!document.hidden&&!reduced)video.play().catch(()=>{});else video.pause()});document.addEventListener('visibilitychange',videoTabState);disposers.push(()=>{clipObserver.disconnect();document.removeEventListener('visibilitychange',videoTabState);clipVisibility.forEach((_,video)=>video.pause())});
 document.querySelectorAll('[data-lightbox]').forEach(b=>b.addEventListener('click',()=>{const key=b.dataset.lightbox,isVideo=A[key].endsWith('.mp4');let media=document.querySelector('#lightbox-image');const replacement=document.createElement(isVideo?'video':'img');replacement.id='lightbox-image';replacement.src=A[key];if(isVideo){replacement.controls=true;replacement.autoplay=true;replacement.loop=true;replacement.muted=true;replacement.playsInline=true;replacement.setAttribute('aria-label',b.dataset.caption||'Project animation')}else replacement.alt=b.dataset.caption||'';media.replaceWith(replacement);document.querySelector('#lightbox-caption').textContent=b.dataset.caption||'';requestAnimationFrame(()=>{if(!dialog.open)dialog.showModal();dialog.scrollTop=0})}));
 document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});document.querySelectorAll('[data-category]').forEach(x=>x.hidden=b.dataset.filter!=='All'&&x.dataset.category!==b.dataset.filter)});
