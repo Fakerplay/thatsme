@@ -15,48 +15,52 @@ function aboutStackPanels(){
 function entranceMotion(){
  const preference=matchMedia('(prefers-reduced-motion: reduce)');
  if(preference.matches||!('IntersectionObserver' in window))return ()=>{};
- const selectors=[
-  '.page-intro','.project-intro','.work-intro','.row-heading','.rail',
-  '.section-title','.film-card','.home-about','.next-project',
-  '.personal-intro','.about-personal > section','.about-personal > figure',
-  '.personality-grid > article','.career-row','.index-card',
-  '.case-opening','.case-information','.case-context > div',
-  '.case-section-heading','.case-decision-copy','.case-decision > figure',
-  '.case-vertical-gallery > figure','.case-outcome > div','.case-connect > div',
-  '.pf-identity','.pf-navigation','.pf-contact','.pf-bottom'
- ];
- const candidates=[...document.querySelectorAll(selectors.map(s=>'#app '+s).join(','))];
- // A nested reveal would blur and move the same content twice.
- const elements=candidates.filter(el=>!candidates.some(parent=>parent!==el&&parent.contains(el)));
- const animations=new Map();
- const tokens=getComputedStyle(document.documentElement);
- const easing=tokens.getPropertyValue('--reveal-ease').trim();
- const durationToken=tokens.getPropertyValue('--reveal-duration').trim();
- const duration=parseFloat(durationToken)*(durationToken.endsWith('ms')?1:1000);
+ const animations=new Map(),waiting=new Set();
+ const easing='cubic-bezier(.23,1,.32,1)';
+ const visualCandidates=[...document.querySelectorAll('#app .rail,#app figure,#app .film-card img,#app .index-card img,#app .case-media,#app .story-object')];
+ const visuals=visualCandidates.filter(el=>!visualCandidates.some(parent=>parent!==el&&parent.contains(el)));
+ const texts=[...document.querySelectorAll('#app h1,#app h2,#app h3,#app p,#app dl,#app .project-tags,#app .pf-navigation,#app .pf-bottom')]
+  .filter(el=>!visuals.some(parent=>parent.contains(el)))
+  .filter(el=>!el.parentElement.closest('p,dl,.pf-navigation,.pf-bottom'));
+ const visualSet=new Set(visuals);
+ const reveal=(el,delay)=>{
+  if(preference.matches||el.contains(document.activeElement))return;
+  const visual=visualSet.has(el);
+  const frames=visual?[
+   {opacity:0,clipPath:'inset(8% 0 18% 0 round 12px)'},
+   {opacity:1,clipPath:'inset(0% 0 0% 0 round 0px)'}
+  ]:[
+   {opacity:0,filter:'blur(6px)',transform:'translate3d(0,20px,0)'},
+   {opacity:1,filter:'blur(0px)',transform:'translate3d(0,0,0)'}
+  ];
+  const animation=el.animate(frames,{duration:visual?1100:950,easing,delay,fill:'backwards'});
+  animations.set(el,animation);
+  animation.finished.catch(()=>{}).finally(()=>animations.delete(el));
+ };
  const observer=new IntersectionObserver(entries=>{
   const entering=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);
   entering.forEach((entry,index)=>{
-   const el=entry.target;observer.unobserve(el);
-   if(preference.matches||el.contains(document.activeElement))return;
-   const animation=el.animate([
-    {opacity:0,filter:'blur(12px)',transform:'translate3d(0,32px,0)'},
-    {opacity:1,filter:'blur(0px)',transform:'translate3d(0,0,0)'}
-   ],{duration,easing,delay:Math.min(index,3)*50,fill:'backwards'});
-   animations.set(el,animation);
-   animation.finished.catch(()=>{}).finally(()=>animations.delete(el));
+   observer.unobserve(entry.target);
+   if(document.documentElement.classList.contains('home-intro-active')&&entry.target.closest('.hero-option'))waiting.add(entry.target);
+   else reveal(entry.target,Math.min(index,3)*80);
   });
- },{threshold:0,rootMargin:'0px 0px -100px 0px'});
- elements.forEach(el=>observer.observe(el));
+ },{threshold:0,rootMargin:'0px 0px -64px 0px'});
+ [...texts,...visuals].forEach(el=>observer.observe(el));
+ // Wait until the welcome overlay clears, so hero motion is actually visible.
+ const introObserver=new MutationObserver(()=>{
+  if(document.documentElement.classList.contains('home-intro-active'))return;
+  [...waiting].forEach((el,i)=>reveal(el,Math.min(i,3)*100));waiting.clear();introObserver.disconnect();
+ });
+ if(document.documentElement.classList.contains('home-intro-active'))introObserver.observe(document.documentElement,{attributes:true,attributeFilter:['class']});
  const finishFocused=event=>animations.forEach((animation,el)=>{if(el.contains(event.target))animation.cancel()});
- const stop=()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());animations.clear()};
+ const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(animation=>animation.cancel());animations.clear()};
  const reduce=()=>{if(preference.matches)stop()};
- document.addEventListener('focusin',finishFocused);
- preference.addEventListener('change',reduce);
+ document.addEventListener('focusin',finishFocused);preference.addEventListener('change',reduce);
  return ()=>{stop();document.removeEventListener('focusin',finishFocused);preference.removeEventListener('change',reduce)};
 }
 
 function bindHeroOption(){
- const section=document.querySelector('.hero-option');if(!section)return ()=>{};
+ const section=document.querySelector('.hero-option');if(!section||section.classList.contains('hero-storymaker'))return ()=>{};
  const preference=matchMedia('(prefers-reduced-motion: reduce)');const animations=new Set();const timers=new Set();let interval=null,stopped=false,index=0;
  const animate=(el,frames,options)=>{if(!el||preference.matches)return null;const a=el.animate(frames,{fill:'backwards',...options});animations.add(a);a.finished.then(()=>animations.delete(a)).catch(()=>{});return a};
  const later=(fn,delay)=>{const t=setTimeout(()=>{timers.delete(t);if(!stopped)fn()},delay);timers.add(t);return t};
