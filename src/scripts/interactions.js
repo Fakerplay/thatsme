@@ -20,11 +20,13 @@ function entranceMotion(){
  if(preference.matches||!('IntersectionObserver' in window)){release();return ()=>{};}
  const animations=new Map(),waiting=new Set();
  const easing='cubic-bezier(.22,1,.36,1)';
- const visualCandidates=[...document.querySelectorAll('#app .rail,#app figure,#app .film-card img,#app .index-card img,#app .case-media,#app .story-object')];
- const visuals=visualCandidates.filter(el=>!visualCandidates.some(parent=>parent!==el&&parent.contains(el)));
- const texts=[...document.querySelectorAll('#app h1,#app h2,#app h3,#app p,#app dl,#app .project-tags,#app .pf-navigation,#app .pf-bottom')]
-  .filter(el=>!visuals.some(parent=>parent.contains(el)))
-  .filter(el=>!el.parentElement.closest('p,dl,.pf-navigation,.pf-bottom'));
+ const VISUAL='.rail,figure,.film-card,.index-card img,.case-media,.story-object';
+ const UNIT=VISUAL+',h1,h2,h3,p,dl,ul,ol,.project-tags,.pf-navigation,.pf-bottom,.pf-name,.pf-label,.btn,.text-link,.back-link,.case-all-work,.case-detail-links,.case-icon,.case-decision-number,.intro-links,.story-bottom,.motion-toggle,.rail-prev,.rail-next';
+ // Everything visible gets one reveal, and only the outermost unit animates, so nothing pops in beside a fading neighbour or moves twice.
+ const candidates=[...document.querySelectorAll('#app :is('+UNIT+')')].filter(el=>!el.closest('[hidden],.name-footer'));
+ const units=candidates.filter(el=>{for(let p=el.parentElement;p&&p!==app;p=p.parentElement)if(p.matches(UNIT))return false;return true});
+ const visuals=units.filter(el=>el.matches(VISUAL));
+ const texts=units.filter(el=>!el.matches(VISUAL));
  const visualSet=new Set(visuals);
  // One shared queue: items entering close together cascade 70ms apart instead of popping in at once or out of order.
  let queueEnd=0;
@@ -35,13 +37,8 @@ function entranceMotion(){
   const start=Math.max(now+minDelay,Math.min(queueEnd,now+MAX_WAIT));
   queueEnd=start+STEP;
   const visual=visualSet.has(el);
-  const frames=visual?[
-   {opacity:0,clipPath:'inset(6% 0 6% 0)',transform:'translate3d(0,24px,0)'},
-   {opacity:1,clipPath:'inset(0% 0 0% 0)',transform:'translate3d(0,0,0)'}
-  ]:[
-   {opacity:0,transform:'translate3d(0,14px,0)'},
-   {opacity:1,transform:'translate3d(0,0,0)'}
-  ];
+  // Single "from" keyframes: each element animates back to its own styled opacity/rotation, so nothing snaps at the end.
+  const frames=visual?[{opacity:0,translate:'0 24px',clipPath:'inset(6% 0 6% 0)'}]:[{opacity:0,translate:'0 14px'}];
   const animation=el.animate(frames,{duration:visual?900:700,easing,delay:start-now,fill:'backwards'});
   animations.set(el,animation);
   animation.finished.catch(()=>{}).finally(()=>animations.delete(el));
