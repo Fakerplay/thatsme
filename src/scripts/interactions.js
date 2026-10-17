@@ -32,7 +32,7 @@ function entranceMotion(){
  let queueEnd=0;
  const STEP=70,MAX_WAIT=280;
  const reveal=(el,minDelay=0)=>{
-  if(preference.matches||el.contains(document.activeElement))return;
+  if(preference.matches||el.contains(document.activeElement)){el.classList.remove('reveal-wait');return}
   const now=performance.now();
   const start=Math.max(now+minDelay,Math.min(queueEnd,now+MAX_WAIT));
   queueEnd=start+STEP;
@@ -40,6 +40,7 @@ function entranceMotion(){
   // Single "from" keyframes: each element animates back to its own styled opacity/rotation, so nothing snaps at the end.
   const frames=visual?[{opacity:0,translate:'0 24px',clipPath:'inset(6% 0 6% 0)'}]:[{opacity:0,translate:'0 14px'}];
   const animation=el.animate(frames,{duration:visual?900:700,easing,delay:start-now,fill:'backwards'});
+  el.classList.remove('reveal-wait');
   animations.set(el,animation);
   animation.finished.catch(()=>{}).finally(()=>animations.delete(el));
  };
@@ -48,14 +49,16 @@ function entranceMotion(){
   entries.sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top).forEach(entry=>{
    const el=entry.target,top=entry.boundingClientRect.top;
    // Already scrolled past (reload mid-page, anchor jump, fast fling): show it as-is, never animate in from the wrong side.
-   if(top<0){observer.unobserve(el);return}
+   if(top<0){observer.unobserve(el);el.classList.remove('reveal-wait');return}
    if(!entry.isIntersecting)return;
    observer.unobserve(el);
    if(introActive()&&el.closest('.hero-option'))waiting.add(el);
    else reveal(el);
   });
  },{threshold:0,rootMargin:'0px 0px -8% 0px'});
- [...texts,...visuals].forEach(el=>observer.observe(el));
+ // Hide each unit before it can be seen, so it never shows, vanishes, then fades back in at the trigger line.
+ const all=[...texts,...visuals];
+ all.forEach(el=>{if(el.getBoundingClientRect().bottom>0)el.classList.add('reveal-wait');observer.observe(el)});
  // The first observer callback runs before the next paint, so lifting the guard on the frame after it is flicker-free.
  requestAnimationFrame(()=>requestAnimationFrame(release));
  // Wait until the welcome overlay clears, so hero motion is actually visible.
@@ -64,8 +67,8 @@ function entranceMotion(){
   queueEnd=0;[...waiting].forEach(el=>reveal(el));waiting.clear();introObserver.disconnect();
  });
  if(introActive())introObserver.observe(root,{attributes:true,attributeFilter:['class']});
- const finishFocused=event=>animations.forEach((animation,el)=>{if(el.contains(event.target))animation.finish()});
- const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(animation=>animation.cancel());animations.clear();release()};
+ const finishFocused=event=>{event.target.closest?.('.reveal-wait')?.classList.remove('reveal-wait');animations.forEach((animation,el)=>{if(el.contains(event.target))animation.finish()})};
+ const stop=()=>{observer.disconnect();introObserver.disconnect();waiting.clear();animations.forEach(animation=>animation.cancel());animations.clear();all.forEach(el=>el.classList.remove('reveal-wait'));release()};
  const reduce=()=>{if(preference.matches)stop()};
  document.addEventListener('focusin',finishFocused);preference.addEventListener('change',reduce);
  return ()=>{stop();document.removeEventListener('focusin',finishFocused);preference.removeEventListener('change',reduce)};
