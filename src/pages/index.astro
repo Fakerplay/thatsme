@@ -6,11 +6,14 @@ import ProjectGallery from '../components/ProjectGallery.astro';
 import { PROJECTS } from '../lib/projects.js';
 import { films } from '../lib/render.js';
 import { companyLinks } from '../lib/links.js';
+// Homepage shows a curated set; /work/ lists every project.
+const HOME_IDS=['benchmark-report','wizcrm','ecolab','solace','vistara','ikea','bhabha','phyllo','daulat','solaris'];
+const HOME=PROJECTS.filter(p=>HOME_IDS.includes(p.id));
 ---
 <Portfolio page="home" title="Shubham Shinde — Design Lead & Art Director" description="Shubham Shinde is a design lead and art director in Bengaluru, currently at WizCommerce. Explore his brand identities, films and website design.">
   <HomeIntro />
-  {PROJECTS.slice(0,4).map(project=><ProjectGallery project={project} homepage />)}
+  {HOME.slice(0,4).map(project=><ProjectGallery project={project} homepage />)}
   <Fragment set:html={companyLinks(films())} />
-  <section class="more-work"><div class="section-title"><h2>More of my work.</h2><a class="text-link" href="studies/">Browse all projects ↗</a></div>{PROJECTS.slice(4).map(project=><ProjectGallery project={project} homepage />)}</section>
+  <section class="more-work"><div class="section-title"><h2>More of my work.</h2><a class="text-link" href="work/">Browse all projects ↗</a></div>{HOME.slice(4).map(project=><ProjectGallery project={project} homepage />)}</section>
   <HomeContact />
 </Portfolio>
