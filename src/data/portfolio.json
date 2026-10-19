@@ -257,10 +257,10 @@
     "benchmark-landing": "assets/benchmark-report/landing.webp",
     "benchmark-cta": "assets/benchmark-report/cta.webp",
     "original-benchmark-insight": "assets/benchmark-report/original-benchmark-insight.mp4",
-    "original-benchmark-criteria": "assets/benchmark-report/original-benchmark-criteria.mp4",
-    "benchmark-poster-orders": "assets/benchmark-report/benchmark-poster-orders.gif",
-    "benchmark-poster-images": "assets/benchmark-report/benchmark-poster-images.gif",
-    "benchmark-poster-seats": "assets/benchmark-report/benchmark-poster-seats.gif"
+    "original-benchmark-criteria": "assets/optimized/benchmark-criteria.mp4",
+    "benchmark-poster-orders": "assets/optimized/benchmark-orders.mp4",
+    "benchmark-poster-images": "assets/optimized/benchmark-images.mp4",
+    "benchmark-poster-seats": "assets/optimized/benchmark-seats.mp4"
   },
   "FILMS": [
     {

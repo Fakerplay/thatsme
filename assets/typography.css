@@ -1,7 +1,7 @@
 /* Sans-only implementation of the supplied tokens.
    Area Normal trial files supplied by the user; HAL Timezone supplied by the user for secondary typography;
    OC Highway -> JetBrains Mono. Gooper intentionally omitted. */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
 @font-face{font-family:"Area Normal";src:url("fonts/area-trial/AreaTrialNormal-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
 @font-face{font-family:"Area Normal";src:url("fonts/area-trial/AreaTrialNormal-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;}
 @font-face{font-family:"Area Normal";src:url("fonts/area-trial/AreaTrialNormal-Semibold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;}
