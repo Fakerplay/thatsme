@@ -1,3 +1,4 @@
+import motionAssets from '../data/motion-assets.json';
 // Build-time presentation helpers. These are never shipped to the browser.
 import data from '../data/portfolio.json';
 import { PROJECTS } from './projects.js';
@@ -82,35 +83,17 @@ function caseDecisionItems(p){
 }
 
 function projectPage(p){
-  const next=PROJECTS.find(q=>q.id!==p.id&&q.category===p.category)||PROJECTS[(PROJECTS.indexOf(p)+1)%PROJECTS.length];
-  const hero=p.assets[0];
-  const decisions=caseDecisionItems(p);
-  const used=new Set([hero,...decisions.map(d=>d.key).filter(Boolean)]);
-  const remaining=p.assets.filter(key=>!used.has(key));
-  const contribution=p.contribution||[];
-  const outcome=p.story?.result||'';
-  // Supporting notes are retained for short showcases, without duplicating their introduction.
-  const notes=!p.story?(p.body||p.detail):'';
-  return `<section class="project-intro case-intro">
-    <a class="back-link" href="work/">← All projects</a>
-    <div class="project-title-row"><div><h1>${esc(p.title)}</h1></div><p class="case-summary">${esc(projectSummary(p))}</p></div>
-    ${projectTags(p)}
-    ${p.watchLinks?.length?`<nav class="case-watch-links" aria-label="Watch ${esc(p.title)}">${p.watchLinks.map(link=>`<a class="text-link" href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">${esc(link.label)} ↗</a>`).join('')}</nav>`:''}
-  </section>
-  <section class="case-opening" aria-label="${esc(p.title)} featured work">${caseMedia(p,hero,true)}</section>
-  <section class="case-information" aria-label="Project information">
-    <dl class="case-facts"><div><dt>Context</dt><dd>${esc(p.context||p.type)}</dd></div><div><dt>My role</dt><dd>${esc(p.role)}</dd></div>${p.ownership?`<div><dt>Ownership</dt><dd>${esc(p.ownership)}<small>For the selected design work</small></dd></div>`:''}${p.year?`<div><dt>Year</dt><dd>${esc(p.year)}</dd></div>`:''}</dl>
-    <nav class="case-jump" aria-label="On this project page"><span>On this page</span><button data-case-jump="case-overview">${p.story?'The brief':'What I did'}</button>${decisions.length?'<button data-case-jump="case-process">What shaped the design</button>':''}${remaining.length?'<button data-case-jump="case-visuals">Selected work</button>':''}${outcome?'<button data-case-jump="case-outcome">Outcome</button>':''}</nav>
-  </section>
-  <section class="case-context" id="case-overview" tabindex="-1">
-    ${p.story?`<div><h2>The brief</h2><p class="case-brief-copy">${esc(p.story.challenge)}</p></div>`:`<div><h2 class="case-brief-title">About the project</h2>${notes?`<p class="case-note">${esc(notes)}</p>`:''}</div>`}
-    <div><h2 class="case-section-title">What I did</h2><ul class="contribution-list">${contribution.map(c=>`<li>${caseIcon('owner')}<span>${esc(c)}</span></li>`).join('')}</ul></div>
-  </section>
-  ${decisions.length?storySections(p):''}
-  ${remaining.length?`<section class="case-selected" id="case-visuals" tabindex="-1"><div class="case-section-heading"><div><h2>Selected work</h2></div><p>${remaining.length} ${remaining.length===1?'visual':'visuals'} · Explore at your own pace</p></div><div class="case-vertical-gallery">${remaining.map(key=>caseMedia(p,key)).join('')}</div></section>`:''}
-  ${outcome?`<section class="case-outcome" id="case-outcome" tabindex="-1"><div><h2>What I delivered</h2></div><div><p>${esc(outcome)}</p></div></section>`:''}
-  <section class="case-connect"><div><h2>Working on something similar?</h2><p>Tell me a little about it.</p></div><div class="case-detail-links"><a class="btn fx-93" href="mailto:shubhamshinde52@gmail.com"><span class="btn-label">Say hello ${caseIcon('mail')}</span></a>${projectLinks(p)}</div></section>
-  <section class="next-project"><p>Next project</p><a href="project/${next.id}/"><h2>${esc(next.title)}</h2><span>↗</span></a><p>${esc(projectSummary(next))}</p><a class="case-all-work" href="work/">Explore all work ↗</a></section>`;
+  const next=PROJECTS[(PROJECTS.indexOf(p)+1)%PROJECTS.length];
+  const motion=new Set(motionAssets);
+  const ordered=[...p.assets.filter(k=>motion.has(k)),...p.assets.filter(k=>!motion.has(k))];
+  const links=[...(p.watchLinks||[]),...(p.externalLinks?.length?p.externalLinks:(SOURCES[p.id]?[{label:'View on Behance',url:SOURCES[p.id]}]:[]))];
+  const media=ordered.map((key,i)=>{
+    const caption=p.captions[p.assets.indexOf(key)]||p.title;
+    const ratio=DIM[key][0]/DIM[key][1];
+    const full=!['crm-tablet','crm-laptop'].includes(key)&&(motion.has(key)||ratio>1.7||ratio<.65||/overview|typograph|guideline|brief|website|layout|editorial|report|direction|opportunit|capabilit|dashboard|pipeline|landing|presentation/i.test(caption));
+    return `<div class="case-index-cell ${full?'is-wide':''}">${caseMedia(p,key,i===0)}</div>`;
+  }).join('');
+  return `<div class="case-index-layout"><aside class="case-index-info"><a class="case-index-back" href="work/">All work</a><h1>${esc(p.title)}</h1><p>${esc(projectSummary(p))}</p><dl><dt>My role</dt><dd>${esc(p.role)}</dd>${p.year?`<dt>Year</dt><dd>${esc(p.year)}</dd>`:''}</dl>${p.context?`<p class="case-index-context">${esc(p.context)}</p>`:''}<nav class="case-index-links" aria-label="Project links">${links.map(l=>`<a class="case-index-primary" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a>`).join('')}</nav></aside><section class="case-index-grid" aria-label="${esc(p.title)} selected work">${media}</section></div><nav class="case-index-end" aria-label="Continue exploring"><p>Have something in mind?</p><a href="mailto:shubhamshinde52@gmail.com">Let’s talk</a><a href="project/${next.id}/">Next: ${esc(next.title)}</a></nav>`;
 }
 
 function storySections(p){

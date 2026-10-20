@@ -10,30 +10,34 @@
   "body": "I designed the WizCRM landing page and supporting product visuals at WizCommerce. The page connects account information, AI assistance and everyday sales tasks.",
   "detail": "The three-day scope covered research, visual direction, page design and supporting visuals while the product interface was still evolving.",
   "assets": [
-    "wizcrm",
+    "original-crm-features",
+    "original-crm-home-copilot",
+    "original-crm-tabs",
+    "crm-home-desktop",
+    "crm-home-pipeline",
+    "crm-home-dashboard",
+    "crm-home-features",
     "crm-tablet",
-    "crm-features",
-    "crm-ai",
     "crm-laptop",
     "crm-direction",
     "crm-opportunities",
-    "crm-page",
-    "original-crm-cards",
-    "original-crm-features",
-    "original-crm-tabs"
+    "crm-landing-5",
+    "crm-landing-6"
   ],
   "captions": [
-    "WizCRM — landing page on desktop",
-    "WizCRM — landing page on tablet",
-    "Core CRM capabilities — product illustration system",
-    "AI task creation — product visual",
-    "WizCRM — landing page on laptop",
-    "Product-led hero and lavender visual direction",
-    "Opportunity prioritisation — AI feature storytelling",
-    "WizCRM — complete landing page design",
-    "Animated CRM cards — accounts, tasks and pipeline",
-    "WizCRM — feature animation",
-    "WizCRM — interactive feature walkthrough"
+    "Feature animation",
+    "AI copilot animation",
+    "Interactive feature walkthrough",
+    "Desktop website mockup",
+    "Deals pipeline product visual",
+    "Accounts and reporting product visual",
+    "Core capabilities product visual",
+    "Tablet website mockup",
+    "Laptop website mockup",
+    "Visual direction",
+    "Opportunity prioritisation",
+    "Full landing page — part 1",
+    "Full landing page — part 2"
   ],
   "color": "#9871cb",
   "story": {
@@ -54,8 +58,8 @@
   ],
   "externalLinks": [
     {
-      "label": "Visit WizCommerce",
-      "url": "https://wizcommerce.com/"
+      "label": "View live website",
+      "url": "https://wizcommerce.com/product/ai-crm-for-distributors-and-wholesalers/"
     }
   ],
   "order": 1,
