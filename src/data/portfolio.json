@@ -262,7 +262,9 @@
     "benchmark-poster-images": "assets/optimized/benchmark-images.mp4",
     "benchmark-poster-seats": "assets/optimized/benchmark-seats.mp4",
     "crm-landing-5": "assets/wizcrm-showcase/crm-landing-5.webp",
-    "crm-landing-6": "assets/wizcrm-showcase/crm-landing-6.webp"
+    "crm-landing-6": "assets/wizcrm-showcase/crm-landing-6.webp",
+    "benchmark-film": "assets/optimized/benchmark-film.mp4",
+    "benchmark-framefold": "assets/optimized/benchmark-framefold.mp4"
   },
   "FILMS": [
     {
@@ -1374,6 +1376,14 @@
     "crm-landing-6": [
       2880,
       12854
+    ],
+    "benchmark-film": [
+      1920,
+      1080
+    ],
+    "benchmark-framefold": [
+      1920,
+      1080
     ]
   },
   "FEATURED": [

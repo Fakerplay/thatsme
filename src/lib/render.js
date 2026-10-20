@@ -71,7 +71,7 @@ function caseMedia(p,key,eager=false){
   const index=p.assets.indexOf(key);
   const caption=p.captions[index]||p.title+' — selected work';
   const video=A[key]?.endsWith('.mp4');
-  const poster=video&&(key.startsWith('original-')||key.startsWith('bhabha-motion-'))?A[key].replace(/\.mp4$/,'.jpg'):'';
+  const poster=video&&(key.startsWith('original-')||key.startsWith('bhabha-motion-')||A[key].startsWith('assets/optimized/'))?A[key].replace(/\.mp4$/,'.jpg'):'';
   return `<figure class="case-media" data-case-media="${esc(key)}">${video
     ?`<video src="${esc(A[key])}" width="${DIM[key][0]}" height="${DIM[key][1]}" ${poster?`poster="${esc(poster)}"`:''} controls playsinline preload="none" aria-label="${esc(caption)}"></video>`
     :`<button class="case-media-open" data-lightbox="${esc(key)}" data-caption="${esc(caption)}" aria-label="Enlarge ${esc(caption)}">${picture(key,caption,'',eager)}<span aria-hidden="true">View larger ↗</span></button>`}

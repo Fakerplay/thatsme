@@ -12,6 +12,11 @@
   "body": "A 50-page report on B2B wholesale commerce, supported by a landing page for readers to download it.",
   "detail": "An orange-and-black visual system connects the report, charts and digital touchpoints.",
   "assets": [
+    "benchmark-film",
+    "benchmark-framefold",
+    "benchmark-poster-orders",
+    "benchmark-poster-images",
+    "benchmark-poster-seats",
     "benchmark-report",
     "benchmark-contents",
     "benchmark-chapters",
@@ -25,6 +30,11 @@
     "benchmark-cta"
   ],
   "captions": [
+    "Benchmark report animation",
+    "Digital order capture — animated page fold",
+    "Digital order capture — animated poster",
+    "Product images — animated poster",
+    "Rep seats — animated poster",
     "Benchmark report — cover",
     "Contents and introduction — editorial layout",
     "Chapter openers — data, trends and wholesaler insights",
