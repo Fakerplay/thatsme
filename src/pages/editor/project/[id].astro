@@ -43,7 +43,7 @@ loadStoryblokBridge().then(()=>{
     if(!response.ok)return;
     const doc=new DOMParser().parseFromString(await response.text(),'text/html');
     const next=doc.querySelector('#storyblok-preview');
-    if(next)document.querySelector('#storyblok-preview').replaceWith(next);
+    if(next){document.querySelector('#storyblok-preview').replaceWith(next);next.querySelectorAll('video').forEach(video=>video.load());}
    } catch(error){if(error.name!=='AbortError')console.warn('Preview update unavailable. Save to refresh.');}
   },180);
  });

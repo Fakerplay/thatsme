@@ -44,7 +44,7 @@ const clientData = JSON.stringify({A:data.A,PROJECTS:PROJECTS.map(({id,title,des
   <Navigation page={page} route={route} />
   <main id="app" tabindex="-1"><slot /><Footer /></main>
   <Dialogs />
-  <Postcard />
+  {!preview && <Postcard />}
   <script id="portfolio-client-data" is:inline type="application/json" set:html={clientData} />
   <script>import '../scripts/interactions.js';</script>
   {!preview && process.env.VERCEL === '1' && <Fragment><script is:inline>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script><script is:inline defer src="/_vercel/insights/script.js"></script></Fragment>}

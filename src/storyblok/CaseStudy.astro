@@ -3,7 +3,7 @@ import {storyblokEditable} from '@storyblok/astro';
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 import {PROJECTS} from '../lib/projects.js';
 const {blok}=Astro.props;
-const current=PROJECTS.findIndex(p=>p.title===blok.title);
+const current=PROJECTS.findIndex(p=>p.id===Astro.params.id);
 const next=PROJECTS[(current+1)%PROJECTS.length];
 ---
 <div class="case-index-layout" {...storyblokEditable(blok)}>
