@@ -1,0 +1,2932 @@
+{
+  "components": [
+    {
+      "name": "case_study",
+      "display_name": "Case study",
+      "is_root": true,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "summary": {
+          "type": "textarea",
+          "required": true
+        },
+        "role": {
+          "type": "text"
+        },
+        "year": {
+          "type": "text"
+        },
+        "context": {
+          "type": "textarea"
+        },
+        "links": {
+          "type": "bloks",
+          "restrict_components": true,
+          "component_whitelist": [
+            "case_link"
+          ]
+        },
+        "media": {
+          "type": "bloks",
+          "restrict_components": true,
+          "component_whitelist": [
+            "case_media"
+          ]
+        }
+      }
+    },
+    {
+      "name": "case_link",
+      "is_root": false,
+      "schema": {
+        "label": {
+          "type": "text",
+          "required": true
+        },
+        "url": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "case_media",
+      "is_root": false,
+      "schema": {
+        "asset": {
+          "type": "asset",
+          "required": true
+        },
+        "poster": {
+          "type": "asset"
+        },
+        "description": {
+          "type": "text",
+          "description": "Accessible image description; not displayed as a caption."
+        },
+        "layout": {
+          "type": "option",
+          "default_value": "full",
+          "options": [
+            {
+              "name": "Full width",
+              "value": "full"
+            },
+            {
+              "name": "Paired",
+              "value": "paired"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "folder": "project",
+  "stories": [
+    {
+      "name": "Kanhoji Angre",
+      "slug": "angre",
+      "content": {
+        "_uid": "5e878d9d-d293-4857-bd30-d376a9208063",
+        "component": "case_study",
+        "title": "Kanhoji Angre",
+        "summary": "I worked on art direction and motion design for Prachyam’s film on Kanhoji Angre, with character scenes, coastal maps and naval sequences.",
+        "role": "Creative Lead & Art Direction",
+        "year": "",
+        "context": "Prachyam · Kanhoji Angre · Selected motion work",
+        "links": [
+          {
+            "label": "Watch on Prachyam",
+            "url": "https://prachyam.com/video/Kanhoji-Angre-Navy-Maratha-Army",
+            "_uid": "7a5e1d42-8f70-46a6-a462-015a1822399c",
+            "component": "case_link"
+          },
+          {
+            "label": "View my film showcase",
+            "url": "https://www.behance.net/gallery/197156949/Kanhoji-Angre-Animated-Film-Showcase",
+            "_uid": "0ca982be-939a-45d5-bb5c-4c07cb90f937",
+            "component": "case_link"
+          },
+          {
+            "label": "Film and trailer on Prachyam",
+            "url": "https://prachyam.com/video/Kanhoji-Angre-Navy-Maratha-Army",
+            "_uid": "de0361cc-7e81-45cd-9765-459e8c7a2528",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "31f1b2de-d70c-49a6-8a11-1b1cc3aeec00",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-01.mp4",
+              "alt": "Angre — closing character sequence"
+            },
+            "description": "Angre — closing character sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-01.jpg"
+            }
+          },
+          {
+            "_uid": "2b61d271-2b7b-450d-932b-d36df25c3254",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-02.mp4",
+              "alt": "British ship — motion sequence"
+            },
+            "description": "British ship — motion sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-02.jpg"
+            }
+          },
+          {
+            "_uid": "c704677b-3953-4eef-b2ca-7ba874f3d089",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-03.mp4",
+              "alt": "Coastal geography — animated map"
+            },
+            "description": "Coastal geography — animated map",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-03.jpg"
+            }
+          },
+          {
+            "_uid": "c4fb79ea-03b9-41c7-88b6-8c93c1cba15f",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-04.mp4",
+              "alt": "Maratha sailor — cinematic sequence"
+            },
+            "description": "Maratha sailor — cinematic sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-04.jpg"
+            }
+          },
+          {
+            "_uid": "506cd53c-42e4-49fb-8122-f234d08ca3c7",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-05.mp4",
+              "alt": "Naval scene — motion sequence"
+            },
+            "description": "Naval scene — motion sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-angre-05.jpg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "B2B Commerce Benchmark Report",
+      "slug": "benchmark-report",
+      "content": {
+        "_uid": "8cb1112c-7956-4709-b42c-1d5b6fcb2f52",
+        "component": "case_study",
+        "title": "B2B Commerce Benchmark Report",
+        "summary": "I designed WizCommerce’s B2B benchmark report and landing page, turning dense industry research into clear layouts, charts and takeaways.",
+        "role": "Art direction, editorial design, data visualisation & landing page design",
+        "year": "2026",
+        "context": "WizCommerce · B2B commerce research",
+        "links": [
+          {
+            "label": "Full project on Behance",
+            "url": "https://www.behance.net/gallery/257032287/The-State-of-B2B-Commerce-Report-Design-2026",
+            "_uid": "20c4ef8b-89fc-498d-b9e1-cae37f963f2d",
+            "component": "case_link"
+          },
+          {
+            "label": "Explore the live report",
+            "url": "https://wizcommerce.com/templates/b2b-ecommerce-benchmark-report-2026/",
+            "_uid": "b5cf1043-d01b-48d4-a63c-f862bd07f130",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "0b851a7f-c1b8-4f2c-a62c-abb4cbc5a9c7",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-film.mp4",
+              "alt": "Benchmark report animation"
+            },
+            "description": "Benchmark report animation",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-film.jpg"
+            }
+          },
+          {
+            "_uid": "95207eb2-0aed-4613-a7cd-e23146ca3056",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-framefold.mp4",
+              "alt": "Digital order capture — animated page fold"
+            },
+            "description": "Digital order capture — animated page fold",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-framefold.jpg"
+            }
+          },
+          {
+            "_uid": "b101e5bd-4dd6-4d6e-9ea5-760f3e7af57e",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-orders.mp4",
+              "alt": "Digital order capture — animated poster"
+            },
+            "description": "Digital order capture — animated poster",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-orders.jpg"
+            }
+          },
+          {
+            "_uid": "5c60c702-17b9-4abf-bdfa-8c4ca67c5d0d",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-images.mp4",
+              "alt": "Product images — animated poster"
+            },
+            "description": "Product images — animated poster",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-images.jpg"
+            }
+          },
+          {
+            "_uid": "60f2057e-5ffc-47e9-a48c-9557892aa799",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-seats.mp4",
+              "alt": "Rep seats — animated poster"
+            },
+            "description": "Rep seats — animated poster",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/optimized/benchmark-seats.jpg"
+            }
+          },
+          {
+            "_uid": "f943392e-9108-40f9-aaf4-9cf7c900ee4a",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/cover.webp",
+              "alt": "Benchmark report — cover"
+            },
+            "description": "Benchmark report — cover",
+            "layout": "full"
+          },
+          {
+            "_uid": "053eba53-0f1b-48de-a289-c52e692d0b3c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/contents.webp",
+              "alt": "Contents and introduction — editorial layout"
+            },
+            "description": "Contents and introduction — editorial layout",
+            "layout": "full"
+          },
+          {
+            "_uid": "c4b62b04-743c-468d-a120-4cf4176b41d6",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/chapters.webp",
+              "alt": "Chapter openers — data, trends and wholesaler insights"
+            },
+            "description": "Chapter openers — data, trends and wholesaler insights",
+            "layout": "full"
+          },
+          {
+            "_uid": "f41fe376-673f-4e5b-bb1a-ba1a53cb5673",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/data.webp",
+              "alt": "Benchmark charts and company overview"
+            },
+            "description": "Benchmark charts and company overview",
+            "layout": "full"
+          },
+          {
+            "_uid": "fca4f8cf-a303-492c-8797-525e94ba5dca",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/takeaway.webp",
+              "alt": "Benchmark analysis and takeaway spread"
+            },
+            "description": "Benchmark analysis and takeaway spread",
+            "layout": "full"
+          },
+          {
+            "_uid": "36eac0a3-78a6-4da0-9b53-912a171634cb",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/merchandising.webp",
+              "alt": "Product merchandising — report spread"
+            },
+            "description": "Product merchandising — report spread",
+            "layout": "full"
+          },
+          {
+            "_uid": "4dd87ff1-9bc4-40a8-b358-16f208328bf4",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/charts.webp",
+              "alt": "Data visualisation — comparative bar charts"
+            },
+            "description": "Data visualisation — comparative bar charts",
+            "layout": "paired"
+          },
+          {
+            "_uid": "a99a8728-ea0b-4e0e-a407-0714fa5fb8a0",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/interview.webp",
+              "alt": "Industry perspective — interview spread"
+            },
+            "description": "Industry perspective — interview spread",
+            "layout": "paired"
+          },
+          {
+            "_uid": "35251994-9947-4e73-acbb-777df506780c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/summary.webp",
+              "alt": "Summary and closing spread"
+            },
+            "description": "Summary and closing spread",
+            "layout": "full"
+          },
+          {
+            "_uid": "cbf97aee-5539-46c6-a07b-159b70d86959",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/landing.webp",
+              "alt": "Report download — landing page"
+            },
+            "description": "Report download — landing page",
+            "layout": "full"
+          },
+          {
+            "_uid": "9ea3d022-88f1-4546-ad83-dddf510a97a2",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/benchmark-report/cta.webp",
+              "alt": "Report campaign — call to action"
+            },
+            "description": "Report campaign — call to action",
+            "layout": "full"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Homi Bhabha",
+      "slug": "bhabha",
+      "content": {
+        "_uid": "977f85dc-d845-487f-8c39-ef8ac62b37a3",
+        "component": "case_study",
+        "title": "Homi Bhabha",
+        "summary": "I created 1960s-inspired graphics and motion for Prachyam’s Who Killed Bhabha?",
+        "role": "Creative Lead & Art Direction · Prachyam",
+        "year": "2024",
+        "context": "Who Killed Bhabha? · Prachyam documentary · 2024",
+        "links": [
+          {
+            "label": "Watch on Prachyam",
+            "url": "https://prachyam.com/video/who-killed-bhabha",
+            "_uid": "fd2f3694-5c92-4071-ac40-78dd3b49dd46",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch film on YouTube",
+            "url": "https://www.youtube.com/watch?v=p6lDrkBhIdY",
+            "_uid": "d268b198-283b-4201-8b89-43d40089868e",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch trailer on YouTube",
+            "url": "https://www.youtube.com/watch?v=YOV3l_BdNSg",
+            "_uid": "e99568c3-2eed-439c-a7be-09014cdde116",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch film on Prachyam",
+            "url": "https://prachyam.com/video/who-killed-bhabha",
+            "_uid": "c8e548dc-232e-4ba8-8642-47970ba82990",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch film on YouTube",
+            "url": "https://www.youtube.com/watch?v=p6lDrkBhIdY",
+            "_uid": "f3799933-5a8a-41b9-b6da-6ffadea5b10a",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch the official trailer",
+            "url": "https://www.youtube.com/watch?v=YOV3l_BdNSg",
+            "_uid": "f1fe83a6-e2c4-4ccf-bb05-971e19f37fdb",
+            "component": "case_link"
+          },
+          {
+            "label": "View the motion design project on Behance",
+            "url": "https://www.behance.net/gallery/215507943/Homi-Bhabha-Motion-Design",
+            "_uid": "af07275b-aa7b-41a1-a319-5235fcd679e7",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "f0a4dd8f-6821-4701-9ac5-a8c82d3773bd",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-bhabha-01.mp4",
+              "alt": "Tata Institute of Fundamental Research — motion sequence"
+            },
+            "description": "Tata Institute of Fundamental Research — motion sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-bhabha-01.jpg"
+            }
+          },
+          {
+            "_uid": "9c4a854f-195b-4a9b-9655-3d48f8b5b019",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-01.mp4",
+              "alt": "Homi Bhabha — main title sequence"
+            },
+            "description": "Homi Bhabha — main title sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-01.jpg"
+            }
+          },
+          {
+            "_uid": "7e6c8526-c63b-41b9-9499-5c997a61926b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-02.mp4",
+              "alt": "Air India 101"
+            },
+            "description": "Air India 101",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-02.jpg"
+            }
+          },
+          {
+            "_uid": "98c9eb1a-c34a-4e68-ae56-3e7337b1f129",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-03.mp4",
+              "alt": "Airport — documentary motion sequence"
+            },
+            "description": "Airport — documentary motion sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-03.jpg"
+            }
+          },
+          {
+            "_uid": "ef996db1-15a8-4edb-9cfd-ae1fa19a0d42",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-04.mp4",
+              "alt": "Aircraft sequence"
+            },
+            "description": "Aircraft sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-04.jpg"
+            }
+          },
+          {
+            "_uid": "03b44427-5dce-4830-b898-7add3b14c3bf",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-05.mp4",
+              "alt": "Bhabha — childhood sequence"
+            },
+            "description": "Bhabha — childhood sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-05.jpg"
+            }
+          },
+          {
+            "_uid": "99b3f11f-d7d1-4423-afb9-3b7bad933818",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-06.mp4",
+              "alt": "Bhabha and C. V. Raman"
+            },
+            "description": "Bhabha and C. V. Raman",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-06.jpg"
+            }
+          },
+          {
+            "_uid": "ac7102c3-ddb0-4b4d-89ea-75519a71b1f6",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-09.mp4",
+              "alt": "CIA archival photographs — documentary sequence"
+            },
+            "description": "CIA archival photographs — documentary sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-09.jpg"
+            }
+          },
+          {
+            "_uid": "fdf38dd2-6115-4af5-a5eb-9bd49a14ef2f",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-10.mp4",
+              "alt": "Crow Book"
+            },
+            "description": "Crow Book",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-10.jpg"
+            }
+          },
+          {
+            "_uid": "610c2660-6f76-4b94-987e-6ac8b4fd5d52",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-11.mp4",
+              "alt": "Crowley sequence"
+            },
+            "description": "Crowley sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-11.jpg"
+            }
+          },
+          {
+            "_uid": "3d3c8a33-a410-4eae-ac97-89f110280a42",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-12.mp4",
+              "alt": "French report"
+            },
+            "description": "French report",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-12.jpg"
+            }
+          },
+          {
+            "_uid": "e15d6ceb-ace2-4f5b-827b-3cd268a763d0",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-13.mp4",
+              "alt": "Aircraft fuselage and burning engine over snowy mountains — motion sequence"
+            },
+            "description": "Aircraft fuselage and burning engine over snowy mountains — motion sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-13.jpg"
+            }
+          },
+          {
+            "_uid": "43bcd9d1-a0ad-43e8-89ae-b901d17164c0",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-14.mp4",
+              "alt": "Air India aircraft approaching snowy mountains — overhead motion sequence"
+            },
+            "description": "Air India aircraft approaching snowy mountains — overhead motion sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-14.jpg"
+            }
+          },
+          {
+            "_uid": "d61bea66-2776-4848-8b88-db88e059a9e2",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-15.mp4",
+              "alt": "Aircraft and burning wings above a mountain landscape — motion sequence"
+            },
+            "description": "Aircraft and burning wings above a mountain landscape — motion sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-15.jpg"
+            }
+          },
+          {
+            "_uid": "c1216489-d1a1-4e80-8742-651e9f474290",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-16.mp4",
+              "alt": "Adams Prize and honours — animated typography and trophy graphics"
+            },
+            "description": "Adams Prize and honours — animated typography and trophy graphics",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-16.jpg"
+            }
+          },
+          {
+            "_uid": "bdab1987-3294-4970-8214-19e8edecf85b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-17.mp4",
+              "alt": "International connections — animated map with the United States highlighted"
+            },
+            "description": "International connections — animated map with the United States highlighted",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-17.jpg"
+            }
+          },
+          {
+            "_uid": "e2a51796-0818-4a6c-8077-9d5b2bdcfd3d",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-18.mp4",
+              "alt": "Dark grid texture — documentary motion study"
+            },
+            "description": "Dark grid texture — documentary motion study",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha-motion/clip-18.jpg"
+            }
+          },
+          {
+            "_uid": "8c73c605-4a40-4822-9909-b6cbb611d8e2",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabha.webp",
+              "alt": "Homi Bhabha documentary cover"
+            },
+            "description": "Homi Bhabha documentary cover",
+            "layout": "paired"
+          },
+          {
+            "_uid": "778f8bec-7426-462d-a84f-bd8d0eff410c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/frame0.webp",
+              "alt": "From the documentary: Air India"
+            },
+            "description": "From the documentary: Air India",
+            "layout": "paired"
+          },
+          {
+            "_uid": "8d564048-1efe-4d15-8813-9656c2fee6b2",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/frame1.webp",
+              "alt": "From the documentary: Tata Institute of Fundamental Research"
+            },
+            "description": "From the documentary: Tata Institute of Fundamental Research",
+            "layout": "full"
+          },
+          {
+            "_uid": "ef382085-0720-41e3-abf5-307fa284b8dd",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/frame2.webp",
+              "alt": "From the documentary: archival records"
+            },
+            "description": "From the documentary: archival records",
+            "layout": "full"
+          },
+          {
+            "_uid": "ec62bb27-8124-4e21-9c60-9979b5d63a4d",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabhaextra0.webp",
+              "alt": "Awards and honours — documentary frame"
+            },
+            "description": "Awards and honours — documentary frame",
+            "layout": "full"
+          },
+          {
+            "_uid": "32f5678c-450f-4cb0-9fda-898c78e4a686",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabhaextra1.webp",
+              "alt": "Homi Bhabha — portrait and archival graphics"
+            },
+            "description": "Homi Bhabha — portrait and archival graphics",
+            "layout": "full"
+          },
+          {
+            "_uid": "f00d0ee9-c314-447a-bedb-85ed35fab059",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabhaextra2.webp",
+              "alt": "International connections — motion design frame"
+            },
+            "description": "International connections — motion design frame",
+            "layout": "full"
+          },
+          {
+            "_uid": "3d8eeb3b-50a0-457f-bb12-e58923dc37a4",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabhaextra4.webp",
+              "alt": "Cambridge — biographical sequence"
+            },
+            "description": "Cambridge — biographical sequence",
+            "layout": "paired"
+          },
+          {
+            "_uid": "6b6302b5-2c9b-4da2-8b92-e762f1d9f80c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/bhabhaextra5.webp",
+              "alt": "CIA headquarters — archival sequence"
+            },
+            "description": "CIA headquarters — archival sequence",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Prachyam — Brochure",
+      "slug": "brochure",
+      "content": {
+        "_uid": "f95763aa-5d39-4b28-9061-f867d2233f9f",
+        "component": "case_study",
+        "title": "Prachyam — Brochure",
+        "summary": "I designed Prachyam’s brochure, bringing its story into print through cultural collages, typography and editorial layouts.",
+        "role": "Creative Lead & Art Direction · Prachyam",
+        "year": "2024",
+        "context": "Prachyam · Brochure design",
+        "links": [
+          {
+            "label": "Original Behance project",
+            "url": "https://www.behance.net/gallery/208727311/Brochure-Design-Prachyam",
+            "_uid": "7150d194-fbc5-40ac-b30d-f8d35c229fde",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "3414b2d2-9237-4ad1-a661-279a5881f444",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-01.jpg",
+              "alt": "Brand story — opening spread"
+            },
+            "description": "Brand story — opening spread",
+            "layout": "paired"
+          },
+          {
+            "_uid": "96e21080-9bbe-414d-8240-3da34aa048c3",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-02.jpg",
+              "alt": "Why Prachyam — editorial spread"
+            },
+            "description": "Why Prachyam — editorial spread",
+            "layout": "full"
+          },
+          {
+            "_uid": "03afe67a-5db8-47a1-a629-d8745a5a5a52",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-03.jpg",
+              "alt": "Our inspiration — illustrated timeline"
+            },
+            "description": "Our inspiration — illustrated timeline",
+            "layout": "paired"
+          },
+          {
+            "_uid": "c4afacf7-cc4c-4eae-8745-36f348b87d8b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-04.jpg",
+              "alt": "Creative direction — cultural narrative"
+            },
+            "description": "Creative direction — cultural narrative",
+            "layout": "full"
+          },
+          {
+            "_uid": "feadd2b1-6ac9-4ca8-adef-df3f7db4219b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-05.jpg",
+              "alt": "Kashi Vishwanath — feature spread"
+            },
+            "description": "Kashi Vishwanath — feature spread",
+            "layout": "paired"
+          },
+          {
+            "_uid": "29d0fba1-3c57-4993-bdc9-65564cb3f03b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-06.jpg",
+              "alt": "Indic films — editorial spread"
+            },
+            "description": "Indic films — editorial spread",
+            "layout": "full"
+          },
+          {
+            "_uid": "5bc8eb5a-1893-477b-babe-8779e5cbaca7",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-07.jpg",
+              "alt": "Community — information layout"
+            },
+            "description": "Community — information layout",
+            "layout": "full"
+          },
+          {
+            "_uid": "aec89449-24bc-4414-b5f5-31587ed0d448",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-08.jpg",
+              "alt": "Closing spread"
+            },
+            "description": "Closing spread",
+            "layout": "paired"
+          },
+          {
+            "_uid": "28a0ab11-e804-4726-b62f-3a8d72925ea8",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-09.webp",
+              "alt": "Cultural illustration — original artwork"
+            },
+            "description": "Cultural illustration — original artwork",
+            "layout": "paired"
+          },
+          {
+            "_uid": "01b3e71c-07a8-40e3-84c0-068ccf1c9379",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-10.webp",
+              "alt": "India — original collage"
+            },
+            "description": "India — original collage",
+            "layout": "paired"
+          },
+          {
+            "_uid": "168d6bfc-157c-4a04-939c-52efa14564d0",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-brochure-11.png",
+              "alt": "Prachyam — wordmark artwork"
+            },
+            "description": "Prachyam — wordmark artwork",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Other highlights from Prachyam",
+      "slug": "cultural-motion",
+      "content": {
+        "_uid": "79008c4f-2212-4dda-843b-d0a27faa7e66",
+        "component": "case_study",
+        "title": "Other highlights from Prachyam",
+        "summary": "A few more motion sequences I created at Prachyam, from illustrated portraits to devotional scenes and cultural practices.",
+        "role": "Creative Lead & Art Direction",
+        "year": "",
+        "context": "Prachyam · Selected highlights",
+        "links": [],
+        "media": [
+          {
+            "_uid": "98194fe1-6925-4296-b647-c77817aefc09",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-01.mp4",
+              "alt": "Cave — meditation sequence"
+            },
+            "description": "Cave — meditation sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-01.jpg"
+            }
+          },
+          {
+            "_uid": "57977fd4-a6c2-4e03-9544-f1318bb87406",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-02.mp4",
+              "alt": "Guru — illustrated portrait"
+            },
+            "description": "Guru — illustrated portrait",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-02.jpg"
+            }
+          },
+          {
+            "_uid": "4c495929-db4c-4572-8741-8a2dfa8cab71",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-03.mp4",
+              "alt": "Kirtan — cultural sequence"
+            },
+            "description": "Kirtan — cultural sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-03.jpg"
+            }
+          },
+          {
+            "_uid": "ace50fc6-9e84-462d-84f6-9336a364de40",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-04.mp4",
+              "alt": "Krishna and Rukmini — illustrated sequence"
+            },
+            "description": "Krishna and Rukmini — illustrated sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-04.jpg"
+            }
+          },
+          {
+            "_uid": "8788bf15-fc3f-4db2-ace4-e6ee4d240a29",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-05.mp4",
+              "alt": "Upanayan — cinematic sequence"
+            },
+            "description": "Upanayan — cinematic sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-cultural-motion-05.jpg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Daulat",
+      "slug": "daulat",
+      "content": {
+        "_uid": "cad7337c-dfef-4299-ab78-06320b280846",
+        "component": "case_study",
+        "title": "Daulat",
+        "summary": "I designed Daulat’s website to introduce its wealth-management approach and guide visitors towards a consultation.",
+        "role": "Website design",
+        "year": "",
+        "context": "Daulat Wealth Management · Website design",
+        "links": [
+          {
+            "label": "View design process on Behance",
+            "url": "https://www.behance.net/gallery/251056585/Daulat-Wealth-Management-Website-Design",
+            "_uid": "6052a998-8322-47bf-96d7-49aa779348a6",
+            "component": "case_link"
+          },
+          {
+            "label": "Visit Daulat",
+            "url": "https://daulat.co.in/",
+            "_uid": "1b24bca8-bdfb-44f3-b2ae-ff46df3763e7",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "6856fd4e-45ec-41b2-a111-5baebc72d000",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-daulat-01.webp",
+              "alt": "Brand message — print composition"
+            },
+            "description": "Brand message — print composition",
+            "layout": "full"
+          },
+          {
+            "_uid": "eb8a82ac-3d52-403a-8f82-9c8a25796455",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-daulat-02.webp",
+              "alt": "Brand identity — botanical composition"
+            },
+            "description": "Brand identity — botanical composition",
+            "layout": "full"
+          },
+          {
+            "_uid": "87b59d91-5207-4c4a-871f-dba17f720c1c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-daulat-03.webp",
+              "alt": "Website — tablet presentation"
+            },
+            "description": "Website — tablet presentation",
+            "layout": "full"
+          },
+          {
+            "_uid": "49759715-1ec2-4fcd-aeb8-58487a2ae90d",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-daulat-04.webp",
+              "alt": "Website — responsive device presentation"
+            },
+            "description": "Website — responsive device presentation",
+            "layout": "full"
+          },
+          {
+            "_uid": "db6d9b75-7ed6-429e-a295-bf2d62dddb17",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-daulat-05.webp",
+              "alt": "Brand illustrations — engraved artwork"
+            },
+            "description": "Brand illustrations — engraved artwork",
+            "layout": "full"
+          },
+          {
+            "_uid": "e6c04d4b-32f5-4d31-9454-c02226137fbf",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/daulat-case-brief.webp",
+              "alt": "The brief — founder’s vision"
+            },
+            "description": "The brief — founder’s vision",
+            "layout": "full"
+          },
+          {
+            "_uid": "5a40088a-bdd3-4f65-9d23-82b0f2ed1825",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/daulat-case-illustrations.webp",
+              "alt": "Illustration system — green and gold engravings"
+            },
+            "description": "Illustration system — green and gold engravings",
+            "layout": "paired"
+          },
+          {
+            "_uid": "5edd87ed-cf8e-4ec5-a9ae-5807efb47fc9",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/daulat-case-typography.webp",
+              "alt": "Typography — Playfair Display"
+            },
+            "description": "Typography — Playfair Display",
+            "layout": "full"
+          },
+          {
+            "_uid": "f098d73e-5775-49cb-903a-8c7c025094b2",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/daulat-case-mobile.webp",
+              "alt": "Website — mobile screens"
+            },
+            "description": "Website — mobile screens",
+            "layout": "full"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ecolab",
+      "slug": "ecolab",
+      "content": {
+        "_uid": "ff00dac6-9d8e-45e4-a158-3b82bb90b53b",
+        "component": "case_study",
+        "title": "Ecolab",
+        "summary": "I handled visual design for Ecolab’s films, event screens and internal showcases, including Spark Growth and RELIGHT.",
+        "role": "Visual Design & Design Direction",
+        "year": "2025–26",
+        "context": "In-house work · Senior Marketing Visual Designer at Ecolab",
+        "links": [
+          {
+            "label": "View the original project on Behance",
+            "url": "https://www.behance.net/gallery/254027613/Video-Work-for-Ecolab",
+            "_uid": "f821b463-6b08-4302-b37a-53e675754a2d",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "a39a9396-91f1-479e-87e0-68863aa5d1ee",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/ecolabgif0.webp",
+              "alt": "Brand motion study"
+            },
+            "description": "Brand motion study",
+            "layout": "full"
+          },
+          {
+            "_uid": "37dee6c9-8113-43e1-a268-23b509c3b85c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/ecolabgif1.webp",
+              "alt": "Campaign motion study"
+            },
+            "description": "Campaign motion study",
+            "layout": "full"
+          },
+          {
+            "_uid": "c047eeef-e3b4-433d-b870-d4a0b2372994",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/ecolabgif2.webp",
+              "alt": "Water motion study"
+            },
+            "description": "Water motion study",
+            "layout": "full"
+          },
+          {
+            "_uid": "27244e1a-6bce-4639-8c7a-6e0333d87783",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/ecolab1.webp",
+              "alt": "Ecolab — original Behance project overview"
+            },
+            "description": "Ecolab — original Behance project overview",
+            "layout": "full"
+          },
+          {
+            "_uid": "63eec2e0-00a5-4ea9-8837-4352b43b8d45",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/ecolabextra1.webp",
+              "alt": "Spark Growth — refreshed title styleframe"
+            },
+            "description": "Spark Growth — refreshed title styleframe",
+            "layout": "full"
+          },
+          {
+            "_uid": "b0560872-0bd7-4f04-ad30-b753015e08f1",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/ecolabextra2.webp",
+              "alt": "GBS+ Year in Review — refreshed title styleframe"
+            },
+            "description": "GBS+ Year in Review — refreshed title styleframe",
+            "layout": "full"
+          },
+          {
+            "_uid": "1d8be4be-1a94-4141-a363-7afdadc5cab4",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/ecolabextra3.webp",
+              "alt": "RELIGHT — refreshed motion styleframe"
+            },
+            "description": "RELIGHT — refreshed motion styleframe",
+            "layout": "full"
+          },
+          {
+            "_uid": "10edca81-29ad-4907-96b1-b804e6404fed",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/ecolabextra4.webp",
+              "alt": "Light Business Meetup — refreshed visual treatment"
+            },
+            "description": "Light Business Meetup — refreshed visual treatment",
+            "layout": "full"
+          },
+          {
+            "_uid": "ecff29e3-ccb4-4218-9b4b-fff97ff8a3da",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/ecolabextra5.webp",
+              "alt": "Ecolab Water Summit — refreshed water study"
+            },
+            "description": "Ecolab Water Summit — refreshed water study",
+            "layout": "full"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Invisible Hand — IKEA",
+      "slug": "ikea",
+      "content": {
+        "_uid": "fbd9797f-912a-435f-8b1d-087fbd3187be",
+        "component": "case_study",
+        "title": "Invisible Hand — IKEA",
+        "summary": "I explored human craft in an independent IKEA campaign concept, using hands, shadows and close-up workshop imagery.",
+        "role": "Visual storytelling",
+        "year": "2025",
+        "context": "Independent concept campaign · not commissioned by IKEA",
+        "links": [
+          {
+            "label": "View project on Behance",
+            "url": "https://www.behance.net/gallery/232710787/Invisible-Hand-IKEA",
+            "_uid": "39f85fe3-3db3-48fb-9e19-a517ea2624f4",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "5adf1349-798e-4014-a7f8-e1f10c86f1c3",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/ikea.webp",
+              "alt": "Invisible Hand — landscape campaign mockup"
+            },
+            "description": "Invisible Hand — landscape campaign mockup",
+            "layout": "full"
+          },
+          {
+            "_uid": "cf7dfc69-659d-4ed5-ad79-12edb24b9137",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/ikeaextra0.webp",
+              "alt": "Independent concept brief — not commissioned by IKEA"
+            },
+            "description": "Independent concept brief — not commissioned by IKEA",
+            "layout": "full"
+          },
+          {
+            "_uid": "f072b2da-f935-4dec-8c45-586ebf7c13eb",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/ikeaextra1.webp",
+              "alt": "Campaign story and visual system"
+            },
+            "description": "Campaign story and visual system",
+            "layout": "full"
+          },
+          {
+            "_uid": "8df81482-7be9-476b-96ac-2be76f8f4a0d",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/ikeaextra2.webp",
+              "alt": "Campaign poster series"
+            },
+            "description": "Campaign poster series",
+            "layout": "full"
+          },
+          {
+            "_uid": "57ca3c19-ef94-4a23-bfea-3fc2a76a2a3c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/ikeaextra3.webp",
+              "alt": "Illustration system"
+            },
+            "description": "Illustration system",
+            "layout": "full"
+          },
+          {
+            "_uid": "d49e44e3-aac8-46b7-ac0e-66b8c57fc54f",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/ikeaextra6.webp",
+              "alt": "Social campaign application"
+            },
+            "description": "Social campaign application",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Chained Souls: Girmitiya",
+      "slug": "indentured",
+      "content": {
+        "_uid": "cca3d120-bf1c-46e2-b08b-3445eb523692",
+        "component": "case_study",
+        "title": "Chained Souls: Girmitiya",
+        "summary": "I created motion sequences for Prachyam’s Chained Souls: Girmitiya, using maps, archival material and typography.",
+        "role": "Creative Lead & Art Direction",
+        "year": "",
+        "context": "Prachyam · Chained Souls: Girmitiya · Documentary",
+        "links": [
+          {
+            "label": "Watch on Prachyam",
+            "url": "https://prachyam.com/video/chained-souls-girmitiya",
+            "_uid": "5c9dd5d8-23c5-4830-a5f6-ba8c7f2baede",
+            "component": "case_link"
+          },
+          {
+            "label": "Film on Prachyam",
+            "url": "https://prachyam.com/video/chained-souls-girmitiya",
+            "_uid": "59597c32-d8f8-48c1-8674-1bf3ce28a84e",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "1ffbe830-1870-47af-b311-cc6f8c80497c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-01.mp4",
+              "alt": "Field labour — cinematic sequence"
+            },
+            "description": "Field labour — cinematic sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-01.jpg"
+            }
+          },
+          {
+            "_uid": "0460d8e8-9909-4431-8675-0225fbc72021",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-02.mp4",
+              "alt": "Mauritius and India — animated map"
+            },
+            "description": "Mauritius and India — animated map",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-02.jpg"
+            }
+          },
+          {
+            "_uid": "d0cd317a-b3d2-412f-b64f-f440dd880ed9",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-03.mp4",
+              "alt": "Workers — monochrome sequence"
+            },
+            "description": "Workers — monochrome sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-03.jpg"
+            }
+          },
+          {
+            "_uid": "2f722a15-93cc-4030-92d5-cbebe0f0ead4",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-04.mp4",
+              "alt": "Historical act — archive sequence"
+            },
+            "description": "Historical act — archive sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-04.jpg"
+            }
+          },
+          {
+            "_uid": "bbcda93d-c68e-4762-ad3a-2b3540734893",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-05.mp4",
+              "alt": "Language — typographic sequence"
+            },
+            "description": "Language — typographic sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-indentured-05.jpg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Prachyam Indiclass",
+      "slug": "indiclass",
+      "content": {
+        "_uid": "34762c06-7ed4-4f6f-85a8-2e54282ce688",
+        "component": "case_study",
+        "title": "Prachyam Indiclass",
+        "summary": "I developed the opening identity and motion-design styleframes for Prachyam’s Indiclass series.",
+        "role": "Creative Lead & Art Direction · Prachyam",
+        "year": "2023",
+        "context": "Prachyam · Series opening identity",
+        "links": [
+          {
+            "label": "View design process on Behance",
+            "url": "https://www.behance.net/gallery/179967223/Indiclass-Motion-Design",
+            "_uid": "810c0e62-5b33-4f67-a3d1-bb8aeb31fb1b",
+            "component": "case_link"
+          },
+          {
+            "label": "Explore Indiclass",
+            "url": "https://prachyam.com/indiclass",
+            "_uid": "b557ae88-9dd9-4f3b-aa9a-5107b773d01c",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "5130a08d-6706-4454-a474-29844ec8042b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/indiclassframe3.webp",
+              "alt": "Styleframe — Indian art and culture"
+            },
+            "description": "Styleframe — Indian art and culture",
+            "layout": "paired"
+          },
+          {
+            "_uid": "09a7f0fa-bf69-4080-9031-1f5c5a4a285f",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/indiclassframe4.webp",
+              "alt": "Styleframe — teaching and knowledge"
+            },
+            "description": "Styleframe — teaching and knowledge",
+            "layout": "paired"
+          },
+          {
+            "_uid": "19427444-92a7-4d55-b455-18f87c0ba4ab",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/indiclassframe5.webp",
+              "alt": "Styleframe — illuminated Prachyam mark"
+            },
+            "description": "Styleframe — illuminated Prachyam mark",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Lachit Borphukan",
+      "slug": "lachit",
+      "content": {
+        "_uid": "b33a91a1-2293-4059-9b82-029080a115d9",
+        "component": "case_study",
+        "title": "Lachit Borphukan",
+        "summary": "I led the visual treatment and motion design for Prachyam’s film on Lachit Borphukan, working within a twelve-day schedule.",
+        "role": "Creative Lead & Art Direction · Prachyam",
+        "year": "2024",
+        "context": "Historical film · Prachyam OTT",
+        "links": [
+          {
+            "label": "Watch on Prachyam",
+            "url": "https://prachyam.com/video/Lachit-Borphukan-Battle-Of-Saraighat",
+            "_uid": "396aaefc-c8cb-4bdc-92bb-4f2f277b6cc6",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch trailer on YouTube",
+            "url": "https://www.youtube.com/watch?v=yaOM2Q5qhHY",
+            "_uid": "df4df7c8-e4e8-464a-b33f-8e59c268f35d",
+            "component": "case_link"
+          },
+          {
+            "label": "View my film showreel",
+            "url": "https://www.behance.net/gallery/191869961/Lachit-Borphukan-Film-Showreel",
+            "_uid": "be6b2b9c-e205-4fb5-a614-33226e98928b",
+            "component": "case_link"
+          },
+          {
+            "label": "Film on Prachyam",
+            "url": "https://prachyam.com/video/Lachit-Borphukan-Battle-Of-Saraighat",
+            "_uid": "81770f55-3fd5-4864-890a-0193c3e058d5",
+            "component": "case_link"
+          },
+          {
+            "label": "Prachyam’s YouTube preview",
+            "url": "https://www.youtube.com/watch?v=yaOM2Q5qhHY",
+            "_uid": "44a1e55e-172c-47a7-9c82-6ceb5e16b2c7",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "6b946ad7-983b-408d-ad8a-b32eced93317",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-01.mp4",
+              "alt": "Opening sequence"
+            },
+            "description": "Opening sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-01.jpg"
+            }
+          },
+          {
+            "_uid": "763af8a5-8a66-4f58-9328-e8b0e0760116",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-02.mp4",
+              "alt": "Ahom fleet — cinematic sequence"
+            },
+            "description": "Ahom fleet — cinematic sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-02.jpg"
+            }
+          },
+          {
+            "_uid": "b984d314-a344-4d90-9581-72c25a048f74",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-03.mp4",
+              "alt": "Itakhuli — animated map"
+            },
+            "description": "Itakhuli — animated map",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-03.jpg"
+            }
+          },
+          {
+            "_uid": "9f2dcca5-6d2c-4ff1-afd8-887e707829c5",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-04.mp4",
+              "alt": "Council — cinematic sequence"
+            },
+            "description": "Council — cinematic sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-04.jpg"
+            }
+          },
+          {
+            "_uid": "420c752c-a254-4282-b65f-1d926a3dbb2b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-05.mp4",
+              "alt": "Lachit — character sequence"
+            },
+            "description": "Lachit — character sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-05.jpg"
+            }
+          },
+          {
+            "_uid": "c18eb092-edfb-4c26-9e3f-235a2238b4c0",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-06.mp4",
+              "alt": "Leadership — motion artwork"
+            },
+            "description": "Leadership — motion artwork",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-lachit-06.jpg"
+            }
+          },
+          {
+            "_uid": "238973da-4867-4354-bdcc-68f29e0644ef",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/lachit0.webp",
+              "alt": "Court scene"
+            },
+            "description": "Court scene",
+            "layout": "full"
+          },
+          {
+            "_uid": "08c963ce-ea33-4e76-9f18-95e49f5401e1",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/lachit3.webp",
+              "alt": "Character frame"
+            },
+            "description": "Character frame",
+            "layout": "paired"
+          },
+          {
+            "_uid": "d6d84d6c-dd2b-4ee7-bea4-9c734d1cb4cd",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/lachit4.webp",
+              "alt": "Council scene"
+            },
+            "description": "Council scene",
+            "layout": "full"
+          },
+          {
+            "_uid": "f1282bea-0c49-485e-b0b2-1e4f9f718e3e",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/lachit5.webp",
+              "alt": "Battlefield at sunset"
+            },
+            "description": "Battlefield at sunset",
+            "layout": "full"
+          },
+          {
+            "_uid": "4c6e7cd7-d2d5-4306-bc10-8ff1c9d5165f",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/lachit6.webp",
+              "alt": "Palace interior"
+            },
+            "description": "Palace interior",
+            "layout": "full"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Phyllo",
+      "slug": "phyllo",
+      "content": {
+        "_uid": "03a7cf54-7371-4f38-a080-68a0b0e61956",
+        "component": "case_study",
+        "title": "Phyllo",
+        "summary": "I designed Phyllo Wrapped 2024, creator-search promotions and brand-safety graphics for Phyllo and insightIQ.",
+        "role": "Visual Designer · Phyllo",
+        "year": "2024",
+        "context": "In-house work · Visual Designer at Phyllo",
+        "links": [
+          {
+            "label": "View the original social portfolio",
+            "url": "https://www.behance.net/gallery/216414569/Social-Media-Portfolio-2024",
+            "_uid": "27409bd0-b00a-4965-bf7a-40328a53e497",
+            "component": "case_link"
+          },
+          {
+            "label": "About insightIQ",
+            "url": "https://www.insightiq.ai/use-cases/influencer-marketing",
+            "_uid": "a6d66edf-8b66-4b75-b621-4176ef8cb30d",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "522719fa-cfe6-4813-bd6f-1d8cd0ba144b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/phyllo2.webp",
+              "alt": "Phyllo Wrapped 2024"
+            },
+            "description": "Phyllo Wrapped 2024",
+            "layout": "paired"
+          },
+          {
+            "_uid": "758e9bc6-3f65-4229-a5f9-cc58053cb353",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/phyllo3.webp",
+              "alt": "API milestones"
+            },
+            "description": "API milestones",
+            "layout": "paired"
+          },
+          {
+            "_uid": "9663913c-519a-4915-815b-a75e7aaa41a8",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/phyllo4.webp",
+              "alt": "insightIQ creator campaign"
+            },
+            "description": "insightIQ creator campaign",
+            "layout": "paired"
+          },
+          {
+            "_uid": "81f5df30-3f6b-4be0-9421-bda0df3beb08",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/phyllo5.webp",
+              "alt": "Influencer marketing"
+            },
+            "description": "Influencer marketing",
+            "layout": "paired"
+          },
+          {
+            "_uid": "db6aee84-29fc-4fae-b03f-f08786276449",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/phyllo6.webp",
+              "alt": "Brand safety communication"
+            },
+            "description": "Brand safety communication",
+            "layout": "paired"
+          },
+          {
+            "_uid": "c1c6ea1d-b179-4b29-85ba-acf5c9bcb88d",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/phyllo7.webp",
+              "alt": "Brand safety features"
+            },
+            "description": "Brand safety features",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sahebs Who Never Left",
+      "slug": "sahebs",
+      "content": {
+        "_uid": "17ca6313-aabf-41bf-870c-f1fbc9cf8d17",
+        "component": "case_study",
+        "title": "Sahebs Who Never Left",
+        "summary": "I worked on the poster, social artwork and trailer for Prachyam’s Sahebs Who Never Left.",
+        "role": "Creative Lead & Art Direction",
+        "year": "",
+        "context": "Prachyam · Documentary campaign",
+        "links": [
+          {
+            "label": "Watch on Prachyam",
+            "url": "https://prachyam.com/video/saheb-who-never-left-1",
+            "_uid": "7f8c6340-8d2a-43ed-8826-e34cf9300734",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch film on YouTube",
+            "url": "https://www.youtube.com/watch?v=N3E534MpkHU",
+            "_uid": "9b641583-cef9-49cb-a350-ee676e2b8b96",
+            "component": "case_link"
+          },
+          {
+            "label": "Film on Prachyam",
+            "url": "https://prachyam.com/video/saheb-who-never-left-1",
+            "_uid": "043829e5-0487-4526-9df6-bcd1f2bb7316",
+            "component": "case_link"
+          },
+          {
+            "label": "Official film on YouTube",
+            "url": "https://www.youtube.com/watch?v=N3E534MpkHU",
+            "_uid": "134bcd68-e502-4e15-87ec-b7dde7948663",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "904b01ee-3e66-4107-9336-264d92b6bc91",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sahebs-07.mp4",
+              "alt": "Sahebs — trailer"
+            },
+            "description": "Sahebs — trailer",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sahebs-07.jpg"
+            }
+          },
+          {
+            "_uid": "c15f97f6-64a8-4074-8e5e-ca9e1122ff8d",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sahebs-01.jpg",
+              "alt": "Sahebs — film poster"
+            },
+            "description": "Sahebs — film poster",
+            "layout": "paired"
+          },
+          {
+            "_uid": "35274734-f2b6-455d-939b-db5fafe2efce",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sahebs-02.jpg",
+              "alt": "Divide and rule — campaign artwork"
+            },
+            "description": "Divide and rule — campaign artwork",
+            "layout": "paired"
+          },
+          {
+            "_uid": "f70baf45-7f60-4a47-8901-d1e0a57bb9eb",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sahebs-03.jpg",
+              "alt": "Partition of India — editorial collage"
+            },
+            "description": "Partition of India — editorial collage",
+            "layout": "full"
+          },
+          {
+            "_uid": "dd3512f2-5506-4a2a-a112-0c7a0981893c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sahebs-04.jpg",
+              "alt": "Psychological warfare — campaign artwork"
+            },
+            "description": "Psychological warfare — campaign artwork",
+            "layout": "paired"
+          },
+          {
+            "_uid": "40c62695-0412-4e86-9d6e-d44b2ca1b3be",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sahebs-05.jpg",
+              "alt": "Churchill — campaign artwork"
+            },
+            "description": "Churchill — campaign artwork",
+            "layout": "paired"
+          },
+          {
+            "_uid": "536ba7b0-1714-4c57-a707-b3d610a47c80",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sahebs-06.jpg",
+              "alt": "Nehru — campaign artwork"
+            },
+            "description": "Nehru — campaign artwork",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Gauri Mahulikar on Sanskrit",
+      "slug": "sanskrit",
+      "content": {
+        "_uid": "d6b0096f-d8ad-4f78-aa7a-a2f7d9306ab9",
+        "component": "case_study",
+        "title": "Gauri Mahulikar on Sanskrit",
+        "summary": "I created motion sequences for Prachyam’s Gauri Mahulikar on Sanskrit, combining script details, explanatory typography, maps and illustrations.",
+        "role": "Creative Lead & Art Direction",
+        "year": "",
+        "context": "Prachyam · Indiclass · Gauri Mahulikar on Sanskrit",
+        "links": [
+          {
+            "label": "Watch on Prachyam",
+            "url": "https://prachyam.com/indiclass/gauri-mahulikar-on-sanskrit",
+            "_uid": "828b0eb9-0467-40f9-9ef1-4e3c44ca45f6",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch trailer on YouTube",
+            "url": "https://www.youtube.com/watch?v=MWc1r3o4NW4",
+            "_uid": "d813f839-81d2-4a1c-b54a-5ec317e38035",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch on Prachyam",
+            "url": "https://prachyam.com/indiclass/gauri-mahulikar-on-sanskrit",
+            "_uid": "4bcd951e-6de8-4f52-98f2-9cbebbfa1cde",
+            "component": "case_link"
+          },
+          {
+            "label": "Official trailer",
+            "url": "https://www.youtube.com/watch?v=MWc1r3o4NW4",
+            "_uid": "6dc5bb7e-d2c2-4e87-8b6b-c5f8c51cdc4d",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "3340dfdc-169c-4daa-b055-5814e7fe3ed1",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sanskrit-01.mp4",
+              "alt": "Brahmi — script detail"
+            },
+            "description": "Brahmi — script detail",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sanskrit-01.jpg"
+            }
+          },
+          {
+            "_uid": "74ac0092-0661-4fb2-9f63-5ce25d3d30f9",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sanskrit-02.mp4",
+              "alt": "Shruti and Smruti — typographic explanation"
+            },
+            "description": "Shruti and Smruti — typographic explanation",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sanskrit-02.jpg"
+            }
+          },
+          {
+            "_uid": "46bef589-600d-4e2c-bb8c-611690dadaae",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sanskrit-03.mp4",
+              "alt": "Language families — animated map"
+            },
+            "description": "Language families — animated map",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sanskrit-03.jpg"
+            }
+          },
+          {
+            "_uid": "e5b036ea-c177-4b26-b7c5-08c7ec921089",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sanskrit-04.mp4",
+              "alt": "Shiv and Shakti — illustrated sequence"
+            },
+            "description": "Shiv and Shakti — illustrated sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-sanskrit-04.jpg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Solace AI",
+      "slug": "solace",
+      "content": {
+        "_uid": "4f72a1a6-f026-49d4-851b-e6eec2b6101b",
+        "component": "case_study",
+        "title": "Solace AI",
+        "summary": "I created Solace as a self-initiated AI wellness concept, shaping its product direction, identity and website.",
+        "role": "Owner & Design Direction",
+        "year": "2026",
+        "context": "Self-initiated concept · product, brand & web",
+        "links": [
+          {
+            "label": "View the Solace AI project on Behance",
+            "url": "https://www.behance.net/gallery/243825305/Solace-AI-Website-Branding",
+            "_uid": "62261884-f700-4ed6-a764-2fc6385db737",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "a5b40ee2-1510-4537-aca4-d10060531ac6",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solacegif0.webp",
+              "alt": "Solace — motion study 1 (animated)"
+            },
+            "description": "Solace — motion study 1 (animated)",
+            "layout": "full"
+          },
+          {
+            "_uid": "40b7b8f3-88a2-447e-8fe2-f7c20fc5a769",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solacegif1.webp",
+              "alt": "Solace — motion study 2 (animated)"
+            },
+            "description": "Solace — motion study 2 (animated)",
+            "layout": "full"
+          },
+          {
+            "_uid": "5a6616a4-0efd-44ab-864c-f485e1adb5fd",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solace0.webp",
+              "alt": "Solace — project overview"
+            },
+            "description": "Solace — project overview",
+            "layout": "full"
+          },
+          {
+            "_uid": "0aa623e2-ed43-4e9d-b5c8-f39a3a589f9d",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/solace1.webp",
+              "alt": "Solace — tactile symbol study"
+            },
+            "description": "Solace — tactile symbol study",
+            "layout": "full"
+          },
+          {
+            "_uid": "da3bb3d0-854d-45f6-86e6-22c9989a0a00",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/solace4.webp",
+              "alt": "Solace — physical colour palette"
+            },
+            "description": "Solace — physical colour palette",
+            "layout": "full"
+          },
+          {
+            "_uid": "f8f6e13d-72b3-495e-a84c-f4a6051bedcc",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/solace5.webp",
+              "alt": "Solace — typographic poster applications"
+            },
+            "description": "Solace — typographic poster applications",
+            "layout": "full"
+          },
+          {
+            "_uid": "960bcc09-43f7-4962-807e-9735a9eea0ce",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/solace6.webp",
+              "alt": "Solace — responsive website presentation"
+            },
+            "description": "Solace — responsive website presentation",
+            "layout": "full"
+          },
+          {
+            "_uid": "356e8587-4f01-4d34-8bd1-85c55b175f3e",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/solaceextra3.webp",
+              "alt": "Solace — identity colour applications"
+            },
+            "description": "Solace — identity colour applications",
+            "layout": "full"
+          },
+          {
+            "_uid": "34fc3152-2ef4-4de2-908b-e02701456156",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solaceextra4.webp",
+              "alt": "Solace — social applications"
+            },
+            "description": "Solace — social applications",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Solaris",
+      "slug": "solaris",
+      "content": {
+        "_uid": "e8e6d29b-eb1b-4d8f-a1ba-793b769a9a42",
+        "component": "case_study",
+        "title": "Solaris",
+        "summary": "I developed a fintech identity concept for Solaris around a sunburst mark, warm colour and imagery inspired by light.",
+        "role": "Branding & creative direction",
+        "year": "",
+        "context": "Fintech brand identity concept",
+        "links": [
+          {
+            "label": "View the Solaris project on Behance",
+            "url": "https://www.behance.net/gallery/237296219/Solaris-Fintech-Branding-Creative-Direction",
+            "_uid": "ff358eb0-32eb-4ce2-86e5-9de4422a66b5",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "dcfaa202-a89d-4c37-b6e7-dc3af2d409d5",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solaris0.webp",
+              "alt": "Solaris brand mark"
+            },
+            "description": "Solaris brand mark",
+            "layout": "full"
+          },
+          {
+            "_uid": "4f6b925e-a685-4c7d-9894-e9c316932db5",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solaris1.webp",
+              "alt": "Solaris — environmental application"
+            },
+            "description": "Solaris — environmental application",
+            "layout": "paired"
+          },
+          {
+            "_uid": "efb84e9d-4bc1-4b0a-bdb8-4f7e6863b449",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solaris3.webp",
+              "alt": "Solaris — digital identity"
+            },
+            "description": "Solaris — digital identity",
+            "layout": "full"
+          },
+          {
+            "_uid": "31245b1b-496b-4c41-84f8-351ab14a4199",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solarisextra3.webp",
+              "alt": "Solaris — brand applications"
+            },
+            "description": "Solaris — brand applications",
+            "layout": "full"
+          },
+          {
+            "_uid": "8b9f9b3a-1775-4878-87da-0d243aa8963f",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solarisextra4.webp",
+              "alt": "Solaris — colour system"
+            },
+            "description": "Solaris — colour system",
+            "layout": "full"
+          },
+          {
+            "_uid": "44e233f3-60ea-4e29-80d5-1e148235c7fb",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/solarisextra5.webp",
+              "alt": "Solaris — typography system"
+            },
+            "description": "Solaris — typography system",
+            "layout": "full"
+          },
+          {
+            "_uid": "08194ac0-4523-49ab-bf5e-0da7cb5b72f6",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/solaris-supplied-01.jpg",
+              "alt": "Staff identity cards"
+            },
+            "description": "Staff identity cards",
+            "layout": "full"
+          },
+          {
+            "_uid": "f055a3a2-c28e-41e0-adb4-1c52a05a3b94",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/solaris-supplied-02.jpg",
+              "alt": "Branded keycaps"
+            },
+            "description": "Branded keycaps",
+            "layout": "paired"
+          },
+          {
+            "_uid": "da152015-7959-416f-a904-ac962f9d61e5",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/solaris-supplied-03.webp",
+              "alt": "Identity and campaign overview"
+            },
+            "description": "Identity and campaign overview",
+            "layout": "full"
+          },
+          {
+            "_uid": "82d3ac46-5a04-44f4-859b-2b3f76c4cde5",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/solaris-supplied-04.jpg",
+              "alt": "Brand cards — Connected by Light"
+            },
+            "description": "Brand cards — Connected by Light",
+            "layout": "paired"
+          },
+          {
+            "_uid": "a44f4197-1ed1-4f97-81e0-b47420043ebe",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/solaris-supplied-05.jpg",
+              "alt": "Social campaign applications"
+            },
+            "description": "Social campaign applications",
+            "layout": "full"
+          },
+          {
+            "_uid": "38d23312-2783-445d-bf30-a2db8a42b90f",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/solaris-supplied-06.jpg",
+              "alt": "Brand world and mobile app icon"
+            },
+            "description": "Brand world and mobile app icon",
+            "layout": "full"
+          },
+          {
+            "_uid": "34100d34-eb43-4bfb-94ae-548a36fe68b3",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/solaris-supplied-07.jpg",
+              "alt": "Financial communication system"
+            },
+            "description": "Financial communication system",
+            "layout": "full"
+          },
+          {
+            "_uid": "e00925ec-8f55-4b19-b9fe-8d17468cc180",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/solaris-supplied-08.jpg",
+              "alt": "Solaris Has Arrived — billboard"
+            },
+            "description": "Solaris Has Arrived — billboard",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "The Vibe Collective",
+      "slug": "vibe",
+      "content": {
+        "_uid": "21ec8c32-b411-440b-b9f4-9728c90fb949",
+        "component": "case_study",
+        "title": "The Vibe Collective",
+        "summary": "I created The Vibe Collective as a personal lifestyle-brand concept, exploring logo variations, motion and apparel mockups.",
+        "role": "Visual identity & branding",
+        "year": "2025",
+        "context": "Personal concept · lifestyle identity",
+        "links": [
+          {
+            "label": "View on Behance",
+            "url": "https://www.behance.net/gallery/231374833/The-Vibe-Collective",
+            "_uid": "3adad6f0-b4dd-4dd4-9e7e-92d1d1112f36",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "92daf842-c163-4fc1-89df-584e3d86a3ce",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vibelogos.mp4",
+              "alt": "Animated logo collection"
+            },
+            "description": "Animated logo collection",
+            "layout": "full"
+          },
+          {
+            "_uid": "6504fa68-85a6-4ddb-9225-2f75a06ad16b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vibemotion0.webp",
+              "alt": "Logo animation — globe"
+            },
+            "description": "Logo animation — globe",
+            "layout": "full"
+          },
+          {
+            "_uid": "5229b379-efa9-43cd-86a6-5a52d18d6031",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vibemotion1.webp",
+              "alt": "Logo animation — variation two"
+            },
+            "description": "Logo animation — variation two",
+            "layout": "full"
+          },
+          {
+            "_uid": "8f03e31c-ac39-456a-bed7-63df3ebe7a26",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vibe0.webp",
+              "alt": "Campaign visual"
+            },
+            "description": "Campaign visual",
+            "layout": "paired"
+          },
+          {
+            "_uid": "fe5c9030-cc7d-4d8a-b7a1-1712d9dae9b2",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/redesign-v2/vibemotion2.webp",
+              "alt": "Vibe Collective — fabric identity study"
+            },
+            "description": "Vibe Collective — fabric identity study",
+            "layout": "full"
+          },
+          {
+            "_uid": "8304c76b-a571-4100-a2e0-a9107c54bb0e",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vibe1.webp",
+              "alt": "Tote bag"
+            },
+            "description": "Tote bag",
+            "layout": "paired"
+          },
+          {
+            "_uid": "670fc8b6-a363-40a6-a399-bc06c878b98c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vibe2.webp",
+              "alt": "Brand flag"
+            },
+            "description": "Brand flag",
+            "layout": "paired"
+          },
+          {
+            "_uid": "62a285a0-103c-4ef7-b7e7-d95b9e41b17f",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vibe3.webp",
+              "alt": "Lifestyle application"
+            },
+            "description": "Lifestyle application",
+            "layout": "paired"
+          },
+          {
+            "_uid": "c13064b4-fe49-4e01-9007-726f392ceef5",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vibe5.webp",
+              "alt": "Merchandise collection"
+            },
+            "description": "Merchandise collection",
+            "layout": "paired"
+          },
+          {
+            "_uid": "7eeed6da-e4df-4067-9db3-5243089d64a0",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vibe6.webp",
+              "alt": "Garment detail"
+            },
+            "description": "Garment detail",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Studio Vistara",
+      "slug": "vistara",
+      "content": {
+        "_uid": "14f96762-1fe8-460d-a640-657e09713c89",
+        "component": "case_study",
+        "title": "Studio Vistara",
+        "summary": "I designed Studio Vistara’s identity and explored it across signage, print, website layouts and motion.",
+        "role": "Brand identity & logo design",
+        "year": "2025",
+        "context": "Brand identity for an architecture studio",
+        "links": [
+          {
+            "label": "View on Behance",
+            "url": "https://www.behance.net/gallery/234194077/Studio-Vistara-Brand-Identity-Logo-Design",
+            "_uid": "d49a6300-86c7-4b75-b472-7b9156464626",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "0cc8aa74-5876-4aaf-897a-923c53e1bf3a",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vistaralogo.mp4",
+              "alt": "Animated 3D logo"
+            },
+            "description": "Animated 3D logo",
+            "layout": "full"
+          },
+          {
+            "_uid": "f1f76da1-1245-478f-94ba-da727be3fdcb",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-vistara-01.jpg",
+              "alt": "Website — desktop presentation"
+            },
+            "description": "Website — desktop presentation",
+            "layout": "full"
+          },
+          {
+            "_uid": "226b6f86-1981-4309-86e8-279f50e1a68b",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-vistara-02.jpg",
+              "alt": "Website — tablet experience"
+            },
+            "description": "Website — tablet experience",
+            "layout": "full"
+          },
+          {
+            "_uid": "88a3282e-d3b8-41d9-bb06-f558afa92b6f",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-vistara-03.jpg",
+              "alt": "Website — mobile experience"
+            },
+            "description": "Website — mobile experience",
+            "layout": "full"
+          },
+          {
+            "_uid": "ae7b139d-c36c-40b5-a3ed-205d2b47c076",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-vistara-04.webp",
+              "alt": "Homepage — architectural visual direction"
+            },
+            "description": "Homepage — architectural visual direction",
+            "layout": "full"
+          },
+          {
+            "_uid": "3562cb38-b762-48e1-86d2-dc3c3e267378",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-vistara-05.webp",
+              "alt": "Website — design process section"
+            },
+            "description": "Website — design process section",
+            "layout": "full"
+          },
+          {
+            "_uid": "39ba3219-c470-4298-bd79-145c43865c64",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-vistara-06.webp",
+              "alt": "Identity system — presentation"
+            },
+            "description": "Identity system — presentation",
+            "layout": "full"
+          },
+          {
+            "_uid": "0ebed3ba-c648-4b04-9483-3182660f1ddf",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-vistara-07.webp",
+              "alt": "Studio Vistara — identity moodboard"
+            },
+            "description": "Studio Vistara — identity moodboard",
+            "layout": "paired"
+          },
+          {
+            "_uid": "aaac5073-0ea2-4f44-93b7-d2990d8110a0",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vistara0.webp",
+              "alt": "Poster application"
+            },
+            "description": "Poster application",
+            "layout": "full"
+          },
+          {
+            "_uid": "8a624f64-e356-429b-b3cf-699d5c745482",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/vistaranew0.webp",
+              "alt": "Primary brand mark"
+            },
+            "description": "Primary brand mark",
+            "layout": "paired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WizCRM",
+      "slug": "wizcrm",
+      "content": {
+        "_uid": "72d6f084-0287-4937-a6f5-c0914b0ab0b9",
+        "component": "case_study",
+        "title": "WizCRM",
+        "summary": "I designed WizCRM’s landing page and product visuals, connecting its CRM and AI features to everyday sales tasks.",
+        "role": "Research, visual design & website design",
+        "year": "",
+        "context": "WizCommerce · CRM landing page · Three-day design scope",
+        "links": [
+          {
+            "label": "View live website",
+            "url": "https://wizcommerce.com/product/ai-crm-for-distributors-and-wholesalers/",
+            "_uid": "5c2310e2-bab2-4364-9caa-b9b13c98b2c7",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "7cae8592-6292-46b7-8334-754c490355d1",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/original-crm-features.mp4",
+              "alt": "Feature animation"
+            },
+            "description": "Feature animation",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/original-crm-features.jpg"
+            }
+          },
+          {
+            "_uid": "42dc2140-e5eb-4ceb-bff7-2596f58bfc7c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/original-crm-home-copilot.mp4",
+              "alt": "AI copilot animation"
+            },
+            "description": "AI copilot animation",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/original-crm-home-copilot.jpg"
+            }
+          },
+          {
+            "_uid": "a489d54f-8863-465a-a2b9-ad2af68055aa",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/original-crm-tabs.mp4",
+              "alt": "Interactive feature walkthrough"
+            },
+            "description": "Interactive feature walkthrough",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/original-crm-tabs.jpg"
+            }
+          },
+          {
+            "_uid": "c7d22013-9079-4af4-99eb-97badde85d28",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-home-desktop.webp",
+              "alt": "Desktop website mockup"
+            },
+            "description": "Desktop website mockup",
+            "layout": "full"
+          },
+          {
+            "_uid": "0baab233-086c-4415-a404-81a1da405744",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-home-pipeline.webp",
+              "alt": "Deals pipeline product visual"
+            },
+            "description": "Deals pipeline product visual",
+            "layout": "full"
+          },
+          {
+            "_uid": "bb7b263d-f2c9-4151-916d-5f2d9a28db66",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-home-dashboard.webp",
+              "alt": "Accounts and reporting product visual"
+            },
+            "description": "Accounts and reporting product visual",
+            "layout": "full"
+          },
+          {
+            "_uid": "98349405-cc49-4b61-ace6-2c81e2b561cf",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-home-features.webp",
+              "alt": "Core capabilities product visual"
+            },
+            "description": "Core capabilities product visual",
+            "layout": "full"
+          },
+          {
+            "_uid": "b1348a81-a640-4fd4-8161-e04f67a7c74c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-tablet.webp",
+              "alt": "Tablet website mockup"
+            },
+            "description": "Tablet website mockup",
+            "layout": "paired"
+          },
+          {
+            "_uid": "b5f58fb7-df97-4fc1-97d8-09983b098f9a",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-laptop.webp",
+              "alt": "Laptop website mockup"
+            },
+            "description": "Laptop website mockup",
+            "layout": "paired"
+          },
+          {
+            "_uid": "66498c72-7fec-45ba-b87c-58519be21c48",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-direction.webp",
+              "alt": "Visual direction"
+            },
+            "description": "Visual direction",
+            "layout": "full"
+          },
+          {
+            "_uid": "00aa45a5-e1c2-4dd4-bf6f-797062ff4e73",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-opportunities.webp",
+              "alt": "Opportunity prioritisation"
+            },
+            "description": "Opportunity prioritisation",
+            "layout": "full"
+          },
+          {
+            "_uid": "2640f89e-20e2-4949-8fb1-288c87996486",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-landing-5.webp",
+              "alt": "Full landing page — part 1"
+            },
+            "description": "Full landing page — part 1",
+            "layout": "full"
+          },
+          {
+            "_uid": "4d7bb73a-eccb-414b-9484-ad9eac4c6bb2",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/wizcrm-showcase/crm-landing-6.webp",
+              "alt": "Full landing page — part 2"
+            },
+            "description": "Full landing page — part 2",
+            "layout": "full"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Wootz Steel",
+      "slug": "wootz",
+      "content": {
+        "_uid": "aeea1a85-fcfa-4ac0-93aa-e221bb7849eb",
+        "component": "case_study",
+        "title": "Wootz Steel",
+        "summary": "I created titles, maps and historical motion sequences for Prachyam’s Wootz Steel documentary.",
+        "role": "Creative Lead & Art Direction",
+        "year": "",
+        "context": "Prachyam · Gifts of India · Selected motion work",
+        "links": [
+          {
+            "label": "Watch on Prachyam",
+            "url": "https://prachyam.com/video/gifts-of-india-wootz-steel",
+            "_uid": "5b844c22-dc67-4176-bf65-215bc66f7e9a",
+            "component": "case_link"
+          },
+          {
+            "label": "Watch trailer on YouTube",
+            "url": "https://www.youtube.com/watch?v=Ybcb_NhV-I4",
+            "_uid": "f37f0941-8027-4dad-ac19-ca3ea5d983f1",
+            "component": "case_link"
+          },
+          {
+            "label": "Film on Prachyam",
+            "url": "https://prachyam.com/video/gifts-of-india-wootz-steel",
+            "_uid": "743c6aba-ecdb-434e-a4a6-2f22705b82ec",
+            "component": "case_link"
+          },
+          {
+            "label": "Official trailer",
+            "url": "https://www.youtube.com/watch?v=Ybcb_NhV-I4",
+            "_uid": "524cffb6-bf5a-4440-95d5-0a71d6c48de9",
+            "component": "case_link"
+          }
+        ],
+        "media": [
+          {
+            "_uid": "71c118bc-9e5c-4fc0-a00e-fefa8a90092c",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-wootz-01.mp4",
+              "alt": "Wootz Steel — title sequence"
+            },
+            "description": "Wootz Steel — title sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-wootz-01.jpg"
+            }
+          },
+          {
+            "_uid": "dcb9bd07-1499-4774-8650-743b30df64fa",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-wootz-02.mp4",
+              "alt": "Geography — animated map"
+            },
+            "description": "Geography — animated map",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-wootz-02.jpg"
+            }
+          },
+          {
+            "_uid": "2c296d6f-9513-4711-af99-52b6859e52a9",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-wootz-03.mp4",
+              "alt": "Crusades — historical sequence"
+            },
+            "description": "Crusades — historical sequence",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-wootz-03.jpg"
+            }
+          },
+          {
+            "_uid": "bdd17c8e-2b06-4d44-a1fe-2bc824465808",
+            "component": "case_media",
+            "asset": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-wootz-04.mp4",
+              "alt": "Gurukul — illustrated environment"
+            },
+            "description": "Gurukul — illustrated environment",
+            "layout": "full",
+            "poster": {
+              "fieldtype": "asset",
+              "filename": "https://studioshubham.vercel.app/assets/portfolio-files/original-wootz-04.jpg"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

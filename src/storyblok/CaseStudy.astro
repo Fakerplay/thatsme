@@ -1,0 +1,19 @@
+---
+import {storyblokEditable} from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import {PROJECTS} from '../lib/projects.js';
+const {blok}=Astro.props;
+const current=PROJECTS.findIndex(p=>p.title===blok.title);
+const next=PROJECTS[(current+1)%PROJECTS.length];
+---
+<div class="case-index-layout" {...storyblokEditable(blok)}>
+  <aside class="case-index-info">
+    <a class="case-index-back" href="/work/">All work</a>
+    <h1>{blok.title}</h1><p>{blok.summary}</p>
+    <dl><dt>My role</dt><dd>{blok.role}</dd>{blok.year && <><dt>Year</dt><dd>{blok.year}</dd></>}</dl>
+    {blok.context && <p class="case-index-context">{blok.context}</p>}
+    <nav class="case-index-links" aria-label="Project links">{(blok.links || []).map(link=><StoryblokComponent blok={link}/>)}</nav>
+  </aside>
+  <section class="case-index-grid" aria-label={blok.title+' selected work'}>{(blok.media || []).map(media=><StoryblokComponent blok={media}/>)}</section>
+</div>
+<nav class="case-index-end" aria-label="Continue exploring"><p>Have something in mind?</p><a href="mailto:shubhamshinde52@gmail.com">Let’s talk</a><a href={next ? `/project/${next.id}/` : "/work/"}>{next ? `Next: ${next.title}` : "Explore all work"}</a></nav>

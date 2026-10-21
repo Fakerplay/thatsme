@@ -11,10 +11,17 @@
     "prebuild": "node scripts/prepare-assets.mjs",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "python3 scripts/check-static.py dist",
+    "test": "node --test tests/*.test.mjs && python3 scripts/check-static.py .vercel/output/static",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/vercel": "^11.0.16",
+    "@storyblok/astro": "^10.3.2",
     "astro": "^7.4.0"
+  },
+  "overrides": {
+    "@vercel/routing-utils": {
+      "path-to-regexp": "^6.3.0"
+    }
   }
 }

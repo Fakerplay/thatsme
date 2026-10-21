@@ -1,0 +1,6 @@
+---
+import {storyblokEditable} from '@storyblok/astro';
+const {blok}=Astro.props;
+const href=blok.url || '';
+---
+{/^https:\/\//.test(href) && <a {...storyblokEditable(blok)} class="case-index-primary" href={href} target="_blank" rel="noopener noreferrer">{blok.label}</a>}

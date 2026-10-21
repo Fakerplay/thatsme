@@ -1,0 +1,16 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import data from '../data/portfolio.json';
+const { blok } = Astro.props;
+const source=blok.asset?.filename || '';
+const safe=/^https:\/\//.test(source);
+const video=/\.mp4(?:\?|$)/i.test(source);
+const localKey=Object.keys(data.A).find(k=>new URL(data.A[k],'https://studioshubham.vercel.app/').href===source);
+const dimensions=localKey ? data.DIM[localKey] : source.match(/\/(\d+)x(\d+)\//)?.slice(1).map(Number);
+const full=blok.layout!=='paired';
+---
+<div {...storyblokEditable(blok)} class:list={['case-index-cell',{'is-wide':full}]}>
+  {safe && <figure class="case-media">
+    {video ? <video src={source} width={dimensions?.[0]} height={dimensions?.[1]} poster={blok.poster?.filename || undefined} controls playsinline preload="none" aria-label={blok.description || 'Project video'} /> : <a href={source} target="_blank" rel="noopener noreferrer" aria-label={'Enlarge '+(blok.description || 'project image')}><img src={source} width={dimensions?.[0]} height={dimensions?.[1]} alt={blok.description || ''} loading="lazy" decoding="async" /></a>}
+  </figure>}
+</div>
