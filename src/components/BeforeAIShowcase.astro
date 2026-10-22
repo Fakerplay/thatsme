@@ -1,0 +1,121 @@
+---
+const illustrations = Array.from({ length: 6 }, (_, i) => ({
+  src: `assets/before-ai/illustration-${i + 1}.png`,
+  alt: `Hand-drawn illustration ${i + 1} from 2021`
+}));
+---
+<section class="archive-showcase" aria-label="Hand-drawn illustrations from 2021">
+  <div class="archive-copy">
+    <h2>5 years ago. Before AI could draw, I did.</h2>
+    <p>A few illustrations from the days of late nights, questionable playlists, and drawing just for the fun of it.</p>
+  </div>
+  <div class="archive-window" aria-label="Draggable, endlessly scrolling illustration gallery">
+    <div class="archive-track">
+      {[0, 1, 2].map((group) => (
+        <div class="archive-group" aria-hidden={group !== 1 ? 'true' : undefined}>
+          {illustrations.map(({src, alt}) => (
+            <div class="archive-slot">
+              <div class="archive-card"><img src={src} alt={group === 1 ? alt : ''} draggable="false" loading="lazy" /></div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+  <p class="archive-hint">Drag to explore ↔</p>
+</section>
+<style>
+  .archive-showcase{padding:clamp(80px,11vw,160px) 0;overflow:hidden;color:inherit;background:transparent}
+  .archive-copy{max-width:1320px;margin:0 auto 44px;padding:0 clamp(22px,5vw,80px)}
+  .archive-copy h2{font:inherit;font-size:clamp(34px,4.6vw,72px);line-height:1.08;letter-spacing:-.045em;font-weight:500;max-width:930px;margin:0 0 22px}
+  .archive-copy p{font-size:clamp(15px,1.28vw,19px);line-height:1.55;max-width:615px;opacity:.7;margin:0}
+  .archive-window{width:100%;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;perspective:1100px}
+  .archive-window.is-dragging{cursor:grabbing}
+  .archive-track{display:flex;width:max-content;will-change:transform;align-items:center}
+  .archive-group{display:flex;align-items:center;flex-shrink:0}
+  .archive-slot{width:auto;flex:0 0 auto;padding:83px 29px 42px;display:flex;align-items:center;justify-content:center}
+  .archive-card{position:relative;transform-origin:center center;will-change:transform;transition:filter .2s ease;transform-style:preserve-3d}
+  .archive-card img{display:block;width:auto;height:clamp(250px,31vw,420px);max-width:none;object-fit:contain;border-radius:12px;pointer-events:none}
+  .archive-card.is-hovered{z-index:10;filter:drop-shadow(0 25px 26px rgba(0,0,0,.16))}
+  .archive-hint{max-width:1320px;padding:0 clamp(22px,5vw,80px);margin:0 auto;text-align:right;font-size:12px;opacity:.55}
+  @media(max-width:640px){.archive-copy{margin-bottom:20px}.archive-slot{padding:66px 19px 29px}.archive-card img{height:270px}.archive-hint{text-align:left}}
+  @media(prefers-reduced-motion:reduce){.archive-window{overflow-x:auto}.archive-track{transform:none!important}.archive-card{transform:none!important}}
+</style>
+<script>
+  const mountArchive = () => {
+    const windowEl = document.querySelector('.archive-window');
+    if (!windowEl || windowEl.dataset.ready) return;
+    windowEl.dataset.ready = 'true';
+    const track = windowEl.querySelector('.archive-track');
+    const groups = [...track.querySelectorAll('.archive-group')];
+    const cards = [...track.querySelectorAll('.archive-card')];
+    const slots = [...track.querySelectorAll('.archive-slot')];
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    let unit = 0, offset = 0, last = 0, velocity = 0, dragging = false, moved = false;
+    let startX = 0, lastX = 0, lastPointerTime = 0, hovered = null, mouseX = 0, mouseY = 0;
+    const measure = () => {
+      unit = groups[0].getBoundingClientRect().width;
+      if (unit) offset = ((offset % unit) + unit) % unit;
+    };
+    groups[0].querySelectorAll('img').forEach(img => img.addEventListener('load', measure));
+    addEventListener('resize', measure, {passive:true});
+    const normalized = x => ((x % unit) + unit) % unit;
+    const tick = now => {
+      const dt = Math.min((now - (last || now)) / 16.667, 2.5);
+      last = now;
+      if (unit > 0) {
+        if (!dragging) {
+          offset += velocity * dt;
+          velocity *= Math.pow(.94, dt);
+          if (Math.abs(velocity) < .08) offset += .55 * dt;
+        }
+        offset = normalized(offset);
+        track.style.transform = `translate3d(${-unit - offset}px,0,0)`;
+        const width = windowEl.clientWidth;
+        slots.forEach((slot,i) => {
+          const card = cards[i];
+          const box = slot.getBoundingClientRect();
+          const distance = Math.abs(box.left + box.width/2 - width/2);
+          const base = .78 + .20 * Math.max(0, 1 - distance / (width*.74));
+          const active = card === hovered && !dragging;
+          const scale = base + (active ? .075 : 0);
+          const lift = active ? -48 : -17 * (base - .78) / .2;
+          const tiltY = active ? mouseX * 8 : 0;
+          const tiltX = active ? -mouseY * 7 : 0;
+          card.style.transform = `translate3d(0,${lift}px,0) scale(${scale}) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        });
+      }
+      requestAnimationFrame(tick);
+    };
+    cards.forEach(card => {
+      card.addEventListener('pointerenter', () => {hovered = card;card.classList.add('is-hovered')});
+      card.addEventListener('pointerleave', () => {if(hovered===card) hovered=null;card.classList.remove('is-hovered')});
+      card.addEventListener('pointermove', e => {
+        const r=card.getBoundingClientRect();
+        mouseX=(e.clientX-r.left)/r.width*2-1;
+        mouseY=(e.clientY-r.top)/r.height*2-1;
+      });
+    });
+    windowEl.addEventListener('pointerdown', e => {
+      if(e.pointerType==='mouse'&&e.button!==0)return;
+      dragging=true;moved=false;startX=lastX=e.clientX;lastPointerTime=performance.now();velocity=0;
+      windowEl.setPointerCapture(e.pointerId);windowEl.classList.add('is-dragging');
+    });
+    windowEl.addEventListener('pointermove', e => {
+      if(!dragging)return;
+      const now=performance.now(), delta=e.clientX-lastX, elapsed=Math.max(1,now-lastPointerTime);
+      offset-=delta;velocity=-(delta / elapsed)*16.667*.8;
+      if(Math.abs(e.clientX-startX)>3)moved=true;
+      lastX=e.clientX;lastPointerTime=now;
+    });
+    const release = () => {dragging=false;windowEl.classList.remove('is-dragging')};
+    windowEl.addEventListener('pointerup',release);
+    windowEl.addEventListener('pointercancel',release);
+    windowEl.addEventListener('lostpointercapture',release);
+    windowEl.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();moved=false}},true);
+    measure();requestAnimationFrame(tick);
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountArchive,{once:true});
+  else mountArchive();
+</script>
