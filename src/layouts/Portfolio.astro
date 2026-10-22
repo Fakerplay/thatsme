@@ -5,12 +5,13 @@ import Footer from '../components/Footer.astro';
 import Dialogs from '../components/Dialogs.astro';
 import Postcard from '../components/Postcard.astro';
 import data from '../data/portfolio.json';
+import mobileMedia from '../data/mobile-media.json';
 import { PROJECTS } from '../lib/projects.js';
 import { metadata, origin } from '../lib/seo.js';
 const { page, title, description, route='', project, preview=false } = Astro.props;
 const { canonical, hero, graph } = metadata({page,title,description,route,project});
 const base = route ? '../'.repeat(route.split('/').filter(Boolean).length) : './';
-const clientData = JSON.stringify({A:data.A,PROJECTS:PROJECTS.map(({id,title,desc,role,body,ownership,category})=>({id,title,desc,role,body,ownership,category}))}).replace(/</g,'\\u003c');
+const clientData = JSON.stringify({A:data.A,M:{v:mobileMedia.videos,a:mobileMedia.anim},PROJECTS:PROJECTS.map(({id,title,desc,role,body,ownership,category})=>({id,title,desc,role,body,ownership,category}))}).replace(/</g,'\\u003c');
 ---
 <!doctype html>
 <html lang="en">

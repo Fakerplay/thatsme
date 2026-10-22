@@ -1,7 +1,23 @@
-const {A,PROJECTS}=JSON.parse(document.getElementById('portfolio-client-data').textContent);
+const {A,M={},PROJECTS}=JSON.parse(document.getElementById('portfolio-client-data').textContent);
+// Phones (<=768px) get the small media from scripts/mobile-media.py; desktop paths are unchanged.
+const PHONE=matchMedia('(max-width: 768px)').matches;
 const app=document.querySelector('#app'),dialog=document.querySelector('#lightbox'),searchDialog=document.querySelector('#search-dialog');let routeCleanup=()=>{};
 function refineIcons(){document.querySelectorAll('a,button,.art-caption').forEach(el=>{const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);const nodes=[];while(walker.nextNode())if(/[↗↘→←↑]/.test(walker.currentNode.textContent))nodes.push(walker.currentNode);nodes.forEach(node=>{const frag=document.createDocumentFragment();node.textContent.split(/([↗↘→←↑])/).forEach(part=>{if(!/[↗↘→←↑]/.test(part)){frag.append(document.createTextNode(part));return}const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('class','cta-icon');svg.setAttribute('aria-hidden','true');svg.innerHTML='<path d="M6 18 18 6M6 6h12v12"/>';if(part==='←'){svg.innerHTML='<path d="M18 12H6m6-6-6 6 6 6"/>';}if(part==='→'){svg.innerHTML='<path d="M6 12h12m-6-6 6 6-6 6"/>';}if(part==='↑'){svg.innerHTML='<path d="M12 18V6m-6 6 6-6 6 6"/>';}frag.append(svg)});node.replaceWith(frag)})})}
-function hydrate(){document.querySelectorAll('[data-asset]').forEach(i=>{i.src=A[i.dataset.asset];if(i.tagName==='VIDEO')i.muted=true});}
+function hydrate(){if(PHONE)swapPhoneAnimations();document.querySelectorAll('[data-asset]').forEach(i=>{const phoneVideo=PHONE&&i.tagName==='VIDEO'&&M.v?.[i.dataset.asset];i.src=phoneVideo?phoneVideo.src:A[i.dataset.asset];if(phoneVideo?.poster&&!i.getAttribute('poster'))i.setAttribute('poster',phoneVideo.poster);if(i.tagName==='VIDEO')i.muted=true});if(PHONE)phoneImages();}
+// Heavy animated webps become a small muted looping mp4 on phones (the <picture> already shows its still frame).
+function swapPhoneAnimations(){document.querySelectorAll('#app picture.mobile-anim').forEach(pic=>{const img=pic.querySelector('img'),clip=img&&M.a?.[img.dataset.asset];if(!clip)return;const v=document.createElement('video');for(const a of ['width','height','class','draggable'])if(img.hasAttribute(a))v.setAttribute(a,img.getAttribute(a));v.setAttribute('aria-label',img.alt);v.setAttribute('poster',clip.frame);for(const a of ['muted','loop','playsinline'])v.setAttribute(a,'');v.preload='none';v.muted=true;v.dataset.phoneClip=img.dataset.asset;v.src=clip.src;pic.replaceWith(v)})}
+// Phones: start the first artworks right away, fetch a rail's images ~600px before it scrolls in,
+// and keep a neutral tone behind each image until it has loaded.
+function phoneImages(){
+ const mark=img=>{if(img.complete&&img.naturalWidth)img.classList.add('is-loaded')};
+ document.addEventListener('load',e=>{if(e.target.tagName==='IMG')e.target.classList.add('is-loaded')},true);
+ document.querySelectorAll('#app .art-slide img').forEach(mark);
+ const rails=[...document.querySelectorAll('#app .project-row .rail')];
+ rails.slice(0,3).forEach(rail=>rail.querySelectorAll('img').forEach((img,i)=>{if(i<2)img.loading='eager'}));
+ if(!('IntersectionObserver' in window)){rails.forEach(rail=>rail.querySelectorAll('img[loading="lazy"]').forEach(img=>img.loading='eager'));return}
+ const ahead=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;ahead.unobserve(entry.target);entry.target.querySelectorAll('img[loading="lazy"]').forEach(img=>img.loading='eager')}),{rootMargin:'600px 0px 600px 0px'});
+ rails.forEach(rail=>ahead.observe(rail));
+}
 
 function aboutStackPanels(){
  const folio=document.querySelector('.about-personal');if(!folio||folio.classList.contains('about-editorial'))return ()=>{};
@@ -25,7 +41,9 @@ function entranceMotion(){
  const hero=document.querySelector('#app .hero-storymaker');
  const candidates=[...document.querySelectorAll('#app :is('+UNIT+')')].filter(el=>!el.closest('[hidden]')&&!(hero&&hero.contains(el)));
  // Only the outermost unit animates, so nothing moves twice.
- const units=candidates.filter(el=>{for(let p=el.parentElement;p&&p!==app;p=p.parentElement)if(p.matches(UNIT))return false;return true});
+ const outermost=candidates.filter(el=>{for(let p=el.parentElement;p&&p!==app;p=p.parentElement)if(p.matches(UNIT))return false;return true});
+ // Phones: artwork is never held at opacity 0 waiting for a reveal; it is simply there when you scroll to it.
+ const units=PHONE?outermost.filter(el=>!el.matches(VISUAL)):outermost;
  const animations=new Map(),waiting=new Set();
  let queueEnd=0;
  const show=el=>el.classList.remove('reveal-wait');
@@ -55,7 +73,7 @@ function entranceMotion(){
    observer.unobserve(el);
    if(introActive()&&el.closest('.hero-option'))waiting.add(el);else reveal(el);
   });
- },{threshold:0,rootMargin:'0px 0px -6% 0px'});
+ },{threshold:0,rootMargin:PHONE?'0px':'0px 0px -6% 0px'});
  // Hide before anything can be seen, so a unit never shows, vanishes, then fades back in.
  units.forEach(el=>{if(el.getBoundingClientRect().bottom>0)el.classList.add('reveal-wait');observer.observe(el)});
  requestAnimationFrame(()=>requestAnimationFrame(release));

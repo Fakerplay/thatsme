@@ -1,0 +1,2481 @@
+{
+ "anim": {
+  "daulatgif2": {
+   "frame": "assets/mobile/daulatgif2-frame.webp",
+   "frameWidth": 600,
+   "src": "assets/mobile/daulatgif2.mp4"
+  },
+  "ecolabgif1": {
+   "frame": "assets/mobile/ecolabgif1-frame.webp",
+   "frameWidth": 600,
+   "src": "assets/mobile/ecolabgif1.mp4"
+  },
+  "ecolabgif2": {
+   "frame": "assets/mobile/ecolabgif2-frame.webp",
+   "frameWidth": 600,
+   "src": "assets/mobile/ecolabgif2.mp4"
+  },
+  "solacegif0": {
+   "frame": "assets/mobile/solacegif0-frame.webp",
+   "frameWidth": 600,
+   "src": "assets/mobile/solacegif0.mp4"
+  },
+  "solacegif1": {
+   "frame": "assets/mobile/solacegif1-frame.webp",
+   "frameWidth": 600,
+   "src": "assets/mobile/solacegif1.mp4"
+  },
+  "vibemotion0": {
+   "frame": "assets/mobile/vibemotion0-frame.webp",
+   "frameWidth": 800,
+   "src": "assets/mobile/vibemotion0.mp4"
+  },
+  "vibemotion1": {
+   "frame": "assets/mobile/vibemotion1-frame.webp",
+   "frameWidth": 800,
+   "src": "assets/mobile/vibemotion1.mp4"
+  }
+ },
+ "images": {
+  "angre": [
+   [
+    "assets/mobile/portfolio-files/original-angre-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-angre-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-angre-01-1280.webp",
+    1280
+   ]
+  ],
+  "approach-studio": [
+   [
+    "assets/mobile/redesign-v2/approach-studio-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/approach-studio-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/approach-studio-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-chapters": [
+   [
+    "assets/mobile/benchmark-report/chapters-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/chapters-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/chapters-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-charts": [
+   [
+    "assets/mobile/benchmark-report/charts-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/charts-960.webp",
+    960
+   ]
+  ],
+  "benchmark-contents": [
+   [
+    "assets/mobile/benchmark-report/contents-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/contents-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/contents-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-cta": [
+   [
+    "assets/mobile/benchmark-report/cta-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/cta-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/cta-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-data": [
+   [
+    "assets/mobile/benchmark-report/data-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/data-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/data-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-interview": [
+   [
+    "assets/mobile/benchmark-report/interview-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/interview-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/interview-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-landing": [
+   [
+    "assets/mobile/benchmark-report/landing-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/landing-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/landing-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-merchandising": [
+   [
+    "assets/mobile/benchmark-report/merchandising-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/merchandising-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/merchandising-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-report": [
+   [
+    "assets/mobile/benchmark-report/cover-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/cover-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/cover-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-summary": [
+   [
+    "assets/mobile/benchmark-report/summary-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/summary-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/summary-1280.webp",
+    1280
+   ]
+  ],
+  "benchmark-takeaway": [
+   [
+    "assets/mobile/benchmark-report/takeaway-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/benchmark-report/takeaway-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/benchmark-report/takeaway-1280.webp",
+    1280
+   ]
+  ],
+  "bhabha": [
+   [
+    "assets/mobile/bhabha-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/bhabha-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/bhabha-1280.webp",
+    1280
+   ]
+  ],
+  "bhabhaextra0": [
+   [
+    "assets/mobile/bhabhaextra0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/bhabhaextra0-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/bhabhaextra0-1280.webp",
+    1280
+   ]
+  ],
+  "bhabhaextra1": [
+   [
+    "assets/mobile/bhabhaextra1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/bhabhaextra1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/bhabhaextra1-1280.webp",
+    1280
+   ]
+  ],
+  "bhabhaextra2": [
+   [
+    "assets/mobile/bhabhaextra2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/bhabhaextra2-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/bhabhaextra2-1280.webp",
+    1280
+   ]
+  ],
+  "bhabhaextra4": [
+   [
+    "assets/mobile/bhabhaextra4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/bhabhaextra4-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/bhabhaextra4-1280.webp",
+    1280
+   ]
+  ],
+  "bhabhaextra5": [
+   [
+    "assets/mobile/bhabhaextra5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/bhabhaextra5-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/bhabhaextra5-1280.webp",
+    1280
+   ]
+  ],
+  "brochure": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-01-1280.webp",
+    1280
+   ]
+  ],
+  "brochure0": [
+   [
+    "assets/mobile/brochure0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/brochure0-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/brochure0-1280.webp",
+    1280
+   ]
+  ],
+  "brochure1": [
+   [
+    "assets/mobile/brochure1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/brochure1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/brochure1-1280.webp",
+    1280
+   ]
+  ],
+  "brochure2": [
+   [
+    "assets/mobile/brochure2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/brochure2-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/brochure2-1280.webp",
+    1280
+   ]
+  ],
+  "brochure3": [
+   [
+    "assets/mobile/brochure3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/brochure3-960.webp",
+    960
+   ]
+  ],
+  "brochure4": [
+   [
+    "assets/mobile/brochure4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/brochure4-960.webp",
+    960
+   ]
+  ],
+  "brochure5": [
+   [
+    "assets/mobile/brochure5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/brochure5-960.webp",
+    960
+   ]
+  ],
+  "brochure6": [
+   [
+    "assets/mobile/brochure6-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/brochure6-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/brochure6-1280.webp",
+    1280
+   ]
+  ],
+  "brochure7": [
+   [
+    "assets/mobile/redesign-v2/brochure7-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/brochure7-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/brochure7-1280.webp",
+    1280
+   ]
+  ],
+  "brochurecover": [
+   [
+    "assets/mobile/brochurecover-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/brochurecover-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/brochurecover-1280.webp",
+    1280
+   ]
+  ],
+  "brochurespread": [
+   [
+    "assets/mobile/brochurespread-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/brochurespread-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/brochurespread-1280.webp",
+    1280
+   ]
+  ],
+  "crm-ai": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-ai-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-ai-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-ai-1280.webp",
+    1280
+   ]
+  ],
+  "crm-direction": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-direction-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-direction-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-direction-1280.webp",
+    1280
+   ]
+  ],
+  "crm-features": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-features-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-features-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-features-1280.webp",
+    1280
+   ]
+  ],
+  "crm-home-dashboard": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-dashboard-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-dashboard-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-dashboard-1280.webp",
+    1280
+   ]
+  ],
+  "crm-home-desktop": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-desktop-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-desktop-960.webp",
+    960
+   ]
+  ],
+  "crm-home-features": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-features-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-features-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-features-1280.webp",
+    1280
+   ]
+  ],
+  "crm-home-pipeline": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-pipeline-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-pipeline-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-home-pipeline-1280.webp",
+    1280
+   ]
+  ],
+  "crm-landing-5": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-landing-5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-landing-5-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-landing-5-1280.webp",
+    1280
+   ]
+  ],
+  "crm-landing-6": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-landing-6-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-landing-6-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-landing-6-1280.webp",
+    1280
+   ]
+  ],
+  "crm-laptop": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-laptop-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-laptop-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-laptop-1280.webp",
+    1280
+   ]
+  ],
+  "crm-opportunities": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-opportunities-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-opportunities-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-opportunities-1280.webp",
+    1280
+   ]
+  ],
+  "crm-page": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-page-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-page-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-page-1280.webp",
+    1280
+   ]
+  ],
+  "crm-tablet": [
+   [
+    "assets/mobile/wizcrm-showcase/crm-tablet-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-tablet-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/crm-tablet-1280.webp",
+    1280
+   ]
+  ],
+  "cultural-motion": [
+   [
+    "assets/mobile/portfolio-files/original-cultural-motion-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-cultural-motion-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-cultural-motion-01-1280.webp",
+    1280
+   ]
+  ],
+  "daulat": [
+   [
+    "assets/mobile/portfolio-files/original-daulat-04-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-04-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-04-1280.webp",
+    1280
+   ]
+  ],
+  "daulat-case-brief": [
+   [
+    "assets/mobile/portfolio-files/daulat-case-brief-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/daulat-case-brief-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/daulat-case-brief-1280.webp",
+    1280
+   ]
+  ],
+  "daulat-case-illustrations": [
+   [
+    "assets/mobile/portfolio-files/daulat-case-illustrations-640.webp",
+    640
+   ]
+  ],
+  "daulat-case-mobile": [
+   [
+    "assets/mobile/portfolio-files/daulat-case-mobile-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/daulat-case-mobile-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/daulat-case-mobile-1280.webp",
+    1280
+   ]
+  ],
+  "daulat-case-typography": [
+   [
+    "assets/mobile/portfolio-files/daulat-case-typography-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/daulat-case-typography-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/daulat-case-typography-1280.webp",
+    1280
+   ]
+  ],
+  "daulat1": [
+   [
+    "assets/mobile/daulat1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/daulat1-960.webp",
+    960
+   ]
+  ],
+  "daulatgif0": [
+   [
+    "assets/mobile/redesign-v2/daulatgif0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/daulatgif0-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/daulatgif0-1280.webp",
+    1280
+   ]
+  ],
+  "daulatgif1": [
+   [
+    "assets/mobile/redesign-v2/daulatgif1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/daulatgif1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/daulatgif1-1280.webp",
+    1280
+   ]
+  ],
+  "daulatnew0": [
+   [
+    "assets/mobile/daulat1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/daulat1-960.webp",
+    960
+   ]
+  ],
+  "daulatnew1": [
+   [
+    "assets/mobile/redesign-v2/daulatnew1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/daulatnew1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/daulatnew1-1280.webp",
+    1280
+   ]
+  ],
+  "daulatnew2": [
+   [
+    "assets/mobile/daulatnew2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/daulatnew2-960.webp",
+    960
+   ]
+  ],
+  "daulatnew3": [
+   [
+    "assets/mobile/daulatnew3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/daulatnew3-960.webp",
+    960
+   ]
+  ],
+  "daulatnew4": [
+   [
+    "assets/mobile/daulatnew4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/daulatnew4-960.webp",
+    960
+   ]
+  ],
+  "daulatnew5": [
+   [
+    "assets/mobile/daulatnew5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/daulatnew5-960.webp",
+    960
+   ]
+  ],
+  "daulatnew6": [
+   [
+    "assets/mobile/daulatnew6-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/daulatnew6-960.webp",
+    960
+   ]
+  ],
+  "daulatnew7": [
+   [
+    "assets/mobile/daulatnew7-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/daulatnew7-960.webp",
+    960
+   ]
+  ],
+  "ecolab": [
+   [
+    "assets/mobile/ecolab1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/ecolab1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/ecolab1-1280.webp",
+    1280
+   ]
+  ],
+  "ecolab1": [
+   [
+    "assets/mobile/ecolab1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/ecolab1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/ecolab1-1280.webp",
+    1280
+   ]
+  ],
+  "ecolabextra0": [
+   [
+    "assets/mobile/ecolab1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/ecolab1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/ecolab1-1280.webp",
+    1280
+   ]
+  ],
+  "ecolabextra1": [
+   [
+    "assets/mobile/redesign-v2/ecolabextra1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra1-1280.webp",
+    1280
+   ]
+  ],
+  "ecolabextra2": [
+   [
+    "assets/mobile/redesign-v2/ecolabextra2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra2-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra2-1280.webp",
+    1280
+   ]
+  ],
+  "ecolabextra3": [
+   [
+    "assets/mobile/redesign-v2/ecolabextra3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra3-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra3-1280.webp",
+    1280
+   ]
+  ],
+  "ecolabextra4": [
+   [
+    "assets/mobile/redesign-v2/ecolabextra4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra4-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra4-1280.webp",
+    1280
+   ]
+  ],
+  "ecolabextra5": [
+   [
+    "assets/mobile/redesign-v2/ecolabextra5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra5-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/ecolabextra5-1280.webp",
+    1280
+   ]
+  ],
+  "frame0": [
+   [
+    "assets/mobile/frame0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/frame0-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/frame0-1280.webp",
+    1280
+   ]
+  ],
+  "frame1": [
+   [
+    "assets/mobile/frame1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/frame1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/frame1-1280.webp",
+    1280
+   ]
+  ],
+  "frame2": [
+   [
+    "assets/mobile/frame2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/frame2-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/frame2-1280.webp",
+    1280
+   ]
+  ],
+  "ikea": [
+   [
+    "assets/mobile/redesign-v2/ikea-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/ikea-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/ikea-1280.webp",
+    1280
+   ]
+  ],
+  "ikeaextra0": [
+   [
+    "assets/mobile/ikeaextra0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/ikeaextra0-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/ikeaextra0-1280.webp",
+    1280
+   ]
+  ],
+  "ikeaextra1": [
+   [
+    "assets/mobile/ikeaextra1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/ikeaextra1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/ikeaextra1-1280.webp",
+    1280
+   ]
+  ],
+  "ikeaextra2": [
+   [
+    "assets/mobile/ikeaextra2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/ikeaextra2-960.webp",
+    960
+   ]
+  ],
+  "ikeaextra3": [
+   [
+    "assets/mobile/ikeaextra3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/ikeaextra3-960.webp",
+    960
+   ]
+  ],
+  "ikeaextra5": [
+   [
+    "assets/mobile/ikea-640.webp",
+    640
+   ]
+  ],
+  "ikeaextra6": [
+   [
+    "assets/mobile/ikeaextra6-640.webp",
+    640
+   ]
+  ],
+  "indentured": [
+   [
+    "assets/mobile/portfolio-files/original-indentured-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-indentured-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-indentured-01-1280.webp",
+    1280
+   ]
+  ],
+  "indiclass0": [
+   [
+    "assets/mobile/indiclass0-640.webp",
+    640
+   ]
+  ],
+  "indiclassframe0": [
+   [
+    "assets/mobile/indiclassframe0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/indiclassframe0-960.webp",
+    960
+   ]
+  ],
+  "lachit": [
+   [
+    "assets/mobile/lachit0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/lachit0-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/lachit0-1280.webp",
+    1280
+   ]
+  ],
+  "lachit0": [
+   [
+    "assets/mobile/lachit0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/lachit0-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/lachit0-1280.webp",
+    1280
+   ]
+  ],
+  "lachit1": [
+   [
+    "assets/mobile/lachit1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/lachit1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/lachit1-1280.webp",
+    1280
+   ]
+  ],
+  "lachit2": [
+   [
+    "assets/mobile/lachit2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/lachit2-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/lachit2-1280.webp",
+    1280
+   ]
+  ],
+  "lachit3": [
+   [
+    "assets/mobile/lachit3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/lachit3-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/lachit3-1280.webp",
+    1280
+   ]
+  ],
+  "lachit4": [
+   [
+    "assets/mobile/lachit4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/lachit4-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/lachit4-1280.webp",
+    1280
+   ]
+  ],
+  "lachit5": [
+   [
+    "assets/mobile/lachit5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/lachit5-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/lachit5-1280.webp",
+    1280
+   ]
+  ],
+  "lachit6": [
+   [
+    "assets/mobile/lachit6-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/lachit6-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/lachit6-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-01": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-01-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-02": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-02-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-02-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-02-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-03": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-03-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-03-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-03-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-04": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-04-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-04-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-04-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-05": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-05-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-05-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-05-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-06": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-06-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-06-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-06-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-07": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-07-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-07-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-07-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-08": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-08-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-08-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-08-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-09": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-09-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-09-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-09-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-10": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-10-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-10-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-10-1280.webp",
+    1280
+   ]
+  ],
+  "original-brochure-11": [
+   [
+    "assets/mobile/portfolio-files/original-brochure-11-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-11-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-brochure-11-1280.webp",
+    1280
+   ]
+  ],
+  "original-daulat-01": [
+   [
+    "assets/mobile/portfolio-files/original-daulat-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-01-1280.webp",
+    1280
+   ]
+  ],
+  "original-daulat-02": [
+   [
+    "assets/mobile/portfolio-files/original-daulat-02-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-02-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-02-1280.webp",
+    1280
+   ]
+  ],
+  "original-daulat-03": [
+   [
+    "assets/mobile/portfolio-files/original-daulat-03-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-03-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-03-1280.webp",
+    1280
+   ]
+  ],
+  "original-daulat-04": [
+   [
+    "assets/mobile/portfolio-files/original-daulat-04-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-04-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-04-1280.webp",
+    1280
+   ]
+  ],
+  "original-daulat-05": [
+   [
+    "assets/mobile/portfolio-files/original-daulat-05-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-05-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-daulat-05-1280.webp",
+    1280
+   ]
+  ],
+  "original-sahebs-01": [
+   [
+    "assets/mobile/portfolio-files/original-sahebs-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-01-1280.webp",
+    1280
+   ]
+  ],
+  "original-sahebs-02": [
+   [
+    "assets/mobile/portfolio-files/original-sahebs-02-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-02-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-02-1280.webp",
+    1280
+   ]
+  ],
+  "original-sahebs-03": [
+   [
+    "assets/mobile/portfolio-files/original-sahebs-03-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-03-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-03-1280.webp",
+    1280
+   ]
+  ],
+  "original-sahebs-04": [
+   [
+    "assets/mobile/portfolio-files/original-sahebs-04-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-04-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-04-1280.webp",
+    1280
+   ]
+  ],
+  "original-sahebs-05": [
+   [
+    "assets/mobile/portfolio-files/original-sahebs-05-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-05-960.webp",
+    960
+   ]
+  ],
+  "original-sahebs-06": [
+   [
+    "assets/mobile/portfolio-files/original-sahebs-06-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-06-960.webp",
+    960
+   ]
+  ],
+  "original-vistara-01": [
+   [
+    "assets/mobile/portfolio-files/original-vistara-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-01-1280.webp",
+    1280
+   ]
+  ],
+  "original-vistara-02": [
+   [
+    "assets/mobile/portfolio-files/original-vistara-02-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-02-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-02-1280.webp",
+    1280
+   ]
+  ],
+  "original-vistara-03": [
+   [
+    "assets/mobile/portfolio-files/original-vistara-03-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-03-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-03-1280.webp",
+    1280
+   ]
+  ],
+  "original-vistara-04": [
+   [
+    "assets/mobile/portfolio-files/original-vistara-04-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-04-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-04-1280.webp",
+    1280
+   ]
+  ],
+  "original-vistara-05": [
+   [
+    "assets/mobile/portfolio-files/original-vistara-05-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-05-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-05-1280.webp",
+    1280
+   ]
+  ],
+  "original-vistara-06": [
+   [
+    "assets/mobile/portfolio-files/original-vistara-06-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-06-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-06-1280.webp",
+    1280
+   ]
+  ],
+  "original-vistara-07": [
+   [
+    "assets/mobile/portfolio-files/original-vistara-07-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-07-960.webp",
+    960
+   ]
+  ],
+  "phyllo": [
+   [
+    "assets/mobile/phyllo2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/phyllo2-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/phyllo2-1280.webp",
+    1280
+   ]
+  ],
+  "phyllo0": [
+   [
+    "assets/mobile/phyllo0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/phyllo0-960.webp",
+    960
+   ]
+  ],
+  "phyllo1": [
+   [
+    "assets/mobile/phyllo1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/phyllo1-960.webp",
+    960
+   ]
+  ],
+  "phyllo2": [
+   [
+    "assets/mobile/phyllo2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/phyllo2-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/phyllo2-1280.webp",
+    1280
+   ]
+  ],
+  "phyllo3": [
+   [
+    "assets/mobile/phyllo3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/phyllo3-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/phyllo3-1280.webp",
+    1280
+   ]
+  ],
+  "phyllo4": [
+   [
+    "assets/mobile/phyllo4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/phyllo4-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/phyllo4-1280.webp",
+    1280
+   ]
+  ],
+  "phyllo5": [
+   [
+    "assets/mobile/phyllo5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/phyllo5-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/phyllo5-1280.webp",
+    1280
+   ]
+  ],
+  "phyllo6": [
+   [
+    "assets/mobile/phyllo6-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/phyllo6-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/phyllo6-1280.webp",
+    1280
+   ]
+  ],
+  "phyllo7": [
+   [
+    "assets/mobile/phyllo7-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/phyllo7-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/phyllo7-1280.webp",
+    1280
+   ]
+  ],
+  "portrait": [
+   [
+    "assets/mobile/redesign-v2/portrait-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/portrait-960.webp",
+    960
+   ]
+  ],
+  "prachyam": [
+   [
+    "assets/mobile/prachyam-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/prachyam-960.webp",
+    960
+   ]
+  ],
+  "sahebs": [
+   [
+    "assets/mobile/portfolio-files/original-sahebs-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sahebs-01-1280.webp",
+    1280
+   ]
+  ],
+  "sanskrit": [
+   [
+    "assets/mobile/portfolio-files/original-sanskrit-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sanskrit-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-sanskrit-01-1280.webp",
+    1280
+   ]
+  ],
+  "solace": [
+   [
+    "assets/mobile/solace0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solace0-960.webp",
+    960
+   ]
+  ],
+  "solace0": [
+   [
+    "assets/mobile/solace0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solace0-960.webp",
+    960
+   ]
+  ],
+  "solace1": [
+   [
+    "assets/mobile/redesign-v2/solace1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/solace1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/solace1-1280.webp",
+    1280
+   ]
+  ],
+  "solace2": [
+   [
+    "assets/mobile/solace2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solace2-960.webp",
+    960
+   ]
+  ],
+  "solace3": [
+   [
+    "assets/mobile/solace3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solace3-960.webp",
+    960
+   ]
+  ],
+  "solace4": [
+   [
+    "assets/mobile/redesign-v2/solace4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/solace4-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/solace4-1280.webp",
+    1280
+   ]
+  ],
+  "solace5": [
+   [
+    "assets/mobile/redesign-v2/solace5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/solace5-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/solace5-1280.webp",
+    1280
+   ]
+  ],
+  "solace6": [
+   [
+    "assets/mobile/redesign-v2/solace6-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/solace6-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/solace6-1280.webp",
+    1280
+   ]
+  ],
+  "solaceextra2": [
+   [
+    "assets/mobile/solaceextra2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solaceextra2-960.webp",
+    960
+   ]
+  ],
+  "solaceextra3": [
+   [
+    "assets/mobile/redesign-v2/solaceextra3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/solaceextra3-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/solaceextra3-1280.webp",
+    1280
+   ]
+  ],
+  "solaceextra4": [
+   [
+    "assets/mobile/solaceextra4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solaceextra4-960.webp",
+    960
+   ]
+  ],
+  "solaris": [
+   [
+    "assets/mobile/solaris0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solaris0-960.webp",
+    960
+   ]
+  ],
+  "solaris-supplied-01": [
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-01-1280.webp",
+    1280
+   ]
+  ],
+  "solaris-supplied-02": [
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-02-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-02-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-02-1280.webp",
+    1280
+   ]
+  ],
+  "solaris-supplied-03": [
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-03-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-03-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-03-1280.webp",
+    1280
+   ]
+  ],
+  "solaris-supplied-04": [
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-04-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-04-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-04-1280.webp",
+    1280
+   ]
+  ],
+  "solaris-supplied-05": [
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-05-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-05-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-05-1280.webp",
+    1280
+   ]
+  ],
+  "solaris-supplied-06": [
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-06-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-06-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-06-1280.webp",
+    1280
+   ]
+  ],
+  "solaris-supplied-07": [
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-07-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-07-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-07-1280.webp",
+    1280
+   ]
+  ],
+  "solaris-supplied-08": [
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-08-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-08-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/solaris-supplied-08-1280.webp",
+    1280
+   ]
+  ],
+  "solaris0": [
+   [
+    "assets/mobile/solaris0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solaris0-960.webp",
+    960
+   ]
+  ],
+  "solaris1": [
+   [
+    "assets/mobile/solaris1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solaris1-960.webp",
+    960
+   ]
+  ],
+  "solaris2": [
+   [
+    "assets/mobile/solaris2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solaris2-960.webp",
+    960
+   ]
+  ],
+  "solaris3": [
+   [
+    "assets/mobile/solaris3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solaris3-960.webp",
+    960
+   ]
+  ],
+  "solarisextra0": [
+   [
+    "assets/mobile/redesign-v2/solarisextra0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/solarisextra0-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/solarisextra0-1280.webp",
+    1280
+   ]
+  ],
+  "solarisextra3": [
+   [
+    "assets/mobile/solarisextra3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solarisextra3-960.webp",
+    960
+   ]
+  ],
+  "solarisextra4": [
+   [
+    "assets/mobile/solarisextra4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solarisextra4-960.webp",
+    960
+   ]
+  ],
+  "solarisextra5": [
+   [
+    "assets/mobile/solarisextra5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/solarisextra5-960.webp",
+    960
+   ]
+  ],
+  "vibe": [
+   [
+    "assets/mobile/vibe0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vibe0-960.webp",
+    960
+   ]
+  ],
+  "vibe0": [
+   [
+    "assets/mobile/vibe0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vibe0-960.webp",
+    960
+   ]
+  ],
+  "vibe1": [
+   [
+    "assets/mobile/vibe1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vibe1-960.webp",
+    960
+   ]
+  ],
+  "vibe2": [
+   [
+    "assets/mobile/vibe2-640.webp",
+    640
+   ]
+  ],
+  "vibe3": [
+   [
+    "assets/mobile/vibe3-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vibe3-960.webp",
+    960
+   ]
+  ],
+  "vibe4": [
+   [
+    "assets/mobile/vibe4-640.webp",
+    640
+   ]
+  ],
+  "vibe5": [
+   [
+    "assets/mobile/vibe5-640.webp",
+    640
+   ]
+  ],
+  "vibe6": [
+   [
+    "assets/mobile/vibe6-640.webp",
+    640
+   ]
+  ],
+  "vibemotion2": [
+   [
+    "assets/mobile/redesign-v2/vibemotion2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/redesign-v2/vibemotion2-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/redesign-v2/vibemotion2-1280.webp",
+    1280
+   ]
+  ],
+  "vistara": [
+   [
+    "assets/mobile/portfolio-files/original-vistara-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-vistara-01-1280.webp",
+    1280
+   ]
+  ],
+  "vistara0": [
+   [
+    "assets/mobile/vistara0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vistara0-960.webp",
+    960
+   ]
+  ],
+  "vistara1": [
+   [
+    "assets/mobile/vistara1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vistara1-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/vistara1-1280.webp",
+    1280
+   ]
+  ],
+  "vistaranew0": [
+   [
+    "assets/mobile/vistaranew0-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vistaranew0-960.webp",
+    960
+   ]
+  ],
+  "vistaranew1": [
+   [
+    "assets/mobile/vistaranew1-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vistaranew1-960.webp",
+    960
+   ]
+  ],
+  "vistaranew2": [
+   [
+    "assets/mobile/vistaranew2-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vistaranew2-960.webp",
+    960
+   ]
+  ],
+  "vistaranew4": [
+   [
+    "assets/mobile/vistaranew4-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vistaranew4-960.webp",
+    960
+   ]
+  ],
+  "vistaranew5": [
+   [
+    "assets/mobile/vistaranew5-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vistaranew5-960.webp",
+    960
+   ]
+  ],
+  "vistaranew7": [
+   [
+    "assets/mobile/vistaranew7-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/vistaranew7-960.webp",
+    960
+   ]
+  ],
+  "wizcrm": [
+   [
+    "assets/mobile/wizcrm-showcase/wizcrm-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/wizcrm-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/wizcrm-showcase/wizcrm-1280.webp",
+    1280
+   ]
+  ],
+  "wootz": [
+   [
+    "assets/mobile/portfolio-files/original-wootz-01-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/portfolio-files/original-wootz-01-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/portfolio-files/original-wootz-01-1280.webp",
+    1280
+   ]
+  ]
+ },
+ "videos": {
+  "benchmark-film": {
+   "src": "assets/mobile/optimized/benchmark-film.mp4"
+  },
+  "benchmark-framefold": {
+   "src": "assets/mobile/optimized/benchmark-framefold.mp4"
+  },
+  "benchmark-poster-images": {
+   "src": "assets/mobile/optimized/benchmark-images.mp4"
+  },
+  "benchmark-poster-orders": {
+   "src": "assets/mobile/optimized/benchmark-orders.mp4"
+  },
+  "benchmark-poster-seats": {
+   "src": "assets/mobile/optimized/benchmark-seats.mp4"
+  },
+  "bhabha-motion-01": {
+   "src": "assets/mobile/bhabha-motion/clip-01.mp4"
+  },
+  "bhabha-motion-02": {
+   "src": "assets/mobile/bhabha-motion/clip-02.mp4"
+  },
+  "bhabha-motion-03": {
+   "src": "assets/mobile/bhabha-motion/clip-03.mp4"
+  },
+  "bhabha-motion-04": {
+   "src": "assets/mobile/bhabha-motion/clip-04.mp4"
+  },
+  "bhabha-motion-05": {
+   "src": "assets/mobile/bhabha-motion/clip-05.mp4"
+  },
+  "bhabha-motion-06": {
+   "src": "assets/mobile/bhabha-motion/clip-06.mp4"
+  },
+  "bhabha-motion-07": {
+   "src": "assets/mobile/bhabha-motion/clip-07.mp4"
+  },
+  "bhabha-motion-08": {
+   "src": "assets/mobile/bhabha-motion/clip-08.mp4"
+  },
+  "bhabha-motion-09": {
+   "src": "assets/mobile/bhabha-motion/clip-09.mp4"
+  },
+  "bhabha-motion-10": {
+   "src": "assets/mobile/bhabha-motion/clip-10.mp4"
+  },
+  "bhabha-motion-11": {
+   "src": "assets/mobile/bhabha-motion/clip-11.mp4"
+  },
+  "bhabha-motion-12": {
+   "src": "assets/mobile/bhabha-motion/clip-12.mp4"
+  },
+  "bhabha-motion-13": {
+   "src": "assets/mobile/bhabha-motion/clip-13.mp4"
+  },
+  "bhabha-motion-14": {
+   "src": "assets/mobile/bhabha-motion/clip-14.mp4"
+  },
+  "bhabha-motion-15": {
+   "src": "assets/mobile/bhabha-motion/clip-15.mp4"
+  },
+  "bhabha-motion-16": {
+   "src": "assets/mobile/bhabha-motion/clip-16.mp4"
+  },
+  "bhabha-motion-17": {
+   "src": "assets/mobile/bhabha-motion/clip-17.mp4"
+  },
+  "bhabha-motion-18": {
+   "src": "assets/mobile/bhabha-motion/clip-18.mp4"
+  },
+  "original-angre-01": {
+   "src": "assets/mobile/portfolio-files/original-angre-01.mp4"
+  },
+  "original-angre-02": {
+   "src": "assets/mobile/portfolio-files/original-angre-02.mp4"
+  },
+  "original-angre-03": {
+   "src": "assets/mobile/portfolio-files/original-angre-03.mp4"
+  },
+  "original-angre-04": {
+   "src": "assets/mobile/portfolio-files/original-angre-04.mp4"
+  },
+  "original-angre-05": {
+   "src": "assets/mobile/portfolio-files/original-angre-05.mp4"
+  },
+  "original-benchmark-criteria": {
+   "src": "assets/mobile/optimized/benchmark-criteria.mp4"
+  },
+  "original-benchmark-insight": {
+   "src": "assets/mobile/benchmark-report/original-benchmark-insight.mp4"
+  },
+  "original-bhabha-01": {
+   "src": "assets/mobile/portfolio-files/original-bhabha-01.mp4"
+  },
+  "original-crm-cards": {
+   "src": "assets/mobile/wizcrm-showcase/original-crm-cards.mp4"
+  },
+  "original-crm-features": {
+   "src": "assets/mobile/wizcrm-showcase/original-crm-features.mp4"
+  },
+  "original-crm-home-copilot": {
+   "src": "assets/mobile/wizcrm-showcase/original-crm-home-copilot.mp4"
+  },
+  "original-crm-tabs": {
+   "src": "assets/mobile/wizcrm-showcase/original-crm-tabs.mp4"
+  },
+  "original-cultural-motion-01": {
+   "src": "assets/mobile/portfolio-files/original-cultural-motion-01.mp4"
+  },
+  "original-cultural-motion-02": {
+   "src": "assets/mobile/portfolio-files/original-cultural-motion-02.mp4"
+  },
+  "original-cultural-motion-03": {
+   "src": "assets/mobile/portfolio-files/original-cultural-motion-03.mp4"
+  },
+  "original-cultural-motion-04": {
+   "src": "assets/mobile/portfolio-files/original-cultural-motion-04.mp4"
+  },
+  "original-cultural-motion-05": {
+   "src": "assets/mobile/portfolio-files/original-cultural-motion-05.mp4"
+  },
+  "original-indentured-01": {
+   "src": "assets/mobile/portfolio-files/original-indentured-01.mp4"
+  },
+  "original-indentured-02": {
+   "src": "assets/mobile/portfolio-files/original-indentured-02.mp4"
+  },
+  "original-indentured-03": {
+   "src": "assets/mobile/portfolio-files/original-indentured-03.mp4"
+  },
+  "original-indentured-04": {
+   "src": "assets/mobile/portfolio-files/original-indentured-04.mp4"
+  },
+  "original-indentured-05": {
+   "src": "assets/mobile/portfolio-files/original-indentured-05.mp4"
+  },
+  "original-lachit-01": {
+   "src": "assets/mobile/portfolio-files/original-lachit-01.mp4"
+  },
+  "original-lachit-02": {
+   "src": "assets/mobile/portfolio-files/original-lachit-02.mp4"
+  },
+  "original-lachit-03": {
+   "src": "assets/mobile/portfolio-files/original-lachit-03.mp4"
+  },
+  "original-lachit-04": {
+   "src": "assets/mobile/portfolio-files/original-lachit-04.mp4"
+  },
+  "original-lachit-05": {
+   "src": "assets/mobile/portfolio-files/original-lachit-05.mp4"
+  },
+  "original-lachit-06": {
+   "src": "assets/mobile/portfolio-files/original-lachit-06.mp4"
+  },
+  "original-sahebs-07": {
+   "src": "assets/mobile/portfolio-files/original-sahebs-07.mp4"
+  },
+  "original-sanskrit-01": {
+   "src": "assets/mobile/portfolio-files/original-sanskrit-01.mp4"
+  },
+  "original-sanskrit-02": {
+   "src": "assets/mobile/portfolio-files/original-sanskrit-02.mp4"
+  },
+  "original-sanskrit-03": {
+   "src": "assets/mobile/portfolio-files/original-sanskrit-03.mp4"
+  },
+  "original-sanskrit-04": {
+   "src": "assets/mobile/portfolio-files/original-sanskrit-04.mp4"
+  },
+  "original-wootz-01": {
+   "src": "assets/mobile/portfolio-files/original-wootz-01.mp4"
+  },
+  "original-wootz-02": {
+   "src": "assets/mobile/portfolio-files/original-wootz-02.mp4"
+  },
+  "original-wootz-03": {
+   "src": "assets/mobile/portfolio-files/original-wootz-03.mp4"
+  },
+  "original-wootz-04": {
+   "src": "assets/mobile/portfolio-files/original-wootz-04.mp4"
+  },
+  "vibelogos": {
+   "poster": "assets/mobile/vibelogos-poster.webp",
+   "src": "assets/mobile/vibelogos.mp4"
+  },
+  "vistaralogo": {
+   "poster": "assets/mobile/vistaralogo-poster.webp",
+   "src": "assets/mobile/vistaralogo.mp4"
+  }
+ }
+}

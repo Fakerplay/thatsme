@@ -1,10 +1,21 @@
 import motionAssets from '../data/motion-assets.json';
+import mobileMedia from '../data/mobile-media.json';
 // Build-time presentation helpers. These are never shipped to the browser.
 import data from '../data/portfolio.json';
 import { PROJECTS } from './projects.js';
 const {A,FILMS,DIM,FEATURED,CASE_DECISION_MEDIA,TAG_COLORS,PROJECT_TAGS,MEDIA_DESCRIPTIONS,CATEGORIES,HOME_MEDIA_EXCLUSIONS,SOURCES}=data;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const picture=(key,alt='',cls='',eager=false)=>A[key]?.endsWith('.mp4')?`<video width="${DIM[key][0]}" height="${DIM[key][1]}" src="${esc(A[key])}" data-asset="${key}" aria-label="${esc(alt)}" class="${cls}" ${(key.startsWith('bhabha-motion-')||key.startsWith('original-')||A[key].startsWith('assets/optimized/'))?`poster="${A[key].replace(/\.mp4$/,'.jpg')}"`:""}  muted loop playsinline preload="none" draggable="false"></video>`:`<img width="${DIM[key][0]}" height="${DIM[key][1]}" src="${esc(A[key])}" data-asset="${key}" alt="${esc(alt)}" class="${cls}" ${eager?'fetchpriority="high"':'loading="lazy"'} decoding="async" draggable="false">`;
+// Phones (<=768px) get the smaller copies from scripts/mobile-media.py. Desktop keeps the original file:
+// its sizes slot is the native width, so the original is always the candidate a desktop picks.
+const MOBILE_SIZES='(max-width: 480px) 80vw, (max-width: 768px) 84vw';
+const responsive=(key,mobileSizes=MOBILE_SIZES)=>{const set=mobileMedia.images[key];if(!set)return '';const native=DIM[key][0];return ` srcset="${set.map(([src,w])=>`${esc(src)} ${w}w`).join(', ')}, ${esc(A[key])} ${native}w" sizes="${mobileSizes}, ${native}px"`};
+const picture=(key,alt='',cls='',eager=false,inRail=false)=>{
+ if(A[key]?.endsWith('.mp4'))return `<video width="${DIM[key][0]}" height="${DIM[key][1]}" src="${esc(A[key])}" data-asset="${key}" aria-label="${esc(alt)}" class="${cls}" ${(key.startsWith('bhabha-motion-')||key.startsWith('original-')||A[key].startsWith('assets/optimized/'))?`poster="${A[key].replace(/\.mp4$/,'.jpg')}"`:""}  muted loop playsinline preload="none" draggable="false"></video>`;
+ const img=`<img width="${DIM[key][0]}" height="${DIM[key][1]}" src="${esc(A[key])}"${responsive(key,inRail?MOBILE_SIZES:'(max-width: 768px) 100vw')} data-asset="${key}" alt="${esc(alt)}" class="${cls}" ${eager?'fetchpriority="high"':'loading="lazy"'} decoding="async" draggable="false">`;
+ // Heavy animated webps: phones get a still frame here, then interactions.js swaps in a small looping mp4.
+ const anim=inRail&&mobileMedia.anim[key];
+ return anim?`<picture class="mobile-anim" style="display:contents"><source media="(max-width: 768px)" srcset="${esc(anim.frame)}">${img}</picture>`:img;
+};
 const link=(p,cls='')=>`<a class="${cls}" href="project/${p.id}/">${picture(p.id,p.title+' — '+p.type)}<div class="index-caption"><h2>${p.title}</h2><span>${p.category} ↗</span></div>${projectTags(p)}</a>`;
 const tag=t=>`<span class="tag">${t}</span>`;
 const artStyle=key=>`--image-ratio:${DIM[key][0]/DIM[key][1]};--native-width:${DIM[key][0]}px`;
@@ -31,9 +42,9 @@ function projectTagIcon(tag){
 
 function projectTags(p){const tags=PROJECT_TAGS[p.id]||(p.tags||[p.category].filter(Boolean));if(!tags||!tags.length)return '';return `<div class="project-tags">${tags.map(t=>`<span class="project-tag">${projectTagIcon(t)}<span>${esc(t)}</span></span>`).join('')}</div>`;}
 
-function artwork(p,key,i,coverLink=false){return coverLink?`<a class="art-slide" style="${artStyle(key)}" href="project/${p.id}/" aria-label="View ${esc(p.title)} project — ${esc(p.captions[i])}">${picture(key,p.captions[i])}</a>`:`<button class="art-slide" style="${artStyle(key)}" data-lightbox="${key}" data-caption="${esc(p.captions[i])}" aria-label="Enlarge ${esc(p.captions[i])}">${picture(key,p.captions[i])}</button>`}
+function artwork(p,key,i,coverLink=false){return coverLink?`<a class="art-slide" style="${artStyle(key)}" href="project/${p.id}/" aria-label="View ${esc(p.title)} project — ${esc(p.captions[i])}">${picture(key,p.captions[i],'',false,true)}</a>`:`<button class="art-slide" style="${artStyle(key)}" data-lightbox="${key}" data-caption="${esc(p.captions[i])}" aria-label="Enlarge ${esc(p.captions[i])}">${picture(key,p.captions[i],'',false,true)}</button>`}
 
-function railControls(p){return `<div class="rail-footer"><span>Scroll to see more</span><div><button class="motion-toggle" aria-label="Pause gallery motion" aria-pressed="false">Play motion</button><button class="rail-prev" aria-label="Previous ${p.title} artwork">←</button><button class="rail-next" aria-label="Next ${p.title} artwork">→</button></div></div>`}
+function railControls(p){return `<div class="rail-footer"><span class="rail-hint-desktop">Scroll to see more</span><span class="rail-hint-mobile">Drag to see more →</span><div><button class="motion-toggle" aria-label="Pause gallery motion" aria-pressed="false">Play motion</button><button class="rail-prev" aria-label="Previous ${p.title} artwork">←</button><button class="rail-next" aria-label="Next ${p.title} artwork">→</button></div></div>`}
 
 function gallery(p){return `<section class="project-row" aria-labelledby="row-${p.id}"><div class="row-heading"><h2 class="project-row-heading"><a href="project/${p.id}/" class="row-title" id="row-${p.id}">${p.title}</a></h2><p>${esc(projectSummary(p))}</p>${projectTags(p)}</div><div class="rail natural-rail" data-moving tabindex="0" role="region" aria-label="${p.title} artwork gallery">${p.assets.map((key,i)=>artwork(p,key,i,true)).join('')}${p.assets.length===1?`<a class="rail-note" href="project/${p.id}/" style="--project-color:${p.color}"><span>${p.role}</span><p>${p.lead}</p><span>View project ↗</span></a>`:''}</div>${railControls(p)}</section>`}
 

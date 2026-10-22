@@ -571,3 +571,16 @@ html body #app .project-row-heading{margin:0;font:inherit;max-width:none}html:no
 #app .project-row .row-heading{margin-bottom:26px}
 #app .project-row>.rail.natural-rail{padding-bottom:26px}
 @media(width<=767px){#app .project-row .row-heading>p{margin-top:16px}}
+
+/* Mobile performance + drag hint (Oct 22 2026). Phone-only: desktop never matches these rules,
+   apart from keeping the phone hint hidden. */
+.rail-hint-mobile{display:none}
+@media(max-width:768px){
+ #app .rail-footer .rail-prev,#app .rail-footer .rail-next{display:none!important}
+ #app .rail-footer>.rail-hint-desktop{display:none}
+ #app .rail-footer>.rail-hint-mobile{display:inline;max-width:none;white-space:nowrap;font-size:11px;line-height:1.4;letter-spacing:.01em;color:var(--muted)}
+ #app .rail{-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior-x:contain}
+ /* Hold the artwork's box with a soft tone until the file arrives, so nothing collapses or flashes white. */
+ #app .art-slide img:not(.is-loaded){background-color:#efeee9}
+ #app .art-slide video{background-color:#efeee9}
+}
