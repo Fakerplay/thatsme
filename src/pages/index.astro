@@ -1,6 +1,7 @@
 ---
 import Portfolio from '../layouts/Portfolio.astro';
 import HomeIntro from '../components/HomeIntro.astro';
+import IllustrationArchive from '../components/IllustrationArchive.astro';
 import HomeContact from '../components/HomeContact.astro';
 import ProjectGallery from '../components/ProjectGallery.astro';
 import { PROJECTS } from '../lib/projects.js';
@@ -15,5 +16,6 @@ const HOME=PROJECTS.filter(p=>HOME_IDS.includes(p.id));
   {HOME.slice(0,4).map(project=><ProjectGallery project={project} homepage />)}
   <Fragment set:html={companyLinks(films())} />
   <section class="more-work"><div class="section-title"><h2>More of my work.</h2><a class="text-link" href="work/">Browse all projects ↗</a></div>{HOME.slice(4).map(project=><ProjectGallery project={project} homepage />)}</section>
+  <IllustrationArchive />
   <HomeContact />
 </Portfolio>
