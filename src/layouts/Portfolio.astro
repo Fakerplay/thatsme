@@ -48,6 +48,6 @@ const clientData = JSON.stringify({A:data.A,M:{v:mobileMedia.videos,a:mobileMedi
   {!preview && <Postcard />}
   <script id="portfolio-client-data" is:inline type="application/json" set:html={clientData} />
   <script>import '../scripts/interactions.js';</script>
-  {!preview && process.env.VERCEL === '1' && <Fragment><script is:inline>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script><script is:inline defer src="/_vercel/insights/script.js"></script></Fragment>}
+  {!preview && process.env.VERCEL === '1' && <Fragment><script is:inline>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script><script is:inline defer src="/_vercel/insights/script.js"></script><script is:inline>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments);};</script><script is:inline defer src="/_vercel/speed-insights/script.js"></script><script is:inline defer src="/assets/track.js?v=1"></script></Fragment>}
 </body>
 </html>
