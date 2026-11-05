@@ -1,0 +1,15 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+---
+<Portfolio page="experiments" route="experiments/" title="Experiments — Shubham Shinde" description="Interactive tools and visual experiments by Shubham Shinde.">
+  <section class="page-intro"><h1>Experiments</h1><p>Small tools, visual ideas, and things made out of curiosity.</p></section>
+  <section class="experiments-list" aria-label="Interactive experiments">
+    <a class="experiment" href="experiments/dither-boil/">
+      <div class="experiment-art" aria-hidden="true"><span>Dither<br/>Boil</span></div>
+      <div><h2>Dither Boil</h2><p>Turn images and videos into animated dither textures. Adjust the grain, contrast, and motion, then save a still or video.</p><span class="pill">Open experiment</span></div>
+    </a>
+  </section>
+</Portfolio>
+<style>
+.experiments-list{padding:0 var(--pad) 100px}.experiment{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.experiment-art{min-height:320px;background:#101112;color:#f4f4f5;display:flex;align-items:center;justify-content:center;font-size:clamp(48px,7vw,100px);line-height:1;letter-spacing:-.06em}.experiment h2{margin-bottom:20px}.experiment p{max-width:460px;margin-bottom:28px}.experiment:focus-visible{outline:2px solid currentColor;outline-offset:8px}@media(max-width:700px){.experiment{grid-template-columns:1fr;gap:24px}.experiment-art{min-height:240px}}
+</style>

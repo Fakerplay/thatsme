@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dither Boil — Shubham Shinde</title>
+<meta name="description" content="Turn images and videos into animated dither textures, then export your creation.">
+<link rel="canonical" href="https://studioshubham.vercel.app/experiments/dither-boil/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+<style>
+html,body{margin:0}img{max-width:100%}
+/* Layout: frosted-glass instrument. A blurred echo of the live output glows behind everything; top bar, panel, dock and controls are translucent glass panes. White is the only highlight. Deliberately dark-only. */
+:root {
+  --bg: #060607;
+  --glass: rgba(255,255,255,0.045);
+  --glass-2: rgba(255,255,255,0.07);
+  --glass-3: rgba(255,255,255,0.11);
+  --hover: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.09);
+  --border-strong: rgba(255,255,255,0.16);
+  --edge: rgba(255,255,255,0.14);
+  --text: #f4f4f5;
+  --text-2: rgba(244,244,245,0.62);
+  --text-3: rgba(244,244,245,0.38);
+  --accent: #ffffff;
+  --accent-soft: rgba(255,255,255,0.14);
+  --on-accent: #0a0a0b;
+  --danger: #ff6b62;
+  --blur: saturate(140%) blur(22px);
+  --shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 12px 40px rgba(0,0,0,0.45);
+  --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 13px; font-weight: 400; line-height: 1.45; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+svg.i { width: 15px; height: 15px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+#ambient { position: fixed; inset: -10%; width: 120%; height: 120%; filter: blur(90px) saturate(0); opacity: .38; pointer-events: none; z-index: 0; }
+.veil { position: fixed; inset: 0; pointer-events: none; z-index: 0; background: radial-gradient(1200px 600px at 30% 40%, rgba(255,255,255,0.05), transparent 60%), radial-gradient(800px 500px at 90% 0%, rgba(255,255,255,0.04), transparent 60%); }
+.app { position: relative; z-index: 1; height: 100%; display: grid; grid-template-rows: 52px minmax(0, 1fr); }
+
+.glass { background: var(--glass); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border: 1px solid var(--border); }
+
+/* top bar */
+.top { display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); background: rgba(10,10,12,0.45); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.crumbs { display: flex; align-items: center; gap: 6px; min-width: 0; color: var(--text-2); }
+.crumbs .mark { width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.06)); border: 1px solid var(--edge); color: var(--text); display: grid; place-items: center; }
+.crumbs .mark svg { width: 12px; height: 12px; stroke-width: 2; }
+.crumbs b { font-weight: 500; color: var(--text); white-space: nowrap; }
+.crumbs .sep { color: var(--text-3); }
+.spacer { flex: 1; }
+.live { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border: 1px solid var(--border); background: var(--glass); border-radius: 999px; color: var(--text-2); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.live i { width: 6px; height: 6px; border-radius: 50%; background: #fff; display: block; box-shadow: 0 0 8px rgba(255,255,255,0.9); }
+.live.paused i { background: var(--text-3); box-shadow: none; }
+.live.rec i { background: var(--danger); box-shadow: 0 0 8px var(--danger); }
+
+.btn { font: inherit; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 11px; border-radius: 8px; border: 1px solid var(--border); background: var(--glass-2); color: var(--text); cursor: pointer; white-space: nowrap; transition: background .15s, border-color .15s, box-shadow .15s; }
+.btn:hover { background: var(--glass-3); border-color: var(--border-strong); }
+.btn.primary { background: linear-gradient(180deg, #ffffff, #e6e6e8); border-color: #ffffff; color: var(--on-accent); box-shadow: 0 0 0 1px rgba(255,255,255,0.3), 0 6px 24px rgba(255,255,255,0.18); }
+.btn.primary:hover { background: #ffffff; box-shadow: 0 0 0 1px rgba(255,255,255,0.5), 0 8px 30px rgba(255,255,255,0.28); }
+.btn.ghost { border-color: transparent; background: transparent; color: var(--text-2); }
+.btn.ghost:hover { background: var(--hover); color: var(--text); }
+.btn:disabled { opacity: .5; cursor: default; }
+kbd { font: inherit; font-size: 11px; min-width: 18px; height: 18px; padding: 0 5px; display: inline-grid; place-items: center; border-radius: 5px; border: 1px solid var(--border); background: rgba(255,255,255,0.06); color: var(--text-2); }
+.btn.primary kbd { background: rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.1); color: rgba(10,10,11,0.7); }
+:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
+
+/* body */
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 350px; min-height: 0; }
+.stage { position: relative; min-width: 0; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 32px 32px 90px; background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 18px 18px; }
+.frame { position: relative; max-width: 100%; max-height: 100%; display: flex; padding: 10px; border-radius: 16px; background: var(--glass); border: 1px solid var(--border); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); box-shadow: var(--shadow); }
+.frame canvas { display: block; max-width: 100%; max-height: calc(100vh - 52px - 142px); image-rendering: pixelated; background: #000; border-radius: 8px; box-shadow: 0 0 0 1px rgba(255,255,255,0.06); }
+.dims { position: absolute; top: -24px; left: 4px; font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.drop { position: absolute; inset: 16px; border: 1.5px dashed rgba(255,255,255,0.6); border-radius: 16px; background: rgba(255,255,255,0.06); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); display: grid; place-items: center; color: var(--text); font-weight: 500; font-size: 14px; pointer-events: none; }
+.dock { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); display: flex; align-items: center; gap: 2px; padding: 5px; background: rgba(20,20,22,0.5); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: var(--shadow); max-width: calc(100% - 32px); }
+.dock .div { width: 1px; height: 18px; background: var(--border); margin: 0 4px; }
+.dock .src { display: flex; align-items: center; gap: 6px; padding: 0 8px; color: var(--text-2); max-width: 220px; min-width: 0; }
+.dock .src span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* panel */
+.panel { border-left: 1px solid var(--border); background: rgba(12,12,14,0.42); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); overflow-y: auto; padding-block: 22px calc(24px + env(safe-area-inset-bottom, 0px)); padding-left: 18px; padding-right: max(18px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 14px; }
+.page-head { padding: 0 6px 6px; }
+.page-head h1 { font-size: 22px; font-weight: 500; letter-spacing: -.02em; margin: 0 0 4px; text-wrap: balance; }
+.page-head p { margin: 0; color: var(--text-2); }
+.props { display: flex; flex-direction: column; gap: 2px; padding: 10px; border-radius: 12px; background: var(--glass); border: 1px solid var(--border); box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset; }
+.sect { font-size: 11px; font-weight: 500; color: var(--text-3); letter-spacing: .04em; text-transform: uppercase; padding: 2px 6px 8px; display: flex; align-items: center; justify-content: space-between; }
+.prop { display: grid; grid-template-columns: 100px minmax(0, 1fr); align-items: center; gap: 8px; min-height: 34px; padding: 2px 6px; border-radius: 7px; transition: background .12s; }
+.prop:hover { background: var(--hover); }
+.prop > label, .prop > .k { display: flex; align-items: center; gap: 8px; color: var(--text-2); }
+.prop > label svg, .prop > .k svg { color: var(--text-3); }
+
+/* segmented */
+.seg { display: flex; padding: 2px; gap: 2px; background: rgba(0,0,0,0.28); border: 1px solid var(--border); border-radius: 8px; min-width: 0; }
+.seg button { flex: 1; font: inherit; font-size: 12px; font-weight: 400; height: 24px; padding: 0 6px; border: 0; border-radius: 6px; background: transparent; color: var(--text-2); cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: background .12s, color .12s; }
+.seg button:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+.seg button[aria-pressed="true"] { background: #ffffff; color: var(--on-accent); font-weight: 500; box-shadow: 0 2px 10px rgba(255,255,255,0.16); }
+
+/* slider */
+.slide { display: grid; grid-template-columns: minmax(0, 1fr) 44px; align-items: center; gap: 10px; }
+.slide output { font-size: 12px; text-align: right; color: var(--text); font-variant-numeric: tabular-nums; }
+input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 18px; background: transparent; margin: 0; cursor: pointer; }
+input[type=range]::-webkit-slider-runnable-track { height: 3px; border-radius: 3px; background: linear-gradient(to right, rgba(255,255,255,0.95) var(--p, 50%), rgba(255,255,255,0.14) var(--p, 50%)); }
+input[type=range]::-moz-range-track { height: 3px; border-radius: 3px; background: rgba(255,255,255,0.14); }
+input[type=range]::-moz-range-progress { height: 3px; border-radius: 3px; background: rgba(255,255,255,0.95); }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; margin-top: -5.5px; border-radius: 50%; background: #fff; border: 0; box-shadow: 0 0 0 4px rgba(255,255,255,0.12), 0 2px 6px rgba(0,0,0,0.5); }
+input[type=range]::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 0; box-shadow: 0 0 0 4px rgba(255,255,255,0.12), 0 2px 6px rgba(0,0,0,0.5); }
+
+/* presets */
+.presets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.preset { font: inherit; text-align: left; display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: rgba(255,255,255,0.03); color: var(--text); cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
+.preset:hover { background: var(--hover); border-color: var(--border-strong); }
+.preset b { font-weight: 500; }
+.preset span { color: var(--text-3); font-size: 12px; }
+.preset[aria-pressed="true"] { border-color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.09); box-shadow: 0 0 0 3px rgba(255,255,255,0.08), 0 0 24px rgba(255,255,255,0.08); }
+.preset[aria-pressed="true"] span { color: var(--text-2); }
+
+.swatch { display: inline-flex; align-items: center; gap: 8px; color: var(--text); }
+input[type=color] { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; padding: 0; border: 1px solid var(--border-strong); border-radius: 6px; background: none; cursor: pointer; }
+input[type=color]::-webkit-color-swatch-wrapper { padding: 0; }
+input[type=color]::-webkit-color-swatch { border: 0; border-radius: 5px; }
+.swatches { display: flex; gap: 16px; }
+.toggle { position: relative; width: 30px; height: 18px; flex: none; }
+.toggle input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.toggle span { position: absolute; inset: 0; border-radius: 999px; background: rgba(255,255,255,0.14); border: 1px solid var(--border); transition: background .15s; pointer-events: none; }
+.toggle span::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.85); transition: transform .15s, background .15s; }
+.toggle input:checked + span { background: #ffffff; }
+.toggle input:checked + span::after { transform: translateX(12px); background: var(--on-accent); }
+
+.callout { display: flex; gap: 10px; padding: 12px; border-radius: 12px; background: var(--glass); border: 1px solid var(--border); color: var(--text-2); }
+.callout svg { color: var(--text-3); margin-top: 2px; }
+.status { min-height: 18px; color: var(--text-2); padding: 0 6px; margin: 6px 0 0; }
+.status.err { color: var(--danger); }
+.export-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 6px 6px 0; }
+.export-row .btn { justify-content: center; height: 34px; }
+.shortcuts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 12px; padding: 2px 6px; color: var(--text-3); font-size: 12px; }
+.shortcuts div { display: flex; align-items: center; gap: 6px; }
+input[type=file] { display: none; }
+
+@media (max-width: 820px) {
+  .app { height: auto; grid-template-rows: 52px auto; }
+  .main { grid-template-columns: 1fr; }
+  .stage { height: 82vw; max-height: 580px; padding: 28px 16px 80px; }
+  .frame canvas { max-height: calc(82vw - 126px); }
+  .panel { border-left: 0; border-top: 1px solid var(--border); overflow: visible; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .hide-sm { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+<meta property="og:url" content="https://studioshubham.vercel.app/experiments/dither-boil/"><meta property="og:title" content="Dither Boil — Shubham Shinde"><meta property="og:type" content="website"><meta property="og:image" content="https://studioshubham.vercel.app/assets/og-share.jpg"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://studioshubham.vercel.app/#person", "name": "Shubham Shinde", "sameAs": ["https://www.linkedin.com/in/shubhamshinde"]}, {"@type": "WebApplication", "name": "Dither Boil", "url": "https://studioshubham.vercel.app/experiments/dither-boil/", "applicationCategory": "MultimediaApplication", "operatingSystem": "Web browser", "author": {"@id": "https://studioshubham.vercel.app/#person"}}]}</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-grain" viewBox="0 0 24 24"><circle cx="6" cy="6" r="1.5"/><circle cx="12" cy="9" r="1.5"/><circle cx="18" cy="6" r="1.5"/><circle cx="8" cy="14" r="1.5"/><circle cx="15" cy="16" r="1.5"/><circle cx="6" cy="20" r="1.5"/><circle cx="19" cy="19" r="1.5"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V3m0 0-4 4m4-4 4 4"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 4v16M16 4v16"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="14" r="3.5"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
+  <symbol id="i-dot" viewBox="0 0 24 24"><rect x="8" y="8" width="8" height="8" rx="1"/></symbol>
+  <symbol id="i-dash" viewBox="0 0 24 24"><path d="M4 12h6M14 12h6"/></symbol>
+  <symbol id="i-cut" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M12 7a5 5 0 0 0 0 10" /></symbol>
+  <symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18a9 9 0 0 0 0-18z" fill="currentColor"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></symbol>
+  <symbol id="i-glow" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7" opacity=".5"/><circle cx="12" cy="12" r="10.5" opacity=".25"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></symbol>
+  <symbol id="i-frame" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/></symbol>
+  <symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.7-4M4 4v4h4M4 13a8 8 0 0 0 14.7 4M20 20v-4h-4"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+  <symbol id="i-invert" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 21 21 3"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+</svg>
+
+<canvas id="ambient" width="64" height="64" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+<main class="app">
+  <header class="top">
+    <div class="crumbs">
+      <span class="mark"><svg class="i"><use href="#i-grain"/></svg></span>
+      <span class="hide-sm">Tools</span><span class="sep hide-sm">/</span>
+      <b>Dither Boil</b>
+    </div>
+    <div class="spacer"></div>
+    <span class="live" id="live"><i></i><span id="liveText">Live · 25 fps</span></span>
+    <button class="btn ghost hide-sm" id="pick2" type="button"><svg class="i"><use href="#i-upload"/></svg>Open <kbd>O</kbd></button>
+    <button class="btn primary" id="record" type="button"><svg class="i"><use href="#i-video"/></svg>Export video <kbd class="hide-sm">E</kbd></button>
+  </header>
+
+  <div class="main">
+    <section class="stage" id="stage" aria-label="Preview">
+      <div class="frame">
+        <span class="dims" id="dims">1080 × 1080</span>
+        <canvas id="out" width="1080" height="1080" aria-label="Dithered preview"></canvas>
+      </div>
+      <div class="drop" id="drop" hidden>Drop an image or video to dither it</div>
+      <div class="dock" role="toolbar" aria-label="Playback">
+        <button class="btn ghost" id="play" type="button" aria-label="Pause"><svg class="i" id="playIcon"><use href="#i-pause"/></svg></button>
+        <span class="div"></span>
+        <span class="src"><svg class="i"><use href="#i-image"/></svg><span id="srcName">Sample flow field (example)</span></span>
+        <span class="div"></span>
+        <button class="btn ghost" id="pick" type="button"><svg class="i"><use href="#i-upload"/></svg>Replace</button>
+        <button class="btn ghost" id="sample" type="button"><svg class="i"><use href="#i-refresh"/></svg><span class="hide-sm">Sample</span></button>
+      </div>
+      <input id="file" type="file" accept="image/*,video/*">
+    </section>
+
+    <aside class="panel">
+      <div class="page-head">
+        <h1>Dither Boil</h1>
+        <p>Turn any image or clip into 1-bit grain that reshuffles every frame, then export it as a looping video.</p>
+      </div>
+
+      <div class="props">
+        <div class="sect">Presets</div>
+        <div class="presets" id="presets">
+          <button class="preset" type="button" data-preset="boil" aria-pressed="true"><b>Boil</b><span>Random dashes, every frame</span></button>
+          <button class="preset" type="button" data-preset="ordered"><b>Ordered</b><span>Bayer grid, retro print</span></button>
+          <button class="preset" type="button" data-preset="diffuse"><b>Diffusion</b><span>Soft, detailed grain</span></button>
+          <button class="preset" type="button" data-preset="hard"><b>Hard cut</b><span>High contrast, slow boil</span></button>
+        </div>
+      </div>
+
+      <div class="props">
+        <div class="sect">Pattern</div>
+        <div class="prop"><span class="k"><svg class="i"><use href="#i-grid"/></svg>Type</span>
+          <div class="seg" data-for="mode"><button type="button" data-v="noise">Noise</button><button type="button" data-v="bayer">Bayer</button><button type="button" data-v="fs">Diffuse</button></div></div>
+        <div class="prop"><label for="pixel"><svg class="i"><use href="#i-dot"/></svg>Dot size</label><div class="slide"><input id="pixel" type="range" min="1" max="8" step="1" value="2"><output id="pixelV"></output></div></div>
+        <div class="prop"><label for="dash"><svg class="i"><use href="#i-dash"/></svg>Dash length</label><div class="slide"><input id="dash" type="range" min="1" max="8" step="1" value="2"><output id="dashV"></output></div></div>
+        <div class="prop"><label for="grain"><svg class="i"><use href="#i-grain"/></svg>Grain</label><div class="slide"><input id="grain" type="range" min="0" max="1" step="0.01" value="0.8"><output id="grainV"></output></div></div>
+      </div>
+
+      <div class="props">
+        <div class="sect">Tone</div>
+        <div class="prop"><label for="cut"><svg class="i"><use href="#i-cut"/></svg>Cut-off</label><div class="slide"><input id="cut" type="range" min="0" max="1" step="0.01" value="0.55"><output id="cutV"></output></div></div>
+        <div class="prop"><label for="contrast"><svg class="i"><use href="#i-contrast"/></svg>Contrast</label><div class="slide"><input id="contrast" type="range" min="0.5" max="3" step="0.05" value="1.4"><output id="contrastV"></output></div></div>
+        <div class="prop"><label for="bright"><svg class="i"><use href="#i-sun"/></svg>Brightness</label><div class="slide"><input id="bright" type="range" min="-0.5" max="0.5" step="0.01" value="0"><output id="brightV"></output></div></div>
+        <div class="prop"><label for="glow"><svg class="i"><use href="#i-glow"/></svg>Glow</label><div class="slide"><input id="glow" type="range" min="0" max="1" step="0.05" value="0.25"><output id="glowV"></output></div></div>
+        <div class="prop"><label for="invert"><svg class="i"><use href="#i-invert"/></svg>Invert</label><span class="toggle"><input id="invert" type="checkbox" aria-label="Invert source"><span></span></span></div>
+        <div class="prop"><span class="k"><svg class="i"><use href="#i-drop"/></svg>Colours</span>
+          <div class="swatches"><label class="swatch" for="ink"><input id="ink" type="color" value="#ffffff">Ink</label><label class="swatch" for="paper"><input id="paper" type="color" value="#000000">Paper</label></div></div>
+      </div>
+
+      <div class="props">
+        <div class="sect">Motion</div>
+        <div class="prop"><span class="k"><svg class="i"><use href="#i-clock"/></svg>Frame rate</span>
+          <div class="seg" data-for="fps"><button type="button" data-v="12">12</button><button type="button" data-v="25">25</button><button type="button" data-v="30">30</button></div></div>
+        <div class="prop"><span class="k"><svg class="i"><use href="#i-refresh"/></svg>Reshuffle</span>
+          <div class="seg" data-for="boil"><button type="button" data-v="1">1f</button><button type="button" data-v="2">2f</button><button type="button" data-v="3">3f</button><button type="button" data-v="6">6f</button><button type="button" data-v="0">Off</button></div></div>
+      </div>
+
+      <div class="props">
+        <div class="sect">Frame</div>
+        <div class="prop"><span class="k"><svg class="i"><use href="#i-frame"/></svg>Size</span>
+          <div class="seg" data-for="size"><button type="button" data-v="1080x1080">1:1</button><button type="button" data-v="1920x1080">16:9</button><button type="button" data-v="1080x1920">9:16</button><button type="button" data-v="1080x1350">4:5</button></div></div>
+        <div class="prop"><span class="k"><svg class="i"><use href="#i-fit"/></svg>Fit</span>
+          <div class="seg" data-for="fit"><button type="button" data-v="cover">Fill</button><button type="button" data-v="contain">Fit</button></div></div>
+      </div>
+
+      <div class="props">
+        <div class="sect">Export</div>
+        <div class="prop"><label for="dur"><svg class="i"><use href="#i-clock"/></svg>Length</label><div class="slide"><input id="dur" type="range" min="1" max="15" step="1" value="4"><output id="durV"></output></div></div>
+        <div class="export-row">
+          <button class="btn" id="still" type="button"><svg class="i"><use href="#i-camera"/></svg>Save PNG <kbd>S</kbd></button>
+          <button class="btn" id="record2" type="button"><svg class="i"><use href="#i-video"/></svg>Video <kbd>E</kbd></button>
+        </div>
+        <p class="status" id="status" role="status"></p>
+      </div>
+
+      <div class="callout"><svg class="i"><use href="#i-info"/></svg><span>Bright, high-contrast sources dither best. Keep source motion subtle; the reshuffle does the rest.</span></div>
+
+      <div class="shortcuts hide-sm" aria-label="Keyboard shortcuts">
+        <div><kbd>Space</kbd>Play / pause</div>
+        <div><kbd>O</kbd>Open file</div>
+        <div><kbd>S</kbd>Save PNG</div>
+        <div><kbd>E</kbd>Export video</div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<input type="hidden" id="mode" value="noise">
+<input type="hidden" id="fps" value="25">
+<input type="hidden" id="boil" value="1">
+<input type="hidden" id="size" value="1080x1080">
+<input type="hidden" id="fit" value="cover">
+
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const out = $("out"), octx = out.getContext("2d");
+  const small = document.createElement("canvas"), sctx = small.getContext("2d", { willReadFrequently: true });
+  const srcCanvas = document.createElement("canvas");
+  const amb = $("ambient").getContext("2d");
+  const ids = ["mode","pixel","dash","cut","grain","contrast","bright","glow","fps","boil","dur","fit","size"];
+  const S = {};
+  let paused = false, recording = false;
+
+  function fill(el) { const p = (el.value - el.min) / (el.max - el.min) * 100; el.style.setProperty("--p", p + "%"); }
+  function syncSeg() {
+    document.querySelectorAll(".seg").forEach((seg) => {
+      const v = $(seg.dataset.for).value;
+      seg.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.v === v ? "true" : "false"));
+    });
+  }
+  function read() {
+    for (const k of ids) { const el = $(k); S[k] = el.type === "range" ? parseFloat(el.value) : el.value; }
+    S.invert = $("invert").checked;
+    S.ink = hex($("ink").value); S.paper = hex($("paper").value);
+    $("pixelV").textContent = S.pixel + "px";
+    $("dashV").textContent = S.dash;
+    $("cutV").textContent = S.cut.toFixed(2);
+    $("grainV").textContent = S.grain.toFixed(2);
+    $("contrastV").textContent = S.contrast.toFixed(2);
+    $("brightV").textContent = (S.bright > 0 ? "+" : "") + S.bright.toFixed(2);
+    $("glowV").textContent = S.glow.toFixed(2);
+    $("durV").textContent = S.dur + "s";
+    document.querySelectorAll("input[type=range]").forEach(fill);
+    syncSeg(); updateLive();
+  }
+  function hex(h) { return [parseInt(h.slice(1,3),16), parseInt(h.slice(3,5),16), parseInt(h.slice(5,7),16)]; }
+  function updateLive() {
+    const l = $("live"); l.classList.toggle("paused", paused && !recording); l.classList.toggle("rec", recording);
+    if (!recording) $("liveText").textContent = paused ? "Paused" : "Live · " + S.fps + " fps";
+  }
+
+  // ---------- sample source ----------
+  let source = { kind: "sample", el: srcCanvas, w: 720, h: 720 };
+  srcCanvas.width = 720; srcCanvas.height = 720;
+  const sc = srcCanvas.getContext("2d");
+  const P = [];
+  for (let i = 0; i < 2600; i++) P.push({ x: Math.random() * 720, y: Math.random() * 720, life: Math.random() * 120 });
+  let st = 0;
+  function drawSample() {
+    st += 0.012;
+    sc.globalCompositeOperation = "source-over";
+    sc.fillStyle = "rgba(0,0,0,0.18)"; sc.fillRect(0, 0, 720, 720);
+    const g = sc.createRadialGradient(300, 330, 20, 300, 330, 300);
+    g.addColorStop(0, "rgba(255,255,255,0.22)"); g.addColorStop(1, "rgba(255,255,255,0)");
+    sc.fillStyle = g; sc.fillRect(0, 0, 720, 720);
+    sc.strokeStyle = "rgba(255,255,255,0.95)"; sc.lineWidth = 2.2;
+    sc.beginPath();
+    for (const p of P) {
+      const a = Math.sin(p.x * 0.006 + st) * 1.1 + Math.cos(p.y * 0.008 - st * 0.7) * 0.9 - 0.4;
+      const nx = p.x + Math.cos(a) * 3.2, ny = p.y + Math.sin(a) * 3.2;
+      const dx = (p.x - 300) / 230, dy = (p.y - 340) / 290;
+      if (dx * dx + dy * dy < 1.2 || Math.random() < 0.25) { sc.moveTo(p.x, p.y); sc.lineTo(nx, ny); }
+      p.x = nx; p.y = ny; p.life--;
+      if (p.life < 0 || p.x < 0 || p.x > 720 || p.y < 0 || p.y > 720) { p.x = 120 + Math.random() * 420; p.y = 60 + Math.random() * 600; p.life = 60 + Math.random() * 120; }
+    }
+    sc.stroke();
+    sc.fillStyle = "rgba(255,255,255,0.9)";
+    for (let i = 0; i < 3; i++) { const sx = 90 + i * 260 + Math.sin(st * 3 + i) * 10, sy = 200 + i * 140; sc.fillRect(sx - 10, sy, 20, 1.5); sc.fillRect(sx, sy - 10, 1.5, 20); }
+  }
+
+  // ---------- loading ----------
+  let objectURL = null;
+  function loadFile(file) {
+    if (!file) return;
+    const isVideo = file.type.startsWith("video/"), isImage = file.type.startsWith("image/");
+    if (!isVideo && !isImage) { setStatus("That file isn’t an image or a video. Try PNG, JPG, MP4 or MOV.", true); return; }
+    if (objectURL) URL.revokeObjectURL(objectURL);
+    objectURL = URL.createObjectURL(file);
+    if (isImage) {
+      const img = new Image();
+      img.onload = () => { source = { kind: "image", el: img, w: img.naturalWidth, h: img.naturalHeight }; done(); };
+      img.onerror = () => setStatus("This image couldn’t be opened. Try saving it as PNG or JPG.", true);
+      img.src = objectURL;
+    } else {
+      const v = document.createElement("video");
+      v.muted = true; v.loop = true; v.playsInline = true; v.preload = "auto";
+      v.onloadeddata = () => { source = { kind: "video", el: v, w: v.videoWidth, h: v.videoHeight }; if (!paused) v.play().catch(() => {}); done(); };
+      v.onerror = () => setStatus("This video couldn’t be played here. MP4 (H.264) or WebM work best.", true);
+      v.src = objectURL;
+    }
+    function done() { $("srcName").textContent = file.name; setStatus(""); reseed(); }
+  }
+  const openPicker = () => $("file").click();
+  $("pick").onclick = openPicker; $("pick2").onclick = openPicker;
+  $("file").onchange = (e) => { loadFile(e.target.files[0]); e.target.value = ""; };
+  $("sample").onclick = () => { source = { kind: "sample", el: srcCanvas, w: 720, h: 720 }; $("srcName").textContent = "Sample flow field (example)"; setStatus(""); };
+  const stage = $("stage"), drop = $("drop");
+  stage.addEventListener("dragover", (e) => { e.preventDefault(); drop.hidden = false; });
+  stage.addEventListener("dragleave", (e) => { if (!stage.contains(e.relatedTarget)) drop.hidden = true; });
+  stage.addEventListener("drop", (e) => { e.preventDefault(); drop.hidden = true; loadFile(e.dataTransfer.files[0]); });
+
+  // ---------- controls ----------
+  const PRESETS = {
+    boil:    { mode: "noise", pixel: 2, dash: 2, cut: 0.55, grain: 0.8, contrast: 1.4, bright: 0, glow: 0.25, boil: "1" },
+    ordered: { mode: "bayer", pixel: 3, dash: 1, cut: 0.5, grain: 1, contrast: 1.2, bright: 0, glow: 0, boil: "2" },
+    diffuse: { mode: "fs", pixel: 2, dash: 1, cut: 0.5, grain: 0.35, contrast: 1.1, bright: 0, glow: 0.15, boil: "1" },
+    hard:    { mode: "noise", pixel: 2, dash: 1, cut: 0.5, grain: 0.15, contrast: 1.6, bright: 0, glow: 0, boil: "3" }
+  };
+  const presetBtns = () => $("presets").querySelectorAll(".preset");
+  $("presets").addEventListener("click", (e) => {
+    const b = e.target.closest(".preset"); if (!b) return;
+    const p = PRESETS[b.dataset.preset];
+    for (const k in p) $(k).value = p[k];
+    presetBtns().forEach((x) => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+    read(); reseed();
+  });
+  document.querySelectorAll(".seg").forEach((seg) => seg.addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    $(seg.dataset.for).value = b.dataset.v; read();
+    if (seg.dataset.for === "size") resize();
+    if (["mode","boil"].includes(seg.dataset.for)) presetBtns().forEach((x) => x.setAttribute("aria-pressed", "false"));
+  }));
+  document.querySelectorAll("input[type=range], input[type=color], input[type=checkbox]").forEach((el) => el.addEventListener("input", () => {
+    read();
+    if (el.type === "range" && el.id !== "dur") presetBtns().forEach((x) => x.setAttribute("aria-pressed", "false"));
+  }));
+  function setPaused(p) {
+    paused = p;
+    $("playIcon").innerHTML = '<use href="#i-' + (p ? "play" : "pause") + '"/>';
+    $("play").setAttribute("aria-label", p ? "Play" : "Pause");
+    if (source.kind === "video") p ? source.el.pause() : source.el.play().catch(() => {});
+    updateLive();
+  }
+  $("play").onclick = () => setPaused(!paused);
+
+  // ---------- dither ----------
+  let W = 0, H = 0, noise = null, rowOff = null, bayerOff = [0, 0], fsErr = null;
+  const BAYER = [0,32,8,40,2,34,10,42,48,16,56,24,50,18,58,26,12,44,4,36,14,46,6,38,60,28,52,20,62,30,54,22,3,35,11,43,1,33,9,41,51,19,59,27,49,17,57,25,15,47,7,39,13,45,5,37,63,31,55,23,61,29,53,21];
+  function resize() {
+    const [ow, oh] = S.size.split("x").map(Number);
+    if (out.width !== ow || out.height !== oh) { out.width = ow; out.height = oh; }
+    $("dims").textContent = ow + " × " + oh;
+  }
+  function ensureBuffers() {
+    const w = Math.max(1, Math.round(out.width / S.pixel)), h = Math.max(1, Math.round(out.height / S.pixel));
+    if (w !== W || h !== H) { W = w; H = h; small.width = W; small.height = H; noise = new Float32Array(W * H); rowOff = new Uint8Array(H); reseed(); }
+  }
+  function reseed() {
+    if (!noise) return;
+    for (let i = 0; i < noise.length; i++) noise[i] = Math.random();
+    for (let y = 0; y < H; y++) rowOff[y] = (Math.random() * 8) | 0;
+    bayerOff = [(Math.random() * 8) | 0, (Math.random() * 8) | 0];
+  }
+  function drawSourceInto(ctx, w, h) {
+    ctx.fillStyle = "#000"; ctx.fillRect(0, 0, w, h);
+    const sw = source.w, sh = source.h; if (!sw || !sh) return;
+    const k = S.fit === "cover" ? Math.max(w / sw, h / sh) : Math.min(w / sw, h / sh);
+    const dw = sw * k, dh = sh * k;
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(source.el, (w - dw) / 2, (h - dh) / 2, dw, dh);
+  }
+  function render() {
+    ensureBuffers();
+    drawSourceInto(sctx, W, H);
+    const img = sctx.getImageData(0, 0, W, H), d = img.data;
+    const [ir, ig, ib] = S.ink, [pr, pg, pb] = S.paper;
+    const c = S.contrast, br = S.bright, cut = S.cut, gr = S.grain, dash = S.dash | 0, mode = S.mode;
+    if (mode === "fs") { if (!fsErr || fsErr.length !== W * H) fsErr = new Float32Array(W * H); fsErr.fill(0); }
+    for (let y = 0; y < H; y++) {
+      const ro = rowOff[y];
+      for (let x = 0; x < W; x++) {
+        const i = y * W + x, j = i * 4;
+        let v = (0.2126 * d[j] + 0.7152 * d[j + 1] + 0.0722 * d[j + 2]) / 255;
+        if (S.invert) v = 1 - v;
+        v = (v - 0.5) * c + 0.5 + br;
+        let on;
+        if (mode === "noise") {
+          const nx = dash > 1 ? Math.min(W - 1, Math.floor((x + ro) / dash) * dash) : x;
+          on = v > cut + (noise[y * W + nx] - 0.5) * gr;
+        } else if (mode === "bayer") {
+          const b = (BAYER[((y + bayerOff[1]) & 7) * 8 + ((x + bayerOff[0]) & 7)] + 0.5) / 64;
+          on = v > cut + (b - 0.5) * gr;
+        } else {
+          const vv = v + fsErr[i] + (noise[i] - 0.5) * gr * 0.5;
+          on = vv > cut;
+          const e = vv - (on ? 1 : 0);
+          if (x + 1 < W) fsErr[i + 1] += e * 7 / 16;
+          if (y + 1 < H) { if (x > 0) fsErr[i + W - 1] += e * 3 / 16; fsErr[i + W] += e * 5 / 16; if (x + 1 < W) fsErr[i + W + 1] += e / 16; }
+        }
+        d[j] = on ? ir : pr; d[j + 1] = on ? ig : pg; d[j + 2] = on ? ib : pb; d[j + 3] = 255;
+      }
+    }
+    sctx.putImageData(img, 0, 0);
+    octx.imageSmoothingEnabled = false;
+    octx.globalCompositeOperation = "source-over"; octx.globalAlpha = 1; octx.filter = "none";
+    octx.drawImage(small, 0, 0, out.width, out.height);
+    if (S.glow > 0) {
+      octx.globalCompositeOperation = "lighter"; octx.globalAlpha = S.glow * 0.6; octx.imageSmoothingEnabled = true;
+      octx.filter = "blur(" + Math.round(out.width / 120) + "px)";
+      octx.drawImage(small, 0, 0, out.width, out.height);
+      octx.filter = "none"; octx.globalAlpha = 1; octx.globalCompositeOperation = "source-over";
+    }
+  }
+
+  // ---------- loop ----------
+  let last = 0, frame = 0;
+  function tick(t) {
+    const step = 1000 / Number(S.fps);
+    if (!paused && t - last >= step - 1) {
+      last = t; frame++;
+      if (source.kind === "sample") drawSample();
+      const every = Number(S.boil);
+      if (every > 0 && frame % every === 0) reseed();
+      render();
+      if (frame % 6 === 0) amb.drawImage(out, 0, 0, 64, 64);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // ---------- export ----------
+  function setStatus(msg, err) { const s = $("status"); s.textContent = msg; s.classList.toggle("err", !!err); }
+  let downloads = null;
+  try { if (window.claude && window.claude.use) window.claude.use("downloads").then((d) => { downloads = d; }).catch(() => {}); } catch (e) {}
+  async function save(filename, data) {
+    if (downloads) {
+      try { await downloads.save({ filename, data }); setStatus("Saved " + filename + "."); }
+      catch (e) {
+        if (e && e.code === "declined") setStatus("Save cancelled.");
+        else if (e && e.code === "rate_limited") setStatus("A save prompt is already open.", true);
+        else setStatus("The file couldn’t be saved here.", true);
+      }
+      return;
+    }
+    try {
+      const url = URL.createObjectURL(data);
+      const a = document.createElement("a");
+      a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+      setStatus("Saved " + filename + ".");
+    } catch (e) { setStatus("The file couldn’t be saved in this browser.", true); }
+  }
+  function still() { if (paused) render(); out.toBlob((b) => b && save("dither-still.png", b), "image/png"); }
+  function record() {
+    if (recording) return;
+    if (!out.captureStream || typeof MediaRecorder === "undefined") { setStatus("This browser can’t record video. Try Chrome, Edge or Safari.", true); return; }
+    const types = ["video/mp4;codecs=avc1", "video/mp4", "video/webm;codecs=vp9", "video/webm"];
+    const type = types.find((t) => MediaRecorder.isTypeSupported(t)) || "";
+    const ext = type.startsWith("video/mp4") ? "mp4" : "webm";
+    const stream = out.captureStream(Number(S.fps));
+    let rec;
+    try { rec = new MediaRecorder(stream, type ? { mimeType: type, videoBitsPerSecond: 16000000 } : { videoBitsPerSecond: 16000000 }); }
+    catch (e) { setStatus("Recording couldn’t start in this browser.", true); return; }
+    const chunks = [];
+    rec.ondataavailable = (e) => e.data.size && chunks.push(e.data);
+    rec.onstop = () => {
+      recording = false; $("record").disabled = false; $("record2").disabled = false; updateLive();
+      save("dither-loop." + ext, new Blob(chunks, { type: type || "video/webm" }));
+    };
+    if (paused) setPaused(false);
+    if (source.kind === "video") { source.el.currentTime = 0; source.el.play().catch(() => {}); }
+    recording = true; $("record").disabled = true; $("record2").disabled = true; updateLive();
+    let left = S.dur;
+    $("liveText").textContent = "Recording " + left + "s";
+    setStatus("Recording " + S.dur + " s at " + S.fps + " fps as " + ext.toUpperCase() + ".");
+    rec.start(250);
+    const iv = setInterval(() => { left--; $("liveText").textContent = "Recording " + Math.max(left, 0) + "s"; if (left <= 0) { clearInterval(iv); rec.stop(); } }, 1000);
+  }
+  $("still").onclick = still;
+  $("record").onclick = record; $("record2").onclick = record;
+  document.addEventListener("keydown", (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const t = e.target; if (t && (t.tagName === "INPUT" && t.type !== "range" && t.type !== "checkbox" || t.tagName === "TEXTAREA")) return;
+    const k = e.key.toLowerCase();
+    if (k === " ") { e.preventDefault(); setPaused(!paused); }
+    else if (k === "o") openPicker();
+    else if (k === "s") still();
+    else if (k === "e") record();
+  });
+
+  read(); resize(); ensureBuffers();
+  for (let i = 0; i < 40; i++) drawSample();
+  render(); amb.drawImage(out, 0, 0, 64, 64);
+  requestAnimationFrame(tick);
+})();
+</script>
+
+</body>
+</html>
