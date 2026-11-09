@@ -1,7 +1,7 @@
 ---
 import Portfolio from '../layouts/Portfolio.astro';
 import {origin} from '../lib/seo.js';
-const {slug,title,description,shareImage,shareAlt,published='2026-11-09',keywords=[],projectUrl,projectLabel}=Astro.props;
+const {slug,title,description,shareImage,shareAlt,published='2026-11-09',keywords=[],projectUrl,projectLabel,ctaText='Open the tool'}=Astro.props;
 const canonical=new URL(`journal/${slug}/`,origin).href;
 const imageUrl=new URL(shareImage,origin).href;
 const linkedInShare='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(canonical);
@@ -39,8 +39,8 @@ const structuredData={
     <div class="journal-body">
       <slot />
       <aside class="journal-try" aria-label="Try the project">
-        <div><span class="journal-eyebrow">Want to play?</span><h2>{projectLabel}</h2></div>
-        <a class="btn" href={projectUrl} target={projectUrl.startsWith('http')?'_blank':undefined} rel={projectUrl.startsWith('http')?'noopener noreferrer':undefined}><span class="btn-label">Open the project</span></a>
+        <div><span class="journal-eyebrow">Made with AI · Directed by me</span><h2>{projectLabel}</h2></div>
+        <a class="btn" href={projectUrl} target={projectUrl.startsWith('http')?'_blank':undefined} rel={projectUrl.startsWith('http')?'noopener noreferrer':undefined}><span class="btn-label">{ctaText}</span></a>
       </aside>
       <nav class="journal-related" aria-label="Related writing">
         <a href="/journal/diwali-isometric-motion/">Diwali isometric motion</a>

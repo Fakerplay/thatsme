@@ -1,7 +1,7 @@
 ---
 import JournalArticle from '../../components/JournalArticle.astro';
-const title='A Diwali greeting card that opens into a 3D scene';
-const description='Shubham Shinde built an interactive 3D Diwali greeting card with draggable objects, day and night scenes, fireworks, and a personalisable flip card.';
+const title='An AI-built 3D Diwali greeting you can make your own';
+const description='A custom personalised 3D Diwali greeting tool built with AI from Shubham Shinde’s concept, with draggable objects, day and night scenes, fireworks, and a flip card.';
 const poster='assets/journal/diwali/greeting-night.jpg';
 ---
 <JournalArticle slug="happy-diwali-3d-card" title={title} description={description} shareImage={poster} shareAlt="Happy Diwali in an interactive 3D scene filled with diyas, kandils, marigolds and lotuses" projectUrl="/experiments/happy-diwali-3d/" projectLabel="Open the interactive Happy Diwali card" keywords={['AI-assisted design','AI-generated 3D models','interactive Diwali greeting card','creative technology','Three.js project']}>
@@ -12,7 +12,7 @@ const poster='assets/journal/diwali/greeting-night.jpg';
     <dl class="journal-facts"><div><dt>What it is</dt><dd>A personalisable 3D Diwali greeting card that runs in a web browser.</dd></div><div><dt>Built with</dt><dd>Three.js, GLTF models and custom interaction physics.</dd></div><div><dt>AI in the process</dt><dd>AI built the experience from my concept prompt; Tripo CLI generated the 3D models.</dd></div><div><dt>Who made it</dt><dd>Shubham Shinde, design lead and AI-assisted creative technologist in Bengaluru, India.</dd></div></dl>
     <h2>AI-generated models, then a lot of hands-on making</h2>
     <p>I generated the 3D models with the Tripo CLI. The diya started from a reference image; the kandil, marigold and lotus started from text prompts. The raw models were around 40 MB each, so I simplified them to roughly 1.8–3 MB with a custom Python script that kept the UV seams closed and texture edges clean.</p>
-    <p>AI built the interactive experience from my concept prompt, and Tripo helped me bring the 3D objects into the scene. I made the creative calls around how the objects, lighting, type, motion and card interaction should work together. The goal was for the result to feel like a personal greeting, not a model viewer.</p>
+    <p>AI built the personalised greeting tool from my concept prompt, and Tripo helped me bring the 3D objects into the scene. I made the creative calls around how the objects, lighting, type, motion and card interaction should work together. The screenshots above showcase the scene; the live tool lets you explore it and make the greeting your own.</p>
     <div class="journal-gallery" aria-label="Day and night scenes from the interactive Diwali card">
       <figure><img src="/assets/journal/diwali/greeting-day.jpg" alt="Daytime view of the interactive Diwali greeting with marigolds, lotuses, kandils and large greeting text" width="1920" height="1080" loading="lazy"><figcaption>Day mode</figcaption></figure>
       <figure><img src="/experiments/happy-diwali-3d/assets/tripo-models.png" alt="A contact sheet of candidate AI-generated 3D models made with Tripo" width="1600" height="900" loading="lazy"><figcaption>Model exploration with Tripo</figcaption></figure>
