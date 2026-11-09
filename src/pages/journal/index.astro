@@ -1,14 +1,14 @@
 ---
 import Portfolio from '../../layouts/Portfolio.astro';
 const entries=[
- {title:'A Diwali motion study, lit one object at a time',desc:'An isometric Diwali motion piece built around diya, anar, chakri, kandil and kamal — made during a few days away from the day job.',href:'/journal/diwali-isometric-motion/',image:'assets/journal/diwali/kandil-poster.jpg',alt:'A glowing Diwali diya, anar, chakri, kandil and kamal arranged on a dark isometric grid'},
- {title:'Dither Boil: give your image a little restless energy',desc:'A browser-based creative coding tool for turning images and clips into animated 1-bit grain, with controls to shape the loop.',href:'/journal/dither-tool/',image:'assets/journal/diwali/dither-poster.jpg',alt:'An archer image rendered as animated black-and-white dither grain'},
- {title:'A Diwali greeting card that opens into a 3D scene',desc:'A browser-based greeting you can explore, flip and personalise, with generated 3D Diwali objects and a day-to-night scene.',href:'/journal/happy-diwali-3d-card/',image:'assets/journal/diwali/greeting-night.jpg',alt:'Interactive Happy Diwali greeting scene with marigolds, lotuses, kandils and diyas'},
+ {title:'A Diwali effects tool, with a little festival in it',desc:'A custom AI-built Diwali experience, directed by me and shown through an isometric motion showcase.',href:'/journal/diwali-isometric-motion/',image:'assets/journal/diwali/kandil-poster.jpg',alt:'A glowing Diwali diya, anar, chakri, kandil and kamal arranged on a dark isometric grid'},
+ {title:'Dither Boil: an AI-built tool for restless images',desc:'A personalised browser tool built from my concept prompt, with a real output showcase and controls for shaping the loop.',href:'/journal/dither-tool/',image:'assets/journal/diwali/dither-poster.jpg',alt:'An archer image rendered as animated black-and-white dither grain'},
+ {title:'An AI-built 3D Diwali greeting you can make your own',desc:'A custom greeting tool built from my concept, shown through day and night scenes and an interactive flip-card showcase.',href:'/journal/happy-diwali-3d-card/',image:'assets/journal/diwali/greeting-night.jpg',alt:'Interactive Happy Diwali greeting scene with marigolds, lotuses, kandils and diyas'},
 ];
 const description='Independent notes on design, AI-assisted creative technology and hands-on making by Shubham Shinde, design lead and art director in Bengaluru, India.';
 ---
 <Portfolio page="journal" route="journal/" title="Journal — Design, AI & Creative Technology | Shubham Shinde" description={description}>
-  <section class="page-intro journal-index-intro"><p class="journal-index-kicker">Notes from the studio and the spare hours</p><h1>Journal</h1><p>Design experiments, creative technology and the occasional idea that got too interesting to leave alone.</p></section>
+  <section class="page-intro journal-index-intro"><p class="journal-index-kicker">Notes from the studio and the spare hours</p><h1>Journal</h1><p>Custom tools I built with AI from my own concepts, plus a look at what they can make. I bring the idea and art direction; AI helps turn it into something people can use.</p></section>
   <section class="journal-index" aria-label="Journal articles">
     {entries.map((entry,i)=><article class="journal-card">
       <a class="journal-card-art" href={entry.href}><img src={entry.image} alt={entry.alt} loading={i===0?'eager':'lazy'} width="1200" height="675"><span>Read the story ↗</span></a>
