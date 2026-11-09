@@ -8,8 +8,11 @@ import data from '../data/portfolio.json';
 import mobileMedia from '../data/mobile-media.json';
 import { PROJECTS } from '../lib/projects.js';
 import { metadata, origin } from '../lib/seo.js';
-const { page, title, description, route='', project, preview=false } = Astro.props;
+const { page, title, description, route='', project, preview=false, socialImage, socialImageAlt, structuredData } = Astro.props;
 const { canonical, hero, graph } = metadata({page,title,description,route,project});
+const shareImage = socialImage || hero;
+const shareAlt = socialImageAlt || (project?project.title+' — selected project visual':'Portrait of Shubham Shinde');
+const pageGraph = structuredData ? [...graph, structuredData] : graph;
 const base = route ? '../'.repeat(route.split('/').filter(Boolean).length) : './';
 const clientData = JSON.stringify({A:data.A,M:{v:mobileMedia.videos,a:mobileMedia.anim},PROJECTS:PROJECTS.map(({id,title,desc,role,body,ownership,category})=>({id,title,desc,role,body,ownership,category}))}).replace(/</g,'\\u003c');
 ---
@@ -25,18 +28,19 @@ const clientData = JSON.stringify({A:data.A,M:{v:mobileMedia.videos,a:mobileMedi
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={page==='journal' && structuredData ? 'article' : 'website'} />
   <meta property="og:site_name" content="Shubham Shinde" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
-  <meta property="og:image" content={new URL(hero,origin).href} />
-  <meta property="og:image:alt" content={project?project.title+' — selected project visual':'Portrait of Shubham Shinde'} />
+  <meta property="og:image" content={new URL(shareImage,origin).href} />
+  <meta property="og:image:alt" content={shareAlt} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={new URL(hero,origin).href} />
-  <script is:inline type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@graph':graph}).replace(/</g,'\\u003c')} />
+  <meta name="twitter:image" content={new URL(shareImage,origin).href} />
+  <meta name="twitter:image:alt" content={shareAlt} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@graph':pageGraph}).replace(/</g,'\\u003c')} />
   <noscript><style is:global>.option-enter{opacity:1!important;transform:none!important}.motion-toggle,.rail-prev,.rail-next,.filter-bar{display:none!important}.case-media-open{cursor:default}</style></noscript>
   {page==='home' && <link rel="stylesheet" href="assets/home-intro.css?v=1" />}
 </head>
