@@ -5,12 +5,12 @@ import {companies} from './links.js';
 export const origin='https://studioshubham.vercel.app/';
 const root=process.cwd();
 const absolute=relative=>new URL(relative,origin).href;
-const person={'@type':'Person','@id':absolute('#person'),name:'Shubham Shinde',url:origin,jobTitle:'Graphic Design Lead',worksFor:{'@type':'Organization',name:'WizCommerce',url:companies.WizCommerce},homeLocation:{'@type':'Place',name:'Bengaluru, India'},sameAs:['https://www.behance.net/shubhamshinde','https://www.linkedin.com/in/shubhamshinde'],knowsAbout:['Brand identity','Art direction','Motion design','Website design'],image:absolute('assets/about-shubham-red.webp')};
+const person={'@type':'Person','@id':absolute('#person'),name:'Shubham Shinde',url:origin,jobTitle:'Graphic Design Lead',worksFor:{'@type':'Organization',name:'WizCommerce',url:companies.WizCommerce},homeLocation:{'@type':'Place',name:'Bengaluru, India'},sameAs:['https://www.behance.net/shubhamshinde','https://www.linkedin.com/in/shubhamshinde'],knowsAbout:['Brand identity','Art direction','Motion design','Website design','AI-assisted design','Creative coding','Interactive web experiences'],image:absolute('assets/about-shubham-red.webp')};
 export function metadata(page){
  const canonical=absolute(page.route);
  const visuals=page.project?page.project.assets.map(key=>data.A[key]).filter(Boolean):[];
  const hero=visuals.map(file=>file.endsWith('.mp4')?file.replace(/\.mp4$/,'.jpg'):file).find(file=>/\.(webp|png|jpe?g)$/i.test(file)&&fs.existsSync(path.join(root,file)))||'assets/og-share.jpg';
- const graph=[person,{'@type':'WebSite','@id':absolute('#website'),url:origin,name:'Shubham Shinde — Portfolio',inLanguage:'en',publisher:{'@id':person['@id']}},{'@type':page.page==='about'?'AboutPage':page.page==='work'||page.page==='studies'?'CollectionPage':'WebPage','@id':canonical+'#webpage',url:canonical,name:page.title,description:page.description,isPartOf:{'@id':absolute('#website')},about:{'@id':person['@id']},inLanguage:'en'}];
+ const graph=[person,{'@type':'WebSite','@id':absolute('#website'),url:origin,name:'Shubham Shinde — Portfolio',inLanguage:'en',publisher:{'@id':person['@id']}},{'@type':page.page==='about'?'AboutPage':page.page==='work'||page.page==='studies'||page.page==='journal'&&page.route==='journal/'?'CollectionPage':'WebPage','@id':canonical+'#webpage',url:canonical,name:page.title,description:page.description,isPartOf:{'@id':absolute('#website')},about:{'@id':person['@id']},inLanguage:'en'}];
  if(page.project)graph.push({'@type':'CreativeWork','@id':canonical+'#work',name:page.project.title,description:page.description,url:canonical,contributor:{'@id':person['@id']},image:absolute(hero)});
  if(page.route){
   const crumbs=[{name:'Home',item:origin}];

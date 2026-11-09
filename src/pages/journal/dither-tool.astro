@@ -1,0 +1,20 @@
+---
+import JournalArticle from '../../components/JournalArticle.astro';
+const title='Dither Boil: give your image a little restless energy';
+const description='Shubham Shinde built Dither Boil, a browser-based creative coding tool that turns images and video clips into animated 1-bit dither loops.';
+const poster='assets/journal/diwali/dither-poster.jpg';
+---
+<JournalArticle slug="dither-tool" title={title} description={description} shareImage={poster} shareAlt="Archer artwork rendered as black-and-white animated dither grain" projectUrl="/experiments/dither-boil/" projectLabel="Dither Boil — the image-to-loop tool" keywords={['AI-assisted creative coding','dither animation tool','creative coding','image to animation','designer builder India']}>
+  <figure class="journal-media"><video controls playsinline preload="none" poster={poster} aria-label="A source image transformed into a looping dither animation"><source src="/assets/journal/diwali/dither-tool.mp4" type="video/mp4"></video><figcaption>A real output from Dither Boil: an image turned into a moving, high-contrast dither loop.</figcaption></figure>
+  <section class="journal-copy">
+    <p>Some vacation projects begin with a plan. This one began with me staring at an image and wondering how much character I could squeeze out of a very small number of pixels.</p>
+    <p><strong>Dither Boil</strong> is a browser-based creative coding tool I built to turn an image or video clip into animated 1-bit grain. Drop in a file, pick a look, adjust the texture and motion, then export a still or a looping video. The recording above shows the result using an archer image.</p>
+    <dl class="journal-facts"><div><dt>What it is</dt><dd>A browser tool for making animated dither textures from images or video.</dd></div><div><dt>Named presets</dt><dd>Boil, Ordered, Diffusion and Hard cut.</dd></div><div><dt>Who made it</dt><dd>Shubham Shinde, designer and creative technologist in Bengaluru, India.</dd></div><div><dt>AI in the process</dt><dd>I wrote the concept prompt; AI built the tool. The dither effect itself runs in the browser.</dd></div></dl>
+    <h2>A tool for happy accidents</h2>
+    <p>The named presets are a starting point, not a set of locked filters. Pattern, dot size, dash length, grain, cut-off, contrast, brightness and glow can all be adjusted. You can also change the colour pair, playback speed and loop duration. That means the same source can go from a soft, detailed texture to a much more graphic, restless one.</p>
+    <p>I wrote the concept prompt and AI built the tool from it. I set what the experience needed to do and shaped the presets and controls around the image-making part. Once it’s open, the dither effect itself runs in the browser with canvas rendering. It isn’t an AI image generator: it transforms the file you choose using the dither controls on the page.</p>
+    <h2>From visual experiment to something other people can use</h2>
+    <p>I wanted this to be more than a clip of an effect. So I made the controls part of the experience: upload your own image, see the change as you make it, and export the loop when something clicks. It’s a small utility with just enough room to get distracted.</p>
+    <p>Try <a href="/experiments/dither-boil/">Dither Boil in your browser</a>, then read about the <a href="/journal/diwali-isometric-motion/">Diwali motion experiment</a> and the <a href="/journal/happy-diwali-3d-card/">interactive greeting card</a>.</p>
+  </section>
+</JournalArticle>
