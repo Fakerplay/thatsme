@@ -1,7 +1,7 @@
 ---
 import Portfolio from '../layouts/Portfolio.astro';
 import {origin} from '../lib/seo.js';
-const {slug,title,description,shareImage,shareAlt,published='2026-11-09',keywords=[],projectUrl,projectLabel,ctaText='Open the tool'}=Astro.props;
+const {slug,title,description,shareImage,shareAlt,published='2026-11-09',keywords=[],projectUrl,projectLabel,ctaText='Open the tool',readTime='3 min read'}=Astro.props;
 const canonical=new URL(`journal/${slug}/`,origin).href;
 const imageUrl=new URL(shareImage,origin).href;
 const linkedInShare='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(canonical);
@@ -24,69 +24,100 @@ const structuredData={
 };
 ---
 <Portfolio page="journal" route={`journal/${slug}/`} title={title+' — Shubham Shinde'} description={description} socialImage={shareImage} socialImageAlt={shareAlt} structuredData={structuredData}>
-  <article class="journal-article">
-    <div class="case-index-layout journal-layout">
-      <aside class="case-index-info">
-        <a class="case-index-back" href="/journal/">Journal</a>
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <dl>
-          <dt>Made by</dt><dd><a href="/about/">Shubham Shinde</a></dd>
-          <dt>Practice</dt><dd>Design direction, creative technology &amp; AI-assisted making</dd>
-          <dt>Published</dt><dd><time datetime={published}>{new Date(published+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</time></dd>
-        </dl>
-        <p class="case-index-context">A Diwali vacation experiment · Bengaluru, India</p>
-        <nav class="case-index-links" aria-label="Project links">
-          <a class="case-index-primary" href={projectUrl} target={projectUrl.startsWith('http')?'_blank':undefined} rel={projectUrl.startsWith('http')?'noopener noreferrer':undefined}>{ctaText} ↗</a>
-        </nav>
-        <p class="case-index-context journal-share">Share: <a href={linkedInShare} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> · <a href={xShare} target="_blank" rel="noopener noreferrer">X ↗</a></p>
-      </aside>
-      <div class="journal-body">
-        <slot />
-        <nav class="journal-related" aria-label="More from the Journal">
-          <span>More from the Journal</span>
-          <a href="/journal/diwali-isometric-motion/">Diwali effects ↗</a>
-          <a href="/journal/dither-tool/">Dither Boil ↗</a>
-          <a href="/journal/happy-diwali-3d-card/">3D Diwali greeting ↗</a>
-          <a href="/experiments/">All experiments ↗</a>
-        </nav>
+  <article class="jr">
+    <header class="jr-head">
+      <a class="jr-back" href="/journal/"><span aria-hidden="true">←</span> Journal</a>
+      <p class="jr-eyebrow">Experiment · Diwali 2026</p>
+      <h1>{title}</h1>
+      <p class="jr-deck">{description}</p>
+      <div class="jr-byline">
+        <img class="jr-avatar" src="/assets/about-shubham-red.webp" alt="" width="44" height="44" />
+        <div><a href="/about/">Shubham Shinde</a><span><time datetime={published}>{new Date(published+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</time> · {readTime}</span></div>
+        <a class="case-index-primary jr-cta" href={projectUrl} target={projectUrl.startsWith('http')?'_blank':undefined} rel={projectUrl.startsWith('http')?'noopener noreferrer':undefined}>{ctaText} ↗</a>
       </div>
+    </header>
+    <div class="journal-body">
+      <slot />
+    </div>
+    <div class="jr-foot">
+      <div class="jr-try">
+        <div><p class="jr-eyebrow">Made with AI · Directed by me</p><h2>{projectLabel}</h2></div>
+        <a class="case-index-primary" href={projectUrl} target={projectUrl.startsWith('http')?'_blank':undefined} rel={projectUrl.startsWith('http')?'noopener noreferrer':undefined}>{ctaText} ↗</a>
+      </div>
+      <nav class="jr-more" aria-label="More from the Journal">
+        <p class="jr-eyebrow">More from the Journal</p>
+        <a href="/journal/diwali-isometric-motion/">A Diwali effects tool, with a little festival in it <span aria-hidden="true">↗</span></a>
+        <a href="/journal/dither-tool/">Dither Boil: an AI-built tool for restless images <span aria-hidden="true">↗</span></a>
+        <a href="/journal/happy-diwali-3d-card/">An AI-built 3D Diwali greeting you can make your own <span aria-hidden="true">↗</span></a>
+      </nav>
+      <p class="jr-share">Share: <a href={linkedInShare} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> · <a href={xShare} target="_blank" rel="noopener noreferrer">X ↗</a> · <a href="/experiments/">All experiments ↗</a></p>
     </div>
   </article>
 </Portfolio>
 <style is:global>
-/* Journal articles use the case-study layout: sticky info column + media column (see assets/case-index.css) */
-body[data-page="journal"] .case-index-layout{display:grid;grid-template-columns:minmax(220px,26%) minmax(0,1fr);gap:5vw;padding:56px 0 0;align-items:start;margin-inline:4vw}
-body[data-page="journal"] .case-index-info{max-height:none;overflow:visible}
-body[data-page="journal"] .case-index-info .journal-share{margin-top:18px}.journal-share a{color:inherit}
-.journal-body{min-width:0;padding-bottom:96px}
-.journal-body>*+*{margin-top:20px}
-.journal-media,.journal-window,.journal-presets,.journal-gallery{margin:0}
-.journal-media img,.journal-media video,.journal-window img,.journal-gallery img{display:block;width:100%;height:auto;border-radius:16px;background:var(--surface,#eceae4)}
+/* Journal: one centred reading column (~680px), wide figures (~1040px), generous vertical rhythm */
+.jr{--jr-text:680px;--jr-wide:1040px;--jr-gap:clamp(48px,7vw,88px);padding:clamp(40px,7vw,96px) var(--pad) clamp(64px,9vw,120px)}
+.jr-head,.journal-copy,.jr-foot{max-width:var(--jr-text);margin-inline:auto}
+.jr-back{display:inline-flex;gap:8px;color:var(--muted);text-decoration:none;font-size:15px}
+.jr-back:hover{color:var(--ink)}
+.jr-eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.jr-head{display:grid;gap:22px}
+.jr-head .jr-eyebrow{margin-top:clamp(28px,5vw,48px)}
+.jr-head h1{font-size:clamp(38px,5.6vw,64px);line-height:1.05;letter-spacing:-.045em;font-weight:400;margin:0;text-wrap:balance}
+.jr-deck{font-size:clamp(19px,2vw,22px);line-height:1.55;color:var(--muted);margin:0;text-wrap:pretty}
+.jr-byline{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:20px 0;margin-top:8px;border-block:1px solid var(--line)}
+.jr-avatar{width:44px;height:44px;border-radius:50%!important;object-fit:cover;object-position:50% 22%}
+.jr-byline>div{display:grid;gap:2px;font-size:15px;margin-right:auto}
+.jr-byline>div a{color:inherit;text-decoration:none}
+.jr-byline>div span{color:var(--muted);font-size:14px}
+.journal-body{display:grid;gap:var(--jr-gap);margin-top:var(--jr-gap)}
+.journal-media,.journal-window,.journal-presets,.journal-gallery{width:100%;max-width:var(--jr-wide);margin:0 auto}
+.journal-media img,.journal-media video,.journal-window img,.journal-gallery img{display:block;width:100%;height:auto;border-radius:14px;background:var(--surface,#eceae4)}
 .journal-media video{aspect-ratio:16/9;background:#000}
-.journal-window a{display:block;border-radius:16px;overflow:hidden}
-.journal-window .jw-bar{display:none}
-.journal-media figcaption,.journal-window figcaption,.journal-presets figcaption,.journal-gallery figcaption{padding-top:12px;font-size:12px;line-height:1.5;color:var(--muted)}
-.journal-window figcaption em,.journal-presets figcaption em{display:none}
-.journal-presets ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.journal-window a{display:block;border-radius:14px;overflow:hidden}
+.journal-window .jw-bar,.journal-window figcaption em,.journal-presets figcaption em{display:none}
+.journal-media figcaption,.journal-window figcaption,.journal-presets figcaption,.journal-gallery figcaption{max-width:var(--jr-text);margin:14px auto 0;font-size:14px;line-height:1.55;color:var(--muted);text-align:center}
+.journal-presets ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .journal-presets img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:12px;background:#000}
-.journal-presets li span{display:block;padding-top:8px;font-size:12px;color:var(--muted)}
-.journal-presets li b{display:block;font-weight:400;color:var(--ink);font-size:13px}
-.journal-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start;margin:32px 0 40px!important}
-body[data-page="journal"] .journal-copy .journal-gallery{margin:36px 0 44px!important}
+.journal-presets li span{display:grid;gap:2px;padding-top:10px;font-size:13px;color:var(--muted);line-height:1.4}
+.journal-presets li b{font-weight:400;color:var(--ink);font-size:14px}
+.journal-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
 .journal-gallery figure{margin:0}
-.journal-copy{max-width:760px;padding-block:36px 28px}
-.journal-copy h2{font-size:clamp(28px,3.4vw,44px);line-height:1.15;letter-spacing:-.04em;font-weight:400;margin:24px 0 20px}
-.journal-copy p,.journal-copy li{font-size:17px;line-height:1.7;color:#44463f}
-.journal-copy p{margin:0 0 18px}
+.journal-copy{width:100%}
+.journal-copy>*+*{margin-top:28px}
+.journal-copy h2{font-size:clamp(28px,3.4vw,38px);line-height:1.15;letter-spacing:-.035em;font-weight:400;margin:clamp(48px,6vw,72px) 0 0;text-wrap:balance}
+.journal-copy h2:first-child{margin-top:0}
+.journal-copy p,.journal-copy li{font-size:clamp(17px,1.4vw,19px);line-height:1.75;color:#3d3f38}
+.journal-copy p{margin-bottom:0}
 .journal-copy a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
-.journal-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 32px;margin:32px 0 8px;padding:24px 0;border-block:1px solid var(--line)}
-.journal-facts div{display:grid;gap:6px}
-.journal-facts dt{font-size:13px;color:#62645d}
-.journal-facts dd{margin:0;font-size:15px;line-height:1.55}
-.journal-related{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;margin-top:56px!important;padding-top:28px;border-top:1px solid var(--line);font-size:14px}
-.journal-related span{color:var(--muted);margin-right:auto;flex-basis:100%}
-.journal-related a{color:inherit;text-underline-offset:4px}
-@media(max-width:800px){body[data-page="journal"] .case-index-layout{display:block;padding-top:32px;margin-inline:4vw}.journal-presets ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){body[data-page="journal"] .case-index-layout{margin-inline:18px}.journal-gallery,.journal-facts{grid-template-columns:1fr}.journal-copy{padding-top:28px}}
+.journal-copy .journal-gallery{max-width:none}
+/* at a glance */
+.journal-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;margin-block:44px 0!important;padding:32px 0;border-block:1px solid var(--line)}
+.journal-facts div{display:grid;gap:8px}
+.journal-facts dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.journal-facts dd{margin:0;font-size:16px;line-height:1.6}
+/* simple steps with icons */
+.journal-steps{list-style:none;margin:40px 0 0!important;padding:0;display:grid;gap:28px}
+.journal-steps li{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start}
+.journal-steps svg{width:48px;height:48px;padding:12px;border:1px solid var(--line);border-radius:12px;color:var(--ink);background:var(--paper,#fcfbf8)}
+.journal-steps b{display:block;font-weight:400;font-size:18px;line-height:1.4;color:var(--ink)}
+.journal-steps span{display:block;font-size:16px;line-height:1.6;color:var(--muted);margin-top:4px}
+/* footer */
+.jr-foot{display:grid;gap:40px;margin-top:var(--jr-gap);width:100%}
+.jr-try{display:grid;gap:20px;justify-items:start;width:100%;box-sizing:border-box;padding:36px;border:1px solid var(--line);border-radius:18px}
+.jr-try h2{max-width:none;font-size:clamp(24px,2.8vw,32px);line-height:1.2;letter-spacing:-.03em;font-weight:400;margin:8px 0 0}
+.jr-more{display:grid}
+.jr-more .jr-eyebrow{margin-bottom:12px}
+.jr-more a{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-top:1px solid var(--line);color:inherit;text-decoration:none;font-size:17px;line-height:1.4}
+.jr-more a:last-child{border-bottom:1px solid var(--line)}
+.jr-more a:hover{color:var(--muted)}
+.jr-share{margin:0;color:var(--muted);font-size:14px}
+.jr-share a{color:var(--ink);text-underline-offset:4px}
+@media(max-width:760px){
+  .jr-cta{width:100%}
+  .journal-presets ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .journal-gallery,.journal-facts{grid-template-columns:1fr}
+  .journal-facts{gap:22px}
+  .jr-try{padding:26px}
+}
 </style>
