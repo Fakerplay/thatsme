@@ -1,7 +1,7 @@
 ---
 import Portfolio from '../layouts/Portfolio.astro';
 import {origin} from '../lib/seo.js';
-const {slug,title,description,shareImage,shareAlt,published='2026-11-09',keywords=[],projectUrl,projectLabel,ctaText='Open the tool',readTime='3 min read'}=Astro.props;
+const {slug,title,description,shareImage,shareAlt,published='2026-11-09',keywords=[],projectUrl,projectLabel,ctaText='Open the tool',readTime='1 min read'}=Astro.props;
 const canonical=new URL(`journal/${slug}/`,origin).href;
 const imageUrl=new URL(shareImage,origin).href;
 const linkedInShare='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(canonical);
@@ -44,13 +44,6 @@ const structuredData={
         <div><p class="jr-eyebrow">Made with AI · Directed by me</p><h2>{projectLabel}</h2></div>
         <a class="case-index-primary" href={projectUrl} target={projectUrl.startsWith('http')?'_blank':undefined} rel={projectUrl.startsWith('http')?'noopener noreferrer':undefined}>{ctaText} ↗</a>
       </div>
-      <nav class="jr-more" aria-label="More from the Journal">
-        <p class="jr-eyebrow">More from the Journal</p>
-        <a href="/journal/diwali-isometric-motion/">A Diwali effects tool, with a little festival in it <span aria-hidden="true">↗</span></a>
-        <a href="/journal/dither-tool/">Dither Boil: an AI-built tool for restless images <span aria-hidden="true">↗</span></a>
-        <a href="/journal/happy-diwali-3d-card/">An AI-built 3D Diwali greeting you can make your own <span aria-hidden="true">↗</span></a>
-      </nav>
-      <p class="jr-share">Share: <a href={linkedInShare} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> · <a href={xShare} target="_blank" rel="noopener noreferrer">X ↗</a> · <a href="/experiments/">All experiments ↗</a></p>
     </div>
   </article>
 </Portfolio>
