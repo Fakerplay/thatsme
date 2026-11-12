@@ -31,8 +31,38 @@
       "permanent": true
     },
     {
-      "source": "/journal/:path*",
-      "destination": "/experiments/:path*",
+      "source": "/journal/",
+      "destination": "/experiments/",
+      "permanent": true
+    },
+    {
+      "source": "/journal/dither-tool",
+      "destination": "/experiments/dither-tool/",
+      "permanent": true
+    },
+    {
+      "source": "/journal/dither-tool/",
+      "destination": "/experiments/dither-tool/",
+      "permanent": true
+    },
+    {
+      "source": "/journal/happy-diwali-3d-card",
+      "destination": "/experiments/happy-diwali-3d-card/",
+      "permanent": true
+    },
+    {
+      "source": "/journal/happy-diwali-3d-card/",
+      "destination": "/experiments/happy-diwali-3d-card/",
+      "permanent": true
+    },
+    {
+      "source": "/journal/diwali-isometric-motion",
+      "destination": "/experiments/diwali-isometric-motion/",
+      "permanent": true
+    },
+    {
+      "source": "/journal/diwali-isometric-motion/",
+      "destination": "/experiments/diwali-isometric-motion/",
       "permanent": true
     },
     {
