@@ -30,7 +30,7 @@ const tools = [
     ],
   },
   {
-    id: 'diwali-effects', title: 'Diwali effects', url: '/experiments/diwali-isometric-motion/', story: '/experiments/diwali-isometric-motion/', cta: 'View the showcase',
+    id: 'diwali-effects', title: 'Diwali effects', url: '/experiments/diwali-isometric-motion/', cta: 'View the showcase',
     desc: 'A Diwali effects experience built around five familiar forms (diya, anar, chakri, kandil and kamal), shown through an isometric motion film.',
     tags: [['motion', 'Motion'], ['cube', '3D'], ['ai', 'Built with AI']],
     shots: [
@@ -55,7 +55,7 @@ const tools = [
         </div>
         <nav class="case-index-links xp-links" aria-label={`${t.title} links`}>
           <a class="case-index-primary" href={t.url}>{t.cta} ↗</a>
-          <a class="case-index-secondary" href={t.story}>Case study</a>
+          {t.story && <a class="case-index-secondary" href={t.story}>Case study</a>}
         </nav>
       </div>
       <div class="xp-shots">
