@@ -9,6 +9,8 @@ export default defineConfig({
  adapter:vercel(),
  output:'static', trailingSlash:'always',
  redirects:{
+  '/journal/':'/experiments/',
+  '/journal/dither-tool/':'/experiments/dither-tool/',
   '/journal/happy-diwali-3d-card/':'/experiments/happy-diwali-3d-card/',
   '/journal/diwali-isometric-motion/':'/experiments/diwali-isometric-motion/',
  },
