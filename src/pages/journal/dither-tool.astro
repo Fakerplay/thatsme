@@ -3,18 +3,20 @@ import JournalArticle from '../../components/JournalArticle.astro';
 const title='Dither Boil: an AI-built tool for restless images';
 const description='Shubham Shinde designed Dither Boil from a concept prompt; AI built the personalised browser tool for turning images and video clips into animated 1-bit dither loops.';
 const poster='assets/journal/diwali/dither-poster.jpg';
+const shareImage='assets/experiments/dither-archer-hero.jpg';
 ---
-<JournalArticle slug="dither-tool" title={title} description={description} shareImage={poster} shareAlt="Archer artwork rendered as black-and-white animated dither grain" projectUrl="/experiments/dither-boil/" projectLabel="Dither Boil — the image-to-loop tool" keywords={['AI-assisted creative coding','dither animation tool','creative coding','image to animation','designer builder India']}>
-  <figure class="journal-media"><video controls playsinline preload="none" poster={poster} aria-label="A source image transformed into a looping dither animation"><source src="/assets/journal/diwali/dither-tool.mp4" type="video/mp4"></video><figcaption>A real output from Dither Boil: an image turned into a moving, high-contrast dither loop.</figcaption></figure>
+<JournalArticle slug="dither-tool" title={title} description={description} shareImage={shareImage} shareAlt="An archer drawing his bow, rendered in glowing white particles against a starry sky" projectUrl="/experiments/dither-boil/" readTime="1 min read" projectLabel="Try Dither Boil in your browser" keywords={['AI-assisted creative coding','dither animation tool','creative coding','image to animation','designer builder India']}>
+  <figure class="journal-window"><a href="/experiments/dither-boil/" aria-label="Open the tool"><img src="/assets/experiments/dither-boil-ui-ember.jpg" alt="The Dither Boil interface: an archer boiling as glowing orange grain in the preview, with Presets, Pattern and Tone panels on the right" width="2400" height="1500" fetchpriority="high" decoding="async"></a><figcaption>Dither Boil running in the browser.</figcaption></figure>
   <section class="journal-copy">
-    <p>Some vacation projects begin with a plan. This one began with me staring at an image and wondering how much character I could squeeze out of a very small number of pixels.</p>
-    <p><strong>Dither Boil</strong> is a browser-based creative coding tool I built to turn an image or video clip into animated 1-bit grain. Drop in a file, pick a look, adjust the texture and motion, then export a still or a looping video. The recording above shows the result using an archer image.</p>
-    <dl class="journal-facts"><div><dt>What it is</dt><dd>A browser tool for making animated dither textures from images or video.</dd></div><div><dt>Named presets</dt><dd>Boil, Ordered, Diffusion and Hard cut.</dd></div><div><dt>Who made it</dt><dd>Shubham Shinde, designer and creative technologist in Bengaluru, India.</dd></div><div><dt>AI in the process</dt><dd>I wrote the concept prompt; AI built the tool. The dither effect itself runs in the browser.</dd></div></dl>
-    <h2>A tool for happy accidents</h2>
-    <p>The named presets are a starting point, not a set of locked filters. Pattern, dot size, dash length, grain, cut-off, contrast, brightness and glow can all be adjusted. You can also change the colour pair, playback speed and loop duration. That means the same source can go from a soft, detailed texture to a much more graphic, restless one.</p>
-    <p>I wrote the concept prompt and AI built the personalised tool from it. I set what the experience needed to do and shaped the presets and controls around the image-making part. Once it’s open, the dither effect itself runs in the browser with canvas rendering. It isn’t an AI image generator: it transforms the file you choose using the dither controls on the page. The video above is a showcase output from the tool.</p>
-    <h2>From visual experiment to something other people can use</h2>
-    <p>I wanted this to be more than a clip of an effect. So I made the controls part of the experience: upload your own image, see the change as you make it, and export the loop when something clicks. It’s a small utility with just enough room to get distracted.</p>
-    <p>Try <a href="/experiments/dither-boil/">Dither Boil in your browser</a>, then read about the <a href="/journal/diwali-isometric-motion/">Diwali motion experiment</a> and the <a href="/journal/happy-diwali-3d-card/">interactive greeting card</a>.</p>
+    <h2>What it is</h2>
+    <p><strong>Dither Boil</strong> is a browser tool that turns any image or short video clip into animated 1-bit grain, then exports it as a still or a looping video.</p>
+    <p>I wrote the concept prompt and AI built the tool. The effect runs live in your browser; nothing is generated, it transforms the file you give it.</p>
+    <h2>How it works</h2>
+    <ol class="journal-steps">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v4h16v-4"/></svg><div><b>Drop in a file</b><span>Any image or a short video clip.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><div><b>Pick a preset</b><span>Boil, Ordered, Diffusion or Hard cut.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><div><b>Shape the grain</b><span>Dot size, grain, contrast, glow and the colour pair.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"/></svg><div><b>Export</b><span>A PNG still or a looping video.</span></div></li>
+    </ol>
   </section>
 </JournalArticle>

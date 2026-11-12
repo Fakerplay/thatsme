@@ -1,30 +1,102 @@
 ---
 import Portfolio from '../layouts/Portfolio.astro';
+
+// Same building blocks as the Work page: page-intro, project-row, row-heading, project-tags and a moving natural rail.
+const icons = {
+  tool: '<path d="M3 4h18v16H3zm2 5v9h14V9z" fill-rule="evenodd"/><circle cx="6" cy="6.5" r=".75" fill="var(--tag-surface)"/><circle cx="9" cy="6.5" r=".75" fill="var(--tag-surface)"/>',
+  motion: '<path d="M3 5h18v14H3zm7 3v8l6-4z" fill-rule="evenodd"/>',
+  cube: '<path d="M12 2 3 7v10l9 5 9-5V7zm0 2.3L18.7 8 12 11.7 5.3 8zM5 9.7l6 3.3v6.6l-6-3.3zm8 9.9V13l6-3.3v6.6z" fill-rule="evenodd"/>',
+  ai: '<path d="M11 2h2l1.6 5.4L20 9v2l-5.4 1.6L13 18h-2l-1.6-5.4L4 11V9l5.4-1.6zM18 15h2l.7 2.3L23 18v1l-2.3.7L20 22h-2l-.7-2.3L15 19v-1l2.3-.7z"/>',
+};
+const tools = [
+  {
+    id: 'dither-boil', title: 'Dither Boil', url: 'experiments/dither-boil/', story: 'journal/dither-tool/', cta: 'Try the tool',
+    desc: 'A browser tool I designed for turning an image or video clip into animated 1-bit grain. Pick a preset, shape the texture, export a loop.',
+    tags: [['tool', 'Web tool'], ['motion', 'Motion'], ['ai', 'Built with AI']],
+    shots: [
+      { src: 'assets/experiments/dither-card-ui.jpg', w: 2400, h: 1500, alt: 'The Dither Boil tool turning the archer artwork into soft Diffusion grain, with presets and tone controls on the right', label: 'The tool' },
+      { video: 'experiments/dither-boil/preview.mp4', poster: 'experiments/dither-boil/preview.jpg', w: 720, h: 720, alt: 'A looping archer animation exported from Dither Boil', label: 'Exported loop' },
+      { src: 'assets/experiments/dither-card-warm.jpg', w: 900, h: 900, alt: 'The archer as glowing orange dashes on near-black, using the Boil preset with high glow', label: 'Ember colour pair' },
+    ],
+  },
+  {
+    id: 'happy-diwali-3d', title: 'Happy Diwali, in 3D', url: 'experiments/happy-diwali-3d/', story: 'journal/happy-diwali-3d-card/', cta: 'Try the tool',
+    desc: 'An interactive 3D greeting you can explore, flip and personalise. Drag the diyas and flowers, switch day and night, then write your own message.',
+    tags: [['cube', '3D'], ['tool', 'Web tool'], ['ai', 'Built with AI']],
+    shots: [
+      { src: 'assets/experiments/diwali-3d-ui.jpg', w: 1440, h: 900, alt: 'The live Happy Diwali 3D greeting with diyas, kandils, marigolds and lotuses', label: 'The live scene' },
+      { src: 'assets/experiments/diwali-card-kandil.jpg', w: 900, h: 900, alt: 'A 3D kandil lantern model generated with Tripo', label: 'Kandil model' },
+      { src: 'assets/experiments/diwali-card-lotus.jpg', w: 900, h: 900, alt: 'A 3D lotus model generated with Tripo', label: 'Lotus model' },
+    ],
+  },
+  {
+    id: 'diwali-effects', title: 'Diwali effects', url: 'journal/diwali-isometric-motion/', story: 'journal/diwali-isometric-motion/', cta: 'View the showcase',
+    desc: 'A Diwali effects experience built around five familiar forms (diya, anar, chakri, kandil and kamal), shown through an isometric motion film.',
+    tags: [['motion', 'Motion'], ['cube', '3D'], ['ai', 'Built with AI']],
+    shots: [
+      { video: 'assets/journal/diwali/kandil-motion.mp4', poster: 'assets/journal/diwali/kandil-poster.jpg', w: 1920, h: 1080, alt: 'Showcase film of the Diwali effects experience', label: 'Showcase film' },
+      { src: 'assets/experiments/effects-card-anar.jpg', w: 900, h: 900, alt: 'The anar effect: green sparks rising from its island', label: 'Anar' },
+      { src: 'assets/experiments/effects-card-kamal.jpg', w: 900, h: 900, alt: 'The kamal effect: pink lotus petals opening', label: 'Kamal' },
+    ],
+  },
+];
 ---
 <Portfolio page="experiments" route="experiments/" title="Experiments — Interactive tools by Shubham Shinde" description="Interactive tools, creative coding and visual experiments by Shubham Shinde, design lead and art director in Bengaluru, India.">
-  <section class="page-intro experiments-intro"><div class="experiments-intro-label">Custom tools · Made with AI</div><div><h1>Experiments</h1><p>Tools built from my concepts, with a showcase of what each one can make.</p></div></section>
-  <section class="experiments-list" aria-label="Custom AI-built tools and their showcases">
-    <article class="experiment">
-      <a class="experiment-art" href="experiments/dither-boil/" aria-label="Open Dither Boil"><video autoplay muted loop playsinline preload="metadata" poster="experiments/dither-boil/preview.jpg" aria-label="Animated dither effect on an archer illustration"><source src="experiments/dither-boil/preview.mp4" type="video/mp4" /></video></a>
-      <div><p class="experiment-kicker">01 / Image to motion</p><h2>Dither Boil</h2><p>Upload an image or clip, shape its animated 1-bit grain, and export a loop. The preview shows a real result made with the tool.</p><div class="experiment-links"><a class="pill" href="experiments/dither-boil/">Try the tool ↗</a><a class="text-link" href="journal/dither-tool/">Tool + showcase story</a></div></div>
-    </article>
-    <article class="experiment">
-      <a class="experiment-art" href="experiments/happy-diwali-3d/" aria-label="Open the Happy Diwali 3D greeting"><img src="experiments/happy-diwali-3d/assets/night.png" alt="Night scene from the interactive 3D Diwali greeting" loading="lazy" width="1920" height="1080"></a>
-      <div><p class="experiment-kicker">02 / Personalised greeting</p><h2>Happy Diwali, in 3D</h2><p>A greeting tool you can explore, flip and personalise. The day and night scenes showcase its 3D world; Tripo generated the models.</p><div class="experiment-links"><a class="pill" href="experiments/happy-diwali-3d/">Try the tool ↗</a><a class="text-link" href="journal/happy-diwali-3d-card/">Tool + showcase story</a></div></div>
-    </article>
-    <article class="experiment">
-      <a class="experiment-art" href="journal/diwali-isometric-motion/" aria-label="Watch the Diwali isometric motion study"><img src="assets/journal/diwali/kandil-poster.jpg" alt="A Diwali diya, anar, chakri, kandil and kamal arranged on a dark isometric grid" loading="lazy" width="1920" height="1080"></a>
-      <div><p class="experiment-kicker">03 / Festival effects</p><h2>Diwali effects</h2><p>A personalised Diwali effects experience built from my concept, with an isometric motion film as its showcase.</p><div class="experiment-links"><a class="pill" href="journal/diwali-isometric-motion/">View the showcase ↗</a><a class="text-link" href="journal/diwali-isometric-motion/">Tool + showcase story</a></div></div>
-    </article>
-  </section>
-  <p class="journal-invite">More process notes and project stories live in the <a href="journal/">Journal ↗</a>.</p>
+  <section class="page-intro"><h1>Experiments</h1><p>Tools I’ve designed and built with AI, and what each one can make.</p></section>
+  {tools.map((t) => (
+    <section class="xp-row" aria-labelledby={`row-${t.id}`}>
+      <div class="row-heading">
+        <h2 class="project-row-heading"><a href={t.url} class="row-title" id={`row-${t.id}`}>{t.title}</a></h2>
+        <p>{t.desc}</p>
+        <div class="project-tags">
+          {t.tags.map(([icon, label]) => (
+            <span class="project-tag"><svg class="project-tag__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" set:html={icons[icon]} /><span>{label}</span></span>
+          ))}
+        </div>
+        <nav class="case-index-links xp-links" aria-label={`${t.title} links`}>
+          <a class="case-index-primary" href={t.url}>{t.cta} ↗</a>
+          <a class="case-index-secondary" href={t.story}>Tool + showcase story</a>
+        </nav>
+      </div>
+      <div class="xp-shots">
+        {t.shots.map((s) => (
+          <a class="xp-shot" style={`--r:${(s.w / s.h).toFixed(4)}`} href={t.url} aria-label={`Open ${t.title}: ${s.label}`}>
+            {s.video
+              ? <video src={s.video} poster={s.poster} aria-label={s.alt} muted loop playsinline autoplay preload="metadata"></video>
+              : <img src={s.src} alt={s.alt} width={s.w} height={s.h} loading="lazy" decoding="async" />}
+            <span>{s.label}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+  <section class="case-index-end xp-end"><p>More process notes and project stories live in the Journal.</p><a href="journal/">Read the Journal</a></section>
 </Portfolio>
 <style>
-.experiments-intro{display:grid;grid-template-columns:minmax(180px,.65fr) minmax(0,1.35fr);gap:0;max-width:1560px;margin:auto;padding-bottom:48px;border-bottom:1px solid var(--line)}.experiments-intro-label{padding:8px 24px 0 0;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:var(--muted)}.experiments-intro>div+div{border-left:1px solid var(--line);padding-left:clamp(24px,5vw,72px)}.experiments-intro h1{margin:0}.experiments-intro>div+div>p{max-width:600px;margin-bottom:0}
-.experiments-list{padding:0 var(--pad) 56px;max-width:1560px;margin:auto;display:grid;border-top:1px solid var(--line)}.experiment{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.75fr);gap:0;align-items:stretch;border-bottom:1px solid var(--line)}.experiment-art{display:flex;min-height:360px;aspect-ratio:16/8.5;overflow:hidden;background:var(--surface);color:var(--ink);align-items:center;justify-content:center;padding:0;border-right:1px solid var(--line)}.experiment-art img,.experiment-art video{display:block;width:100%;height:100%;object-fit:contain}.experiment>div{align-self:center;padding:clamp(24px,4vw,54px)}.experiment h2{font-size:clamp(34px,4.3vw,64px);line-height:1;letter-spacing:-.055em;margin:0 0 18px}.experiment p{max-width:520px}.experiment-kicker{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 16px}.experiment-links{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:28px}.experiment-links .text-link{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}.experiment:focus-within .experiment-art{outline:2px solid currentColor;outline-offset:4px}.journal-invite{padding:0 var(--pad) 100px;text-align:center;color:var(--muted)}.journal-invite a{color:var(--ink)}
-@media(max-width:760px){.experiments-intro{grid-template-columns:1fr;gap:18px;padding-top:42px;padding-bottom:32px}.experiments-intro-label{padding:0}.experiments-intro>div+div{border-left:0;padding-left:0}.experiments-list{padding-bottom:40px}.experiment{grid-template-columns:1fr}.experiment-art{min-height:0;aspect-ratio:16/9;border-right:0;border-bottom:1px solid var(--line)}.experiment>div{padding:24px 4px 30px}.experiment-links{margin-top:22px}}
+.xp-row{padding:clamp(56px,8vw,112px) var(--pad) 0;max-width:1560px;margin:0 auto}
+.xp-row+.xp-row{margin-top:clamp(24px,4vw,56px);border-top:1px solid var(--line)}
+.xp-row .row-heading{max-width:640px;display:grid;gap:18px;margin-bottom:clamp(28px,4vw,44px)}
+.xp-row .row-heading p{margin:0;color:var(--muted);line-height:1.6}
+.xp-row .project-row-heading{margin:0}
+.xp-links{margin-top:6px}
+.case-index-secondary{display:inline-flex;justify-content:center;align-items:center;border:1px solid #22201b;border-radius:999px;padding:15px 25px;font-size:15px;line-height:1.4;color:#22201b;text-decoration:none}
+.case-index-secondary:hover{background:#22201b0a}
+.case-index-secondary:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+/* justified row: each shot grows by its aspect ratio so all three share one height */
+.xp-shots{display:flex;gap:clamp(10px,1.4vw,20px);align-items:flex-start}
+.xp-shot{flex:var(--r) 1 0;min-width:0;display:grid;gap:10px;color:var(--muted);text-decoration:none;font-size:13px}
+:global(#app) .xp-shot img,:global(#app) .xp-shot video{display:block;width:100%;height:auto;aspect-ratio:var(--r);object-fit:cover;border-radius:14px;background:#0c0c0c;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.xp-shot:hover img,.xp-shot:hover video{transform:scale(1.012)}
+.xp-shot:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:14px}
+.xp-end{margin:clamp(72px,9vw,120px) var(--pad) 0}
+@media(max-width:900px){
+  .xp-shots{flex-wrap:wrap}
+  .xp-shot:first-child{flex-basis:100%}
+  .xp-shot:not(:first-child){flex:1 1 0}
+}
+@media(prefers-reduced-motion:reduce){.xp-shot img,.xp-shot video{transition:none}}
 </style>
 <script>
-const preview=document.querySelector('.experiment-art video');
-if(preview instanceof HTMLVideoElement){const reduce=matchMedia('(prefers-reduced-motion: reduce)');const sync=()=>{if(reduce.matches){preview.pause();preview.removeAttribute('autoplay')}else preview.play().catch(()=>{})};sync();reduce.addEventListener('change',sync)}
+const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+document.querySelectorAll('.xp-shot video').forEach((v)=>{if(!(v instanceof HTMLVideoElement))return;const sync=()=>{if(reduce.matches){v.pause();v.removeAttribute('autoplay')}else v.play().catch(()=>{})};sync();reduce.addEventListener('change',sync)});
 </script>
