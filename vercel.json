@@ -26,6 +26,16 @@
   ],
   "redirects": [
     {
+      "source": "/journal",
+      "destination": "/experiments/",
+      "permanent": true
+    },
+    {
+      "source": "/journal/:path*",
+      "destination": "/experiments/:path*",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
