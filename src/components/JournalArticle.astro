@@ -1,8 +1,8 @@
 ---
 import Portfolio from '../layouts/Portfolio.astro';
 import {origin} from '../lib/seo.js';
-const {slug,title,description,shareImage,shareAlt,published='2026-11-09',keywords=[],projectUrl,projectLabel,ctaText='Open the tool',readTime='1 min read'}=Astro.props;
-const canonical=new URL(`journal/${slug}/`,origin).href;
+const {slug,title,description,shareImage,shareAlt,published='2026-11-09',keywords=[],projectUrl,projectLabel,ctaText='Open the tool',readTime='1 min read',section='journal'}=Astro.props;
+const canonical=new URL(`${section}/${slug}/`,origin).href;
 const imageUrl=new URL(shareImage,origin).href;
 const linkedInShare='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(canonical);
 const xShare='https://twitter.com/intent/tweet?text='+encodeURIComponent(title+' — a design and AI-making note by Shubham Shinde')+'&url='+encodeURIComponent(canonical);
@@ -17,16 +17,16 @@ const structuredData={
   author:{'@id':new URL('#person',origin).href},
   publisher:{'@id':new URL('#person',origin).href},
   mainEntityOfPage:{'@type':'WebPage','@id':canonical},
-  isPartOf:{'@type':'Blog','@id':new URL('journal/',origin).href+'#journal','name':'Notes on design and making'},
+  isPartOf:section==='journal'?{'@type':'Blog','@id':new URL('journal/',origin).href+'#journal','name':'Notes on design and making'}:{'@type':'CollectionPage','@id':new URL('experiments/',origin).href+'#experiments','name':'Experiments by Shubham Shinde'},
   keywords,
   inLanguage:'en',
   about:[{'@type':'Thing','name':'AI-assisted design'},{'@type':'Thing','name':'Creative technology'}]
 };
 ---
-<Portfolio page="journal" route={`journal/${slug}/`} title={title+' — Shubham Shinde'} description={description} socialImage={shareImage} socialImageAlt={shareAlt} structuredData={structuredData}>
+<Portfolio page={section} route={`${section}/${slug}/`} title={title+' — Shubham Shinde'} description={description} socialImage={shareImage} socialImageAlt={shareAlt} structuredData={structuredData}>
   <article class="jr">
     <header class="jr-head">
-      <a class="jr-back" href="/journal/"><span aria-hidden="true">←</span> Journal</a>
+      <a class="jr-back" href={`/${section}/`}><span aria-hidden="true">←</span> {section === 'experiments' ? 'Experiments' : 'Journal'}</a>
       <p class="jr-eyebrow">Experiment · Diwali 2026</p>
       <h1>{title}</h1>
       <p class="jr-deck">{description}</p>
