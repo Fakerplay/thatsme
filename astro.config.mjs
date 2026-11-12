@@ -8,6 +8,10 @@ export default defineConfig({
  site:'https://studioshubham.vercel.app',
  adapter:vercel(),
  output:'static', trailingSlash:'always',
+ redirects:{
+  '/journal/happy-diwali-3d-card/':'/experiments/happy-diwali-3d-card/',
+  '/journal/diwali-isometric-motion/':'/experiments/diwali-isometric-motion/',
+ },
  build:{format:'directory'},
  devToolbar:{enabled:false},
 });
