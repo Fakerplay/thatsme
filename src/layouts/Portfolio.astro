@@ -11,7 +11,7 @@ import { metadata, origin } from '../lib/seo.js';
 const { page, title, description, route='', project, preview=false, socialImage, socialImageAlt, structuredData } = Astro.props;
 const { canonical, hero, graph } = metadata({page,title,description,route,project});
 const shareImage = socialImage || hero;
-const shareAlt = socialImageAlt || (project?project.title+' — selected project visual':'Portrait of Shubham Shinde');
+const shareAlt = socialImageAlt || (project?project.title+' — selected project visual':'Illustrated introduction to Shubham Shinde, designer and art director');
 const pageGraph = structuredData ? [...graph, structuredData] : graph;
 const base = route ? '../'.repeat(route.split('/').filter(Boolean).length) : './';
 const clientData = JSON.stringify({A:data.A,M:{v:mobileMedia.videos,a:mobileMedia.anim},PROJECTS:PROJECTS.map(({id,title,desc,role,body,ownership,category})=>({id,title,desc,role,body,ownership,category}))}).replace(/</g,'\\u003c');
