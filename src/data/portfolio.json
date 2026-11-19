@@ -264,7 +264,18 @@
     "crm-landing-5": "assets/wizcrm-showcase/crm-landing-5.webp",
     "crm-landing-6": "assets/wizcrm-showcase/crm-landing-6.webp",
     "benchmark-film": "assets/optimized/benchmark-film.mp4",
-    "benchmark-framefold": "assets/optimized/benchmark-framefold.mp4"
+    "benchmark-framefold": "assets/optimized/benchmark-framefold.mp4",
+    "cotopay": "assets/cotopay/cotopay-hero.webp",
+    "original-cotopay-use-cases": "assets/cotopay/original-cotopay-use-cases.mp4",
+    "original-cotopay-spend-locks": "assets/cotopay/original-cotopay-spend-locks.mp4",
+    "original-cotopay-scan": "assets/cotopay/original-cotopay-scan.mp4",
+    "original-cotopay-ledger": "assets/cotopay/original-cotopay-ledger.mp4",
+    "original-cotopay-wordmark": "assets/cotopay/original-cotopay-wordmark.mp4",
+    "cotopay-hero": "assets/cotopay/cotopay-hero.webp",
+    "cotopay-how-it-works": "assets/cotopay/cotopay-how-it-works.webp",
+    "cotopay-spend-locks": "assets/cotopay/cotopay-spend-locks.webp",
+    "cotopay-compare": "assets/cotopay/cotopay-compare.webp",
+    "original-wizcommerce-customer-stories": "assets/wizcrm-showcase/original-wizcommerce-customer-stories.mp4"
   },
   "FILMS": [
     {
@@ -1384,6 +1395,50 @@
     "benchmark-framefold": [
       1920,
       1080
+    ],
+    "cotopay": [
+      1440,
+      1080
+    ],
+    "original-cotopay-use-cases": [
+      1440,
+      1080
+    ],
+    "original-cotopay-spend-locks": [
+      1440,
+      1080
+    ],
+    "original-cotopay-scan": [
+      1440,
+      1080
+    ],
+    "original-cotopay-ledger": [
+      1440,
+      1080
+    ],
+    "original-cotopay-wordmark": [
+      1440,
+      1080
+    ],
+    "cotopay-hero": [
+      1440,
+      1080
+    ],
+    "cotopay-how-it-works": [
+      1440,
+      1080
+    ],
+    "cotopay-spend-locks": [
+      1440,
+      1080
+    ],
+    "cotopay-compare": [
+      1440,
+      1080
+    ],
+    "original-wizcommerce-customer-stories": [
+      1920,
+      1080
     ]
   },
   "FEATURED": [
@@ -1542,6 +1597,11 @@
       "B2B",
       "AI",
       "SaaS"
+    ],
+    "cotopay": [
+      "Fintech",
+      "Brand",
+      "Web"
     ]
   },
   "MEDIA_DESCRIPTIONS": {
