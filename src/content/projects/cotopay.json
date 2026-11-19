@@ -48,7 +48,12 @@
     "Designed the brand system and the homepage.",
     "Created the launch social animations."
   ],
-  "externalLinks": [],
+  "externalLinks": [
+    {
+      "label": "See the live homepage concept",
+      "url": "https://fakerplay.github.io/cotopay-homepage/"
+    }
+  ],
   "order": 20,
   "summary": "A self-initiated rebrand and launch concept for CotoPay, which issues purpose-locked UPI vouchers on NPCI e-RUPI with ICICI Bank. Vouchers lock by category, brand or outlet, with no new app or per-employee KYC, and unused money never leaves the company account."
 }
