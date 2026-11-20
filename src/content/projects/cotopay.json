@@ -1,0 +1,59 @@
+{
+  "id": "cotopay",
+  "title": "CotoPay",
+  "type": "Brand, website & launch concept",
+  "year": "2026",
+  "role": "Concept, brand system, homepage design & launch animations",
+  "desc": "A self-initiated rebrand and launch concept for CotoPay’s purpose-locked UPI vouchers.",
+  "lead": "I created an unsolicited rebrand and launch concept for CotoPay: a brand system, a homepage and a set of launch animations built around one line, “Company money, spent on UPI.”",
+  "body": "CotoPay issues purpose-locked UPI vouchers on NPCI e-RUPI, with ICICI Bank. A company can lock a voucher to a category, a brand or a single outlet. Employees pay with the UPI app they already have, with no new app and no per-employee KYC. Unused money never leaves the company account.",
+  "detail": "I wanted the product to make sense in one look. The homepage leads with the promise, then shows a voucher being issued, received, paid and reconciled. The launch animations take one idea each: spend locks, scanning a QR, the ledger and real use cases such as fleet fuel.",
+  "assets": [
+    "original-cotopay-use-cases",
+    "original-cotopay-spend-locks",
+    "original-cotopay-scan",
+    "original-cotopay-ledger",
+    "original-cotopay-wordmark",
+    "cotopay-hero",
+    "cotopay-how-it-works",
+    "cotopay-spend-locks",
+    "cotopay-compare"
+  ],
+  "captions": [
+    "Use cases launch film — fleet fuel, petty cash and allowances",
+    "Spend locks — launch animation",
+    "Scan any QR — launch animation",
+    "From issued to reconciled — launch animation",
+    "CotoPay wordmark — launch animation",
+    "Homepage hero — “Company money, spent on UPI.”",
+    "How it works — issue, receive, pay, reconcile",
+    "Spend locks — category, brand or outlet",
+    "Comparison with prepaid cards and wallets"
+  ],
+  "color": "#1f7a4d",
+  "category": "Web & digital",
+  "story": {
+    "challenge": "Explain a new kind of company payment, purpose-locked UPI vouchers, to fleet owners and finance teams in a few seconds.",
+    "decisions": [
+      "Lead with one plain promise: “Company money, spent on UPI.”",
+      "Show the voucher’s life in four steps: issue, receive, pay and reconcile.",
+      "Give every launch animation a single idea, from spend locks to fleet fuel."
+    ],
+    "result": "A brand system, homepage design and a set of launch social animations, shared as a self-initiated concept."
+  },
+  "context": "Self-initiated concept · unsolicited rebrand & launch · not client work",
+  "ownership": "Sole contributor",
+  "contribution": [
+    "Shaped the concept and the core message.",
+    "Designed the brand system and the homepage.",
+    "Created the launch social animations."
+  ],
+  "externalLinks": [
+    {
+      "label": "See the live homepage concept",
+      "url": "https://fakerplay.github.io/cotopay-homepage/"
+    }
+  ],
+  "order": 20,
+  "summary": "A self-initiated rebrand and launch concept for CotoPay, which issues purpose-locked UPI vouchers on NPCI e-RUPI with ICICI Bank. Vouchers lock by category, brand or outlet, with no new app or per-employee KYC, and unused money never leaves the company account."
+}

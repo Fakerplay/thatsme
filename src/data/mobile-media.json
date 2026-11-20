@@ -441,6 +441,76 @@
     1280
    ]
   ],
+  "cotopay": [
+   [
+    "assets/mobile/cotopay/cotopay-hero-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-hero-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-hero-1280.webp",
+    1280
+   ]
+  ],
+  "cotopay-compare": [
+   [
+    "assets/mobile/cotopay/cotopay-compare-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-compare-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-compare-1280.webp",
+    1280
+   ]
+  ],
+  "cotopay-hero": [
+   [
+    "assets/mobile/cotopay/cotopay-hero-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-hero-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-hero-1280.webp",
+    1280
+   ]
+  ],
+  "cotopay-how-it-works": [
+   [
+    "assets/mobile/cotopay/cotopay-how-it-works-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-how-it-works-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-how-it-works-1280.webp",
+    1280
+   ]
+  ],
+  "cotopay-spend-locks": [
+   [
+    "assets/mobile/cotopay/cotopay-spend-locks-640.webp",
+    640
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-spend-locks-960.webp",
+    960
+   ],
+   [
+    "assets/mobile/cotopay/cotopay-spend-locks-1280.webp",
+    1280
+   ]
+  ],
   "crm-ai": [
    [
     "assets/mobile/wizcrm-showcase/crm-ai-640.webp",
@@ -2382,6 +2452,21 @@
   "original-bhabha-01": {
    "src": "assets/mobile/portfolio-files/original-bhabha-01.mp4"
   },
+  "original-cotopay-ledger": {
+   "src": "assets/mobile/cotopay/original-cotopay-ledger.mp4"
+  },
+  "original-cotopay-scan": {
+   "src": "assets/mobile/cotopay/original-cotopay-scan.mp4"
+  },
+  "original-cotopay-spend-locks": {
+   "src": "assets/mobile/cotopay/original-cotopay-spend-locks.mp4"
+  },
+  "original-cotopay-use-cases": {
+   "src": "assets/mobile/cotopay/original-cotopay-use-cases.mp4"
+  },
+  "original-cotopay-wordmark": {
+   "src": "assets/mobile/cotopay/original-cotopay-wordmark.mp4"
+  },
   "original-crm-cards": {
    "src": "assets/mobile/wizcrm-showcase/original-crm-cards.mp4"
   },
@@ -2456,6 +2541,9 @@
   },
   "original-sanskrit-04": {
    "src": "assets/mobile/portfolio-files/original-sanskrit-04.mp4"
+  },
+  "original-wizcommerce-customer-stories": {
+   "src": "assets/mobile/wizcrm-showcase/original-wizcommerce-customer-stories.mp4"
   },
   "original-wootz-01": {
    "src": "assets/mobile/portfolio-files/original-wootz-01.mp4"
